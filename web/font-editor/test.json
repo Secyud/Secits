@@ -1,0 +1,54 @@
+{
+  "shapes": [
+    {
+      "name": "path",
+      "startPoint": {
+        "x": 0,
+        "y": 0
+      },
+      "steps": [
+        {
+          "id": "first draw",
+          "name": "draw",
+          "draws": [
+            {
+              "name": "L",
+              "isRelative": true,
+              "point": {
+                "x": 0,
+                "y": -20
+              }
+            },
+            {
+              "name": "L",
+              "isRelative": true,
+              "point": {
+                "x": 20,
+                "y": 0
+              }
+            },
+            {
+              "name": "L",
+              "isRelative": true,
+              "point": {
+                "x": 0,
+                "y": 20
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "viewPort": {
+    "x": 256,
+    "y": 256,
+    "width": 512,
+    "height": 512
+  },
+  "precision": 1,
+  "startPoint": {
+    "x": 0,
+    "y": 0
+  }
+}
