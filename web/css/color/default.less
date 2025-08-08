@@ -1,0 +1,57 @@
+﻿@color: rgb(39, 128, 227);
+
+.color-theme() {
+  --s-c: @color;
+  --r: red(@color);
+  --g: green(@color);
+  --b: blue(@color);
+  --h: round(hue(@color));
+  --s: round(saturation(@color));
+  --v: round(lightness(@color));
+}
+
+[s] {
+  // color
+  @color: rgb(39, 128, 227);
+  .color-theme();
+  // text color on color
+  --s-c-t: rgb(255, 255, 255);
+  // background color
+  --s-c-bg: rgb(255, 255, 255);
+  // text color on background
+  --s-c-t-bg: rgb(80, 80, 80);
+
+
+  &.primary {
+  }
+
+  &.secondary {
+    @color: rgb(24, 191, 153);
+    .color-theme();
+  }
+
+  &.naive {
+    @color: rgb(126, 126, 126);
+    .color-theme();
+  }
+
+  &.success {
+    @color: rgb(65, 198, 16);
+    .color-theme();
+  }
+
+  &.info {
+    @color: rgb(160, 17, 214);
+    .color-theme();
+  }
+
+  &.warning {
+    @color: rgb(255, 117, 24);
+    .color-theme();
+  }
+
+  &.danger {
+    @color: rgb(255, 0, 57);
+    .color-theme();
+  }
+}

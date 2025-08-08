@@ -1,0 +1,16 @@
+﻿@import "component";
+
+.activable {
+  &:extend(.component);
+  text-align: center;
+  cursor: pointer;
+  .set-color(var(--s-c), var(--s-c-t));
+
+  &:hover {
+    .set-color(rgba(from var(--s-c) r g b / 0.6), var(--s-c-t));
+  }
+
+  &:active {
+    .set-color(rgba(from var(--s-c) r g b / 0.8), var(--s-c-t));
+  }
+}

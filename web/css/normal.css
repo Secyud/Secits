@@ -1,0 +1,160 @@
+﻿
+:root {
+    --cbgp: var(--s-color);
+    --cbgs: var(--s-color-blend);
+    --ctxp: var(--s-color);
+    --ctxs: var(--s-color-reverse);
+    --cbdp: var(--s-color);
+    --cbds: var(--s-color-blend);
+    --height-c: auto;
+    --width-c: auto;
+    --bgmix: 5%;
+    --txmix: 30%;
+    --bdmix: 50%;
+}
+
+[s] {
+    /* activable */
+
+    &.button, &.input, &.card, &.table {
+        --background-color-c: color-mix(in lch, var(--cbgp) var(--bgmix), var(--cbgs));
+        --text-color-c: color-mix(in lch, var(--ctxp) var(--txmix), var(--ctxs));
+        --border-color-c: color-mix(in lch, var(--cbdp) var(--bdmix), var(--cbds));
+        --border-radius-c: calc(var(--size) / 4);
+        --margin-c: calc(var(--size) / 4);
+        --line-height-c: var(--size);
+        --padding-x-c: calc(var(--size) / 2);
+        --padding-y-c: calc(var(--size) / 4);
+        flex-shrink: 0;
+        overflow: hidden;
+        padding: var(--padding-y-c) var(--padding-x-c);
+        margin: var(--margin-c);
+        font-size: var(--size);
+        border-radius: var(--border-radius-c);
+        line-height: var(--line-height-c);
+        height: var(--height-c);
+        width: var(--width-c);
+        transition: 50ms;
+        background-color: var(--background-color-c);
+        color: var(--text-color-c);
+        border: 0.125rem solid var(--border-color-c);
+
+        &:hover {
+            --bgmix-h: 20%;
+            --txmix-h: 60%;
+            --bdmix-h: 70%;
+        }
+
+        &:active {
+            --bgmix-a: 40%;
+            --txmix-a: 30%;
+            --bdmix-a: 90%;
+        }
+
+        &:has(:focus) {
+            --bgmix-f: 40%;
+            --txmix-f: 30%;
+            --bdmix-f: 90%;
+        }
+
+        .selected {
+            --bgmix-s: 40%;
+            --txmix-s: 30%;
+            --bdmix-s: 90%;
+        }
+    }
+
+
+    /* shadow */
+
+    &.sd {
+        --shadow-size: calc(var(--size) * var(--shadow-size-n));
+        --shadow-size-n: 0.25;
+        --shadow-opacity: 0.1;
+        box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(
+                from var(--s-color-reverse) r g b / var(--shadow-opacity));
+        transition: 50ms;
+
+        &:active {
+            --shadow-size-n: 0.5;
+            --shadow-opacity: 0.2;
+            transition: 0ms;
+        }
+
+        &.disabled, &.readonly {
+            --shadow-size-n: 0.25;
+            --shadow-opacity: 0.1;
+        }
+    }
+
+    /* borderless */
+
+    &.bl {
+        --border-color-c: transparent;
+    }
+
+    /* angular */
+
+    &.ag {
+        --border-radius-c: 0;
+    }
+
+    /* rounded */
+
+    &.rd {
+        --height-c: var(--size);
+        --border-radius-c: calc(var(--height-c) / 2 + var(--padding-y-c));
+
+        .input-container {
+            padding: 0 var(--padding-x-c);
+        }
+    }
+
+    /* background */
+
+    &.bg {
+        --bgmix: 55%;
+        --txmix: 10%;
+        --bdmix: 90%;
+        --ctxs: var(--s-color-blend);
+
+        &:hover {
+            --bgmix-h: 70%;
+            --txmix-h: 20%;
+            --bdmix-h: 100%;
+        }
+
+        &:active {
+            --bgmix-a: 90%;
+            --txmix-a: 10%;
+            --bdmix-a: 90%;
+        }
+
+        &:has(:focus) {
+            --bgmix-f: 90%;
+            --txmix-f: 10%;
+            --bdmix-f: 90%;
+        }
+
+        .selected {
+            --bgmix-s: 90%;
+            --txmix-s: 10%;
+            --bdmix-s: 90%;
+        }
+    }
+
+    &.pl {
+        --bgmix: 0%;
+        --cbgs: var(--s-color-body);
+    }
+
+    &.readonly {
+        --s-color-blend: rgb(224, 224, 224);
+        --s-color-reverse: rgb(64, 64, 64);
+    }
+
+    &.disabled {
+        --s-color-blend: rgb(192, 192, 192);
+        --s-color-reverse: rgb(128, 128, 128);
+    }
+}

@@ -1,0 +1,17 @@
+﻿@color: var(--s-c);
+@size: var(--s-s);
+@border-radius: var(--s-s-br);
+@border-width: var(--s-s-bw);
+
+.component {
+  border-radius: var(--s-s-br);
+  background-color: var(--s-c-bg);
+  border: var(--s-s-bw) solid var(--s-c-bg);
+  padding: calc(var(--s-s) / 2) var(--s-s);
+}
+
+.set-color(@color, @text-color) {
+  background-color: @color;
+  border: @color;
+  color: @text-color;
+}

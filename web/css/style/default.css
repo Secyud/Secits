@@ -1,0 +1,28 @@
+.component,
+.card,
+.activable,
+.button {
+  border-radius: var(--s-s-br);
+  background-color: var(--s-c-bg);
+  border: var(--s-s-bw) solid var(--s-c-bg);
+  padding: calc(var(--s-s) / 2) var(--s-s);
+}
+.activable,
+.button {
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--s-c);
+  border: var(--s-c);
+  color: var(--s-c-t);
+}
+.activable:hover {
+  background-color: rgba(from var(--s-c) r g b / 0.6);
+  border: rgba(from var(--s-c) r g b / 0.6);
+  color: var(--s-c-t);
+}
+.activable:active {
+  background-color: rgba(from var(--s-c) r g b / 0.8);
+  border: rgba(from var(--s-c) r g b / 0.8);
+  color: var(--s-c-t);
+}
+/*# sourceMappingURL=default.css.map */
