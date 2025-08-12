@@ -1,0 +1,17 @@
+﻿@import "component";
+
+.input {
+  &:extend(.component);
+  &:extend(.disable-web-style all);
+  &:extend(.layout all);
+
+  --border-color: rgba(from var(--s-c) r g b / 0.6);
+
+  &:hover {
+    --border-color: rgba(from var(--s-c) r g b / 0.8);
+  }
+
+  &:has(:focus) {
+    --border-color: var(--s-c);
+  }
+}

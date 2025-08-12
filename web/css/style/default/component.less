@@ -3,15 +3,60 @@
 @border-radius: var(--s-s-br);
 @border-width: var(--s-s-bw);
 
-.component {
-  border-radius: var(--s-s-br);
-  background-color: var(--s-c-bg);
-  border: var(--s-s-bw) solid var(--s-c-bg);
+.set-all-color(@color) {
+  --backgrond-color: @color;
+  --border-color: @color;
+}
+
+.has-padding() {
   padding: calc(var(--s-s) / 2) var(--s-s);
 }
 
-.set-color(@color, @text-color) {
-  background-color: @color;
-  border: @color;
-  color: @text-color;
+.component {
+  border: var(--s-s-bw) solid var(--border-color);
+  font-size: var(--size);
+  border-radius: var(--s-s-br);
+  background-color: var(--backgrond-color);
+  color: var(--text-color);
+  transition: 50ms;
+}
+
+.disable-web-style {
+  input, textarea, button, input&, textarea&, button& {
+    margin: 0;
+    outline: none;
+    border: none;
+    background: none;
+  }
+}
+
+.layout {
+
+  div, span {
+    margin: 0;
+  }
+
+  .l {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .r {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .t {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .b {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .m {
+    border-radius: 0;
+  }
 }

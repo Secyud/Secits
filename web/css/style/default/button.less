@@ -1,6 +1,19 @@
-﻿
-// 普通按钮
-.button {
-  &:extend(.activable);
+﻿@import "component";
 
+.button {
+  &:extend(.component);
+  &:extend(.disable-web-style all);
+  &:extend(.layout all);
+  .has-padding();
+
+  --text-color: var(--s-c-t);
+  .set-all-color(var(--s-c));
+
+  &:hover {
+    .set-all-color(rgba(from var(--s-c) r g b / 0.6));
+  }
+
+  &:active {
+    .set-all-color(rgba(from var(--s-c) r g b / 0.8));
+  }
 }

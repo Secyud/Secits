@@ -1,28 +1,186 @@
 .component,
 .card,
-.activable,
-.button {
-  border-radius: var(--s-s-br);
-  background-color: var(--s-c-bg);
-  border: var(--s-s-bw) solid var(--s-c-bg);
+.button,
+.input,
+.table {
+  border: var(--s-s-bw) solid var(--border-color);
   padding: calc(var(--s-s) / 2) var(--s-s);
+  font-size: var(--size);
+  border-radius: var(--s-s-br);
+  background-color: var(--backgrond-color);
+  color: var(--text-color);
 }
-.activable,
+.disable-web-style input,
+.disable-web-style textarea,
+.disable-web-style button,
+input.disable-web-style,
+textarea.disable-web-style,
+button.disable-web-style,
+.button input,
+.button textarea,
+.button button,
+input.button,
+textarea.button,
+button.button,
+.input input,
+.input textarea,
+.input button,
+input.input,
+textarea.input,
+button.input {
+  margin: 0;
+  outline: none;
+  border: none;
+  background: none;
+}
+.layout div,
+.layout span,
+.button div,
+.button span,
+.input div,
+.input span {
+  margin: 0;
+}
+.layout .l,
+.button .l,
+.input .l {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.layout .r,
+.button .r,
+.input .r {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.layout .t,
+.button .t,
+.input .t {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.layout .b,
+.button .b,
+.input .b {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.layout .m,
+.button .m,
+.input .m {
+  border-radius: 0;
+}
+.card {
+  --backgrond-color: var(--s-c-c);
+  --border-color: var(--s-c-c);
+}
 .button {
-  text-align: center;
-  cursor: pointer;
-  background-color: var(--s-c);
-  border: var(--s-c);
-  color: var(--s-c-t);
+  --text-color: var(--s-c-t);
+  --backgrond-color: var(--s-c);
+  --border-color: var(--s-c);
 }
-.activable:hover {
-  background-color: rgba(from var(--s-c) r g b / 0.6);
-  border: rgba(from var(--s-c) r g b / 0.6);
-  color: var(--s-c-t);
+.button:hover {
+  --backgrond-color: rgba(from var(--s-c) r g b / 0.6);
+  --border-color: rgba(from var(--s-c) r g b / 0.6);
 }
-.activable:active {
-  background-color: rgba(from var(--s-c) r g b / 0.8);
-  border: rgba(from var(--s-c) r g b / 0.8);
-  color: var(--s-c-t);
+.button:active {
+  --backgrond-color: rgba(from var(--s-c) r g b / 0.8);
+  --border-color: rgba(from var(--s-c) r g b / 0.8);
+}
+.input {
+  --border-color: rgba(from var(--s-c) r g b / 0.6);
+}
+.input:hover {
+  --border-color: rgba(from var(--s-c) r g b / 0.8);
+}
+.input:has(:focus) {
+  --border-color: var(--s-c);
+}
+.table {
+  --padding-x-c: 0;
+  --padding-y-c: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.table > .table-body {
+  flex: 1;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  /*&::-webkit-scrollbar {*/
+  /*    background-color: rgba(0, 0, 0, 0);*/
+  /*}*/
+  /*&::-webkit-scrollbar-button {*/
+  /*}*/
+  /*&::-webkit-scrollbar-thumb {*/
+  /*}*/
+  /*&::-webkit-scrollbar-track {*/
+  /*    background-color: rgba(0, 0, 0, 0);*/
+  /*}*/
+}
+.table table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  flex: 0;
+}
+.table table > thead,
+.table table > tbody,
+.table table > tfoot {
+  --border-c: 1px solid var(--border-color-c);
+}
+.table table > thead > tr > td,
+.table table > tbody > tr > td,
+.table table > tfoot > tr > td,
+.table table > thead > tr > th,
+.table table > tbody > tr > th,
+.table table > tfoot > tr > th {
+  padding: 0.5rem 1rem;
+  border-left: var(--border-c);
+  border-top: var(--border-c);
+}
+.table table > thead > tr > td,
+.table table > tbody > tr > td,
+.table table > tfoot > tr > td {
+  overflow: hidden;
+}
+.table table > thead > tr:first-child > th,
+.table table > tbody > tr:first-child > th,
+.table table > tfoot > tr:first-child > th,
+.table table > thead > tr:first-child > td,
+.table table > tbody > tr:first-child > td,
+.table table > tfoot > tr:first-child > td {
+  --cw: auto;
+  width: var(--cw);
+}
+.table table > thead > tr:first-child > th:last-child,
+.table table > tbody > tr:first-child > th:last-child,
+.table table > tfoot > tr:first-child > th:last-child,
+.table table > thead > tr:first-child > td:last-child,
+.table table > tbody > tr:first-child > td:last-child,
+.table table > tfoot > tr:first-child > td:last-child {
+  width: auto;
+}
+.table table > thead > tr:first-child > td,
+.table table > tbody > tr:first-child > td,
+.table table > tfoot > tr:first-child > td {
+  padding: 0 1rem;
+}
+.table table > thead > tr > th {
+  position: relative;
+}
+.table table > tbody > tr {
+  background-color: color-mix(in lch, var(--cbgp) var(--bgmix), var(--cbgs));
+  color: color-mix(in lch, var(--ctxp) var(--txmix), var(--ctxs));
+  transition: 50ms;
+}
+.table table > tbody > tr:hover {
+  --bgmix: var(--bgmix-h);
+  --txmix: var(--txmix-h);
+}
+.table table > tbody > tr.selected {
+  --bgmix: var(--bgmix-s);
+  --txmix: var(--txmix-s);
 }
 /*# sourceMappingURL=default.css.map */
