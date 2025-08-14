@@ -1,22 +1,37 @@
-﻿@color: var(--s-c);
-@size: var(--s-s);
-@border-radius: var(--s-s-br);
-@border-width: var(--s-s-bw);
-
-.set-all-color(@color) {
-  --backgrond-color: @color;
-  --border-color: @color;
-}
-
-.has-padding() {
+﻿.has-padding() {
   padding: calc(var(--s-s) / 2) var(--s-s);
 }
 
+.add-shadow(@color-rgb) {
+  box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(@color-rgb, var(--shadow-opacity));
+}
+
+.set-shadow(@size, @opacity) {
+  --shadow-size: @size;
+  --shadow-opacity: @opacity;
+}
+
+.set-component-color(@color) {
+  --component-color: var(@color);
+  --component-color-rgb: var(@{color}-rgb);
+}
+
+.set-text-color(@color) {
+  --text-color: var(@color);
+  --text-color-rgb: var(@{color}-rgb);
+}
+
+.set-component(@color, @text-color) {
+  .set-component-color(@color);
+  .set-text-color(@text-color);
+}
+
 .component {
-  border: var(--s-s-bw) solid var(--border-color);
-  font-size: var(--size);
+  --component-opacity: 1;
+  border: var(--s-s-bw) solid transparent;
+  font-size: var(--s-s);
   border-radius: var(--s-s-br);
-  background-color: var(--backgrond-color);
+  background-color: var(--component-color);
   color: var(--text-color);
   transition: 50ms;
 }
@@ -30,7 +45,8 @@
   }
 }
 
-.layout {
+.group {
+  display: grid;
 
   div, span {
     margin: 0;

@@ -1,59 +1,52 @@
-﻿@color: rgb(39, 128, 227);
-
-.color-theme() {
-  --s-c: @color;
-  --r: red(@color);
-  --g: green(@color);
-  --b: blue(@color);
-  --h: round(hue(@color));
-  --s: round(saturation(@color));
-  --v: round(lightness(@color));
+﻿.define-color(@color-name, @color) {
+    @{color-name}: @color;
+    @{color-name}-rgb: red(@color), green(@color), blue(@color);
+  //--h: round(hue(@color));
+  //--s: round(saturation(@color));
+  //--v: round(lightness(@color));
 }
 
 [s] {
   // color
-  @color: rgb(39, 128, 227);
-  .color-theme();
+  .define-color(--s-c, rgb(39, 128, 227));
   // text color on color
-  --s-c-t: rgb(255, 255, 255);
+  .define-color(--s-c-t, rgb(255, 255, 255));
   // background color
-  --s-c-bg: rgb(255, 255, 255);
+  .define-color(--s-c-bg, rgb(255, 255, 255));
+  // background color reverse
+  .define-color(--s-c-bg-r, #505050);
   // text color on background
-  --s-c-t-bg: rgb(80, 80, 80);
-
-  --s-c-c: rgb(224, 224, 224);
-
+  .define-color(--s-c-bg-t, rgb(80, 80, 80));
+  // card color
+  .define-color(--s-c-card, rgb(224, 224, 224));
+  // disabled color
+  .define-color(--s-c-disabled, rgb(224, 224, 224));
+  .define-color(--s-c-disabled-t, rgb(80, 80, 80));
 
   &.primary {
   }
 
   &.secondary {
-    @color: rgb(24, 191, 153);
-    .color-theme();
+    .define-color(--s-c, rgb(24, 191, 153));
   }
 
   &.naive {
-    @color: rgb(126, 126, 126);
-    .color-theme();
+    .define-color(--s-c, rgb(126, 126, 126));
   }
 
   &.success {
-    @color: rgb(65, 198, 16);
-    .color-theme();
+    .define-color(--s-c, rgb(65, 198, 16));
   }
 
   &.info {
-    @color: rgb(160, 17, 214);
-    .color-theme();
+    .define-color(--s-c, rgb(160, 17, 214));
   }
 
   &.warning {
-    @color: rgb(255, 117, 24);
-    .color-theme();
+    .define-color(--s-c, rgb(255, 117, 24));
   }
 
   &.danger {
-    @color: rgb(255, 0, 57);
-    .color-theme();
+    .define-color(--s-c, rgb(255, 0, 57));
   }
 }

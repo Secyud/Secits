@@ -3,12 +3,13 @@
 .button,
 .input,
 .table {
-  border: var(--s-s-bw) solid var(--border-color);
-  padding: calc(var(--s-s) / 2) var(--s-s);
-  font-size: var(--size);
+  --component-opacity: 1;
+  border: var(--s-s-bw) solid transparent;
+  font-size: var(--s-s);
   border-radius: var(--s-s-br);
-  background-color: var(--backgrond-color);
+  background-color: var(--component-color);
   color: var(--text-color);
+  transition: 50ms;
 }
 .disable-web-style input,
 .disable-web-style textarea,
@@ -33,72 +34,120 @@ button.input {
   border: none;
   background: none;
 }
-.layout div,
-.layout span,
+.group,
+.button,
+.input {
+  display: grid;
+}
+.group div,
+.group span,
 .button div,
 .button span,
 .input div,
 .input span {
   margin: 0;
 }
-.layout .l,
+.group .l,
 .button .l,
 .input .l {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.layout .r,
+.group .r,
 .button .r,
 .input .r {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-.layout .t,
+.group .t,
 .button .t,
 .input .t {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.layout .b,
+.group .b,
 .button .b,
 .input .b {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-.layout .m,
+.group .m,
 .button .m,
 .input .m {
   border-radius: 0;
 }
 .card {
-  --backgrond-color: var(--s-c-c);
-  --border-color: var(--s-c-c);
+  padding: calc(var(--s-s) / 2) var(--s-s);
+  --component-color: var(--s-c-card);
+  --component-color-rgb: var(--s-c-card-rgb);
+  --text-color: var(--s-c-bg-t);
+  --text-color-rgb: var(--s-c-bg-t-rgb);
 }
 .button {
+  --button-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  padding: calc(var(--s-s) / 2) var(--s-s);
+  --component-color: var(--s-c);
+  --component-color-rgb: var(--s-c-rgb);
   --text-color: var(--s-c-t);
-  --backgrond-color: var(--s-c);
-  --border-color: var(--s-c);
+  --text-color-rgb: var(--s-c-t-rgb);
+  text-align: center;
+  background-color: var(--button-color);
 }
-.button:hover {
-  --backgrond-color: rgba(from var(--s-c) r g b / 0.6);
-  --border-color: rgba(from var(--s-c) r g b / 0.6);
+.button.plain,
+.button.outline,
+.button.text {
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  --component-opacity: 0;
 }
-.button:active {
-  --backgrond-color: rgba(from var(--s-c) r g b / 0.8);
-  --border-color: rgba(from var(--s-c) r g b / 0.8);
+.button.outline {
+  border-color: var(--button-color);
+}
+.button:hover:not(.disabled,.readonly) {
+  --component-opacity: 0.6;
+}
+.button:active:not(.disabled,.readonly) {
+  --component-opacity: 0.8;
+}
+.button.shadow {
+  box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(var(--component-color-rgb), var(--shadow-opacity));
+  --shadow-size: calc(var(--s-s) * 0.25);
+  --shadow-opacity: 0.1;
+  --component-color: var(--s-c-bg-r);
+  --component-color-rgb: var(--s-c-bg-r-rgb);
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  background-color: transparent;
+}
+.button.shadow:hover:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.5);
+  --shadow-opacity: 0.2;
+}
+.button.shadow:active:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.25);
+  --shadow-opacity: 0.1;
+}
+.button.text {
+  color: var(--button-color);
+}
+.icon {
+  --icon-size: var(--s-s);
+  border-radius: 50%;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 .input {
-  --border-color: rgba(from var(--s-c) r g b / 0.6);
+  background-color: transparent;
+  border-color: var(--component-color);
+  --component-color: rgba(from var(--s-c) r g b / 0.6);
 }
 .input:hover {
-  --border-color: rgba(from var(--s-c) r g b / 0.8);
+  --component-color: rgba(from var(--s-c) r g b / 0.8);
 }
 .input:has(:focus) {
-  --border-color: var(--s-c);
+  --component-color: var(--s-c);
 }
 .table {
-  --padding-x-c: 0;
-  --padding-y-c: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -182,5 +231,11 @@ button.input {
 .table table > tbody > tr.selected {
   --bgmix: var(--bgmix-s);
   --txmix: var(--txmix-s);
+}
+.disabled {
+  --component-color: var(--s-c-disabled);
+  --component-color-rgb: var(--s-c-disabled-rgb);
+  --text-color: var(--s-c-disabled-t);
+  --text-color-rgb: var(--s-c-disabled-t-rgb);
 }
 /*# sourceMappingURL=default.css.map */
