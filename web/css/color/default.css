@@ -1,4 +1,4 @@
-[s] {
+:root {
   --s-c: #2780e3;
   --s-c-rgb: 39, 128, 227;
   --s-c-t: #ffffff;
@@ -9,34 +9,34 @@
   --s-c-bg-r-rgb: 80, 80, 80;
   --s-c-bg-t: #505050;
   --s-c-bg-t-rgb: 80, 80, 80;
-  --s-c-card: #e0e0e0;
-  --s-c-card-rgb: 224, 224, 224;
+  --s-c-card: #f8f8f8;
+  --s-c-card-rgb: 248, 248, 248;
   --s-c-disabled: #e0e0e0;
   --s-c-disabled-rgb: 224, 224, 224;
   --s-c-disabled-t: #505050;
   --s-c-disabled-t-rgb: 80, 80, 80;
 }
-[s].secondary {
+:root .secondary {
   --s-c: #18bf99;
   --s-c-rgb: 24, 191, 153;
 }
-[s].naive {
+:root .naive {
   --s-c: #7e7e7e;
   --s-c-rgb: 126, 126, 126;
 }
-[s].success {
+:root .success {
   --s-c: #41c610;
   --s-c-rgb: 65, 198, 16;
 }
-[s].info {
+:root .info {
   --s-c: #a011d6;
   --s-c-rgb: 160, 17, 214;
 }
-[s].warning {
+:root .warning {
   --s-c: #ff7518;
   --s-c-rgb: 255, 117, 24;
 }
-[s].danger {
+:root .danger {
   --s-c: #ff0039;
   --s-c-rgb: 255, 0, 57;
 }

@@ -33,11 +33,13 @@ button.input {
   outline: none;
   border: none;
   background: none;
+  font-size: var(--s-s);
 }
 .group,
 .button,
 .input {
   display: grid;
+  --u: var(--s-s);
 }
 .group div,
 .group span,
@@ -83,6 +85,9 @@ button.input {
   --text-color: var(--s-c-bg-t);
   --text-color-rgb: var(--s-c-bg-t-rgb);
 }
+.card .header {
+  font-weight: bold;
+}
 .button {
   --button-color: rgba(var(--component-color-rgb), var(--component-opacity));
   padding: calc(var(--s-s) / 2) var(--s-s);
@@ -92,6 +97,8 @@ button.input {
   --text-color-rgb: var(--s-c-t-rgb);
   text-align: center;
   background-color: var(--button-color);
+  cursor: pointer;
+  user-select: none;
 }
 .button.plain,
 .button.outline,
@@ -139,10 +146,10 @@ button.input {
 .input {
   background-color: transparent;
   border-color: var(--component-color);
-  --component-color: rgba(from var(--s-c) r g b / 0.6);
+  --component-color: rgba(from var(--s-c) r g b / 0.25);
 }
 .input:hover {
-  --component-color: rgba(from var(--s-c) r g b / 0.8);
+  --component-color: rgba(from var(--s-c) r g b / 0.6);
 }
 .input:has(:focus) {
   --component-color: var(--s-c);

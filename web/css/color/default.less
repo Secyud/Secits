@@ -6,7 +6,7 @@
   //--v: round(lightness(@color));
 }
 
-[s] {
+:root {
   // color
   .define-color(--s-c, rgb(39, 128, 227));
   // text color on color
@@ -18,35 +18,35 @@
   // text color on background
   .define-color(--s-c-bg-t, rgb(80, 80, 80));
   // card color
-  .define-color(--s-c-card, rgb(224, 224, 224));
+  .define-color(--s-c-card, rgb(248, 248, 248));
   // disabled color
   .define-color(--s-c-disabled, rgb(224, 224, 224));
   .define-color(--s-c-disabled-t, rgb(80, 80, 80));
 
-  &.primary {
+  .primary {
   }
 
-  &.secondary {
+  .secondary {
     .define-color(--s-c, rgb(24, 191, 153));
   }
 
-  &.naive {
+  .naive {
     .define-color(--s-c, rgb(126, 126, 126));
   }
 
-  &.success {
+  .success {
     .define-color(--s-c, rgb(65, 198, 16));
   }
 
-  &.info {
+  .info {
     .define-color(--s-c, rgb(160, 17, 214));
   }
 
-  &.warning {
+  .warning {
     .define-color(--s-c, rgb(255, 117, 24));
   }
 
-  &.danger {
+  .danger {
     .define-color(--s-c, rgb(255, 0, 57));
   }
 }
