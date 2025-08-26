@@ -2,6 +2,8 @@
 .card,
 .button,
 .input,
+.iterator,
+.list,
 .table {
   --component-opacity: 1;
   border: var(--s-s-bw) solid transparent;
@@ -9,6 +11,7 @@
   border-radius: var(--s-s-br);
   background-color: var(--component-color);
   color: var(--text-color);
+  position: relative;
   transition: 50ms;
 }
 .disable-web-style input,
@@ -79,18 +82,18 @@ button.input {
   border-radius: 0;
 }
 .card {
-  padding: calc(var(--s-s) / 2) var(--s-s);
   --component-color: var(--s-c-card);
   --component-color-rgb: var(--s-c-card-rgb);
   --text-color: var(--s-c-bg-t);
   --text-color-rgb: var(--s-c-bg-t-rgb);
+  padding: calc(var(--s-s) / 6);
 }
 .card .header {
   font-weight: bold;
 }
 .button {
   --button-color: rgba(var(--component-color-rgb), var(--component-opacity));
-  padding: calc(var(--s-s) / 2) var(--s-s);
+  padding: calc(var(--s-s) / 6);
   --component-color: var(--s-c);
   --component-color-rgb: var(--s-c-rgb);
   --text-color: var(--s-c-t);
@@ -140,10 +143,13 @@ button.input {
 .icon {
   --icon-size: var(--s-s);
   border-radius: 50%;
-  width: var(--icon-size);
-  height: var(--icon-size);
+  width: calc(var(--icon-size) / 1.5);
+  height: calc(var(--icon-size) / 1.5);
+  padding: calc(var(--icon-size) / 8);
+  margin: calc(var(--icon-size) / 8);
 }
 .input {
+  padding: calc(var(--s-s) / 6);
   background-color: transparent;
   border-color: var(--component-color);
   --component-color: rgba(from var(--s-c) r g b / 0.25);
@@ -153,6 +159,31 @@ button.input {
 }
 .input:has(:focus) {
   --component-color: var(--s-c);
+}
+.iterator,
+.list,
+.table {
+  --component-color: var(--s-c-card);
+  --component-color-rgb: var(--s-c-card-rgb);
+  --text-color: var(--s-c-bg-t);
+  --text-color-rgb: var(--s-c-bg-t-rgb);
+}
+.iterator .row,
+.list .row,
+.table .row {
+  --row-color: rgba(var(--s-c-rgb), var(--row-opacity));
+  --row-opacity: 0;
+  background-color: var(--row-color);
+}
+.iterator .row.selected,
+.list .row.selected,
+.table .row.selected {
+  --row-opacity: 0.1;
+}
+.iterator .row:hover,
+.list .row:hover,
+.table .row:hover {
+  --row-opacity: 0.2;
 }
 .table {
   display: flex;
@@ -239,10 +270,24 @@ button.input {
   --bgmix: var(--bgmix-s);
   --txmix: var(--txmix-s);
 }
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 0.125rem);
+  left: 0;
+  right: 0;
+  z-index: 8;
+  overflow-y: auto;
+}
 .disabled {
   --component-color: var(--s-c-disabled);
   --component-color-rgb: var(--s-c-disabled-rgb);
   --text-color: var(--s-c-disabled-t);
   --text-color-rgb: var(--s-c-disabled-t-rgb);
+}
+.flex {
+  display: flex;
+}
+.w-100 {
+  width: 100%;
 }
 /*# sourceMappingURL=default.css.map */

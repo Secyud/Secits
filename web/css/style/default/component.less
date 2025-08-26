@@ -1,5 +1,5 @@
 ﻿.has-padding() {
-  padding: calc(var(--s-s) / 2) var(--s-s);
+  padding: calc(var(--s-s) / 6);
 }
 
 .add-shadow(@color-rgb) {
@@ -33,7 +33,14 @@
   border-radius: var(--s-s-br);
   background-color: var(--component-color);
   color: var(--text-color);
+  position: relative;
   transition: 50ms;
+}
+
+.content() {
+  &:extend(.component);
+  .set-component-color(--s-c-card);
+  .set-text-color(--s-c-bg-t);
 }
 
 .disable-web-style {

@@ -1,7 +1,32 @@
-﻿@import "component";
+﻿@import "card";
+
+.iterator {
+  .content();
+
+
+  .row {
+    --row-color: rgba(var(--s-c-rgb), var(--row-opacity));
+    --row-opacity: 0;
+
+    background-color: var(--row-color);
+
+    &.selected {
+      --row-opacity: 0.1;
+    }
+
+    &:hover {
+      --row-opacity: 0.2;
+    }
+  }
+}
+
+.list {
+  &:extend(.iterator all);
+}
+
 
 .table {
-  &:extend(.component);
+  &:extend(.iterator all);
 
   display: flex;
   flex-direction: column;

@@ -1,11 +1,10 @@
 ﻿@import "component";
 
+
 .card {
-  &:extend(.component);
+  .content();
   .has-padding();
-  .set-component-color(--s-c-card);
-  .set-text-color(--s-c-bg-t);
-  .header{
+  .header {
     font-weight: bold;
   }
 }
