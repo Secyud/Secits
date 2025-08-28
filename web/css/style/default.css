@@ -87,6 +87,7 @@ button.input {
   --text-color: var(--s-c-bg-t);
   --text-color-rgb: var(--s-c-bg-t-rgb);
   padding: calc(var(--s-s) / 6);
+  margin: calc(var(--s-s) / 6);
 }
 .card .header {
   font-weight: bold;
@@ -103,21 +104,26 @@ button.input {
   cursor: pointer;
   user-select: none;
 }
-.button.plain,
-.button.outline,
-.button.text {
-  --text-color: var(--s-c-t-bg);
-  --text-color-rgb: var(--s-c-t-bg-rgb);
-  --component-opacity: 0;
-}
-.button.outline {
-  border-color: var(--button-color);
-}
 .button:hover:not(.disabled,.readonly) {
   --component-opacity: 0.6;
 }
 .button:active:not(.disabled,.readonly) {
   --component-opacity: 0.8;
+}
+.button.plain {
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  --component-opacity: 0;
+}
+.button.text {
+  background-color: transparent;
+  color: var(--button-color);
+}
+.button.outline {
+  background-color: transparent;
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  border-color: var(--button-color);
 }
 .button.shadow {
   box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(var(--component-color-rgb), var(--shadow-opacity));
@@ -134,11 +140,8 @@ button.input {
   --shadow-opacity: 0.2;
 }
 .button.shadow:active:not(.disabled,.readonly) {
-  --shadow-size: calc(var(--s-s) * 0.25);
-  --shadow-opacity: 0.1;
-}
-.button.text {
-  color: var(--button-color);
+  --shadow-size: calc(var(--s-s) * 0.35);
+  --shadow-opacity: 0.15;
 }
 .icon {
   --icon-size: var(--s-s);
@@ -283,6 +286,227 @@ button.input {
   --component-color-rgb: var(--s-c-disabled-rgb);
   --text-color: var(--s-c-disabled-t);
   --text-color-rgb: var(--s-c-disabled-t-rgb);
+}
+.inline-block {
+  margin: calc(var(--s-s) / 6);
+  display: inline-block;
+}
+.form-layout {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-auto-flow: row;
+}
+.form-layout .form-item {
+  --col-span-xs: 12;
+  --col-span-sm: 6;
+  --col-span-md: 4;
+  --col-span-lg: 3;
+  --col-span-xl: 2;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+.form-layout .form-item.col-xs-1 {
+  --col-span-xs: 1;
+}
+.form-layout .form-item.col-sm-2 {
+  --col-span-sm: 2;
+}
+.form-layout .form-item.col-md-3 {
+  --col-span-md: 3;
+}
+.form-layout .form-item.col-lg-4 {
+  --col-span-lg: 4;
+}
+.form-layout .form-item.col-xl-5 {
+  --col-span-xl: 5;
+}
+@media (max-width: 300px) {
+  .form-layout .form-item {
+    grid-column: auto / span var(--col-span-xs);
+  }
+}
+@media (min-width: 301px) and (max-width: 720px) {
+  .form-layout .form-item {
+    grid-column: auto / span var(--col-span-sm);
+  }
+}
+@media (min-width: 721px) and (max-width: 1280px) {
+  .form-layout .form-item {
+    grid-column: auto / span var(--col-span-md);
+  }
+}
+@media (min-width: 1281px) and (max-width: 1920px) {
+  .form-layout .form-item {
+    grid-column: auto / span var(--col-span-lg);
+  }
+}
+@media (min-width: 1921px) {
+  .form-layout .form-item {
+    grid-column: auto / span var(--col-span-xl);
+  }
 }
 .flex {
   display: flex;

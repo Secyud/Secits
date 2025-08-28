@@ -13,22 +13,28 @@
   cursor: pointer;
   user-select: none;
 
-  &.plain {
-    .set-text-color(--s-c-t-bg);
-    --component-opacity: 0;
-  }
-
-  &.outline {
-    &:extend(.button.plain);
-    border-color: var(--button-color);
-  }
-
   &:hover:not(.disabled,.readonly) {
     --component-opacity: 0.6;
   }
 
   &:active:not(.disabled,.readonly) {
     --component-opacity: 0.8;
+  }
+
+  &.plain {
+    .set-text-color(--s-c-t-bg);
+    --component-opacity: 0;
+  }
+
+  &.text {
+    background-color: transparent;
+    color: var(--button-color);
+  }
+
+  &.outline {
+    background-color: transparent;
+    .set-text-color(--s-c-t-bg);
+    border-color: var(--button-color);
   }
 
   &.shadow {
@@ -42,13 +48,8 @@
     }
 
     &:active:not(.disabled,.readonly) {
-      .set-shadow(calc(var(--s-s) * 0.25), 0.1);
+      .set-shadow(calc(var(--s-s) * 0.35), 0.15);
     }
-  }
-
-  &.text {
-    &:extend(.button.plain);
-    color: var(--button-color);
   }
 }
 
