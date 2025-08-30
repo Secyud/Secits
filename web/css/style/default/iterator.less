@@ -1,127 +1,148 @@
 ﻿@import "card";
 
-.iterator {
-  .content();
+.set-color-mixed(@name) {
+  --@{name}-color: color-mix(in srgb, var(--s-c) var(--@{name}-opacity), var(--s-c-bg));
+}
 
-  &.outline{
+.set-color-opacity(@name) {
+  --@{name}-color: rgba(var(--s-c-rgb), var(--@{name}-opacity));
+}
+
+.set-color-iter(@name, @o, @e) {
+  background-color: ~"var(--@{name}-color)";
+  &:nth-child(odd) {
+    --@{name}-opacity: ~"@{o}%";
+  }
+  &:nth-child(even) {
+    --@{name}-opacity: ~"@{e}%";
+  }
+}
+
+.set-anim-hover-selected(@hover,@active) {
+  &:hover:not(.disabled,.readonly) {
+    each(@hover, {
+        @{key}: @value;
+    });
+  }
+
+  &.selected:not(.disabled,.readonly) {
+    each(@active, {
+        @{key}: @value;
+    });
+  }
+}
+
+
+.iterator(@component-name) {
+  .content();
+  &.outline {
     .outline(var(--s-c));
   }
+}
 
-  .row {
-    --row-color: rgba(var(--s-c-rgb), var(--row-opacity));
-    --row-opacity: 0;
+.s-list {
+  .iterator(list);
+  .set-anim-hover-selected({
+    --row-opacity: 10%;
+  }, {
+    --row-opacity: 20%;
+  });
 
-    background-color: var(--row-color);
-
-    &.selected {
-      --row-opacity: 0.1;
-    }
-
-    &:hover {
-      --row-opacity: 0.2;
-    }
+  .list-row {
+    .set-color-iter(row, 5, 0);
+    .set-color-mixed(row);
   }
 }
 
-.list {
-  &:extend(.iterator all);
-}
+.s-grid {
+  .iterator(grid);
+  --grid-height: 600px;
+  display: grid;
+  grid-template-columns: auto;
 
+  &.visualize > .grid-container {
+    height: var(--grid-height);
+  }
 
-.table {
-  &:extend(.iterator all);
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  > .table-body {
-    flex: 1;
+  & > .grid-container {
+    .content();
+    position: relative;
     overflow: auto;
 
-    scrollbar-gutter: stable;
+    & > .grid-row {
+      .set-color-iter(row, 5, 0);
+      .set-color-mixed(row);
+      --row-z-index: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: var(--column-template);
+      z-index: var(--row-z-index);
 
-    /*&::-webkit-scrollbar {*/
-    /*    background-color: rgba(0, 0, 0, 0);*/
-    /*}*/
-
-    /*&::-webkit-scrollbar-button {*/
-    /*}*/
-
-    /*&::-webkit-scrollbar-thumb {*/
-
-    /*}*/
-
-    /*&::-webkit-scrollbar-track {*/
-    /*    background-color: rgba(0, 0, 0, 0);*/
-    /*}*/
-  }
-
-  table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-    flex: 0;
-
-    > thead, > tbody, > tfoot {
-      --border-c: 1px solid var(--border-color-c);
-
-      > tr {
-
-        > td, > th {
-          padding: 0.5rem 1rem;
-          border-left: var(--border-c);
-          border-top: var(--border-c);
+      .fix(@position) {
+        & > .grid-col.fix-@{position} {
+          background-color: color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 10%), var(--s-c-bg));
+          --col-z-index: 1;
+          position: sticky;
+            @{position}: 0;
         }
+      }
 
-        > td {
-          overflow: hidden;
+      & > .grid-col {
+        .set-color-iter(col, 0, 5);
+        .has-padding();
+        --col-z-index: 0;
+
+        grid-column: auto / span 1;
+        position: relative;
+        z-index: calc(var(--col-z-index) + var(--row-z-index));
+      }
+
+      &.body {
+        .set-anim-hover-selected({
+          --row-opacity: 10%;
+        }, {
+          --row-opacity: 20%;
+        });
+
+        & > .grid-col {
+          .set-color-opacity(col);
         }
+      }
 
-        &:first-child {
-          > th, > td {
-            --cw: auto;
-            width: var(--cw);
+      &.header, &.footer {
+        position: sticky;
+        --row-z-index: 2;
 
-            &:last-child {
-              width: auto;
-            }
+        & > .grid-col {
+          .set-color-mixed(col);
+        }
+      }
+
+      &.header {
+        top: 0;
+        user-select: none;
+
+        & > .grid-col {
+          font-weight: bold;
+
+          .resizer {
+            position: absolute;
+            right: -0.5rem;
+            width: 1rem;
+            top: 0;
+            bottom: 0;
+            cursor: col-resize;
+            z-index: 8;
           }
-
-          > td {
-            padding: 0 1rem;
-          }
         }
       }
-    }
 
-    > thead {
-      > tr {
-        > th {
-          position: relative;
-
-        }
+      &.footer {
+        bottom: 0;
       }
-    }
 
-    > tbody {
-      > tr {
-        background-color: color-mix(in lch, var(--cbgp) var(--bgmix), var(--cbgs));
-        color: color-mix(in lch, var(--ctxp) var(--txmix), var(--ctxs));
-        transition: 50ms;
-
-
-        &:hover {
-          --bgmix: var(--bgmix-h);
-          --txmix: var(--txmix-h);
-        }
-
-        &.selected {
-          --bgmix: var(--bgmix-s);
-          --txmix: var(--txmix-s);
-        }
-      }
+      .fix(left);
+      .fix(right);
     }
   }
 }

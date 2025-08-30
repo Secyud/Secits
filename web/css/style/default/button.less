@@ -1,6 +1,6 @@
 ﻿@import "component";
 
-.button {
+.s-button {
   --button-color: rgba(var(--component-color-rgb), var(--component-opacity));
 
   &:extend(.component);
@@ -8,8 +8,8 @@
   &:extend(.group all);
   .has-padding();
   .set-component(--s-c, --s-c-t);
-  text-align: center;
   background-color: var(--button-color);
+  text-align: center;
   cursor: pointer;
   user-select: none;
 
@@ -65,7 +65,7 @@
 
   &.anim {
     --component-opacity: 0.25;
-    
+
     .set-anim-hover-active({
       --component-opacity: 0.6;
     }, {
