@@ -152,12 +152,20 @@ button.input {
   --shadow-opacity: 0.15;
 }
 .icon {
+  --component-opacity: 0.25;
   --icon-size: var(--s-s);
+  --icon-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  color: var(--icon-color);
   border-radius: 50%;
-  width: calc(var(--icon-size) / 1.5);
-  height: calc(var(--icon-size) / 1.5);
-  padding: calc(var(--icon-size) / 8);
-  margin: calc(var(--icon-size) / 8);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  font-size: var(--icon-size);
+}
+.icon.anim:hover:not(.disabled,.readonly) {
+  --component-opacity: 0.6;
+}
+.icon.anim:active:not(.disabled,.readonly) {
+  --component-opacity: 0.8;
 }
 .input {
   --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
