@@ -15,6 +15,35 @@
   --shadow-opacity: @opacity;
 }
 
+.set-anim-hover-active(@hover,@active) {
+  &:hover:not(.disabled,.readonly) {
+    each(@hover, {
+        @{key}: @value;
+    });
+  }
+
+  &:active:not(.disabled,.readonly) {
+    each(@active, {
+        @{key}: @value;
+    });
+  }
+}
+
+
+.set-anim-hover-focus(@hover,@focus) {
+  &:hover:not(.disabled,.readonly) {
+    each(@hover, {
+        @{key}: @value;
+    });
+  }
+
+  &:has(:focus):not(.disabled,.readonly) {
+    each(@focus, {
+        @{key}: @value;
+    });
+  }
+}
+
 .set-component-color(@color) {
   --component-color: var(@color);
   --component-color-rgb: var(@{color}-rgb);
@@ -43,8 +72,17 @@
 
 .content() {
   &:extend(.component);
-  .set-component-color(--s-c-card);
+  .set-component-color(--s-c-bg);
   .set-text-color(--s-c-bg-t);
+}
+
+.text(@text-color) {
+  color: @text-color;
+}
+
+.outline(@border-color) {
+  .set-text-color(--s-c-t-bg);
+  border-color: @border-color;
 }
 
 .disable-web-style {

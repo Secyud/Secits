@@ -1,21 +1,40 @@
 ﻿@import "component";
 
 .input {
+  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
   &:extend(.component);
   &:extend(.disable-web-style all);
   &:extend(.group all);
   .has-padding();
+  .set-component(--s-c, --s-c-t-bg);
 
-  background-color: transparent;
-  border-color: var(--component-color);
+  --component-opacity: 0.25;
+  border-color: var(--input-color);
+  background-color: var(--s-c-bg);
+  width: 100%;
 
-  --component-color: rgba(from var(--s-c) r g b / 0.25);
+  .set-anim-hover-focus({
+    --component-opacity: 0.6;
+  }, {
+    --component-opacity: 1;
+  });
 
-  &:hover {
-    --component-color: rgba(from var(--s-c) r g b / 0.6);
+  &.shadow {
+    .add-shadow(var(--component-color-rgb));
+    .set-shadow(calc(var(--s-s) * 0.25), 0.1);
+    .set-component(--s-c-bg-r, --s-c-t-bg);
+    border-color: transparent;
+    background-color: transparent;
+
+    .set-anim-hover-focus({
+      .set-shadow(calc(var(--s-s) * 0.5), 0.2);
+    }, {
+      .set-shadow(calc(var(--s-s) * 0.35), 0.15);
+    });
   }
 
-  &:has(:focus) {
-    --component-color: var(--s-c);
+
+  input, textarea {
+    width: 100%;
   }
 }
