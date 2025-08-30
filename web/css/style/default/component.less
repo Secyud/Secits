@@ -1,9 +1,9 @@
-﻿.has-padding() {
-  padding: calc(var(--s-s) / 6);
+﻿.has-padding(@level: 4) {
+  padding: calc(var(--s-s) / @level);
 }
 
-.has-margin() {
-  margin: calc(var(--s-s) / 6);
+.has-margin(@level: 4) {
+  margin: calc(var(--s-s) / @level);
 }
 
 .add-shadow(@color-rgb) {

@@ -1,1 +1,1 @@
-:root{--s-s:1rem;--s-s-br:0.125rem;--s-s-bw:0.075rem}:root .xs{--s-s:0.75rem}:root .sm{--s-s:0.875rem}:root .lg{--s-s:1.125rem}:root .xl{--s-s:1.25rem}
+:root{--s-s:1rem;--s-s-br:0.125rem;--s-s-bw:0.1rem}:root .xs{--s-s:0.5rem}:root .sm{--s-s:0.75rem}:root .lg{--s-s:1.25rem;--s-s-br:0.25rem}:root .xl{--s-s:1.5rem;--s-s-br:0.5rem}
