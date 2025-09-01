@@ -42,15 +42,15 @@
 
 .s-list {
   .iterator(list);
-  .set-anim-hover-selected({
-    --row-opacity: 10%;
-  }, {
-    --row-opacity: 20%;
-  });
 
-  .list-row {
+  > .list-row {
     .set-color-iter(row, 5, 0);
     .set-color-mixed(row);
+    .set-anim-hover-selected({
+      --row-opacity: 10%;
+    }, {
+      --row-opacity: 20%;
+    });
   }
 }
 

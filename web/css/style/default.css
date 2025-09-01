@@ -221,21 +221,21 @@ button.s-input {
   --text-color-rgb: var(--s-c-t-bg-rgb);
   border-color: var(--s-c);
 }
-.s-list:hover:not(.disabled,.readonly) {
-  --row-opacity: 10%;
-}
-.s-list.selected:not(.disabled,.readonly) {
-  --row-opacity: 20%;
-}
-.s-list .list-row {
+.s-list > .list-row {
   background-color: var(--row-color);
   --row-color: color-mix(in srgb, var(--s-c) var(--row-opacity), var(--s-c-bg));
 }
-.s-list .list-row:nth-child(odd) {
+.s-list > .list-row:nth-child(odd) {
   --row-opacity: 5%;
 }
-.s-list .list-row:nth-child(even) {
+.s-list > .list-row:nth-child(even) {
   --row-opacity: 0%;
+}
+.s-list > .list-row:hover:not(.disabled,.readonly) {
+  --row-opacity: 10%;
+}
+.s-list > .list-row.selected:not(.disabled,.readonly) {
+  --row-opacity: 20%;
 }
 .s-grid {
   --component-color: var(--s-c-bg);
