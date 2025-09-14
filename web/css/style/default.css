@@ -265,11 +265,9 @@ button.s-input {
 .s-grid > .grid-container > .grid-row {
   background-color: var(--row-color);
   --row-color: color-mix(in srgb, var(--s-c) var(--row-opacity), var(--s-c-bg));
-  --row-z-index: 0;
-  width: 100%;
+  width: var(--grid-row-width);
   display: grid;
-  grid-template-columns: var(--column-template);
-  z-index: var(--row-z-index);
+  grid-template-columns: var(--template-body);
 }
 .s-grid > .grid-container > .grid-row:nth-child(odd) {
   --row-opacity: 5%;
@@ -277,18 +275,40 @@ button.s-input {
 .s-grid > .grid-container > .grid-row:nth-child(even) {
   --row-opacity: 0%;
 }
-.s-grid > .grid-container > .grid-row > .grid-col {
+.s-grid > .grid-container > .grid-row .grid-col-front {
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 10%), var(--s-c-bg));
+  position: sticky;
+  left: 0;
+  display: grid;
+  grid-column: auto / span 1;
+  grid-template-columns: var(--template- front);
+}
+.s-grid > .grid-container > .grid-row .grid-col-behind {
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 10%), var(--s-c-bg));
+  position: sticky;
+  right: 0;
+  display: grid;
+  grid-column: auto / span 1;
+  grid-template-columns: var(--template- behind);
+}
+.s-grid > .grid-container > .grid-row .grid-col-front {
+  border-right: 1px solid color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 20%), var(--s-c-bg));
+}
+.s-grid > .grid-container > .grid-row .grid-col-behind {
+  border-left: 1px solid color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 20%), var(--s-c-bg));
+}
+.s-grid > .grid-container > .grid-row .grid-col {
   background-color: var(--col-color);
   padding: calc(var(--s-s) / 4);
-  --col-z-index: 0;
-  grid-column: auto / span 1;
   position: relative;
-  z-index: calc(var(--col-z-index) + var(--row-z-index));
+  grid-column: auto / span 1;
 }
-.s-grid > .grid-container > .grid-row > .grid-col:nth-child(odd) {
+.s-grid > .grid-container > .grid-row .grid-col:nth-child(odd) {
   --col-opacity: 0%;
 }
-.s-grid > .grid-container > .grid-row > .grid-col:nth-child(even) {
+.s-grid > .grid-container > .grid-row .grid-col:nth-child(even) {
   --col-opacity: 5%;
 }
 .s-grid > .grid-container > .grid-row.body:hover:not(.disabled,.readonly) {
@@ -297,48 +317,52 @@ button.s-input {
 .s-grid > .grid-container > .grid-row.body.selected:not(.disabled,.readonly) {
   --row-opacity: 20%;
 }
-.s-grid > .grid-container > .grid-row.body > .grid-col {
+.s-grid > .grid-container > .grid-row.body .grid-col {
   --col-color: rgba(var(--s-c-rgb), var(--col-opacity));
 }
 .s-grid > .grid-container > .grid-row.header,
 .s-grid > .grid-container > .grid-row.footer {
   position: sticky;
-  --row-z-index: 2;
+  z-index: 2;
 }
-.s-grid > .grid-container > .grid-row.header > .grid-col,
-.s-grid > .grid-container > .grid-row.footer > .grid-col {
+.s-grid > .grid-container > .grid-row.header .grid-col,
+.s-grid > .grid-container > .grid-row.footer .grid-col {
   --col-color: color-mix(in srgb, var(--s-c) var(--col-opacity), var(--s-c-bg));
 }
 .s-grid > .grid-container > .grid-row.header {
   top: 0;
   user-select: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 40%), var(--s-c-bg));
 }
-.s-grid > .grid-container > .grid-row.header > .grid-col {
+.s-grid > .grid-container > .grid-row.header .grid-col {
   font-weight: bold;
 }
-.s-grid > .grid-container > .grid-row.header > .grid-col .resizer {
+.s-grid > .grid-container > .grid-row.header .grid-col .resizer {
+  z-index: 2;
   position: absolute;
   right: -0.5rem;
   width: 1rem;
   top: 0;
   bottom: 0;
   cursor: col-resize;
-  z-index: 8;
+}
+.s-grid > .grid-container > .grid-row.header .grid-col .resizer.half {
+  right: 0;
+  width: 0.5rem;
 }
 .s-grid > .grid-container > .grid-row.footer {
+  border-top: 1px solid color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 40%), var(--s-c-bg));
   bottom: 0;
 }
-.s-grid > .grid-container > .grid-row > .grid-col.fix-left {
-  background-color: color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 10%), var(--s-c-bg));
-  --col-z-index: 1;
-  position: sticky;
-  left: 0;
+.pager {
+  display: flex;
 }
-.s-grid > .grid-container > .grid-row > .grid-col.fix-right {
-  background-color: color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 10%), var(--s-c-bg));
-  --col-z-index: 1;
-  position: sticky;
-  right: 0;
+.pager .s-button {
+  margin: calc(var(--s-s) / 4);
+  min-width: var(--s-s);
+  height: var(--s-s);
+  line-height: var(--s-s);
+  text-align: center;
 }
 .dropdown-content {
   position: absolute;
@@ -596,5 +620,8 @@ button.s-input {
 }
 .display-grid {
   display: grid;
+}
+.floater {
+  position: fixed;
 }
 /*# sourceMappingURL=default.css.map */
