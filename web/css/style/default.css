@@ -131,6 +131,7 @@ button.s-input {
   --text-color: var(--s-c-t-bg);
   --text-color-rgb: var(--s-c-t-bg-rgb);
   border-color: var(--button-color);
+  color: var(--button-color);
   background-color: transparent;
 }
 .s-button.shadow {
@@ -159,6 +160,10 @@ button.s-input {
   width: var(--icon-size);
   height: var(--icon-size);
   font-size: var(--icon-size);
+}
+.icon > svg {
+  height: 100%;
+  width: 100%;
 }
 .icon.anim {
   --component-opacity: 0.25;
@@ -358,16 +363,6 @@ button.s-input {
 .s-grid > .grid-container > .grid-row.footer {
   border-top: 1px solid color-mix(in srgb, var(--s-c) calc(var(--row-opacity) + 40%), var(--s-c-bg));
   bottom: 0;
-}
-.pager {
-  display: flex;
-}
-.pager .s-button {
-  margin: calc(var(--s-s) / 4);
-  min-width: var(--s-s);
-  height: var(--s-s);
-  line-height: var(--s-s);
-  text-align: center;
 }
 .dropdown-content {
   position: absolute;
@@ -679,5 +674,17 @@ button.s-input {
   top: 0;
   width: 100%;
   height: 100%;
+}
+.pager {
+  display: flex;
+}
+.pager .s-button {
+  margin: calc(var(--s-s) / 4);
+  --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  color: var(--text-color);
+  min-width: var(--s-s);
+  height: var(--s-s);
+  line-height: var(--s-s);
+  text-align: center;
 }
 /*# sourceMappingURL=default.css.map */

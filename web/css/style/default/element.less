@@ -1,4 +1,7 @@
-﻿.progress-bar {
+﻿@import "component";
+
+
+.progress-bar {
   width: 100%;
   height: 4px;
 
@@ -57,4 +60,19 @@
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+
+.pager {
+  display: flex;
+
+  .s-button {
+    .has-margin();
+    --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
+    .text(var(--text-color));
+    min-width: var(--s-s);
+    height: var(--s-s);
+    line-height: var(--s-s);
+    text-align: center;
+  }
 }

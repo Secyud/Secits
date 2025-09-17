@@ -37,6 +37,7 @@
 
   &.outline {
     .outline(var(--button-color));
+    .text(var(--button-color));
     background-color: transparent;
   }
 
@@ -62,6 +63,11 @@
   width: var(--icon-size);
   height: var(--icon-size);
   font-size: var(--icon-size);
+
+  & > svg {
+    height: 100%;
+    width: 100%;
+  }
 
   &.anim {
     --component-opacity: 0.25;
