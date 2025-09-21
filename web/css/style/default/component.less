@@ -1,10 +1,51 @@
-﻿.has-padding(@level: 4) {
-  padding: calc(var(--s-s) / @level);
+﻿.size-calc(@v) {
+  @res: if(@v <= 0, 0, calc(var(--s-s) / @v));
 }
 
-.has-margin(@level: 4) {
-  margin: calc(var(--s-s) / @level);
+.set-four(@e, @t, @r, @b, @l) {
+    @{e}: .size-calc(@t)[@res] .size-calc(@r) [@res].size-calc(@b) [@res].size-calc(@l) [@res];
 }
+
+.set-two(@e, @v, @h) {
+    @{e}: .size-calc(@v)[@res] .size-calc(@h) [@res];
+}
+
+.set-one(@e, @v) {
+    @{e}: .size-calc(@v)[@res];
+}
+
+.has-padding() {
+  .set-two(padding, 2, 4);
+}
+
+.has-padding(@v) {
+  .set-one(padding, @v);
+}
+
+.has-padding(@v, @h) {
+  .set-two(padding, @v, @h);
+}
+
+.has-padding(@v, @t, @r, @b, @l) {
+  .set-four(padding, @t, @r, @b, @l);
+}
+
+.has-margin() {
+  .set-two(margin, 2, 4);
+}
+
+.has-margin(@v) {
+  .set-one(margin, @v);
+}
+
+.has-margin(@v, @h) {
+  .set-two(margin, @v, @h);
+}
+
+.has-margin(@v, @t, @r, @b, @l) {
+  .set-four(margin, @t, @r, @b, @l);
+}
+
 
 .add-shadow(@color-rgb) {
   box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(@color-rgb, var(--shadow-opacity));
@@ -39,6 +80,20 @@
 
   &:has(:focus):not(.disabled,.readonly) {
     each(@focus, {
+        @{key}: @value;
+    });
+  }
+}
+
+.set-anim-hover-selected(@hover, @active) {
+  &:hover:not(.disabled,.readonly) {
+    each(@hover, {
+        @{key}: @value;
+    });
+  }
+
+  &.selected:not(.disabled,.readonly) {
+    each(@active, {
         @{key}: @value;
     });
   }

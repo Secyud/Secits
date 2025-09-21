@@ -4,7 +4,8 @@
 .s-input,
 .s-list,
 .s-grid,
-.s-grid > .grid-container {
+.s-grid > .grid-container,
+.s-tab-tags {
   --component-opacity: 1;
   border: var(--s-s-bw) solid transparent;
   font-size: var(--s-s);
@@ -81,22 +82,42 @@ button.s-input {
 .s-input .m {
   border-radius: 0;
 }
-.s-card {
+.s-card,
+.s-tab-tags {
   --component-color: var(--s-c-bg);
   --component-color-rgb: var(--s-c-bg-rgb);
   --text-color: var(--s-c-bg-t);
   --text-color-rgb: var(--s-c-bg-t-rgb);
-  padding: calc(var(--s-s) / 1);
-  margin: calc(var(--s-s) / 4);
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   --component-color: var(--s-c-card);
   --component-color-rgb: var(--s-c-card-rgb);
 }
 .s-card .header {
   font-weight: bold;
 }
+.s-tab-tags {
+  display: flex;
+}
+.s-tab-tags > .s-tab-tag {
+  padding: calc(var(--s-s) / 8) calc(var(--s-s) / 4);
+  margin: calc(var(--s-s) / 8) calc(var(--s-s) / 16);
+  --opacity: 0;
+  --border-color: rgba(var(--s-c-rgb), var(--opacity));
+  border: 2px solid var(--border-color);
+  border-radius: var(--s-s-br);
+  transition: 50ms;
+}
+.s-tab-tags > .s-tab-tag:hover:not(.disabled,.readonly) {
+  --opacity: 1;
+  cursor: pointer;
+}
+.s-tab-tags > .s-tab-tag.selected:not(.disabled,.readonly) {
+  --opacity: 0.6;
+}
 .s-button {
   --button-color: rgba(var(--component-color-rgb), var(--component-opacity));
-  padding: calc(var(--s-s) / 4);
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   --component-color: var(--s-c);
   --component-color-rgb: var(--s-c-rgb);
   --text-color: var(--s-c-t);
@@ -176,7 +197,7 @@ button.s-input {
 }
 .s-input {
   --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
-  padding: calc(var(--s-s) / 4);
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   --component-color: var(--s-c);
   --component-color-rgb: var(--s-c-rgb);
   --text-color: var(--s-c-t-bg);
@@ -311,7 +332,7 @@ button.s-input {
 }
 .s-grid > .grid-container > .grid-row .grid-col {
   background-color: var(--col-color);
-  padding: calc(var(--s-s) / 4);
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   position: relative;
   grid-column: auto / span 1;
 }
@@ -379,7 +400,7 @@ button.s-input {
   --text-color-rgb: var(--s-c-disabled-t-rgb);
 }
 .inline-block {
-  margin: calc(var(--s-s) / 4);
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   display: inline-block;
 }
 .s-form-layout {
@@ -389,7 +410,7 @@ button.s-input {
   --label-width: 4;
 }
 .s-form-layout .form-item-title {
-  padding: calc(var(--s-s) / 4);
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   grid-column: 1 / 2;
   width: 100%;
   margin: auto;
@@ -679,7 +700,7 @@ button.s-input {
   display: flex;
 }
 .pager .s-button {
-  margin: calc(var(--s-s) / 4);
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
   --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
   color: var(--text-color);
   min-width: var(--s-s);

@@ -18,19 +18,7 @@
   }
 }
 
-.set-anim-hover-selected(@hover,@active) {
-  &:hover:not(.disabled,.readonly) {
-    each(@hover, {
-        @{key}: @value;
-    });
-  }
 
-  &.selected:not(.disabled,.readonly) {
-    each(@active, {
-        @{key}: @value;
-    });
-  }
-}
 
 
 .iterator(@component-name) {
