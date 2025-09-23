@@ -31,6 +31,12 @@
 .s-list {
   .iterator(list);
 
+  &.ipd{
+    >.list-row{
+      .has-padding()
+    }
+  }
+
   > .list-row {
     .set-color-iter(row, 5, 0);
     .set-color-mixed(row);

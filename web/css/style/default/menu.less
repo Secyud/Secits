@@ -1,0 +1,46 @@
+﻿@import "component";
+
+.s-menu {
+  &.collapsed {
+    display: none;
+  }
+
+  .menu-item {
+    --menu-item-color: rgba(var(--component-color-rgb), var(--component-opacity));
+    .component();
+    .set-component-color(--s-c);
+    .has-margin(4);
+    .has-padding(4);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    background-color: var(--menu-item-color);
+
+    --component-opacity: 0;
+    .set-anim-hover-selected({
+      --component-opacity: 0.1;
+    }, {
+      --component-opacity: 0.05;
+    });
+
+    > .menu-item-text {
+      padding: 0 5px;
+      width: 100%;
+    }
+  }
+}
+
+.s-context-menu {
+  z-index: 8;
+  position: absolute;
+}
+
+.s-dropdown {
+  &-content {
+    top: calc(100% + 0.125rem);
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+}

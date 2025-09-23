@@ -55,14 +55,15 @@
   }
 }
 
-.icon {
-  --icon-size: var(--s-s);
+.s-icon {
   --icon-color: rgba(var(--component-color-rgb), var(--component-opacity));
-  .text(var(--icon-color));
+  --icon-size: var(--s-s);
+  .text(inherit);
   border-radius: 50%;
   width: var(--icon-size);
   height: var(--icon-size);
   font-size: var(--icon-size);
+  display: inline-block;
 
   & > svg {
     height: 100%;
@@ -70,12 +71,13 @@
   }
 
   &.anim {
-    --component-opacity: 0.25;
+    .text(var(--icon-color));
+    --component-opacity: 0.8;
 
     .set-anim-hover-active({
-      --component-opacity: 0.6;
+      --component-opacity: 1;
     }, {
-      --component-opacity: 0.8;
+      --component-opacity: 0.6;
     });
   }
 }
