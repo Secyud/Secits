@@ -19,8 +19,6 @@
 }
 
 
-
-
 .iterator(@component-name) {
   .content();
   &.outline {
@@ -31,8 +29,8 @@
 .s-list {
   .iterator(list);
 
-  &.ipd{
-    >.list-row{
+  &.ipd {
+    > .list-row {
       .has-padding()
     }
   }
@@ -56,10 +54,6 @@
 
   &.visualize > .grid-container {
     height: var(--grid-height);
-
-    & > spacer {
-      display: block;
-    }
   }
 
   & > .grid-container {

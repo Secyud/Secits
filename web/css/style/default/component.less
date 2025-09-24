@@ -48,12 +48,22 @@
 
 
 .add-shadow(@color-rgb) {
-  box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(@color-rgb, var(--shadow-opacity));
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(@color-rgb, var(--shadow-opacity));
 }
 
 .set-shadow(@size, @opacity) {
   --shadow-size: @size;
   --shadow-opacity: @opacity;
+}
+
+.set-shadow(@size, @extend, @opacity) {
+  .set-shadow(@size, @opacity);
+  --shadow-extend: @extend;
 }
 
 .set-anim-hover-active(@hover,@active) {

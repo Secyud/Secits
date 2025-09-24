@@ -157,7 +157,12 @@ button.s-input {
   background-color: transparent;
 }
 .s-button.shadow {
-  box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(var(--component-color-rgb), var(--shadow-opacity));
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--component-color-rgb), var(--shadow-opacity));
   --shadow-size: calc(var(--s-s) * 0.25);
   --shadow-opacity: 0.1;
   --component-color: var(--s-c-bg-r);
@@ -183,6 +188,7 @@ button.s-input {
   height: var(--icon-size);
   font-size: var(--icon-size);
   display: inline-block;
+  user-select: none;
 }
 .s-icon > svg {
   height: 100%;
@@ -217,7 +223,12 @@ button.s-input {
   --component-opacity: 1;
 }
 .s-input.shadow {
-  box-shadow: 0 var(--shadow-size) var(--shadow-size) rgba(var(--component-color-rgb), var(--shadow-opacity));
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--component-color-rgb), var(--shadow-opacity));
   --shadow-size: calc(var(--s-s) * 0.25);
   --shadow-opacity: 0.1;
   --component-color: var(--s-c-bg-r);
@@ -285,9 +296,6 @@ button.s-input {
 }
 .s-grid.visualize > .grid-container {
   height: var(--grid-height);
-}
-.s-grid.visualize > .grid-container > spacer {
-  display: block;
 }
 .s-grid > .grid-container {
   --component-color: var(--s-c-bg);
@@ -396,6 +404,33 @@ button.s-input {
   --component-color-rgb: var(--s-c-disabled-rgb);
   --text-color: var(--s-c-disabled-t);
   --text-color-rgb: var(--s-c-disabled-t-rgb);
+}
+:root {
+  /* 滚动条轨道 */
+  /* 滚动条滑块 */
+  /* 滑块悬停效果 */
+}
+:root ::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+  /* 滚动条宽度 */
+}
+:root ::-webkit-scrollbar-track {
+  background: var(--s-c-bg);
+  /* 背景颜色 */
+  border-radius: 2px;
+  /* 圆角 */
+}
+:root ::-webkit-scrollbar-thumb {
+  background: rgba(var(--s-c-rgb), 0.6);
+  /* 滑块颜色 */
+  border-radius: 2px;
+  /* 圆角 */
+  cursor: pointer;
+}
+:root ::-webkit-scrollbar-thumb:hover {
+  background: var(--s-c);
+  /* 悬停时颜色 */
 }
 .inline-block {
   margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
@@ -640,6 +675,126 @@ button.s-input {
 .display-grid {
   display: grid;
 }
+.pd-1 {
+  padding: calc(var(--s-s) / 1);
+}
+.pd-1-1 {
+  padding: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.pd-2-2 {
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.pd-4-4 {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.pd-8-8 {
+  padding: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.pd-2 {
+  padding: calc(var(--s-s) / 2);
+}
+.pd-1-1 {
+  padding: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.pd-2-2 {
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.pd-4-4 {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.pd-8-8 {
+  padding: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.pd-4 {
+  padding: calc(var(--s-s) / 4);
+}
+.pd-1-1 {
+  padding: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.pd-2-2 {
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.pd-4-4 {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.pd-8-8 {
+  padding: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.pd-8 {
+  padding: calc(var(--s-s) / 8);
+}
+.pd-1-1 {
+  padding: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.pd-2-2 {
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.pd-4-4 {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.pd-8-8 {
+  padding: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.mg-1 {
+  margin: calc(var(--s-s) / 1);
+}
+.mg-1-1 {
+  margin: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.mg-2-2 {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.mg-4-4 {
+  margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.mg-8-8 {
+  margin: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.mg-2 {
+  margin: calc(var(--s-s) / 2);
+}
+.mg-1-1 {
+  margin: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.mg-2-2 {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.mg-4-4 {
+  margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.mg-8-8 {
+  margin: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.mg-4 {
+  margin: calc(var(--s-s) / 4);
+}
+.mg-1-1 {
+  margin: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.mg-2-2 {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.mg-4-4 {
+  margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.mg-8-8 {
+  margin: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
+.mg-8 {
+  margin: calc(var(--s-s) / 8);
+}
+.mg-1-1 {
+  margin: calc(var(--s-s) / 1) calc(var(--s-s) / 1);
+}
+.mg-2-2 {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 2);
+}
+.mg-4-4 {
+  margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+}
+.mg-8-8 {
+  margin: calc(var(--s-s) / 8) calc(var(--s-s) / 8);
+}
 .s-progress-bar {
   width: 100%;
   height: 4px;
@@ -647,7 +802,30 @@ button.s-input {
 .s-progress-bar > .progress-bar-inner {
   height: 100%;
   width: calc(var(--percentage) * 1%);
-  background-color: var(--s-c);
+  overflow: hidden;
+  background: var(--s-c);
+  transition: width 1s;
+  position: relative;
+}
+.s-progress-bar > .progress-bar-inner::after {
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 30%;
+  left: var(--anim);
+  position: absolute;
+  display: block;
+  --mid-color: color-mix(in srgb, var(--s-c-bg) 90%, var(--s-c));
+  background: linear-gradient(0.25turn, var(--s-c), var(--mid-color), var(--s-c));
+  animation: progress-anim 1.5s linear infinite;
+}
+@keyframes progress-anim {
+  from {
+    left: -90%;
+  }
+  to {
+    left: 190%;
+  }
 }
 .s-floater {
   position: absolute;
@@ -659,12 +837,12 @@ button.s-input {
   --bottom: 0;
 }
 .s-floater.center {
-  --f-padding-h: calc(100% - var(--width) / 2);
+  --f-padding-h: calc(50% - var(--width) / 2);
   left: var(--f-padding-h);
   right: var(--f-padding-h);
 }
 .s-floater.middle {
-  --f-padding-v: calc(100% - var(--height) / 2);
+  --f-padding-v: calc(50% - var(--height) / 2);
   top: var(--f-padding-v);
   bottom: var(--f-padding-v);
 }
@@ -742,9 +920,61 @@ button.s-input {
   position: absolute;
 }
 .s-dropdown-content {
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--s-c-bg-r-rgb), var(--shadow-opacity));
   top: calc(100% + 0.125rem);
   left: 0;
   right: 0;
   overflow-y: auto;
+}
+.s-page-router-view.s-tab-tags {
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-extend: 0;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--s-c-bg-r-rgb), var(--shadow-opacity));
+  --shadow-size: 0.2rem;
+  --shadow-opacity: 0.25;
+  margin: 0;
+  padding: 0 calc(var(--s-s) / 0.5);
+  background-color: var(--s-c-bg);
+  position: sticky;
+  top: 0;
+  overflow-x: auto;
+  z-index: 4;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag {
+  --color: color-mix(in srgb, var(--s-c) 20%, var(--s-c-bg-t));
+  background-color: var(--border-color);
+  border-color: transparent;
+  color: var(--color);
+  display: flex;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag > .tab-text {
+  margin: 0 calc(var(--s-s) / 4);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag:hover:not(.disabled,.readonly) {
+  --opacity: 0.2 !important;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag.selected:not(.disabled,.readonly) {
+  --opacity: 0.1 !important;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag > .s-icon.anim {
+  --component-color-rgb: var(--s-c-card-rgb);
+  --component-opacity: 0;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag:hover > .s-icon.anim {
+  --component-opacity: 0.3;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag:hover > .s-icon.anim:hover:not(.disabled,.readonly) {
+  --component-opacity: 1;
+}
+.s-page-router-view.s-tab-tags > .s-tab-tag:hover > .s-icon.anim:active:not(.disabled,.readonly) {
+  --component-opacity: 0.6;
 }
 /*# sourceMappingURL=default.css.map */

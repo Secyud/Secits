@@ -1,4 +1,6 @@
-﻿.flex {
+﻿@import "component";
+
+.flex {
   display: flex;
 }
 
@@ -9,3 +11,29 @@
 .display-grid {
   display: grid;
 }
+
+@each-item: 1, 2, 4, 8;
+
+each(@each-item, {
+  .pd-@{value} {
+    .has-padding(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .pd-@{value}-@{w} {
+      .has-padding(@value, @w);
+    }
+  })
+})
+
+each(@each-item, {
+  .mg-@{value} {
+    .has-margin(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .mg-@{value}-@{w} {
+      .has-margin(@value, @w);
+    }
+  })
+})

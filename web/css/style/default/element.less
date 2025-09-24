@@ -8,7 +8,37 @@
   & > .progress-bar-inner {
     height: 100%;
     width: calc(var(--percentage) * 1%);
-    background-color: var(--s-c);
+    overflow: hidden;
+
+    background: var(--s-c);
+
+    transition: width 1s;
+    position: relative;
+
+    @anim-width: 30%;
+
+    &::after {
+      content: "";
+      height: 100%;
+      top: 0;
+      width: @anim-width;
+      left: var(--anim);
+      position: absolute;
+      display: block;
+      --mid-color: color-mix(in srgb, var(--s-c-bg) 90%, var(--s-c));
+      background: linear-gradient(0.25turn, var(--s-c), var(--mid-color), var(--s-c));
+
+      animation: progress-anim 1.5s linear infinite;
+    }
+
+    @keyframes progress-anim {
+      from {
+        left: -@anim-width*3;
+      }
+      to {
+        left: @anim-width*3 + 100%;
+      }
+    }
   }
 }
 
@@ -22,13 +52,13 @@
   --bottom: 0;
 
   &.center {
-    --f-padding-h: calc(100% - var(--width) / 2);
+    --f-padding-h: calc(50% - var(--width) / 2);
     left: var(--f-padding-h);
     right: var(--f-padding-h);
   }
 
   &.middle {
-    --f-padding-v: calc(100% - var(--height) / 2);
+    --f-padding-v: calc(50% - var(--height) / 2);
     top: var(--f-padding-v);
     bottom: var(--f-padding-v);
   }
