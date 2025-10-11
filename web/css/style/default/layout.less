@@ -9,22 +9,25 @@
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-auto-flow: row;
-  --label-width: 4;
+  grid-gap: 1rem;
+  --title-height: calc(0.9 * var(--s-s));
 
   .form-item-title {
-    .has-padding();
-    grid-column: 1 / 2;
+    display: block;
+    grid-row: 1 / 2;
+    line-height: var(--title-height);
+    font-size: var(--title-height);
     width: 100%;
-    margin: auto;
-    text-align: justify;
-    text-align-last: justify;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 0.125rem;
+    color: rgba(var(--s-c-bg-t-rgb), 0.8);
   }
 
   .form-item {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: calc(var(--label-width) * var(--s-s))  1fr;
-    grid-gap: 1rem;
+    grid-template-rows: var(--title-height)  1fr;
+    grid-template-columns: 1fr;
     --col-span-xs: 12;
     --col-span-sm: 6;
     --col-span-md: 4;

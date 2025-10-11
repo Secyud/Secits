@@ -440,21 +440,24 @@ button.s-input {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-auto-flow: row;
-  --label-width: 4;
+  grid-gap: 1rem;
+  --title-height: calc(0.9 * var(--s-s));
 }
 .s-form-layout .form-item-title {
-  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
-  grid-column: 1 / 2;
+  display: block;
+  grid-row: 1 / 2;
+  line-height: var(--title-height);
+  font-size: var(--title-height);
   width: 100%;
-  margin: auto;
-  text-align: justify;
-  text-align-last: justify;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 0.125rem;
+  color: rgba(var(--s-c-bg-t-rgb), 0.8);
 }
 .s-form-layout .form-item {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: calc(var(--label-width) * var(--s-s)) 1fr;
-  grid-gap: 1rem;
+  grid-template-rows: var(--title-height) 1fr;
+  grid-template-columns: 1fr;
   --col-span-xs: 12;
   --col-span-sm: 6;
   --col-span-md: 4;
@@ -675,6 +678,11 @@ button.s-input {
 .display-grid {
   display: grid;
 }
+.colored {
+  --text-color: var(--s-c);
+  --text-color-rgb: var(--s-c-rgb);
+  color: var(--text-color);
+}
 .pd-1 {
   padding: calc(var(--s-s) / 1);
 }
@@ -827,40 +835,107 @@ button.s-input {
     left: 190%;
   }
 }
-.s-floater {
+.s-floater,
+.s-modal {
+  z-index: 8;
   position: absolute;
-  --height: 100%;
-  --width: 100%;
+  --height: 60%;
+  --width: 60%;
   --left: 0;
   --right: 0;
   --top: 0;
   --bottom: 0;
 }
-.s-floater.center {
+.s-floater.xl,
+.s-modal.xl {
+  --height: 80%;
+  --width: 80%;
+}
+.s-floater.lg,
+.s-modal.lg {
+  --height: 70%;
+  --width: 70%;
+}
+.s-floater.md,
+.s-modal.md {
+  --height: 60%;
+  --width: 60%;
+}
+.s-floater.sm,
+.s-modal.sm {
+  --height: 50%;
+  --width: 50%;
+}
+.s-floater.xs,
+.s-modal.xs {
+  --height: 40%;
+  --width: 40%;
+}
+.s-floater.center,
+.s-modal.center {
   --f-padding-h: calc(50% - var(--width) / 2);
   left: var(--f-padding-h);
   right: var(--f-padding-h);
 }
-.s-floater.middle {
+.s-floater.middle,
+.s-modal.middle {
   --f-padding-v: calc(50% - var(--height) / 2);
   top: var(--f-padding-v);
   bottom: var(--f-padding-v);
 }
-.s-floater.top {
+.s-floater.top,
+.s-modal.top {
   top: var(--top);
   height: var(--height);
 }
-.s-floater.bottom {
+.s-floater.bottom,
+.s-modal.bottom {
   bottom: var(--bottom);
   height: var(--height);
 }
-.s-floater.left {
+.s-floater.left,
+.s-modal.left {
   left: var(--left);
   width: var(--width);
 }
-.s-floater.right {
+.s-floater.right,
+.s-modal.right {
   right: var(--right);
   width: var(--width);
+}
+.s-modal .s-card {
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--s-c-bg-r-rgb), var(--shadow-opacity));
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.s-modal .s-card > .header {
+  --header-size: calc(var(--s-s) * 1.2);
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  font-size: var(--header-size);
+}
+.s-modal .s-card > .body {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  height: 100%;
+  flex-shrink: 2;
+}
+.s-modal .s-card > .footer {
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.s-modal .s-card > .footer > div {
+  display: inline-block;
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
 }
 .s-popup-back {
   position: absolute;

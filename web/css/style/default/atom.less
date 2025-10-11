@@ -12,6 +12,11 @@
   display: grid;
 }
 
+.colored {
+  .set-text-color(--s-c);
+  color: var(--text-color);
+}
+
 @each-item: 1, 2, 4, 8;
 
 each(@each-item, {
