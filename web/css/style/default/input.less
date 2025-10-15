@@ -1,23 +1,12 @@
 ﻿@import "component";
 
-.s-input {
-  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
+.input-style() {
   &:extend(.component);
-  &:extend(.disable-web-style all);
-  &:extend(.group all);
-  .has-padding();
+  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
   .set-component(--s-c, --s-c-t-bg);
-
-  --component-opacity: 0.25;
-  border-color: var(--input-color);
   background-color: var(--s-c-bg);
-  width: 100%;
+  border-color: var(--input-color);
 
-  .set-anim-hover-focus({
-    --component-opacity: 0.6;
-  }, {
-    --component-opacity: 1;
-  });
 
   &.shadow {
     .add-shadow(var(--component-color-rgb));
@@ -32,9 +21,51 @@
       .set-shadow(calc(var(--s-s) * 0.35), 0.15);
     });
   }
+}
 
+.s-input {
+  &:extend(.disable-web-style all);
+  &:extend(.group all);
+  .has-padding();
+  .input-style();
+
+  width: 100%;
+
+  --component-opacity: 0.25;
+
+  .set-anim-hover-focus({
+    --component-opacity: 0.6;
+  }, {
+    --component-opacity: 1;
+  });
 
   input, textarea {
     width: 100%;
+  }
+}
+
+
+.check-box {
+  .input-style();
+  --size: calc(var(--s-s) * 1.75);
+  .has-margin(4, 0);
+  height: var(--size);
+  width: var(--size);
+  border-width: 2px;
+  font-weight: bold;
+
+  --component-opacity: 0.8;
+
+  .set-anim-hover-focus({
+    --component-opacity: 0.6;
+  }, {
+    --component-opacity: 1;
+  });
+
+  & > .s-check {
+    color: var(--input-color);
+    width: 70%;
+    height: 70%;
+    padding: 15%;
   }
 }

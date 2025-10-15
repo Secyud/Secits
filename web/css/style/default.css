@@ -2,6 +2,7 @@
 .s-card,
 .s-button,
 .s-input,
+.check-box,
 .s-list,
 .s-grid,
 .s-grid > .grid-container,
@@ -193,6 +194,7 @@ button.s-input {
 .s-icon > svg {
   height: 100%;
   width: 100%;
+  display: block;
 }
 .s-icon.anim {
   color: var(--icon-color);
@@ -205,22 +207,16 @@ button.s-input {
   --component-opacity: 0.6;
 }
 .s-input {
-  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
   padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
   --component-color: var(--s-c);
   --component-color-rgb: var(--s-c-rgb);
   --text-color: var(--s-c-t-bg);
   --text-color-rgb: var(--s-c-t-bg-rgb);
-  --component-opacity: 0.25;
-  border-color: var(--input-color);
   background-color: var(--s-c-bg);
+  border-color: var(--input-color);
   width: 100%;
-}
-.s-input:hover:not(.disabled,.readonly) {
-  --component-opacity: 0.6;
-}
-.s-input:has(:focus):not(.disabled,.readonly) {
-  --component-opacity: 1;
+  --component-opacity: 0.25;
 }
 .s-input.shadow {
   --shadow-x: 0;
@@ -246,9 +242,67 @@ button.s-input {
   --shadow-size: calc(var(--s-s) * 0.35);
   --shadow-opacity: 0.15;
 }
+.s-input:hover:not(.disabled,.readonly) {
+  --component-opacity: 0.6;
+}
+.s-input:has(:focus):not(.disabled,.readonly) {
+  --component-opacity: 1;
+}
 .s-input input,
 .s-input textarea {
   width: 100%;
+}
+.check-box {
+  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  --component-color: var(--s-c);
+  --component-color-rgb: var(--s-c-rgb);
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  background-color: var(--s-c-bg);
+  border-color: var(--input-color);
+  --size: calc(var(--s-s) * 1.75);
+  margin: calc(var(--s-s) / 4) 0;
+  height: var(--size);
+  width: var(--size);
+  border-width: 2px;
+  font-weight: bold;
+  --component-opacity: 0.8;
+}
+.check-box.shadow {
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--component-color-rgb), var(--shadow-opacity));
+  --shadow-size: calc(var(--s-s) * 0.25);
+  --shadow-opacity: 0.1;
+  --component-color: var(--s-c-bg-r);
+  --component-color-rgb: var(--s-c-bg-r-rgb);
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  border-color: transparent;
+  background-color: transparent;
+}
+.check-box.shadow:hover:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.5);
+  --shadow-opacity: 0.2;
+}
+.check-box.shadow:has(:focus):not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.35);
+  --shadow-opacity: 0.15;
+}
+.check-box:hover:not(.disabled,.readonly) {
+  --component-opacity: 0.6;
+}
+.check-box:has(:focus):not(.disabled,.readonly) {
+  --component-opacity: 1;
+}
+.check-box > .s-check {
+  color: var(--input-color);
+  width: 70%;
+  height: 70%;
+  padding: 15%;
 }
 .s-list {
   --component-color: var(--s-c-bg);
