@@ -17,4 +17,7 @@
   --s-s: 1.5rem;
   --s-s-br: 0.5rem;
 }
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 /*# sourceMappingURL=default.css.map */

@@ -7,7 +7,6 @@
   background-color: var(--s-c-bg);
   border-color: var(--input-color);
 
-
   &.shadow {
     .add-shadow(var(--component-color-rgb));
     .set-shadow(calc(var(--s-s) * 0.25), 0.1);
@@ -26,10 +25,11 @@
 .s-input {
   &:extend(.disable-web-style all);
   &:extend(.group all);
-  .has-padding();
+  .has-padding(0, 4);
   .input-style();
 
   width: 100%;
+  height: 100%;
 
   --component-opacity: 0.25;
 
@@ -40,10 +40,46 @@
   });
 
   input, textarea {
-    width: 100%;
+    min-height: var(--s-s);
+    width: 100% !important;
+    .has-padding(4, 0);
+  }
+
+  textarea {
+    margin-bottom: 0.25rem;
   }
 }
 
+.s-input:has(input[type="checkbox"]) {
+  &:extend(.disable-web-style all);
+  &:extend(.group all);
+  .has-padding(0, 4);
+  .input-style();
+  .has-margin();
+  padding: 0;
+  width: var(--s-s);
+  height: var(--s-s);
+
+  --component-opacity: 0.8;
+
+  .set-anim-hover-focus({
+    --component-opacity: 0.4;
+  }, {
+    --component-opacity: 0.8;
+  });
+
+  input[type="checkbox"] {
+    appearance: none;
+
+    &:checked {
+      background-color: var(--component-color);
+      width: 100%;
+      height: 100%;
+      mask: url("../images/check.svg") no-repeat;
+      mask-size: contain;
+    }
+  }
+}
 
 .check-box {
   .input-style();

@@ -2,6 +2,7 @@
 .s-card,
 .s-button,
 .s-input,
+.s-input:has(input[type="checkbox"]),
 .check-box,
 .s-list,
 .s-grid,
@@ -33,7 +34,13 @@ button.s-button,
 .s-input button,
 input.s-input,
 textarea.s-input,
-button.s-input {
+button.s-input,
+.s-input:has(input[type="checkbox"]) input,
+.s-input:has(input[type="checkbox"]) textarea,
+.s-input:has(input[type="checkbox"]) button,
+input.s-input:has(input[type="checkbox"]),
+textarea.s-input:has(input[type="checkbox"]),
+button.s-input:has(input[type="checkbox"]) {
   margin: 0;
   outline: none;
   border: none;
@@ -43,45 +50,49 @@ button.s-input {
 }
 .group,
 .s-button,
-.s-input {
+.s-input,
+.s-input:has(input[type="checkbox"]) {
   display: grid;
   --u: var(--s-s);
 }
 .group div,
-.group span,
 .s-button div,
-.s-button span,
 .s-input div,
-.s-input span {
+.s-input:has(input[type="checkbox"]) div {
   margin: 0;
 }
 .group .l,
 .s-button .l,
-.s-input .l {
+.s-input .l,
+.s-input:has(input[type="checkbox"]) .l {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 .group .r,
 .s-button .r,
-.s-input .r {
+.s-input .r,
+.s-input:has(input[type="checkbox"]) .r {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 .group .t,
 .s-button .t,
-.s-input .t {
+.s-input .t,
+.s-input:has(input[type="checkbox"]) .t {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .group .b,
 .s-button .b,
-.s-input .b {
+.s-input .b,
+.s-input:has(input[type="checkbox"]) .b {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 .group .m,
 .s-button .m,
-.s-input .m {
+.s-input .m,
+.s-input:has(input[type="checkbox"]) .m {
   border-radius: 0;
 }
 .s-card,
@@ -190,6 +201,7 @@ button.s-input {
   font-size: var(--icon-size);
   display: inline-block;
   user-select: none;
+  margin: auto;
 }
 .s-icon > svg {
   height: 100%;
@@ -207,7 +219,7 @@ button.s-input {
   --component-opacity: 0.6;
 }
 .s-input {
-  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  padding: 0 calc(var(--s-s) / 4);
   --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
   --component-color: var(--s-c);
   --component-color-rgb: var(--s-c-rgb);
@@ -216,6 +228,7 @@ button.s-input {
   background-color: var(--s-c-bg);
   border-color: var(--input-color);
   width: 100%;
+  height: 100%;
   --component-opacity: 0.25;
 }
 .s-input.shadow {
@@ -250,7 +263,72 @@ button.s-input {
 }
 .s-input input,
 .s-input textarea {
+  min-height: var(--s-s);
+  width: 100% !important;
+  padding: calc(var(--s-s) / 4) 0;
+}
+.s-input textarea {
+  margin-bottom: 0.25rem;
+}
+.s-input input[type="date"]::-webkit-datetime-edit {
+  /* content: '起始时间'; */
+  color: #bcbcbc;
+  padding-left: 10px;
+}
+.s-input:has(input[type="checkbox"]) {
+  padding: 0 calc(var(--s-s) / 4);
+  --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  --component-color: var(--s-c);
+  --component-color-rgb: var(--s-c-rgb);
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  background-color: var(--s-c-bg);
+  border-color: var(--input-color);
+  margin: calc(var(--s-s) / 2) calc(var(--s-s) / 4);
+  padding: 0;
+  width: var(--s-s);
+  height: var(--s-s);
+  --component-opacity: 0.8;
+}
+.s-input:has(input[type="checkbox"]).shadow {
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-size: 0.2rem;
+  --shadow-extend: 0;
+  --shadow-opacity: 0.25;
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-size) var(--shadow-extend) rgba(var(--component-color-rgb), var(--shadow-opacity));
+  --shadow-size: calc(var(--s-s) * 0.25);
+  --shadow-opacity: 0.1;
+  --component-color: var(--s-c-bg-r);
+  --component-color-rgb: var(--s-c-bg-r-rgb);
+  --text-color: var(--s-c-t-bg);
+  --text-color-rgb: var(--s-c-t-bg-rgb);
+  border-color: transparent;
+  background-color: transparent;
+}
+.s-input:has(input[type="checkbox"]).shadow:hover:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.5);
+  --shadow-opacity: 0.2;
+}
+.s-input:has(input[type="checkbox"]).shadow:has(:focus):not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.35);
+  --shadow-opacity: 0.15;
+}
+.s-input:has(input[type="checkbox"]):hover:not(.disabled,.readonly) {
+  --component-opacity: 0.4;
+}
+.s-input:has(input[type="checkbox"]):has(:focus):not(.disabled,.readonly) {
+  --component-opacity: 0.8;
+}
+.s-input:has(input[type="checkbox"]) input[type="checkbox"] {
+  appearance: none;
+}
+.s-input:has(input[type="checkbox"]) input[type="checkbox"]:checked {
+  background-color: var(--component-color);
   width: 100%;
+  height: 100%;
+  mask: url("../images/check.svg") no-repeat;
+  mask-size: contain;
 }
 .check-box {
   --input-color: rgba(var(--component-color-rgb), var(--component-opacity));
@@ -495,22 +573,23 @@ button.s-input {
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-auto-flow: row;
   grid-gap: 1rem;
-  --title-height: calc(0.9 * var(--s-s));
 }
 .s-form-layout .form-item-title {
   display: block;
   grid-row: 1 / 2;
-  line-height: var(--title-height);
-  font-size: var(--title-height);
+  vertical-align: bottom;
+  font-size: calc(0.9 * var(--s-s));
   width: 100%;
   height: 100%;
   overflow: hidden;
-  margin-bottom: 0.125rem;
   color: rgba(var(--s-c-bg-t-rgb), 0.8);
+}
+.s-form-layout .form-item-content {
+  display: table;
 }
 .s-form-layout .form-item {
   display: grid;
-  grid-template-rows: var(--title-height) 1fr;
+  grid-template-rows: auto  1fr;
   grid-template-columns: 1fr;
   --col-span-xs: 12;
   --col-span-sm: 6;
