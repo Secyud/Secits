@@ -7,11 +7,13 @@
   &:extend(.disable-web-style all);
   &:extend(.group all);
   .has-padding();
+  .has-margin();
   .set-component(--s-c, --s-c-t);
   background-color: var(--button-color);
   text-align: center;
   cursor: pointer;
   user-select: none;
+  display: inline-block;
 
   .set-anim-hover-active({
     --component-opacity: 0.6;
