@@ -34,6 +34,14 @@
 .s-context-menu {
   z-index: 8;
   position: absolute;
+  background-color: var(--s-c-bg);
+
+  .dropdown-box-content {
+    & > .s-button {
+      margin: 0;
+      display: block;
+    }
+  }
 }
 
 .s-dropdown {
@@ -45,7 +53,6 @@
     overflow-y: auto;
   }
 }
-
 
 .s-page-router-view.s-tab-tags {
   .add-shadow(var(--s-c-bg-r-rgb));
