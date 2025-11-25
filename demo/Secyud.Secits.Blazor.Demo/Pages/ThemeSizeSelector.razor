@@ -1,0 +1,28 @@
+<SCard>
+    <Body>
+    <SFormLayout>
+        <FormLayoutItem Title="尺寸">
+            <EnumSelector Value="Size" ValueChanged="SizeChanged"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="颜色主题">
+            <EnumSelector Value="Theme" ValueChanged="ThemeChanged"/>
+        </FormLayoutItem>
+    </SFormLayout>
+    </Body>
+</SCard>
+
+@code
+{
+    [Parameter]
+    public Size Size { get; set; }
+
+    [Parameter]
+    public EventCallback<Size> SizeChanged { get; set; }
+
+    [Parameter]
+    public Theme Theme { get; set; }
+
+    [Parameter]
+    public EventCallback<Theme> ThemeChanged { get; set; }
+
+}

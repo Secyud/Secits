@@ -1,0 +1,21 @@
+@namespace Secyud.Secits.Blazor.Preset
+@inherits SButton
+
+@((RenderFragment)base.BuildRenderTree)
+
+@code
+{
+    [Parameter]
+    public RenderFragment? Settings { get; set; }
+
+    protected override RenderFragment GenerateSetting()
+    {
+        return __builder =>
+        {
+            <AddTemplate>
+                @ChildContent
+            </AddTemplate>
+            @Settings
+        };
+    }
+}

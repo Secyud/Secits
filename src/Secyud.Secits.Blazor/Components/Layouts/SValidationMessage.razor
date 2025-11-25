@@ -1,0 +1,9 @@
+@namespace Secyud.Secits.Blazor
+
+@if (ValidationField is { ValidationResults : { Count: > 0 } results })
+    foreach (var result in results)
+    {
+        <div class="validation-message">
+            @result.ErrorMessage
+        </div>
+    }

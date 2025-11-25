@@ -1,0 +1,18 @@
+﻿@namespace Secyud.Secits.Blazor.Element
+@inherits Secyud.Secits.Blazor.Element.TimePickerTemplateBase
+<div class="pkr-t board">
+    <SRoller TValue="int" Cycle Style="@SliderStyle" Items="Numbers24" TextField="Format"
+             Disabled="@Pression.Disable(DateTimePrecisionKind.Hour)"
+             Value="@GetHour()" ValueChanged="SetHourAsync"/>
+    <SRoller TValue="int" Cycle Style="@SliderStyle" Items="Numbers60" TextField="Format"
+             Disabled="@Pression.Disable(DateTimePrecisionKind.Minute)"
+             Value="@GetMinute()" ValueChanged="SetMinuteAsync"/>
+    <SRoller TValue="int" Cycle Style="@SliderStyle" Items="Numbers60" TextField="Format"
+             Disabled="@Pression.Disable(DateTimePrecisionKind.Second)"
+             Value="@GetSecond()" ValueChanged="SetSecondAsync"/>
+</div>
+
+@code
+{
+    private const string SliderStyle = "width: 3rem;padding: 0;";
+}

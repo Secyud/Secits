@@ -1,0 +1,40 @@
+﻿@namespace Secyud.Secits.Blazor.Element
+@inherits SElementBase
+@typeparam TValue
+
+<div @ref="Ref" class="integer-slider @Class" style="--bias: @NumberCount;@Style" @onwheel="OnWheelAsync">
+    @GenerateNumberBox()
+</div>
+
+@code
+{
+    private RenderFragment GenerateOffset(int offset, int index) =>
+        __builder =>
+        {
+            var item = Items![index];
+            var text = TextField is null ? item?.ToString() : TextField(item);
+
+            <span class="element" style="--offset: @offset;"
+                  @onclick="() => OnIndexChangedAsync(index)">
+                @text
+            </span>
+        };
+
+
+    private RenderFragment GenerateNumberBox() =>
+        __builder =>
+        {
+            var currentIndex = CurrentIndex;
+            var cacheElement = NumberCount * 2;
+            for (var offset = -cacheElement; offset <= cacheElement; offset++)
+            {
+                var index = currentIndex + offset;
+
+                if (Cycle) index = GetCycleIndex(index);
+                if (index < 0 || index > MaxIndex)
+                    continue;
+                
+                __builder.AddContent(index, GenerateOffset(offset, index));
+            }
+        };
+}

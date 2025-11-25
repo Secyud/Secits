@@ -1,0 +1,19 @@
+@namespace Secyud.Secits.Blazor.Preset
+@inherits InputBase<TValue>
+@typeparam TValue
+
+@((RenderFragment)base.BuildRenderTree)
+
+@code
+{
+    protected override RenderFragment GenerateSetting() =>
+        __builder =>
+        {
+            <EnableValueInput TValue="TValue" Value="Value" ValueChanged="ValueChanged"/>
+            <AddNumberBox TValue="TValue" SubmitOnInput="SubmitOnInput"/>
+            @base.GenerateSetting()
+        };
+
+    [Parameter]
+    public bool SubmitOnInput { get; set; }
+}

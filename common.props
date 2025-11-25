@@ -1,0 +1,23 @@
+<Project>
+    <Import Project="../../secyud.props"/>
+    <Import Project="../../version.props"/>
+
+    <PropertyGroup>
+        <PackageOutputPath>../../../../$(PackageOutputPath)</PackageOutputPath>
+        <RootNamespace>Secyud.Secits.Blazor</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <VersionPrefix>1.0.0</VersionPrefix>
+<!--        <VersionSuffix></VersionSuffix>-->
+        <Description>
+            A blazor library.
+        </Description>
+        <PackageProjectUrl>https://github.com/Secyud/Secits/Blazor</PackageProjectUrl>
+        <PackageTags>Blazor, Component</PackageTags>
+        <ReferenceType>Project</ReferenceType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md"
+              Pack="true" PackagePath="/"/>
+    </ItemGroup>
+</Project>

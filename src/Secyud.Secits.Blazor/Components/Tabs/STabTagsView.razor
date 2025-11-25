@@ -1,0 +1,28 @@
+@using Secyud.Secits.Blazor.Settings.Tabs
+@namespace Secyud.Secits.Blazor
+
+<div class="@GetClass()" style="@GetStyle()">
+    @if (TabContainer is {} container)
+    {
+        foreach (var tabProvider in container.TabProviders)
+        {
+            foreach (var tab in tabProvider.GetTabs())
+            {
+                @RenderTabTag(tab, container.CurrentKey)
+            }
+        }
+    }
+</div>
+
+@code{
+
+    RenderFragment RenderTabTag(ITab tab, string? key) =>
+        __builder =>
+        {
+            <div @onclick="@(() => SelectTabAsync(tab))" id="@tab.Key"
+                 class="s-tab-tag @(tab.Key == key ? "selected" : "")">
+                @tab.RenderTab()
+            </div>
+        };
+
+}

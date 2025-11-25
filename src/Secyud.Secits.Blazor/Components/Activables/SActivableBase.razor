@@ -1,0 +1,23 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits SContentBase
+
+@GenerateHeader()
+@if (Disabled || Readonly)
+{
+    <div class="@GetClass()" style="@GetStyle()">
+        @GenerateChildContent()
+    </div>
+}
+else
+{
+    <div class="@GetClass()" style="@GetStyle()" @onclick="OnClick">
+        @GenerateChildContent()
+    </div>
+}
+@GenerateFooter()
+
+@code
+{
+    protected override RenderFragment? GenerateChildContent() => GenerateBody();
+}
+

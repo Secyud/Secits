@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="/"/>
+    <link rel="stylesheet" href="@Assets["app.css"]"/>
+    <link rel="stylesheet" href="@Assets["Secyud.Secits.Blazor.Server.Demo.styles.css"]"/>
+    <link rel="stylesheet" href="@Assets["_content/Secyud.Secits.Blazor.Demo/secits-theme.css"]"/>
+
+    <ImportMap/>
+    <HeadOutlet @rendermode="InteractiveServer"/>
+    <title>demo</title>
+</head>
+
+<body class="application-layout">
+<Routes @rendermode="InteractiveServer"/>
+<script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>

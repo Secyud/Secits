@@ -1,0 +1,10 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits SActivablePluginBase<SInput<TValue>>
+@typeparam TValue
+
+<SRoller TValue="TValue" Value="GetValue()" ValueChanged="SetValueAsync"
+         Style="@GetStyle()" Class="@GetClass()"
+         Cycle="Cycle" Items="Items" TextField="TextField"
+         Disabled="Disabled" Readonly="Readonly"
+         NumberCount="NumberCount"
+/>

@@ -1,0 +1,67 @@
+﻿@using Secyud.Secits.Blazor.Settings
+
+@attribute [Route(Menu.Table)]
+
+
+<ThemeSizeSelector @bind-Size="Size" @bind-Theme="Theme"/>
+
+<STabContainer>
+    <FixTab>
+        <Tag>Visualize</Tag>
+        <Content>
+            <SCard Theme="Theme" Size="Size">
+                <Body>
+                <SGrid TValue="ListDemoItem" Class="outline" DisableFooter>
+                    <EnableStaticSource Items="_list"/>
+                    <EnableIteratorVisualize/>
+                    <EnableColumnResize/>
+                    <GridColumn Caption="@nameof(ListDemoItem.Name)" Width="200"
+                                Field="@(item => item.Name)" Position="ColumnPosition.Front"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.PhoneNumber)" Width="200"
+                                Field="@(item => item.PhoneNumber)"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.Age)" Width="50"
+                                Field="@(item => item.Age)"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.BirthDate)" Width="512"
+                                Field="@(item => item.BirthDate)" Position="ColumnPosition.Behind"
+                                Format="yyyy MM dd hh mm ss"/>
+                </SGrid>
+                </Body>
+            </SCard>
+        </Content>
+    </FixTab>
+    <FixTab>
+        <Tag>Paged</Tag>
+        <Content>
+            <SCard Theme="Theme" Size="Size">
+                <Body>
+                <SGrid TValue="ListDemoItem" Class="outline" DisableFooter>
+                    <EnableStaticSource Items="_list"/>
+                    @* <DynamicDataSource Items="_list"/> *@
+                    <EnableIteratorPager/>
+                    <EnableColumnResize/>
+                    <GridColumn Caption="@nameof(ListDemoItem.Name)" Width="200"
+                                Field="@(item => item.Name)" Position="ColumnPosition.Front"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.PhoneNumber)" Width="200"
+                                Field="@(item => item.PhoneNumber)"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.Age)" Width="50"
+                                Field="@(item => item.Age)"/>
+                    <GridColumn Caption="@nameof(ListDemoItem.BirthDate)" Width="512"
+                                Field="@(item => item.BirthDate)" Position="ColumnPosition.Behind"
+                                Format="yyyy MM dd hh mm ss"/>
+                </SGrid>
+                </Body>
+            </SCard>
+        </Content>
+    </FixTab>
+    <STabTagsView/>
+    <STabContentsView RenderMode="TabRenderMode.LazyLoad"/>
+</STabContainer>
+
+
+@code {
+    readonly List<ListDemoItem> _list = ListDemoItem.Generate(200);
+
+    private Theme Theme { get; set; }
+
+    private Size Size { get; set; }
+}

@@ -1,0 +1,83 @@
+﻿@attribute [Route(Menu.Overview)]
+
+<SCard Theme="Theme" Size="Size">
+    <Body>
+    <SFormLayout>
+        <FormLayoutItem Title="尺寸">
+            <EnumSelector @bind-Value="Size"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="颜色主题">
+            <EnumSelector @bind-Value="Theme"/>
+        </FormLayoutItem>
+    </SFormLayout>
+    </Body>
+</SCard>
+
+<SCard Theme="Theme" Size="Size">
+    <Header>
+        按钮
+    </Header>
+    <Body>
+    <Button Class="inline-block">
+        Button
+    </Button>
+    <Button Class="inline-block outline">
+        Button
+    </Button>
+    <Button Class="inline-block plain">
+        Button
+    </Button>
+    <Button Class="inline-block shadow">
+        Button
+    </Button>
+    </Body>
+</SCard>
+
+<SCard Theme="Theme" Size="Size">
+    <Header>
+        输入框
+    </Header>
+    <Body>
+    <SFormLayout>
+        <FormLayoutItem Title="default text">
+            <TextBox Value="@("default")"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="shadow text">
+            <TextBox Value="@("shadow")" Class="shadow"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="default area">
+            <TextArea Value="@("default")"></TextArea>
+        </FormLayoutItem>
+        <FormLayoutItem Title="shadow area">
+            <TextArea Value="@("shadow")" Class="shadow"></TextArea>
+        </FormLayoutItem>
+        <FormLayoutItem Title="default date">
+            <DateTimeBox Value="@(DateTime.Now)"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="shadow date">
+            <DateTimeBox Value="@(DateTime.Now)" Class="shadow"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="default bool">
+            <CheckBox Value="@(false)"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="shadow bool">
+            <CheckBox Value="@(false)" Class="shadow"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="default number">
+            <NumberBox Value="@(1)"/>
+        </FormLayoutItem>
+        <FormLayoutItem Title="shadow number">
+            <NumberBox Value="@(1)" Class="shadow"/>
+        </FormLayoutItem>
+    </SFormLayout>
+    </Body>
+</SCard>
+
+
+
+@code
+{
+    private Theme Theme { get; set; }
+
+    private Size Size { get; set; }
+}

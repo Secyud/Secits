@@ -1,0 +1,7 @@
+@namespace Secyud.Secits.Blazor.Element
+@inherits SElementBase
+
+<span @key="Icon" @ref="Ref" class="@GetClass()" style="@GetStyle()"
+      @onclick="OnClick" @onclick:stopPropagation="@(Click.HasDelegate)">
+    <i class="@Icon"></i>
+</span>

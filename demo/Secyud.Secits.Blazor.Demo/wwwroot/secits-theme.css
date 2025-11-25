@@ -1,0 +1,141 @@
+
+.application-layout {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.sc-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    background: var(--s-c-bg);
+
+    > .sc-pin-menu {
+        --menu-width: 2rem;
+        flex-shrink: 0;
+        background: var(--s-c-card);
+        z-index: 8;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: var(--menu-width);
+        transition: 250ms;
+        padding-top: calc(var(--s-s) * 2);
+        box-shadow: 0 0 0.2rem rgba(var(--s-c-bg-r-rgb), 0.5);
+
+        &.left {
+            --menu-width: 15rem;
+            left: calc(0rem - var(--menu-width));
+
+
+            &:hover, &:has(.layout-menu-pin:hover) {
+                left: 0;
+            }
+
+            .layout-menu-pin {
+                left: var(--gap);
+            }
+        }
+
+        &.right {
+            --menu-width: 2.2rem;
+            right: calc(0rem - var(--menu-width));
+
+            &:hover, &:has(.layout-menu-pin:hover) {
+                right: 0;
+            }
+
+            .layout-menu-pin {
+                right: var(--gap);
+            }
+        }
+
+        &.fixed {
+            position: static;
+        }
+
+        .layout-menu-pin {
+            --opacity: 0;
+            --gap: calc(var(--s-s) / 4);
+            position: fixed;
+            padding: calc(var(--s-s) / 3);
+            top: var(--gap);
+            width: var(--s-s);
+            height: var(--s-s);
+            border-radius: 20%;
+            color: color-mix(in srgb, var(--s-c) 20%, var(--s-c-bg-t));
+            background-color: rgba(var(--s-c-rgb), var(--opacity));
+            transition: 50ms;
+
+            > span {
+                display: flex;
+            }
+
+            &:hover {
+                --opacity: 0.1;
+            }
+        }
+    }
+
+
+    > .sc-container {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+}
+
+
+.sc-menu {
+    margin: calc(var(--s-s) / 2);
+    color: color-mix(in srgb, var(--s-c) 20%, var(--s-c-bg-t));
+
+    .s-menu.inner {
+        padding-inline-start: 5px;
+
+        > .menu-item {
+            font-size: calc(var(--s-s) * 0.8);
+        }
+    }
+}
+
+.sc-main-toolbar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    > .fixed-toolbar {
+        margin-bottom: 3rem;
+        margin-top: auto;
+    }
+}
+
+.sc-general-setting {
+    > .setting-icon {
+        --component-color-rgb: var(--s-c-rgb);
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+        cursor: pointer;
+
+        .s-icon {
+            width: 100%;
+        }
+    }
+
+    > .s-context-menu {
+        z-index: 8;
+        box-shadow: 0 0 0.2rem rgba(var(--s-c-bg-r-rgb), 0.25);
+        background-color: var(--s-c-card);
+        border-radius: var(--s-s-br);
+        width: 10rem;
+        max-height: 768px;
+        right: 3rem;
+        bottom: 1rem;
+        overflow-y: auto;
+    }
+}

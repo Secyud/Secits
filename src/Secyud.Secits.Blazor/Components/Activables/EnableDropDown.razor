@@ -1,0 +1,17 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits SLayoutPluginBase<SActivableBase>
+
+@{
+    var iconName = ContextVisible ? _upIcon : _downIcon;
+}
+<SIcon @ref="_icon" IconName="@iconName" @key="iconName"
+       Click="@OpenDropDownAsync"
+       Class="@GetClass()" Style="@GetStyle()"/>
+
+<SContextMenu
+    @bind-Visible="ContextVisible"
+    Class="@GetContentClass()"
+    Style="@GetContentStyle()"
+    ExtendElement="@(() => _icon?.ElementRef)">
+    @ChildContent
+</SContextMenu>

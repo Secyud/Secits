@@ -1,0 +1,94 @@
+﻿.pkr-t.clock {
+    --border-color-c: transparent;
+    --border-c: 1px solid var(--border-color-c);
+    border: var(--border-c);
+    &.active{
+        --border-color-c: var(--s-c);
+    }
+    
+    margin: 0.25rem;
+    width: var(--wh-size);
+    height: var(--wh-size);
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+
+    background-color: color-mix(in lch, var(--cbgp) var(--bgmix), var(--cbgs));
+
+    > div {
+        --position: 0;
+        position: absolute;
+
+        > .handle {
+            --handle-size: calc(var(--s-s) / 2);
+            z-index: 1;
+            position: absolute;
+            border-radius: 50%;
+            width: var(--handle-size);
+            height: var(--handle-size);
+            left: calc(0.5 * (var(--width) * var(--s-s) - var(--handle-size)));
+            top: calc(-0.5 * var(--handle-size));
+            background-color: var(--s-c);
+            pointer-events: auto;
+            transition: all 50ms;
+        }
+
+        &.active > .handle, > .handle:hover {
+            --handle-size: var(--s-s);
+        }
+    }
+
+    > .number {
+        --distance: 5;
+        position: absolute;
+        border-radius: 50%;
+        width: var(--s-s);
+        height: var(--s-s);
+        line-height: var(--s-s);
+        font-size: calc(var(--s-s) * 0.75);
+        text-align: center;
+        user-select: none;
+        left: calc(var(--s-s) * (var(--multiple) - 0.5 + var(--distance) * sin(30deg * var(--position))));
+        top: calc(var(--s-s) * (var(--multiple) - 0.5 - var(--distance) * cos(30deg * var(--position))));
+        --txmix: 0.05;
+        color: color-mix(in lch, var(--ctxp) var(--txmix), var(--ctxs));
+    }
+
+    > .hand {
+        z-index: 0;
+
+        height: calc(var(--s-s) * var(--length));
+        top: calc(var(--s-s) * (var(--multiple) - var(--length)));
+        width: calc(var(--width) * var(--s-s));
+        left: calc((var(--multiple) - var(--width) / 2) * var(--s-s));
+
+        background-color: rgba(from var(--cbgp) r g b / var(--bgmix));
+        transform-origin: bottom;
+        transform: rotate(calc(6deg * var(--position)));
+        border-radius: 0.25rem;
+        pointer-events: none;
+
+        &.hour {
+            --length: 2;
+            --width: 0.3;
+            --bgmix: 0.6;
+
+            &.inner {
+                --length: 1;
+                --bgmix: 0.8;
+            }
+        }
+
+        &.minute {
+            --length: 3;
+            --width: 0.2;
+            --bgmix: 0.4;
+        }
+
+        &.second {
+            --length: 4;
+            --width: 0.1;
+            --bgmix: 0.2;
+        }
+    }
+}

@@ -7,7 +7,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
-.idea
 node_modules
 
 # Build results

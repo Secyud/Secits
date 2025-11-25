@@ -1,0 +1,18 @@
+{
+  "name": "secyud.secits.blazor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-component": "esbuild libs/components.js --format=esm --bundle --sourcemap --minify --outfile=wwwroot/js/components.bundle.min.js --platform=node",
+    "build-event": "esbuild libs/event-handler.js --format=esm --bundle --sourcemap --minify --outfile=wwwroot/js/event-handler.bundle.min.js --platform=node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "esbuild": "^0.25.10",
+    "js-cookie": "^3.0.5"
+  }
+}

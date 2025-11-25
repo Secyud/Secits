@@ -1,0 +1,30 @@
+@using Secyud.Secits.Blazor.Settings
+@namespace Secyud.Secits.Blazor.Element
+@inherits SStyledBase
+@implements IHasContent
+<div class="s-tooltip">
+    @ChildContent
+    <div class="@GetClass()" style="@GetStyle()">
+        @Text @TextTemplate
+    </div>
+</div>
+
+
+@code{
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? TextTemplate { get; set; }
+
+    [Parameter]
+    public string? Text { get; set; }
+
+
+    protected override string? GetClass()
+    {
+        return ClassStyleBuilder.GenerateClass("s-tooltip-context", Class);
+    }
+
+}

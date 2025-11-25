@@ -1,0 +1,15 @@
+﻿@namespace Secyud.Secits.Blazor.Preset
+@inherits InputBase<bool>
+
+@((RenderFragment)base.BuildRenderTree)
+
+@code
+{
+    protected override RenderFragment GenerateSetting() =>
+        __builder =>
+        {
+            <EnableValueInput TValue="bool" Value="Value" ValueChanged="ValueChanged"/>
+            <AddCheckBox/>
+            @base.GenerateSetting()
+        };
+}

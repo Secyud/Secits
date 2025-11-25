@@ -1,0 +1,7 @@
+@namespace Secyud.Secits.Blazor
+@inherits SActivableBase
+@typeparam TValue
+
+<CascadingValue Value="SelectableContainer" IsFixed>
+    @((RenderFragment)base.BuildRenderTree)
+</CascadingValue>

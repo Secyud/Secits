@@ -1,0 +1,82 @@
+﻿@namespace Secyud.Secits.Blazor.Element
+@inherits Secyud.Secits.Blazor.Element.TimePickerTemplateBase
+
+@{
+    var hour = GetHour();
+    var minute = GetMinute();
+    var second = GetSecond();
+}
+
+<div class="pkr-t clock@(_clockState.PrecisionKind == DateTimePrecisionKind.Default ? "" : " active")"
+     @ref="_ref"
+     @onmouseup="OnMouseUp"
+     @onmouseup:stopPropagation
+     @onmouseleave="OnMouseUp"
+     @onmouseleave:stopPropagation
+     @ontouchend="OnMouseUp"
+     @ontouchend:stopPropagation
+     @onmousemove="OnMouseMove">
+    <div style="--position: @(hour * 5)"
+         class="hand hour@((State == DateTimePrecisionKind.Hour ? " active" : "") + (HoverInner ? " inner" : ""))">
+        <div class="handle"
+             @onmousedown="@OnMouseDownHour"
+             @onmousedown:preventDefault
+             @onmousedown:stopPropagation></div>
+    </div>
+    <div class="hand minute@(State == DateTimePrecisionKind.Minute ? " active" : "")"
+         style="--position: @minute">
+        <div class="handle"
+             @onmousedown="@OnMouseDownMinute"
+             @onmousedown:preventDefault
+             @onmousedown:stopPropagation></div>
+    </div>
+    <div class="hand second@(State == DateTimePrecisionKind.Second ? " active" : "")"
+         style="--position: @second">
+        <div class="handle"
+             @onmousedown="@OnMouseDownSecond"
+             @onmousedown:preventDefault
+             @onmousedown:stopPropagation></div>
+    </div>
+    @switch (_clockState.PrecisionKind)
+    {
+        case DateTimePrecisionKind.Default:
+        case DateTimePrecisionKind.Hour:
+        {
+            var add = HoverInner ? 0 : 12;
+            for (var i = 1; i <= 12; i++)
+            {
+                @GenerateNumber(i, i + add, hour % 12 == i)
+            }
+
+            break;
+        }
+        case DateTimePrecisionKind.Minute:
+        {
+            for (var i = 0; i < 12; i++)
+            {
+                @GenerateNumber(i, $"{i * 5: 00}", minute == i * 5)
+            }
+
+            break;
+        }
+        case DateTimePrecisionKind.Second:
+        {
+            for (var i = 0; i < 12; i++)
+            {
+                @GenerateNumber(i, $"{i * 5: 00}", second == i * 5)
+            }
+
+            break;
+        }
+    }
+</div>
+
+@code
+{
+
+    private RenderFragment GenerateNumber(int position, object number, bool selected) =>
+        @<div class="number@(selected ? " selected" : null)"
+              style="--position: @position">
+            @number
+        </div>;
+}

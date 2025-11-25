@@ -1,0 +1,41 @@
+﻿@using Secyud.Secits.Blazor.Icons
+@inherits LayoutComponentBase
+<div class="@GetClass()" style="@GetStyle()">
+    <STabContainer @ref="TabContainer">
+        <TabProvider Items="PageRouteManager.Items" Options="OnTabOptioned">
+            <TagTemplate>
+                @GenerateTag(context)
+            </TagTemplate>
+            <ContentTemplate>
+                @GenerateContent(context)
+            </ContentTemplate>
+        </TabProvider>
+
+        @GenerateChildContent()
+
+    </STabContainer>
+</div>
+
+@code
+{
+    protected virtual RenderFragment GenerateChildContent() =>
+        __builder =>
+        {
+            <STabTagsView Class="s-page-router-view"/>
+            <STabContentsView RenderMode="TabRenderMode.LazyLoad"/>
+        };
+
+
+    protected virtual RenderFragment GenerateTag(PageRouteItem context)
+    {
+        context.DisplayNameGetter ??= CreateDisplayNameGetter(context);
+        return __builder =>
+        {
+            <a class="tab-text" href="@context.Uri.AbsolutePath" @onclick:stopPropagation>
+                @context.DisplayName
+            </a>
+            <SIcon IconName="@IconProvider.GetIcon(IconName.Cross)" Class="anim"
+                   Click="() => CloseTabAsync(context)"/>
+        };
+    }
+}

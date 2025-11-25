@@ -1,0 +1,29 @@
+@namespace Secyud.Secits.Blazor.Preset
+@inherits SInput<TValue>
+@typeparam TValue
+@typeparam TField
+
+@((RenderFragment)base.BuildRenderTree)
+
+@code
+{
+    protected override RenderFragment GenerateSetting() =>
+        __builder =>
+        {
+            <EnableFieldInput TValue="TValue" TField="TField"
+                              EnableNullable="EnableNullable"
+                              Field="Field" FieldChanged="FieldChanged"
+                              ValueField="ValueField" ItemFinder="ItemFinder"
+                              ValueUpdated="CloseDropDownAsync"/>
+            <AddShowBox TValue="TValue" Class="w-100" Readonly @onclick="OpenDropDownAsync"/>
+            <EnableDropDown @ref="_enableDropDown" ContentClass="outline">
+                <SList TValue="TValue" Class="ipd" Style="max-height: calc(var(--s-s) * 16);">
+                    <EnableStaticSource Items="Items"/>
+                    <EnableIteratorFixed/>
+                    <EnableIteratorSelect/>
+                    <ListColumn ChildContent="ListItemTemplate"/>
+                </SList>
+            </EnableDropDown>
+            @base.GenerateSetting()
+        };
+}

@@ -1,0 +1,8 @@
+@namespace Secyud.Secits.Blazor.Element
+@inherits SFloater
+@if (Visible)
+{
+    <div class="s-popup-back" @onclick:stopPropagation>
+        @((RenderFragment)base.BuildRenderTree)
+    </div>
+}

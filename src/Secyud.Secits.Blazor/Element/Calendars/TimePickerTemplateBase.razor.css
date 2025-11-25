@@ -1,0 +1,4 @@
+﻿.pkr-t {
+    --multiple: 6;
+    --wh-size: calc(var(--multiple) * 2 * var(--s-s));
+}

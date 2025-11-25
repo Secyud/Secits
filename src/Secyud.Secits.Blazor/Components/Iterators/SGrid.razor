@@ -1,0 +1,103 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits SIteratorBase<TValue>
+@typeparam TValue
+
+
+@((RenderFragment)base.BuildRenderTree)
+
+@code
+{
+    protected override RenderFragment GenerateBody()
+    {
+        var context = new GridContext<TValue>(this);
+        var template = $"--template-body:{context.GetBodyTemplate()};" +
+                       $"--template-front:{context.GetFrontTemplate()};" +
+                       $"--template-behind:{context.GetFrontTemplate()};" +
+                       $"--grid-row-width:{context.GetGridWidth()};";
+        return __builder =>
+        {
+            <div class="grid-container" style="@template">
+                @if (!DisableHeader)
+                {
+                    <div class="grid-row header">
+                        @GenerateRow(context, GenerateGridHeader)
+                    </div>
+                }
+                @ItemsRenderer.Get()?.GenerateItems(GenerateGridRow)
+                @if (!DisableFooter)
+                {
+                    <div class="grid-row footer">
+                        @GenerateRow(context, GenerateGridFooter)
+                    </div>
+                }
+            </div>
+        };
+
+        RenderFragment GenerateGridRow(TValue value) =>
+            __builder =>
+            {
+                <div class="@GetRowClass(value)" style="@GetRowStyle(value)" @onclick="e => OnRowClick(e, value)">
+                    @GenerateRow(context, t => t.Renderer.GenerateColumn(value))
+                </div>
+            };
+    }
+
+
+    protected virtual RenderFragment GenerateGridHeader(GridColumnContext<TValue> t) =>
+        __builder =>
+        {
+            @t.Renderer.GenerateHeader()
+            @foreach (var header in TableHeaders)
+            {
+                @header.GenerateHeader(t.Sequence)
+            }
+        };
+
+    protected virtual RenderFragment GenerateGridFooter(GridColumnContext<TValue> t) =>
+        __builder =>
+        {
+            @t.Renderer.GenerateFooter()
+            @foreach (var header in TableFooters)
+            {
+                @header.GenerateFooter(t.Sequence)
+            }
+        };
+
+
+    protected virtual RenderFragment GenerateRow(GridContext<TValue> context,
+        RenderFragment<GridColumnContext<TValue>> renderer) =>
+        __builder =>
+        {
+            if (context.FrontColumns.Count > 0)
+            {
+                <div class="grid-col-front">
+                    @foreach (var t in context.FrontColumns.Columns)
+                    {
+                        <div class="grid-col @t.Renderer.Class" style="@t.Renderer.Style">
+                            @renderer(t)
+                        </div>
+                    }
+                </div>
+            }
+
+            @foreach (var t in context.MiddleColumns.Columns)
+            {
+                <div class="grid-col">
+                    @renderer(t)
+                </div>
+            }
+
+            if (context.BehindColumns.Count > 0)
+            {
+                <div class="grid-col-behind">
+                    @foreach (var t in context.BehindColumns.Columns)
+                    {
+                        <div class="grid-col">
+                            @renderer(t)
+                        </div>
+                    }
+                </div>
+            }
+        };
+
+}

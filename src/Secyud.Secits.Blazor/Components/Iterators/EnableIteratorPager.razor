@@ -1,0 +1,54 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits EnableIteratorFixed<TValue>
+@typeparam TValue
+
+@code
+{
+    public RenderFragment RenderTemplate() =>
+        __builder =>
+        {
+            var maxPageCount = Math.Max(1, (TotalCount - 1) / Master.DataRequest.PageSize + 1);
+            <div class="pager-container">
+                <SPager MaxPageCount="maxPageCount"
+                        PageIndex="Master.DataRequest.PageIndex"
+                        PageIndexChanged="PageIndexChangedAsync"/>
+
+                @if (PageSizes is { Length: > 1 })
+                {
+                    EnableDropDown? enableDropDown = null;
+
+                    <SInput TValue="int" Class="pager-selector">
+                        <AddTextBox Class="w-100" Readonly
+                                    @onclick="OpenDropDownAsync"/>
+                        <EnableValueInput TValue="int" Value="Master.DataRequest.PageSize"
+                                          ValueChanged="PageSizeChangedAsync"
+                                          ValueUpdated="CloseDropDownAsync"/>
+                        <EnableDropDown @ref="enableDropDown">
+                            <SList Class="outline" Style="max-height: calc(var(--s-s) * 16);">
+                                <EnableStaticSource Items="PageSizes"/>
+                                <EnableIteratorFixed/>
+                                <EnableIteratorSelect/>
+                                <ListColumn>
+                                    <div class="page-selector-item">
+                                        @context
+                                    </div>
+                                </ListColumn>
+                            </SList>
+                        </EnableDropDown>
+                    </SInput>
+
+                    async Task CloseDropDownAsync()
+                    {
+                        if (enableDropDown is not null)
+                            await enableDropDown.CloseDropDownAsync();
+                    }
+
+                    async Task OpenDropDownAsync()
+                    {
+                        if (enableDropDown is not null)
+                            await enableDropDown.OpenDropDownAsync();
+                    }
+                }
+            </div>
+        };
+}

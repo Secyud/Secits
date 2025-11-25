@@ -1,0 +1,16 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits SPluginBase<SIteratorBase<TValue>>
+@typeparam TValue
+
+@code
+{
+    public virtual RenderFragment GenerateItems(RenderFragment<TValue> itemTemplate) => __builder =>
+    {
+        if (!Items.Any()) return;
+
+        foreach (var item in Items)
+        {
+            @itemTemplate(item)
+        }
+    };
+}
