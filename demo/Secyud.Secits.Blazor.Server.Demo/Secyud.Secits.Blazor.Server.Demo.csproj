@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-    <Import Project="../../common.props"/>
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IsApp>true</IsApp>
     </PropertyGroup>
+    
+    <Import Project="../../common.props"/>
 
     <ItemGroup>
-      <ProjectReference Include="..\Secyud.Secits.Blazor.Demo\Secyud.Secits.Blazor.Demo.csproj" />
+        <ProjectReference Include="..\Secyud.Secits.Blazor.Demo\Secyud.Secits.Blazor.Demo.csproj"/>
     </ItemGroup>
 
 </Project>

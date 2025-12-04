@@ -1,15 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-    <Import Project="../../common.props"/>
-
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IsApp>true</IsApp>
     </PropertyGroup>
 
+    <Import Project="../../common.props"/>
+
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.*"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.*" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.0" PrivateAssets="all"/>
     </ItemGroup>
 
     <ItemGroup>

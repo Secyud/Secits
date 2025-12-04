@@ -1,29 +1,27 @@
 ﻿@inherits LayoutComponentBase
 <SecitsStylesImport/>
-<SApp Class="sc-body">
-    <LayoutMenu Class="sc-pin-menu left">
-        @GenerateLayoutLftMenu()
-    </LayoutMenu>
+<LayoutMenu Class="sc-pin-menu left">
+    @GenerateLayoutLftMenu()
+</LayoutMenu>
 
-    <ErrorBoundary>
-        <ChildContent>
-            <div class="sc-container">
-                @Body
+<ErrorBoundary>
+    <ChildContent>
+        <div class="sc-container">
+            @Body
+        </div>
+    </ChildContent>
+    <ErrorContent>
+        <div class="sc-error-content">
+            <a class="help-link" href="@context.HelpLink"> @context.HelpLink</a>
+            <div class="error-message">
+                @context.Message
             </div>
-        </ChildContent>
-        <ErrorContent>
-            <div class="sc-error-content">
-                <a class="help-link" href="@context.HelpLink"> @context.HelpLink</a>
-                <div class="error-message">
-                    @context.Message
-                </div>
-                <div class="stack-trace">
-                    @context.StackTrace
-                </div>
+            <div class="stack-trace">
+                @context.StackTrace
             </div>
-        </ErrorContent>
-    </ErrorBoundary>
-</SApp>
+        </div>
+    </ErrorContent>
+</ErrorBoundary>
 
 <SecitsScriptsImport/>
 
