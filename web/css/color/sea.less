@@ -1,39 +1,46 @@
 ﻿@import "default/component.less";
 
-:root { 
-  .define-color(--s-c, rgb(0, 105, 148)); // Deep ocean blue
-  .define-color(--s-c-t, rgb(255, 255, 255));
-  .define-color(--s-c-bg, rgb(240, 255, 255)); // Light azure
-  .define-color(--s-c-bg-r, #001F3F); // Dark navy
-  .define-color(--s-c-bg-t, rgb(60, 60, 60));
-  .define-color(--s-c-card, rgb(255, 255, 255));
-  .define-color(--s-c-disabled, rgb(173, 216, 230)); // Pale wave blue
-  .define-color(--s-c-disabled-t, rgb(100, 100, 100));
+:root {
+  // color
+  .define-color(--s-c, rgb(0, 51, 102));  // Deep midnight blue (kept for primary accents)
+  // text color on color
+  .define-color(--s-c-t, rgb(220, 220, 220));  // Brighter gray for better visibility on primary
+  // background color
+  .define-color(--s-c-bg, rgb(18, 24, 32));  // Dark abyss (unchanged)
+  // background color reverse
+  .define-color(--s-c-bg-r, #A9A9A9);  // Muted silver (unchanged)
+  // text color on background
+  .define-color(--s-c-bg-t, rgb(200, 200, 200));  // Brighter soft light gray for icons/text on cards/backgrounds
+  // card color
+  .define-color(--s-c-card, rgb(40, 55, 70));  // Lighter shadowy teal for better contrast with primary
+  // disabled color
+  .define-color(--s-c-disabled, rgb(110, 110, 110));  // Slightly lighter faded gray
+  .define-color(--s-c-disabled-t, rgb(70, 70, 70));  // Adjusted darker disabled text for visibility
 
   .primary {
   }
 
   .secondary {
-    .define-color(--s-c, rgb(64, 224, 208)); // Turquoise wave
+    .define-color(--s-c, rgb(32, 112, 104));  // Dark turquoise
   }
 
   .naive {
-    .define-color(--s-c, rgb(128, 128, 128)); // Stormy gray
+    .define-color(--s-c, rgb(80, 80, 80));  // Stormy dark gray
   }
 
   .success {
-    .define-color(--s-c, rgb(46, 139, 87)); // Seaweed green
+    .define-color(--s-c, rgb(23, 69, 43));  // Deep seaweed
   }
 
   .info {
-    .define-color(--s-c, rgb(75, 0, 130)); // Deep indigo
+    .define-color(--s-c, rgb(37, 0, 65));  // Dark indigo
   }
 
   .warning {
-    .define-color(--s-c, rgb(255, 127, 80)); // Coral orange
+    .define-color(--s-c, rgb(127, 63, 40));  // Muted coral
   }
 
   .danger {
-    .define-color(--s-c, rgb(220, 20, 60)); // Crimson tide
+    .define-color(--s-c, rgb(110, 10, 30));  // Dark crimson
   }
 }

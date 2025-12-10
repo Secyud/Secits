@@ -1,43 +1,43 @@
 :root {
-  --s-c: #006994;
-  --s-c-rgb: 0, 105, 148;
-  --s-c-t: #ffffff;
-  --s-c-t-rgb: 255, 255, 255;
-  --s-c-bg: #f0ffff;
-  --s-c-bg-rgb: 240, 255, 255;
-  --s-c-bg-r: #001F3F;
-  --s-c-bg-r-rgb: 0, 31, 63;
-  --s-c-bg-t: #3c3c3c;
-  --s-c-bg-t-rgb: 60, 60, 60;
-  --s-c-card: #ffffff;
-  --s-c-card-rgb: 255, 255, 255;
-  --s-c-disabled: #add8e6;
-  --s-c-disabled-rgb: 173, 216, 230;
-  --s-c-disabled-t: #646464;
-  --s-c-disabled-t-rgb: 100, 100, 100;
+  --s-c: #003366;
+  --s-c-rgb: 0, 51, 102;
+  --s-c-t: #dcdcdc;
+  --s-c-t-rgb: 220, 220, 220;
+  --s-c-bg: #121820;
+  --s-c-bg-rgb: 18, 24, 32;
+  --s-c-bg-r: #A9A9A9;
+  --s-c-bg-r-rgb: 169, 169, 169;
+  --s-c-bg-t: #c8c8c8;
+  --s-c-bg-t-rgb: 200, 200, 200;
+  --s-c-card: #283746;
+  --s-c-card-rgb: 40, 55, 70;
+  --s-c-disabled: #6e6e6e;
+  --s-c-disabled-rgb: 110, 110, 110;
+  --s-c-disabled-t: #464646;
+  --s-c-disabled-t-rgb: 70, 70, 70;
 }
 :root .secondary {
-  --s-c: #40e0d0;
-  --s-c-rgb: 64, 224, 208;
+  --s-c: #207068;
+  --s-c-rgb: 32, 112, 104;
 }
 :root .naive {
-  --s-c: #808080;
-  --s-c-rgb: 128, 128, 128;
+  --s-c: #505050;
+  --s-c-rgb: 80, 80, 80;
 }
 :root .success {
-  --s-c: #2e8b57;
-  --s-c-rgb: 46, 139, 87;
+  --s-c: #17452b;
+  --s-c-rgb: 23, 69, 43;
 }
 :root .info {
-  --s-c: #4b0082;
-  --s-c-rgb: 75, 0, 130;
+  --s-c: #250041;
+  --s-c-rgb: 37, 0, 65;
 }
 :root .warning {
-  --s-c: #ff7f50;
-  --s-c-rgb: 255, 127, 80;
+  --s-c: #7f3f28;
+  --s-c-rgb: 127, 63, 40;
 }
 :root .danger {
-  --s-c: #dc143c;
-  --s-c-rgb: 220, 20, 60;
+  --s-c: #6e0a1e;
+  --s-c-rgb: 110, 10, 30;
 }
 /*# sourceMappingURL=sea.css.map */
