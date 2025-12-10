@@ -19,19 +19,33 @@ public class SJsDocument(JsEventHandler eventHandler) : IJsDocument
 
     private async Task<long> AddEventListenerAsync(object invoker, string[] types)
     {
-        var handler = await _documentEventHandler.Value;
-        return await handler.InvokeAsync<long>("addEventListener",
-            DotNetObjectReference.Create(invoker), types);
+        try
+        {
+            var handler = await _documentEventHandler.Value;
+            return await handler.InvokeAsync<long>("addEventListener",
+                DotNetObjectReference.Create(invoker), types);
+        }
+        catch (JSException)
+        {
+            return 0;
+        }
     }
 
     public async Task<long?> RemoveEventListenerAsync(long? id)
     {
-        if (id.HasValue)
+        try
         {
-            var handler = await _documentEventHandler.Value;
-            await handler.InvokeVoidAsync("removeEventListener", id);
-        }
+            if (id.HasValue)
+            {
+                var handler = await _documentEventHandler.Value;
+                await handler.InvokeVoidAsync("removeEventListener", id);
+            }
 
-        return null;
+            return null;
+        }
+        catch (JSException)
+        {
+            return null;
+        }
     }
 }
