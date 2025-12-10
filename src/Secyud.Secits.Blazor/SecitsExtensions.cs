@@ -27,8 +27,7 @@ public static class SecitsExtensions
 
         services.AddTransient<IJsElement, SJsElement>();
         services.AddTransient<IJsWindow, SJsWindow>();
-        services.AddTransient<IJsDocument, SJsDocument>();
-        services.AddScoped<JsEventHandler>();
+        services.AddScoped<IAppDocument, SAppDocument>();
 
         #endregion
 

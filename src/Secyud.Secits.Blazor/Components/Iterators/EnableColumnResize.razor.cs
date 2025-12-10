@@ -7,41 +7,34 @@ namespace Secyud.Secits.Blazor;
 
 public partial class EnableColumnResize<TValue> : IGridHeaderRenderer
 {
-    [Inject]
-    private IJsDocument JsDocument { get; set; } = null!;
+    [Inject] private IAppDocument AppDocument { get; set; } = null!;
 
-    [Parameter]
-    public bool FitNextColumn { get; set; }
+    [Parameter] public bool FitNextColumn { get; set; }
 
     private bool _isDrag;
-    private long? _dragEventId;
-    private long? _endEventId;
     private int _currentColumnIndex;
 
     protected override void ApplySetting()
     {
         Master.TableHeaders.Apply(this);
+        AppDocument.Move += OnDragColumnHeader;
+        AppDocument.Up += EndDragColumnHeader;
+        AppDocument.Leave += EndDragColumnHeader;
     }
 
     protected override void ForgoSetting()
     {
         Master.TableHeaders.Forgo(this);
+        AppDocument.Move -= OnDragColumnHeader;
+        AppDocument.Up -= EndDragColumnHeader;
+        AppDocument.Leave -= EndDragColumnHeader;
     }
 
-    private async Task SetDragAsync(bool isDrag)
+    private Task SetDragAsync(bool isDrag)
     {
-        if (isDrag == _isDrag) return;
         _isDrag = isDrag;
-        if (_isDrag)
-        {
-            _dragEventId = await JsDocument.AddEventListenerAsync<MouseEventArgs>(OnDragColumnHeader, "mousemove");
-            _endEventId = await JsDocument.AddEventListenerAsync(EndDragColumnHeader, "mouseup", "mouseleave");
-        }
-        else
-        {
-            _dragEventId = await JsDocument.RemoveEventListenerAsync(_dragEventId);
-            _endEventId = await JsDocument.RemoveEventListenerAsync(_endEventId);
-        }
+
+        return Task.CompletedTask;
     }
 
     private async Task BeginDragColumnHeader(int index)
@@ -81,7 +74,7 @@ public partial class EnableColumnResize<TValue> : IGridHeaderRenderer
         await Master.SetDirtyAsync();
     }
 
-    private async Task EndDragColumnHeader()
+    private async Task EndDragColumnHeader(MouseEventArgs args)
     {
         await SetDragAsync(false);
     }

@@ -1,7 +1,7 @@
 @namespace Secyud.Secits.Blazor.Element
 @inherits SStyledBase
 
-@if (HideMode || Visible)
+@if (HideMode || _visible)
 {
     <div @ref="Ref" class="@GetClass()" style="@GetStyle()" @onclick:stopPropagation>
         @ChildContent

@@ -1,40 +1,24 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Secyud.Secits.Blazor.JSInterop;
-using Secyud.Secits.Blazor.Services;
 using Secyud.Secits.Blazor.Settings;
 
 namespace Secyud.Secits.Blazor.Element;
 
 public partial class SContextMenu : IHasContent, IAsyncDisposable
 {
-    [Parameter]
-    public RenderFragment? ChildContent { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
 
-    [Parameter]
-    public bool HideMode { get; set; }
+    [Parameter] public bool HideMode { get; set; }
 
-    [Parameter]
-    public Func<ElementReference?>? ExtendElement { get; set; }
+    [Parameter] public Func<ElementReference?>? ExtendElement { get; set; }
 
-    [Parameter]
-    public bool Visible { get; set; }
+    [Parameter] public bool Visible { get; set; }
+    [Parameter] public EventCallback<bool> VisibleChanged { get; set; }
 
-    [Parameter]
-    public EventCallback<bool> VisibleChanged { get; set; }
-
-    [Inject]
-    public IJsDocument Document { get; set; } = null!;
+    [Inject] public IAppDocument AppDocument { get; set; } = null!;
 
     private bool _visible;
-    private long? _eventId;
-
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-        if (Visible) await ShowAsync();
-        else await HideAsync();
-    }
 
     protected override string? GetClass()
     {
@@ -46,12 +30,28 @@ public partial class SContextMenu : IHasContent, IAsyncDisposable
         return $"display:{(_visible ? "static" : "none")};{Style}";
     }
 
+    protected override Task OnInitializedAsync()
+    {
+        AppDocument.Click += OnDocumentClickAsync;
+        return Task.CompletedTask;
+    }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        if (parameters.TryGetValue<bool>(nameof(Visible), out var visible))
+            _visible = visible;
+        return base.SetParametersAsync(parameters);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+    }
+
     public async Task HideAsync()
     {
         if (!_visible) return;
         _visible = false;
-        _eventId = await Document.AddEventListenerAsync<MouseEventArgs>(
-            OnDocumentClickAsync, "onclick");
         await VisibleChanged.InvokeAsync(_visible);
         await InvokeAsync(StateHasChanged);
     }
@@ -60,7 +60,6 @@ public partial class SContextMenu : IHasContent, IAsyncDisposable
     {
         if (_visible) return;
         _visible = true;
-        _eventId = await Document.RemoveEventListenerAsync(_eventId);
         await VisibleChanged.InvokeAsync(_visible);
         await InvokeAsync(StateHasChanged);
     }
@@ -70,8 +69,9 @@ public partial class SContextMenu : IHasContent, IAsyncDisposable
         return HideAsync();
     }
 
-    public async ValueTask DisposeAsync()
+    public ValueTask DisposeAsync()
     {
-        await HideAsync();
+        AppDocument.Click -= OnDocumentClickAsync;
+        return ValueTask.CompletedTask;
     }
 }
