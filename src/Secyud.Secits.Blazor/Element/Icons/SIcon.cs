@@ -5,7 +5,6 @@ namespace Secyud.Secits.Blazor.Element;
 
 public class SIcon : SIconBase
 {
-    private string? _icon;
     private bool _needRefresh = true;
 
     [Parameter]
@@ -28,7 +27,7 @@ public class SIcon : SIconBase
         {
             if (_needRefresh)
             {
-                _icon = IconName switch
+                field = IconName switch
                 {
                     string str => str,
                     IconName icon => IconProvider.GetIcon(icon),
@@ -37,7 +36,7 @@ public class SIcon : SIconBase
                 _needRefresh = false;
             }
 
-            return _icon;
+            return field;
         }
     }
 }

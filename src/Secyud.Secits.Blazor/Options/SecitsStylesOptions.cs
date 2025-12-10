@@ -8,43 +8,28 @@ public class SecitsStylesOptions
     public const string Param = "secits-theme-param";
     public const string Style = "secits-theme-style";
 
-    public List<Func<SecitsThemeParam, IEnumerable<SecitsStyleFile>>> Styles { get; } = [];
+    public List<Func<SecitsThemeInput, IEnumerable<SecitsStyleFile>>> Styles { get; } = [];
 
-    public List<SecitsStyleFile> Get(SecitsThemeParam? param = null)
+    public List<SecitsStyleFile> Get(SecitsThemeInput? input = null)
     {
-        param ??= new SecitsThemeParam();
+        input ??= new SecitsThemeInput();
         List<SecitsStyleFile> res = [];
-        switch (param.ThemeColor)
+        if (input.Parameters.TryGetValue(Color, out var color))
         {
-            case UiThemeColor.Default:
-                res.Add(new SecitsStyleFile(RootPath + "css/color/default.min.css", Color));
-                break;
-            case UiThemeColor.Dark:
-                res.Add(new SecitsStyleFile(RootPath + "css/color/dark.min.css", Color));
-                break;
+            res.Add(new SecitsStyleFile(RootPath + $"css/color/{color}.min.css", Color));
         }
 
-        switch (param.ThemeParam)
+        if (input.Parameters.TryGetValue(Param, out var param))
         {
-            case UiThemeParam.Default:
-                res.Add(new SecitsStyleFile(RootPath + "css/param/default.min.css", Param));
-                break;
+            res.Add(new SecitsStyleFile(RootPath + $"css/param/{param}.min.css", Param));
         }
 
-        switch (param.ThemeStyle)
+        if (input.Parameters.TryGetValue(Style, out var style))
         {
-            case UiThemeStyle.Default:
-                res.Add(new SecitsStyleFile(RootPath + "css/style/default.min.css", Style));
-                break;
+            res.Add(new SecitsStyleFile(RootPath + $"css/style/{style}.min.css", Style));
         }
 
-        foreach (var style in Styles)
-        {
-            foreach (var str in style(param))
-            {
-                res.Add(str);
-            }
-        }
+        res.AddRange(Styles.SelectMany(styleFile => styleFile(input)));
 
         return res;
     }

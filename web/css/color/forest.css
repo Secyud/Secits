@@ -1,0 +1,43 @@
+:root {
+  --s-c: #228b22;
+  --s-c-rgb: 34, 139, 34;
+  --s-c-t: #ffffff;
+  --s-c-t-rgb: 255, 255, 255;
+  --s-c-bg: #f5f5dc;
+  --s-c-bg-rgb: 245, 245, 220;
+  --s-c-bg-r: #4B3621;
+  --s-c-bg-r-rgb: 75, 54, 33;
+  --s-c-bg-t: #323232;
+  --s-c-bg-t-rgb: 50, 50, 50;
+  --s-c-card: #fffff0;
+  --s-c-card-rgb: 255, 255, 240;
+  --s-c-disabled: #98fb98;
+  --s-c-disabled-rgb: 152, 251, 152;
+  --s-c-disabled-t: #646464;
+  --s-c-disabled-t-rgb: 100, 100, 100;
+}
+:root .secondary {
+  --s-c: #90ee90;
+  --s-c-rgb: 144, 238, 144;
+}
+:root .naive {
+  --s-c: #8b7355;
+  --s-c-rgb: 139, 115, 85;
+}
+:root .success {
+  --s-c: #32cd32;
+  --s-c-rgb: 50, 205, 50;
+}
+:root .info {
+  --s-c: #008080;
+  --s-c-rgb: 0, 128, 128;
+}
+:root .warning {
+  --s-c: #daa520;
+  --s-c-rgb: 218, 165, 32;
+}
+:root .danger {
+  --s-c: #b22222;
+  --s-c-rgb: 178, 34, 34;
+}
+/*# sourceMappingURL=forest.css.map */

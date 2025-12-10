@@ -6,9 +6,9 @@ namespace Secyud.Secits.Blazor.Services;
 
 public class SecitsService(IJSRuntime jsRuntime, IOptions<SecitsStylesOptions> options) : ISecitsService
 {
-    public ValueTask SetCurrentStyle(string style, SecitsThemeParam param)
+    public ValueTask SetCurrentStyle(string style, SecitsThemeInput input)
     {
-        var styles = options.Value.Get(param);
+        var styles = options.Value.Get(input);
 
         return jsRuntime.InvokeVoidAsync("setCurrentStyle", style, styles);
     }

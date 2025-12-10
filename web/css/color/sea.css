@@ -1,0 +1,43 @@
+:root {
+  --s-c: #006994;
+  --s-c-rgb: 0, 105, 148;
+  --s-c-t: #ffffff;
+  --s-c-t-rgb: 255, 255, 255;
+  --s-c-bg: #f0ffff;
+  --s-c-bg-rgb: 240, 255, 255;
+  --s-c-bg-r: #001F3F;
+  --s-c-bg-r-rgb: 0, 31, 63;
+  --s-c-bg-t: #3c3c3c;
+  --s-c-bg-t-rgb: 60, 60, 60;
+  --s-c-card: #ffffff;
+  --s-c-card-rgb: 255, 255, 255;
+  --s-c-disabled: #add8e6;
+  --s-c-disabled-rgb: 173, 216, 230;
+  --s-c-disabled-t: #646464;
+  --s-c-disabled-t-rgb: 100, 100, 100;
+}
+:root .secondary {
+  --s-c: #40e0d0;
+  --s-c-rgb: 64, 224, 208;
+}
+:root .naive {
+  --s-c: #808080;
+  --s-c-rgb: 128, 128, 128;
+}
+:root .success {
+  --s-c: #2e8b57;
+  --s-c-rgb: 46, 139, 87;
+}
+:root .info {
+  --s-c: #4b0082;
+  --s-c-rgb: 75, 0, 130;
+}
+:root .warning {
+  --s-c: #ff7f50;
+  --s-c-rgb: 255, 127, 80;
+}
+:root .danger {
+  --s-c: #dc143c;
+  --s-c-rgb: 220, 20, 60;
+}
+/*# sourceMappingURL=sea.css.map */
