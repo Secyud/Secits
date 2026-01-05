@@ -1,6 +1,5 @@
 <Project>
     <Import Project="../secyud.props"/>
-    <Import Project="../version.props"/>
 
     <PropertyGroup>
         <PackageOutputPath>../../../../$(PackageOutputPath)</PackageOutputPath>

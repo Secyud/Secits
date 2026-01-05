@@ -93,8 +93,7 @@ public abstract class EnableInputDelayInvokerBase<TValue> : SPluginBase<SInput<T
     {
         if (_timer != null)
         {
-            _timer.Stop();
-            _timer.Elapsed -= OnElapsed;
+            _timer.Dispose();
             _timer = null;
         }
 
@@ -145,4 +144,6 @@ public abstract class EnableInputDelayInvokerBase<TValue> : SPluginBase<SInput<T
         };
         await ValidationField.OnValidationChangedAsync(context, value);
     }
+    
+    
 }

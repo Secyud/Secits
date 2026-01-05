@@ -3,11 +3,11 @@
     <Import Project="../../common.props"/>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="$(DotnetVersion)"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj" />
+        <ProjectReference Include="..\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj"/>
     </ItemGroup>
 
 </Project>
