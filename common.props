@@ -12,7 +12,6 @@
         </Description>
         <PackageProjectUrl>https://github.com/Secyud/Secits/Blazor</PackageProjectUrl>
         <PackageTags>Blazor, Component</PackageTags>
-        <ReferenceType>Project</ReferenceType>
     </PropertyGroup>
 
     <ItemGroup>

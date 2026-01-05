@@ -2,7 +2,7 @@
 
 namespace Secyud.Secits.Blazor.JSInterop;
 
-public class SAppDocument() : IAppDocument
+public class SAppDocument : IAppDocument
 {
     public Task ClickAsync(MouseEventArgs args)
     {

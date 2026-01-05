@@ -1,8 +1,16 @@
-
-
+/**
+ * @typedef {Object} Style
+ * @property {string} id 
+ * @property {string} path 
+ *
+ * replace the styles
+ * @param {Style[]} styles
+ */
 export function replaceStyles(styles) {
+    // get all CSS imported by secits
     let links = document.querySelectorAll('link[theme="secits"]');
 
+    // analyze all styles imported
     let linkDict = {};
     for (const link of links) {
         let id = link.getAttribute('id');
@@ -16,12 +24,13 @@ export function replaceStyles(styles) {
         if (linkDict[id]) {
             let link = linkDict[id];
             let href = link.getAttribute('href');
-            href = href?.replace(href.substring(href.indexOf('?_v')), '');
             if (href !== path) {
                 link.href = path;
             }
+            // remove from delete list
             delete linkDict[id];
         } else {
+            // new CSS
             let link = document.createElement('link');
             link.type = 'text/css';
             link.rel = 'stylesheet';
@@ -31,6 +40,7 @@ export function replaceStyles(styles) {
         }
     }
 
+    // delete CSS not imported
     for (const key in linkDict) {
         let link = linkDict[key];
         link.remove();
