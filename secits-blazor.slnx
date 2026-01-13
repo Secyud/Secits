@@ -5,19 +5,19 @@
     <Platform Name="x86" />
   </Configurations>
   <Folder Name="/demo/">
-    <Project Path="demo\Secyud.Secits.Blazor.Demo\Secyud.Secits.Blazor.Demo.csproj" Type="Classic C#">
+    <Project Path="demo\Secyud.Secits.Blazor.Demo\Secyud.Secits.Blazor.Demo.csproj">
       <Configuration Solution="Debug|x64" Project="Debug|Any CPU" />
       <Configuration Solution="Debug|x86" Project="Debug|Any CPU" />
       <Configuration Solution="Release|x64" Project="Release|Any CPU" />
       <Configuration Solution="Release|x86" Project="Release|Any CPU" />
     </Project>
-    <Project Path="demo\Secyud.Secits.Blazor.Server.Demo\Secyud.Secits.Blazor.Server.Demo.csproj" Type="Classic C#">
+    <Project Path="demo\Secyud.Secits.Blazor.Server.Demo\Secyud.Secits.Blazor.Server.Demo.csproj">
       <Configuration Solution="Debug|x64" Project="Debug|Any CPU" />
       <Configuration Solution="Debug|x86" Project="Debug|Any CPU" />
       <Configuration Solution="Release|x64" Project="Release|Any CPU" />
       <Configuration Solution="Release|x86" Project="Release|Any CPU" />
     </Project>
-    <Project Path="demo\Secyud.Secits.Blazor.WebAssembly.Demo\Secyud.Secits.Blazor.WebAssembly.Demo.csproj" Type="Classic C#">
+    <Project Path="demo\Secyud.Secits.Blazor.WebAssembly.Demo\Secyud.Secits.Blazor.WebAssembly.Demo.csproj">
       <Configuration Solution="Debug|x64" Project="Debug|Any CPU" />
       <Configuration Solution="Debug|x86" Project="Debug|Any CPU" />
       <Configuration Solution="Release|x64" Project="Release|Any CPU" />
@@ -25,6 +25,8 @@
     </Project>
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/Secyud.Secits.Blazor.FontAwesome/Secyud.Secits.Blazor.FontAwesome.csproj" />
+    <Project Path="src/Secyud.Secits.Blazor.SourceGenerator/Secyud.Secits.Blazor.SourceGenerator.csproj" />
     <Project Path="src\Secyud.Secits.Blazor.Icons.FontAwesome\Secyud.Secits.Blazor.Icons.FontAwesome.csproj" />
     <Project Path="src\Secyud.Secits.Blazor.Preset\Secyud.Secits.Blazor.Preset.csproj" />
     <Project Path="src\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj" />

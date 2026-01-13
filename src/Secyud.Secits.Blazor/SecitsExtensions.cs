@@ -11,7 +11,7 @@ namespace Secyud.Secits.Blazor;
 public static class SecitsExtensions
 {
     public static IServiceCollection AddSecitsBlazor(this IServiceCollection services,
-        Action<SecitsOptions>? optionAction = null)
+        Action<SecitsBlazorBuildContext>? buildAction = null)
     {
         #region Service
 
@@ -41,8 +41,14 @@ public static class SecitsExtensions
                 new ThemeParameter(),
                 new ActiveParameter(),
             ]);
-            optionAction?.Invoke(options);
         });
+
+        var context = new SecitsBlazorBuildContext
+        {
+            Services = services,
+        };
+        
+        buildAction?.Invoke(context);
 
         return services;
     }

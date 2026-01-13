@@ -8,8 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddSecitsBlazor();
-builder.Services.AddSecitsFontAwesome();
+builder.Services.AddSecitsBlazor(options
+    =>
+{
+    options.AddSecitsIconFontAwesome();
+});
 
 var app = builder.Build();
 

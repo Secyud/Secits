@@ -1,20 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ed505d4-e12b-4e4e-b7a3-a9e3e4729212" name="更改" comment="" />
+    <list default="true" id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsBlazorBuildContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Server.Demo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Server.Demo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.WebAssembly.Demo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.WebAssembly.Demo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secits-blazor.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.slnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/Secyud.Secits.Blazor.Icons.FontAwesome.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/Secyud.Secits.Blazor.Icons.FontAwesome.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/css/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/css/all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/brands.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/brands.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/regular.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/regular.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/solid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/solid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/svg-with-js.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/svg-with-js.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/svg.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/svg.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v4-font-face.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v4-font-face.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v4-shims.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v4-shims.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v5-font-face.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/css/v5-font-face.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/brands.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/brands.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/conflict-detection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/conflict-detection.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/fontawesome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/fontawesome.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/regular.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/regular.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/solid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/solid.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/v4-shims.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/js/v4-shims.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/wwwroot/webfonts/fa-v4compatibility.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/wwwroot/webfonts/fa-v4compatibility.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/web.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="58" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="web" pattern="file[web]:web/css/color/*||file[web]:web/css/param/*||file[web]:web/css/style/*" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
-  "associatedIndex": 0
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="31B1kEtzPo53tZtZCm5GfN2GSr6" />
+  <component name="ProjectId" id="38C0iEtf7w1U2Dgv1wkWY79YXQ9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,28 +94,33 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "watcher.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="3ed505d4-e12b-4e4e-b7a3-a9e3e4729212" name="更改" comment="" />
-      <created>1754982793259</created>
+      <changelist id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="" />
+      <created>1768288371582</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1754982793259</updated>
-      <workItem from="1754982794565" duration="26000" />
+      <updated>1768288371582</updated>
+      <workItem from="1768288372771" duration="217000" />
     </task>
     <servers />
   </component>
