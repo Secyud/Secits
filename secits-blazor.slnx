@@ -24,6 +24,9 @@
       <Configuration Solution="Release|x86" Project="Release|Any CPU" />
     </Project>
   </Folder>
+  <Folder Name="/docs/">
+    <File Path=".junie/guidelines.md" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Secyud.Secits.Blazor.FontAwesome/Secyud.Secits.Blazor.FontAwesome.csproj" />
     <Project Path="src/Secyud.Secits.Blazor.SourceGenerator/Secyud.Secits.Blazor.SourceGenerator.csproj" />
