@@ -4,7 +4,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="add a react project" />
+    <list default="true" id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="add a react project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Footer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Footer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Header.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Header.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SecitsComponentExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SecitsComponentExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SDivider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SDivider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/dark.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/dark.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/default.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/default/component.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/forest.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/forest.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/forest.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/forest.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sea.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sea.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sea.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sea.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sky.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sky.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sky.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/color/sky.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/images/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/images/down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/images/up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/param/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/param/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/param/default.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/param/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/atom.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/button.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/card.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/component.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/element.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/global.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/input.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/iterator.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/layout.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/default/menu.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/images/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/images/down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style/images/up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/lib/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/lib/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/App.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/index.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.lib.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/react/vite.config.ts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +101,7 @@
     </option>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="67" />
+    <option name="cachedIndexableFilesCount" value="96" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -46,31 +130,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/Projects/secyud/secits/web/react",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "D:\\Projects\\secyud\\secits\\web\\react\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/secyud/secits/web/react&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\secyud\\secits\\web\\react\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="9" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\secyud\secits\web\react" />
@@ -79,7 +166,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -94,6 +181,11 @@
       <workItem from="1768288789891" duration="38000" />
       <workItem from="1768289164224" duration="85000" />
       <workItem from="1768289322035" duration="1251000" />
+      <workItem from="1770170423448" duration="15000" />
+      <workItem from="1770170460378" duration="542000" />
+      <workItem from="1770172947567" duration="19000" />
+      <workItem from="1770173002532" duration="67000" />
+      <workItem from="1770173084921" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="add font awesome split icon">
       <option name="closed" value="true" />
