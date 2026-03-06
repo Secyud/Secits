@@ -1,0 +1,34 @@
+﻿@using Secyud.Secits.Blazor.Services
+@inject IOptionsSnapshot<SecitsStylesOptions> StylesOptions
+@inject IOptionsSnapshot<SecitsOptions> Options
+
+@foreach (var path in _staticPaths)
+{
+    <link rel="stylesheet" href="@path"/>
+}
+
+@foreach (var path in _paths)
+{
+    <link rel="stylesheet" href="@path.Path" id="@path.Id"/>
+}
+
+@code
+{
+    [Parameter]
+    public bool IsWebAssemblyOnly { get; set; }
+
+    private readonly List<SecitsStyleFile> _paths = [];
+    private readonly List<string> _staticPaths = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        var option = StylesOptions.Value;
+        foreach (var path in option.Get())
+        {
+            _paths.Add(IsWebAssemblyOnly ? path : new SecitsStyleFile(Assets[path.Path], path.Id));
+        }
+
+        _staticPaths.AddRange(Options.Value.ExtendStyles);
+    }
+}

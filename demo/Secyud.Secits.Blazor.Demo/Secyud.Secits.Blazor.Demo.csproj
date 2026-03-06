@@ -20,8 +20,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj"/>
-        <ProjectReference Include="..\..\src\Secyud.Secits.Blazor.Icons.FontAwesome\Secyud.Secits.Blazor.Icons.FontAwesome.csproj"/>
-        <ProjectReference Include="..\..\src\Secyud.Secits.Blazor.Preset\Secyud.Secits.Blazor.Preset.csproj"/>
     </ItemGroup>
 
 </Project>

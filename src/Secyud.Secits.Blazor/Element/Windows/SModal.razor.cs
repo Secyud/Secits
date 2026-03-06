@@ -1,15 +1,14 @@
 using System.ComponentModel.DataAnnotations;
-using Secyud.Secits.Blazor.Validations;
 
 namespace Secyud.Secits.Blazor.Element;
 
 public partial class SModal
 {
-    private ValidationForm? _validationForm;
+    private SForm? _validationForm;
 
     public bool Validate()
     {
-        return _validationForm is null || _validationForm.Validate();
+        return _validationForm is null || _validationForm.IsValid();
     }
 
     public List<ValidationResult> GetValidationResults()

@@ -1,0 +1,12 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="@GetClass()" style="@GetStyle()">
+    @if (Context?.Tabs is { Count: > 0 } tabs)
+    {
+        foreach (var tab in tabs)
+        {
+            @tab.Info.Content(tab.Status)
+        }
+    }
+</div>

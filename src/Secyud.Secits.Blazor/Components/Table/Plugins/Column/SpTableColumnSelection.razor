@@ -1,0 +1,22 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@typeparam TItem
+@inherits SpTableColumnBase
+
+<SInputCheck @bind-Value="AllItemSelected"/>
+
+@code {
+
+    public RenderFragment GenerateColumn(TItem item)
+    {
+        if (_table is null) return @<td></td>;
+
+        var key = _table.GetKey(item);
+        var selected = _table.GetSelectedKeys().Contains(key);
+
+        return @<td>
+                   <SInputCheck Value="selected" ValueExpression="()=>selected"
+                                ValueChanged="(b)=>OnCheckChanged(item,b)"/>
+               </td>;
+    }
+
+}

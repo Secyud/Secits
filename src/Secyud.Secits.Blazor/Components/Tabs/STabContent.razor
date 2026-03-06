@@ -1,0 +1,23 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="@GetClass()" style="@GetStyle()">
+    @if (Context?.Tabs is { Count: > 0 } tabs)
+    {
+        @if (Context.Mode == STabMode.Default)
+        {
+            var tab = tabs.FirstOrDefault(u => u.Status.IsActive);
+            @tab?.Info.Content(tab.Status)
+        }
+        else
+        {
+            foreach (var tab in tabs)
+            {
+                if (tab.Status.IsRender)
+                {
+                    @tab.Info.Content(tab.Status)
+                }
+            }
+        }
+    }
+</div>

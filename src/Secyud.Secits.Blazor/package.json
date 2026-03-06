@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build-component": "esbuild libs/components.js --format=esm --bundle --sourcemap --minify --outfile=wwwroot/js/components.bundle.min.js --platform=node"
+    "build-component": "esbuild wwwroot/js/components.js --format=esm --bundle --sourcemap --minify --outfile=wwwroot/js/components.bundle.min.js --platform=node"
   },
   "keywords": [],
   "author": "",

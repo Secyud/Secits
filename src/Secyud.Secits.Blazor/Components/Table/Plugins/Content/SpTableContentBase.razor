@@ -1,0 +1,38 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@inherits SPluginBase
+@typeparam TItem
+
+
+@code
+{
+
+    protected virtual RenderFragment? GenerateRow(TItem item)
+    {
+        if (Table is null) return null;
+        var isSelected = Equals(Table.GetKey(item), Table.GetSelectedKey());
+        var @class = isSelected ? "selected" : "";
+        return @<tr @onclick="@OnClick" class="@class">
+                   @foreach (var column in Columns)
+                   {
+                       @column.GenerateColumn(item)
+                   }
+               </tr>;
+
+        void OnClick()
+        {
+            Table.SetSelectedItem(isSelected ? default : item);
+        }
+    }
+
+    public virtual RenderFragment GenerateContent(List<ISpTableColumn<TItem>> columns)
+    {
+        Columns = columns;
+        return @<tbody class="@GetClass()" style="@GetStyle()">
+               @if (_table is not null)
+               {
+                   @((RenderFragment)BuildRenderTree)
+               }
+               </tbody>;
+    }
+
+}

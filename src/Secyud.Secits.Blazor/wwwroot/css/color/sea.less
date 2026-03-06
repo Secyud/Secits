@@ -1,0 +1,39 @@
+﻿@import "../root";
+@import "../@{root}/color/component";
+
+:root {
+  // color
+  .declare-color(--sc-a, rgb(0, 51, 102), rgb(220, 220, 220));  // Deep midnight blue (kept for primary accents)
+  // background color
+  .declare-color(--sc-b, rgb(18, 24, 32), rgb(200, 200, 200));  // Dark abyss (unchanged)
+  // card color
+  .declare-color(--sc-c, rgb(40, 55, 70), rgb(200, 200, 200));  // Lighter shadowy teal for better contrast with primary
+  // disabled color
+  .declare-color(--sc-d, rgb(110, 110, 110), rgb(70, 70, 70));  // Slightly lighter faded gray
+
+  .primary {}
+
+  .secondary {
+    .declare-color(--sc-a, rgb(32, 112, 104), rgb(220, 220, 220));  // Dark turquoise
+  }
+
+  .naive {
+    .declare-color(--sc-a, rgb(80, 80, 80), rgb(220, 220, 220));  // Stormy dark gray
+  }
+
+  .success {
+    .declare-color(--sc-a, rgb(23, 69, 43), rgb(220, 220, 220));  // Deep seaweed
+  }
+
+  .info {
+    .declare-color(--sc-a, rgb(37, 0, 65), rgb(220, 220, 220));  // Dark indigo
+  }
+
+  .warning {
+    .declare-color(--sc-a, rgb(127, 63, 40), rgb(220, 220, 220));  // Muted coral
+  }
+
+  .danger {
+    .declare-color(--sc-a, rgb(110, 10, 30), rgb(220, 220, 220));  // Dark crimson
+  }
+}

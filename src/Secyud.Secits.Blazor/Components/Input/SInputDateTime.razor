@@ -1,0 +1,15 @@
+﻿@namespace Secyud.Secits.Blazor
+@typeparam TValue
+@inherits EComponentBase<TValue>
+
+@(base.BuildRenderTree)
+
+@code {
+
+    protected override RenderFragment GenerateElements => __builder =>
+    {
+        @base.GenerateElements
+        <i class="si-calendar"></i>
+    };
+
+}

@@ -1,0 +1,42 @@
+﻿@using Secyud.Secits.Blazor.Plugins
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+<STabs @ref="Tabs">
+    <Plugins>
+        <SpRouterTabProvider TabItems="Items">
+            <HeaderTemplate>
+                <a class="tab-text" href="@context.Uri.AbsolutePath" @onclick:stopPropagation>
+                    @context.DisplayName
+                </a>
+                <i class="si-cross" @onclick="@(() => DeleteTabAsync(context))"></i>
+            </HeaderTemplate>
+            <ContentTemplate>
+                @context.Content
+            </ContentTemplate>
+        </SpRouterTabProvider>
+    </Plugins>
+    <ChildContent>
+        @GenerateContent()
+    </ChildContent>
+</STabs>
+
+@code
+{
+    protected virtual RenderFragment GenerateContent()
+    {
+        return @<div class="@GetClass()" style="@GetStyle()">
+                   @GenerateTabHeader()
+                   @GenerateTabContent()
+               </div>;
+    }
+
+    protected RenderFragment GenerateTabHeader()
+    {
+        return @<STabHeader Class="s-router-tab-header"/>;
+    }
+
+    protected RenderFragment GenerateTabContent()
+    {
+        return @<STabContent Class="s-router-tab-content"/>;
+    }
+}

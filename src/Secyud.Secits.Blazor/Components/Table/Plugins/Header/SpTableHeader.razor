@@ -1,0 +1,19 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@typeparam TItem
+@inherits SPluginBase
+
+@code {
+
+    public RenderFragment GenerateHeader(ISpTableColumn<TItem> item)
+    {
+        return @<th>
+                   @item.GenerateCaption()
+                   @if (EnableResize && item.ColumnInfo.Width.HasValue)
+                   {
+                       <div class="s-table-resize"
+                            @onmousedown="@(() => SetDragAsync(item))"></div>
+                   }
+               </th>;
+    }
+
+}

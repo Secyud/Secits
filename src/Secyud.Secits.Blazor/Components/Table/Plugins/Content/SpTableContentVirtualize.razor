@@ -1,0 +1,8 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@inherits SpTableContentBase<TItem>
+@typeparam TItem
+
+<Virtualize TItem="TItem" @ref="_virtualize"
+            ItemsProvider="RequestItemAsync">
+    @GenerateRow(context)
+</Virtualize>

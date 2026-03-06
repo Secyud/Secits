@@ -1,0 +1,18 @@
+﻿@namespace Secyud.Secits.Blazor
+@typeparam TValue
+@inherits EComponentBase<TValue>
+
+@(base.BuildRenderTree)
+
+@code {
+
+    protected override RenderFragment GenerateElements => __builder =>
+    {
+        @base.GenerateElements
+        <span class="s-element">
+            <i class="si-up"></i>
+            <i class="si-down"></i>
+        </span>
+    };
+
+}

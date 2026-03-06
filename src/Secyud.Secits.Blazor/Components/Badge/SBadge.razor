@@ -1,0 +1,10 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+
+<div class="s-badge-container">
+    @ChildContent
+    <div class="@GetClass()" style="@GetStyle()">
+        @BadgeContent
+    </div>
+</div>

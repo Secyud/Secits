@@ -1,0 +1,24 @@
+﻿@namespace Secyud.Secits.Blazor
+@typeparam TValue
+@inherits CComponentBase
+
+<CascadingValue Value="PluginContext" IsFixed>
+    @Plugins
+</CascadingValue>
+
+<div class="@GetClass()" style="@GetStyle()">
+    @(BuildInputRenderTree)
+    @GenerateElements
+</div>
+
+@code{
+
+    protected virtual RenderFragment GenerateElements => __builder =>
+    {
+        @foreach (var value in _inputElements)
+        {
+            @(value.GenerateInputElement)
+        }
+    };
+
+}

@@ -29,9 +29,6 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Secyud.Secits.Blazor.FontAwesome/Secyud.Secits.Blazor.FontAwesome.csproj" />
-    <Project Path="src/Secyud.Secits.Blazor.SourceGenerator/Secyud.Secits.Blazor.SourceGenerator.csproj" />
-    <Project Path="src\Secyud.Secits.Blazor.Icons.FontAwesome\Secyud.Secits.Blazor.Icons.FontAwesome.csproj" />
-    <Project Path="src\Secyud.Secits.Blazor.Preset\Secyud.Secits.Blazor.Preset.csproj" />
     <Project Path="src\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj" />
   </Folder>
 </Solution>

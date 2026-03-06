@@ -1,0 +1,60 @@
+/*
+ * Declares a color series.
+ * main-color is the theme color.
+ * part-color is the text or icon color on main.
+ */
+:root {
+  --sc-a-m: #003366;
+  --sc-a-m-rgb: 0, 51, 102;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+  --sc-b-m: #121820;
+  --sc-b-m-rgb: 18, 24, 32;
+  --sc-b-p: #c8c8c8;
+  --sc-b-p-rgb: 200, 200, 200;
+  --sc-c-m: #283746;
+  --sc-c-m-rgb: 40, 55, 70;
+  --sc-c-p: #c8c8c8;
+  --sc-c-p-rgb: 200, 200, 200;
+  --sc-d-m: #6e6e6e;
+  --sc-d-m-rgb: 110, 110, 110;
+  --sc-d-p: #464646;
+  --sc-d-p-rgb: 70, 70, 70;
+}
+:root .secondary {
+  --sc-a-m: #207068;
+  --sc-a-m-rgb: 32, 112, 104;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+:root .naive {
+  --sc-a-m: #505050;
+  --sc-a-m-rgb: 80, 80, 80;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+:root .success {
+  --sc-a-m: #17452b;
+  --sc-a-m-rgb: 23, 69, 43;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+:root .info {
+  --sc-a-m: #250041;
+  --sc-a-m-rgb: 37, 0, 65;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+:root .warning {
+  --sc-a-m: #7f3f28;
+  --sc-a-m-rgb: 127, 63, 40;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+:root .danger {
+  --sc-a-m: #6e0a1e;
+  --sc-a-m-rgb: 110, 10, 30;
+  --sc-a-p: #dcdcdc;
+  --sc-a-p-rgb: 220, 220, 220;
+}
+/*# sourceMappingURL=sea.css.map */

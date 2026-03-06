@@ -1,0 +1,43 @@
+@import (reference)  "../general";
+
+
+.s-progress {
+  width: 100%;
+  height: 4px;
+
+  & > .s-progress-inner {
+    height: 100%;
+    width: calc(var(--percentage) * 1%);
+    overflow: hidden;
+
+    background: var(--s-c);
+
+    transition: width 1s;
+    position: relative;
+
+    @anim-width: 30%;
+
+    &::after {
+      content: "";
+      height: 100%;
+      top: 0;
+      width: @anim-width;
+      left: var(--anim);
+      position: absolute;
+      display: block;
+      --mid-color: color-mix(in srgb, var(--s-c-bg) 90%, var(--s-c));
+      background: linear-gradient(0.25turn, var(--s-c), var(--mid-color), var(--s-c));
+
+      animation: progress-anim 1.5s linear infinite;
+    }
+
+    @keyframes progress-anim {
+      from {
+        left: -@anim-width*3;
+      }
+      to {
+        left: @anim-width*3 + 100%;
+      }
+    }
+  }
+}

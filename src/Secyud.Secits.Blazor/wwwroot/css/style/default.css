@@ -1,0 +1,192 @@
+.s-avatar,
+.s-badge,
+.s-button,
+.s-card,
+.s-input {
+  background-color: transparent;border: var(--s-s-bw) solid transparent;color: var(--text-color);font-size: var(--s-s);border-radius: var(--s-s-br);position: relative;transition: 50ms;
+}
+.s-avatar {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  resize: both;
+  width: calc(var(--s-s) * 2);
+  height: calc(var(--s-s) * 2);
+}
+.s-avatar .circle {
+  border-radius: 50%;
+}
+.s-button {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  ----main-color-color: var(--sc-a-m);
+  ----main-color-color-rgb: var(--sc-a-m-rgb);
+  ----part-color-color: var(--sc-a-p);
+  ----part-color-color-rgb: var(--sc-a-p-rgb);
+  --alpha: 1;
+  border-color: var(--main-color);
+  background-color: rgba(var(--main-color-rgb), var(--alpha));
+  color: var(--part-color);
+}
+.s-button.plain,
+.s-button.text {
+  --alpha: 1;
+  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  background-color: rgba(var(--main-color-rgb), var(--alpha));
+  color: var(--part-color);
+}
+.s-button.outline {
+  --alpha: 1;
+  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  background-color: transparent;
+  color: rgba(var(--main-color-rgb), var(--alpha));
+}
+.s-button:hover:not(.disabled,.readonly) {
+  --alpha: 0.6;
+}
+.s-button:active:not(.disabled,.readonly) {
+  --alpha: 0.8;
+}
+.s-button.text {
+  --alpha: 0;
+}
+.s-button.text:hover:not(.disabled,.readonly) {
+  --alpha: 0.3;
+}
+.s-button.text:active:not(.disabled,.readonly) {
+  --alpha: 0.5;
+}
+.s-button.shadow {
+  --shadow-alpha: 0.25;
+  box-shadow: 0 0 0.2rem 0 rgba(var(--sc-b-p-rgb), var(--shadow-alpha));
+}
+.s-button.shadow:hover:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.5);
+  --shadow-alpha: 0.2;
+}
+.s-button.shadow:active:not(.disabled,.readonly) {
+  --shadow-size: calc(var(--s-s) * 0.35);
+  --shadow-alpha: 0.15;
+}
+.s-card {
+  margin: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  ----main-color-color: var(--sc-c-m);
+  ----main-color-color-rgb: var(--sc-c-m-rgb);
+  ----part-color-color: var(--sc-c-p);
+  ----part-color-color-rgb: var(--sc-c-p-rgb);
+  --alpha: 1;
+  border-color: var(--main-color);
+  background-color: rgba(var(--main-color-rgb), var(--alpha));
+  color: var(--part-color);
+}
+.s-card > .s-card-header {
+  font-weight: bold;
+}
+.s-icon {
+  border-radius: 50%;
+  width: var(--s-s);
+  height: var(--s-s);
+  font-size: var(--s-s);
+  display: inline-block;
+  user-select: none;
+  margin: auto;
+  color: inherit;
+}
+.s-icon > svg {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.s-input {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  width: 100%;
+  ----main-color-color: var(--sc-a-m);
+  ----main-color-color-rgb: var(--sc-a-m-rgb);
+  ----part-color-color: var(--sc-c-p);
+  ----part-color-color-rgb: var(--sc-c-p-rgb);
+  --alpha: 0.25;
+  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  background-color: var(--sc-c-m);
+  color: var(--part-color);
+}
+.s-input:hover:not(.disabled,.readonly) {
+  --alpha: 0.6;
+}
+.s-input:has(:focus):not(.disabled,.readonly) {
+  --alpha: 1;
+}
+.s-input input,
+.s-input textarea {
+  min-height: var(--s-s);
+  width: 100% !important;
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+.s-input textarea {
+  margin-bottom: 0.25rem;
+}
+.s-pager {
+  display: flex;
+}
+.s-pager .s-button {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  min-width: var(--s-s);
+  height: var(--s-s);
+  line-height: var(--s-s);
+  text-align: center;
+}
+.s-progress {
+  width: 100%;
+  height: 4px;
+}
+.s-progress > .s-progress-inner {
+  height: 100%;
+  width: calc(var(--percentage) * 1%);
+  overflow: hidden;
+  background: var(--s-c);
+  transition: width 1s;
+  position: relative;
+}
+.s-progress > .s-progress-inner::after {
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 30%;
+  left: var(--anim);
+  position: absolute;
+  display: block;
+  --mid-color: color-mix(in srgb, var(--s-c-bg) 90%, var(--s-c));
+  background: linear-gradient(0.25turn, var(--s-c), var(--mid-color), var(--s-c));
+  animation: progress-anim 1.5s linear infinite;
+}
+@keyframes progress-anim {
+  from {
+    left: -90%;
+  }
+  to {
+    left: 190%;
+  }
+}
+h1.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+h2.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+h3.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+h4.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+h5.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+h6.s-title {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+/*# sourceMappingURL=default.css.map */

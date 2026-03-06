@@ -1,0 +1,16 @@
+@import (reference)  "../general";
+
+.s-card {
+  &:extend(.s-component);
+  margin: size();
+  padding: size();
+
+  .set-color(--main-color, --sc-c-m);
+  .set-color(--part-color, --sc-c-p);
+  .is-normal();
+
+
+  & > .s-card-header {
+    font-weight: bold;
+  }
+}

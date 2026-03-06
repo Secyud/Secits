@@ -1,0 +1,42 @@
+﻿@import "../root";
+@import "../@{root}/color/component";
+
+/*
+ * a: activable
+ * b: background
+ * c: card
+ * d: disabled
+ */
+:root {
+  .declare-color(--sc-a, rgb(39, 128, 227), rgb(255, 255, 255));
+  .declare-color(--sc-b, rgb(250, 250, 250), rgb(80, 80, 80));
+  .declare-color(--sc-c, rgb(255, 255, 255), rgb(80, 80, 80));
+  .declare-color(--sc-d, rgb(242, 242, 242), rgb(80, 80, 80));
+
+  .primary {
+  }
+
+  .secondary {
+    .declare-color(--sc-a, rgb(24, 191, 153), rgb(255, 255, 255));
+  }
+
+  .naive {
+    .declare-color(--sc-a, rgb(126, 126, 126), rgb(255, 255, 255));
+  }
+
+  .success {
+    .declare-color(--sc-a, rgb(65, 198, 16), rgb(255, 255, 255));
+  }
+
+  .info {
+    .declare-color(--sc-a, rgb(160, 17, 214), rgb(255, 255, 255));
+  }
+
+  .warning {
+    .declare-color(--sc-a, rgb(255, 117, 24), rgb(255, 255, 255));
+  }
+
+  .danger {
+    .declare-color(--sc-a, rgb(255, 0, 57), rgb(255, 255, 255));
+  }
+}

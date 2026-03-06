@@ -1,0 +1,8 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="@GetClass()" style="@GetStyle()">
+    <CascadingValue Value="Context" IsFixed>
+        @ChildContent
+    </CascadingValue>
+</div>

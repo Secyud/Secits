@@ -1,0 +1,13 @@
+﻿.get-theme(@index) when (@index > length(@theme-list)) {
+  @res: "default";
+}
+
+.get-theme(@index) when (@index <= length(@theme-list)) {
+  @current: extract(@theme-list, @index);
+  @res: if(@theme=@current, @theme, .get-theme(@index+1)[@res]);
+}
+
+.import-theme(@comp) {
+  @current-theme: .get-theme(1)[@res];
+  @import "@{comp}/@{current-theme}";
+}

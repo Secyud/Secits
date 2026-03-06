@@ -1,0 +1,60 @@
+/*
+ * Declares a color series.
+ * main-color is the theme color.
+ * part-color is the text or icon color on main.
+ */
+:root {
+  --sc-a-m: #185395;
+  --sc-a-m-rgb: 24, 83, 149;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+  --sc-b-m: #1c1c1c;
+  --sc-b-m-rgb: 28, 28, 28;
+  --sc-b-p: #c0c0c0;
+  --sc-b-p-rgb: 192, 192, 192;
+  --sc-c-m: #020e10;
+  --sc-c-m-rgb: 2, 14, 16;
+  --sc-c-p: #858585;
+  --sc-c-p-rgb: 133, 133, 133;
+  --sc-d-m: #595959;
+  --sc-d-m-rgb: 89, 89, 89;
+  --sc-d-p: #000000;
+  --sc-d-p-rgb: 0, 0, 0;
+}
+:root .secondary {
+  --sc-a-m: #10775f;
+  --sc-a-m-rgb: 16, 119, 95;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+:root .naive {
+  --sc-a-m: #4e4e4e;
+  --sc-a-m-rgb: 78, 78, 78;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+:root .success {
+  --sc-a-m: #257009;
+  --sc-a-m-rgb: 37, 112, 9;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+:root .info {
+  --sc-a-m: #590a77;
+  --sc-a-m-rgb: 89, 10, 119;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+:root .warning {
+  --sc-a-m: #73360c;
+  --sc-a-m-rgb: 115, 54, 12;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+:root .danger {
+  --sc-a-m: #85001e;
+  --sc-a-m-rgb: 133, 0, 30;
+  --sc-a-p: #7f7f7f;
+  --sc-a-p-rgb: 127, 127, 127;
+}
+/*# sourceMappingURL=dark.css.map */

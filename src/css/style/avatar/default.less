@@ -1,0 +1,16 @@
+﻿@import (reference) "../general";
+
+.s-avatar {
+  &:extend(.s-component);
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  resize: both;
+  width: calc(var(--s-s) * 2);
+  height: calc(var(--s-s) * 2);
+
+  .circle {
+    border-radius: 50%;
+  }
+
+}

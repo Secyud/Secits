@@ -1,0 +1,27 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@inherits SpTableContentBase<TItem>
+@typeparam TItem
+
+@if (Result?.Items is { Count: > 0 } items)
+{
+    @foreach (var item in items)
+    {
+        @GenerateRow(item)
+    }
+}
+
+@code{
+
+    /// <summary>
+    /// generate table pager
+    /// </summary>
+    /// <returns></returns>
+    public RenderFragment GenerateElement()
+    {
+        return @<div class="s-table-pager">
+                   <SPager MaxPageCount="@(Result?.TotalCount ?? 0)"
+                           @bind-PageIndex="PageIndex"/>
+               </div>;
+    }
+
+}

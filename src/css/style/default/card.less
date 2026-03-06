@@ -1,0 +1,25 @@
+﻿@import "component";
+
+
+
+.s-tab-tags {
+  &:extend(.s-card);
+  display: flex;
+
+  & > .s-tab-tag {
+    .set-padding(8, 4);
+    .set-padding(8, 16);
+    --opacity: 0;
+    --border-color:rgba(var(--s-c-rgb), var(--opacity));
+    border: 2px solid var(--border-color);
+    border-radius: var(--s-s-br);
+    transition: 50ms;
+    .set-anim-hover-selected({
+      --opacity: 1;
+      cursor: pointer;
+    }, {
+      --opacity: 0.6;
+    });
+  }
+}
+

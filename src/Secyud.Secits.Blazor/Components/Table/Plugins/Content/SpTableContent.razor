@@ -1,0 +1,11 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@inherits SpTableContentBase<TItem>
+@typeparam TItem
+
+@if (Items is { Count: > 0 })
+{
+    @foreach (var item in Items)
+    {
+        @GenerateRow(item)
+    }
+}

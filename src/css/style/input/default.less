@@ -1,0 +1,34 @@
+@import (reference)  "../general";
+
+
+.s-input {
+  &:extend(.s-component);
+  padding: size(0, 4);
+
+  width: 100%;
+
+  .set-color(--main-color, --sc-a-m);
+  .set-color(--part-color, --sc-c-p);
+
+  --alpha: 0.25;
+  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  background-color: var(--sc-c-m);
+  color: var(--part-color);
+
+  .on-hover({
+    --alpha: 0.6;
+  });
+  .on-focus({
+    --alpha: 1;
+  });
+
+  input, textarea {
+    min-height: var(--s-s);
+    width: 100% !important;
+    padding: size(4, 0);
+  }
+
+  textarea {
+    margin-bottom: 0.25rem;
+  }
+}

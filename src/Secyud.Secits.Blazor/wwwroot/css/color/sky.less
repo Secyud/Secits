@@ -1,0 +1,35 @@
+﻿@import "../root";
+@import "../@{root}/color/component";
+
+:root {
+  .declare-color(--sc-a, rgb(135, 206, 235), rgb(255, 255, 255));
+  .declare-color(--sc-b, rgb(240, 248, 255), rgb(70, 70, 70));
+  .declare-color(--sc-c, rgb(255, 255, 255), rgb(70, 70, 70));
+  .declare-color(--sc-d, rgb(173, 216, 230), rgb(100, 100, 100));
+
+  .primary {}
+
+  .secondary {
+    .declare-color(--sc-a, rgb(24, 191, 185), rgb(255, 255, 255));
+  }
+
+  .naive {
+    .declare-color(--sc-a, rgb(126, 126, 126), rgb(255, 255, 255));
+  }
+
+  .success {
+    .declare-color(--sc-a, rgb(65, 198, 16), rgb(255, 255, 255));
+  }
+
+  .info {
+    .declare-color(--sc-a, rgb(160, 17, 214), rgb(255, 255, 255));
+  }
+
+  .warning {
+    .declare-color(--sc-a, rgb(255, 117, 24), rgb(255, 255, 255));
+  }
+
+  .danger {
+    .declare-color(--sc-a, rgb(255, 0, 57), rgb(255, 255, 255));
+  }
+}

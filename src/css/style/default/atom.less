@@ -1,0 +1,52 @@
+﻿@import "component";
+
+.flex {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.display-grid {
+  display: grid;
+}
+
+.colored {
+  .set-text-color(--s-c);
+  color: var(--text-color);
+}
+
+.mg {
+  .set-padding()
+}
+
+.pd {
+  .set-padding()
+}
+
+@each-item: 1, 2, 4, 8;
+
+each(@each-item, {
+  .pd-@{value} {
+    .set-padding(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .pd-@{value}-@{w} {
+      .set-padding(@value, @w);
+    }
+  })
+})
+
+each(@each-item, {
+  .mg-@{value} {
+    .set-padding(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .mg-@{value}-@{w} {
+      .set-padding(@value, @w);
+    }
+  })
+})

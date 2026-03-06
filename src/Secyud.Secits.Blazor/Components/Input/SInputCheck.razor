@@ -1,0 +1,10 @@
+﻿@namespace Secyud.Secits.Blazor
+@typeparam TValue
+@inherits EComponentBase<TValue>
+
+@(base.BuildRenderTree)
+
+@if (!string.IsNullOrEmpty(Label))
+{
+    <label>@Label</label>
+}

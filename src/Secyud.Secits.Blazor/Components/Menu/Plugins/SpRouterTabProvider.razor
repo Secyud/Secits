@@ -1,0 +1,50 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@using Secyud.Secits.Blazor.Navigation
+@inherits SPluginBase
+
+
+@code
+{
+    protected RenderFragment<STabStatus> GenerateTabHeader(RouterItem item)
+    {
+        return Generate;
+
+        RenderFragment Generate(STabStatus status)
+        {
+            var cls = "s-tab-header-item";
+            if (status.IsActive)
+            {
+                cls += " active";
+            }
+
+            return @<div class="@cls" @key="item.Id"
+                         @onclick="@(() => OnTabClicked(item))">
+                       @if (HeaderTemplate is not null)
+                       {
+                           @HeaderTemplate(item)
+                       }
+                   </div>;
+        }
+    }
+
+    protected RenderFragment<STabStatus> GenerateTabContent(RouterItem item)
+    {
+        return Generate;
+
+        RenderFragment Generate(STabStatus status)
+        {
+            var cls = "s-tab-content-item";
+            if (!status.IsActive)
+            {
+                cls += " invisible";
+            }
+
+            return @<div class="@cls" @key="item.Id">
+                       @if (ContentTemplate is not null)
+                       {
+                           @ContentTemplate(item)
+                       }
+                   </div>;
+        }
+    }
+}

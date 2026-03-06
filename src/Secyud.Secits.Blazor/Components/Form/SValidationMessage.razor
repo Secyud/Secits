@@ -1,0 +1,10 @@
+@namespace Secyud.Secits.Blazor
+@inherits SComponentBase
+
+@if (Context?.GetValidationResults() is { Count: > 0 } results)
+    foreach (var result in results)
+    {
+        <div class="s-validation-message">
+            @result.ErrorMessage
+        </div>
+    }

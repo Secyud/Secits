@@ -5,7 +5,7 @@ using Secyud.Secits.Blazor.Settings;
 
 namespace Secyud.Secits.Blazor.Element;
 
-public partial class SContextMenu : IHasContent, IAsyncDisposable
+public partial class SContextMenu : IContentComponent, IAsyncDisposable
 {
     [Parameter] public RenderFragment? ChildContent { get; set; }
 

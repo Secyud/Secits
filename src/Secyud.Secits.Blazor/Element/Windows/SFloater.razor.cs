@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Components;
 using Secyud.Secits.Blazor.Settings;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor.Element;
 
-public partial class SFloater : IHasContent, IHasCustomStyle
+public partial class SFloater : IContentComponent, IContainerComponent
 {
     [Parameter]
     public RenderFragment? ChildContent { get; set; }

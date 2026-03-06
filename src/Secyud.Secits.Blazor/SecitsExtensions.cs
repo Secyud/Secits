@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Secyud.Secits.Blazor.Icons;
 using Secyud.Secits.Blazor.JSInterop;
-using Secyud.Secits.Blazor.Options;
-using Secyud.Secits.Blazor.PageRoutes;
+using Secyud.Secits.Blazor.Navigation;
 using Secyud.Secits.Blazor.Services;
-using Secyud.Secits.Blazor.Validations;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
@@ -15,19 +13,16 @@ public static class SecitsExtensions
     {
         #region Service
 
-        services.AddSingleton<IDirtyParameterService, DirtyParameterService>();
-        services.AddTransient<ISecitsModelValidator, DefaultSecitsModelValidator>();
-        services.AddTransient<IIconProvider, NullIconProvider>();
+        services.AddSingleton<IDirtyParameterProvider, DirtyParameterProvider>();
         services.AddTransient<ISecitsService, SecitsService>();
-        services.AddScoped<PageRouteManager>();
+        services.AddScoped<IFormValidator, FormValidator>();
+        services.AddScoped<IRouterItemGenerator, RouterItemGenerator>();
 
         #endregion
 
         #region Js
 
-        services.AddTransient<IJsElement, SJsElement>();
-        services.AddTransient<IJsWindow, SJsWindow>();
-        services.AddScoped<IAppDocument, SAppDocument>();
+        services.AddTransient<IJsWindow, JsWindow>();
 
         #endregion
 
@@ -35,11 +30,13 @@ public static class SecitsExtensions
         {
             options.Parameters.AddRange([
                 new ClassStyleParameter(),
-                new HeightParameter(),
-                new WidthParameter(),
-                new SizeParameter(),
-                new ThemeParameter(),
-                new ActiveParameter(),
+                new VerticalParameter(),
+                new HorizontalParameter(),
+                new LayoutedParameter(),
+                new ThemedParameter(),
+                new SizedParameter(),
+                new ActivableParameter(),
+                new InputParameter(),
             ]);
         });
 
@@ -47,7 +44,7 @@ public static class SecitsExtensions
         {
             Services = services,
         };
-        
+
         buildAction?.Invoke(context);
 
         return services;

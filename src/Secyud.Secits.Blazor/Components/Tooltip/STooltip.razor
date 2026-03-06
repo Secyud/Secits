@@ -1,0 +1,9 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="s-tooltip-container">
+    @ChildContent
+    <div class="@GetClass()" style="@GetStyle()">
+        @TooltipContent
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@namespace Secyud.Secits.Blazor
+@typeparam TItem
+@using Secyud.Secits.Blazor.Plugins
+@inherits CComponentBase
+<CascadingValue Value="PluginContext">
+    <CascadingValue Value="ColumnContext">
+        @Columns
+    </CascadingValue>
+    @Plugins
+</CascadingValue>
+@{
+    var columns = ColumnContext.Columns
+        .Where(u => u.ColumnInfo.Visible)
+        .OrderBy(u => u.ColumnInfo.Sequence)
+        .ToList();
+}
+<div class="@GetClass()" style="@GetStyle()">
+    @foreach (var element in Element)
+    {
+        if (element.Position == STablePosition.Header)
+        {
+            element.GenerateElement();
+        }
+    }
+    <table>
+        <thead>
+        @foreach (var header in Header)
+        {
+            @foreach (var column in columns)
+            {
+                @header.GenerateHeader(column)
+            }
+        }
+        </thead>
+
+        @if (Content.Get() is { } content)
+        {
+            @content.GenerateContent(columns)
+        }
+        else
+        {
+            <tbody class="s-error">
+            no content set for s-table
+            </tbody>
+        }
+
+        <tfoot>
+        @foreach (var footer in Footer)
+        {
+            @foreach (var column in columns)
+            {
+                @footer.GenerateFooter(column)
+            }
+        }
+        </tfoot>
+    </table>
+    @foreach (var element in Element)
+    {
+        if (element.Position == STablePosition.Footer)
+        {
+            element.GenerateElement();
+        }
+    }
+</div>

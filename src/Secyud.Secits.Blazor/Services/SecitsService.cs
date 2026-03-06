@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Options;
 using Microsoft.JSInterop;
-using Secyud.Secits.Blazor.Options;
+using Secyud.Secits.Blazor.Themes;
 
-namespace Secyud.Secits.Blazor.Services;
+namespace Secyud.Secits.Blazor;
 
 public class SecitsService(IJSRuntime jsRuntime, IOptions<SecitsStylesOptions> options) : ISecitsService
 {

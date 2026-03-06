@@ -11,7 +11,7 @@
         <Content>
             <SCard Theme="Theme" Size="Size">
                 <Body>
-                <SGrid TValue="ListDemoItem" Class="outline" DisableFooter>
+                <SGridRow TValue="ListDemoItem" Class="outline" DisableFooter>
                     <EnableStaticSource Items="_list"/>
                     <EnableIteratorVisualize/>
                     <EnableColumnResize/>
@@ -24,7 +24,7 @@
                     <GridColumn Caption="@nameof(ListDemoItem.BirthDate)" Width="512"
                                 Field="@(item => item.BirthDate)" Position="ColumnPosition.Behind"
                                 Format="yyyy MM dd hh mm ss"/>
-                </SGrid>
+                </SGridRow>
                 </Body>
             </SCard>
         </Content>
@@ -34,7 +34,7 @@
         <Content>
             <SCard Theme="Theme" Size="Size">
                 <Body>
-                <SGrid TValue="ListDemoItem" Class="outline" DisableFooter>
+                <SGridRow TValue="ListDemoItem" Class="outline" DisableFooter>
                     <EnableStaticSource Items="_list"/>
                     @* <DynamicDataSource Items="_list"/> *@
                     <EnableIteratorPager/>
@@ -48,7 +48,7 @@
                     <GridColumn Caption="@nameof(ListDemoItem.BirthDate)" Width="512"
                                 Field="@(item => item.BirthDate)" Position="ColumnPosition.Behind"
                                 Format="yyyy MM dd hh mm ss"/>
-                </SGrid>
+                </SGridRow>
                 </Body>
             </SCard>
         </Content>

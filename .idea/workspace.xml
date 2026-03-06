@@ -4,110 +4,492 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="add a react project">
+    <list default="true" id="0e95faa3-2a3a-4bb8-b986-94a566f901ba" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Abstraction/IClickableComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Abstraction/SValue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatarShape.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Badge/SBadge.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Badge/SBadge.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Breadcrumb/SBreadcrumb.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Breadcrumb/SBreadcrumb.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Breadcrumb/SBreadcrumbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Button/SButton.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Button/SButton.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Button/SColor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Button/SSize.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/CComponentBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCard.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCard.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardBody.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardBody.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardFooter.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardFooter.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardHeader.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Card/SCardHeader.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Divider/SDivider.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Divider/SDivider.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/EComponentBase.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/EComponentBase.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Flex/SFlex.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Flex/SFlex.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Flex/SFlexDirection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Flex/SFlexGap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SForm.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SForm.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SFormField.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SFormField.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SFormGap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SFormSpan.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SValidationContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SValidationGroupContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SValidationMessage.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/SValidationMessage.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Grid/SGridCol.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Grid/SGridCol.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Grid/SGridRow.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Grid/SGridRow.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Grid/SGridSpan.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icon/SIcon.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icon/SIcon.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/ISpInputElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/ISpInputHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/ISpValueHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/SpInputClear.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/SpInputClear.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/SpInputDelay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/Plugins/SpInputValidate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputCheck.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputCheck.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputDateTime.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputDateTime.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputNumber.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputNumber.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputText.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Input/SInputText.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SComponentExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataField.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/ISpTableColumn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumn.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumn.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/ISpTableContent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContent.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentBase.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentBase.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentPaged.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentPaged.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentVirtualize.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentVirtualize.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Footer/ISpTableFooter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Header/ISpTableHeader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Header/SpTableHeader.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Header/SpTableHeader.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/ISpTableElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/STablePosition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/ISpTabProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProviderItem.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProviderItem.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProviderItems.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProviderItems.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContent.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabHeader.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabHeader.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabs.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabs.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Title/STitle.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Title/STitle.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Overlay.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Overlay.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/OverlayContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/OverlayTrigger.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/OverlayTrigger.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Layout/Placement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/IRouterItemGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/MenuItemParameterAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/RouterItemGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/IPluggableComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/ISPlugin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/DirtyParameterProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/IDirtyParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/IDirtyParameterProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/ActivableParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/HorizontalParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IActivableComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IHorizontalComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IInputComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/ILayoutedComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/ISizedComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IThemedComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IVerticalComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/InputParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/VerticalParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/land.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/param/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/root.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/avatar/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/badge/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/button/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/card/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/component.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/general.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/icon/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/input/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/pager/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/progress/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style/title/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/secits-less.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Layout/LayoutMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Layout/LayoutMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Grid.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Grid.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Home.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Secyud.Secits.Blazor.Demo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Secyud.Secits.Blazor.Demo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/dark.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/dark.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/dark.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/default.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/default/component.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/color/component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/forest.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/forest.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/forest.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/forest.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/forest.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/forest.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/forest.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/landscape.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/landscape.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/landscape.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/landscape.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sea.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sea.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sea.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sea.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sea.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sky.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sky.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sky.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sky.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sky.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sky.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/color/sky.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/images/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/images/down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/images/up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/param/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/param/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/param/default.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/param/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/atom.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/atom.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/button.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/card.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/card.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/component.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/element.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/element.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/global.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/input.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/iterator.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/iterator.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/layout.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/layout.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/default/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style/default/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/images/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/images/down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/css/style/images/up.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Footer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Footer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Header.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Header.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SecitsComponentExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SecitsComponentExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SDivider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SDivider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/dark.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/dark.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/dark.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/default.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/default.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/default/component.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/forest.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/forest.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/forest.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/forest.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/landscape.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sea.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sea.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sea.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sea.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sky.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sky.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sky.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/color/sky.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/components.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/images/check.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/images/down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/images/up.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/param/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/param/default.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/param/default.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/param/default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/atom.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/button.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/card.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/component.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/element.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/global.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/input.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/iterator.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/layout.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/default/menu.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/images/check.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/images/down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style/images/up.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/lib/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/lib/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/App.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/index.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/src/main.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.lib.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/tsconfig.node.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/react/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secits-blazor.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.slnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/FodyWeavers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/FodyWeavers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/FontAwesomeIconProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/SecitsFontAwesomeIconsExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/Secyud.Secits.Blazor.Icons.FontAwesome.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Icons.FontAwesome/_Imports.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Buttons/CloseButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Buttons/CloseButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/AutoComplete.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/AutoComplete.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/ComboBox.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/ComboBox.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/EnumSelector.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/EnumSelector.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/SelectBox.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.Preset/Inputs/SelectBox.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor.SourceGenerator/Secyud.Secits.Blazor.SourceGenerator.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/ICanActive.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/IHasCustomStyle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/IContainerComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/IHasHeight.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/IHasSize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/IHasTheme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Abstraction/IHasWidth.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/ClassStyleBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/ClassStyleContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/ClassStyleContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Data/DataFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Data/DataFilterType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Data/DataRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Data/DataResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Data/DataSorter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataSorter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/ActiveParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/ClassStyleParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/ClassStyleParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/HeightParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/SizeParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/LayoutedParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/ThemeParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/Styles/ThemedParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Dirty/WidthParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/DirtyParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/IMaybeClassParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Styles/SValue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Styles/Size.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Arguments/Styles/Theme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/EnableDropDown.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/SActivableBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/SActivableBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/SActivablePluginBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Activables/SButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/AddContentBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/AddTemplate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Body.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Footer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/Header.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/IHasContentRender.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/SCard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/SContentBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/SContentBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Contents/SLayoutPluginBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/IPluggable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icons/IIconProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icons/IconName.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableInputClearButton.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/EnableValueTextField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Invokers/EnableFieldInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Invokers/EnableFieldsInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Invokers/EnableInputDelayInvokerBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Invokers/EnableValueInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Invokers/EnableValuesInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/SContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/SInput.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/SInput.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddCheckBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddDateTimeBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddNumberBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRadio.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddRollerBox.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddShowBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddTemplateBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddTextArea.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Inputs/Templates/AddTextBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/DataSource/EnableDynamicSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/DataSource/EnableStaticSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableColumnResize.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableColumnResize.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorFixed.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorFixed.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorPager.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorPager.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorSelect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorTreePager.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorTreePager.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorVisualize.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/EnableIteratorVisualize.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumn.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumnContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridColumnListContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/GridContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/ListColumn.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/ListColumn.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SGrid.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SGrid.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SIteratorBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SIteratorBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SList.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Iterators/SList.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Layouts/FormLayoutItem.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Layouts/FormLayoutItem.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Layouts/SFormLayout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Layouts/SValidationMessage.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Layouts/SValidationMessage.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/ParameterContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SComponentBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SComponentBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SPluggableBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SPluggableBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SPluggableContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SPluginBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SecitsComponentExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Selectors/ISelectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Selectors/SSelectableContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Selectors/SSelectorPluginBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/FixTab.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/FixTab.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContainer.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContainer.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContentsView.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabContentsView.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabTagsView.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabTagsView.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Tab.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/TabProvider.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProvider.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/TabProvider.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/Plugins/SpTabProvider.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/TabRenderMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/ValueFieldOperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataFieldExpression.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/DatePrecision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/DateTimePrecision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/DateTimePrecisionKind.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerBoardTemplate.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerBoardTemplate.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerBoardTemplate.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerClockTemplate.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerClockTemplate.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerClockTemplate.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerTemplateBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerTemplateBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePickerTemplateBase.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Calendars/TimePrecision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Icons/SIcon.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Icons/SIconBase.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Icons/SIconBase.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Inputs/SCheck.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Inputs/SRoller.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Inputs/SRoller.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Inputs/SRoller.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/SElementBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SBadge.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SDivider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SLabel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SPager.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SPager.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SProgressBar.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SProgressBar.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/SStyledBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/STitle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Styled/STooltip.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/ValueTypeCascading.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SContextMenu.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SContextMenu.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SFloater.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SFloater.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SModal.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SModal.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SModal.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Element/Windows/SModal.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/IAppDocument.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/IJsElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/IJsWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/IJsWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/JsElementBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/JsModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/JsObjects/DomRect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsObjects/DomRect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/JsObjects/Invoker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsObjects/Invoker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/SAppDocument.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/SJsElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JSInterop/SJsWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Options/SecitsOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Options/SecitsStylesOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsStylesOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/PageRoutes/PageRouteAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/MenuItemAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/PageRoutes/PageRouteItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/RouterItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/PageRoutes/PageRouteManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/PageRoutes/PageRouteTabsLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Menu/RouterTabs.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/PageRoutes/PageRouteTabsLayout.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Menu/RouterTabs.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsScriptsImport.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/SecitsScriptsImport.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/SecitsStylesImport.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/SecitsStylesImport.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/DirtyParameterService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/IDefaultIconNameProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/IDirtyParameterService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/ISecitsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/ISecitsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Activable/ICanClick.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Content/IContentRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Content/IHasContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Abstraction/IContentComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Content/RendererPosition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/IExtendClassStyleBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/IIsPlugin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IHasCurrentValue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IHasCurrentValues.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IHasRange.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IHasValue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IHasValues.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IInputInvoker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IValueContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IValueParser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Input/IValueTextField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/ColumnPosition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IDataSourceProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IGridColumnRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IGridFooterRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IGridHeaderRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IIteratorRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IListColumnRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IRowClassProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IRowClickEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/IRowStyleProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Iterator/ITreeItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/SSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/SSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginsContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Selector/IHasField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Selector/IHasTextField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Selector/IIsSelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Tabs/ITab.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Tabs/ITabListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Settings/Tabs/ITabsProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Styles/SecitsStyleFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/SecitsStyleFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Styles/SecitsThemeInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/SecitsThemeInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/DefaultSecitsModelValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/FormValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/IModelFieldValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Form/IFormValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/IValidationListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/ValidationField.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/ValidationField.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/ValidationForm.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Validations/ValidationForm.razor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/libs/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/js/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/libs/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/forest.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/forest.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/landscape.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sea.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sea.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sky.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/color/sky.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/images/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/images/down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/images/up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/param/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-      <option value="repository" />
-    </option>
-  </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="96" />
+    <option name="cachedIndexableFilesCount" value="2135" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
+        <option value="Less File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -119,13 +501,15 @@
     <urls />
   </component>
   <component name="NamedScopeManager">
-    <scope name="web" pattern="file[web]:web/css/color/*||file[web]:web/css/param/*||file[web]:web/css/style/*" />
+    <order>
+      <scope name="blazor" />
+    </order>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="38C0iEtf7w1U2Dgv1wkWY79YXQ9" />
+  <component name="ProjectId" id="3A6bMJi0BJUHVxDLkovdl1xNt4m" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,85 +523,69 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;experiment&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/secyud/secits/web/react&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/secyud/secits/src/css/style&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;Less&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\secyud\\secits\\web\\react\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="9" />
+    <option name="suspendCountdown" value="0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\secyud\secits\web\react" />
+      <recent name="D:\Projects\secyud\secits\src\css\style" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\secyud\secits\src\js\less" />
+      <recent name="D:\Projects\secyud\secits\src\Secyud.Secits.Blazor\Components" />
+      <recent name="D:\Projects\secyud\secits\src\js" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="" />
-      <created>1768288371582</created>
+      <changelist id="0e95faa3-2a3a-4bb8-b986-94a566f901ba" name="更改" comment="" />
+      <created>1771915917848</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1768288371582</updated>
-      <workItem from="1768288372771" duration="369000" />
-      <workItem from="1768288789891" duration="38000" />
-      <workItem from="1768289164224" duration="85000" />
-      <workItem from="1768289322035" duration="1251000" />
-      <workItem from="1770170423448" duration="15000" />
-      <workItem from="1770170460378" duration="542000" />
-      <workItem from="1770172947567" duration="19000" />
-      <workItem from="1770173002532" duration="67000" />
-      <workItem from="1770173084921" duration="26000" />
+      <updated>1771915917848</updated>
+      <workItem from="1771915919161" duration="204000" />
+      <workItem from="1771917593229" duration="49000" />
+      <workItem from="1771917654787" duration="654000" />
+      <workItem from="1771919676613" duration="10721000" />
+      <workItem from="1771984735095" duration="22464000" />
+      <workItem from="1772156790912" duration="5452000" />
+      <workItem from="1772781186999" duration="684000" />
     </task>
-    <task id="LOCAL-00001" summary="add font awesome split icon">
-      <option name="closed" value="true" />
-      <created>1768288685202</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1768288685202</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add a react project">
-      <option name="closed" value="true" />
-      <created>1768290573821</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1768290573821</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/react/lib/main.js" />
+        <option value="$PROJECT_DIR$/react/lib/main.js" />
       </list>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add some annotation" />
-    <MESSAGE value="add font awesome split icon" />
-    <MESSAGE value="add a react project" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a react project" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

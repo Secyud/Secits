@@ -1,0 +1,29 @@
+﻿.define-param(@component-size, @interval-size, @border-radius, @border-width, @unit-value) {
+
+  // size
+  --s-s: unit(@component-size, @unit-value);
+  // border radius
+  --s-s-br: unit(@border-radius, @unit-value);
+  // border width
+  --s-s-bw: unit(@border-width, @unit-value);
+
+  .xs {
+    --s-s: unit(@component-size - 2 * @interval-size, @unit-value);
+  }
+
+  .sm {
+    --s-s: unit(@component-size - @interval-size, @unit-value);
+  }
+
+  .md {
+  }
+
+  .lg {
+    --s-s: unit(@component-size + @interval-size, @unit-value);
+  }
+
+  .xl {
+    --s-s: unit(@component-size + 2 * @interval-size, @unit-value);
+  }
+
+}

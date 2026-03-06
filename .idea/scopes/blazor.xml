@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="blazor" pattern="file[secits]:*/wwwroot//*" />
+</component>

@@ -1,0 +1,50 @@
+@namespace Secyud.Secits.Blazor.Plugins
+@inherits SPluginBase
+@typeparam TItem
+
+
+@code
+{
+    protected RenderFragment<STabStatus> GenerateTabHeader(TItem item, string key)
+    {
+        return Generate;
+
+        RenderFragment Generate(STabStatus status)
+        {
+            var cls = "s-tab-header-item";
+            if (status.IsActive)
+            {
+                cls += " active";
+            }
+
+            return @<div class="@cls" @key="key"
+                         @onclick="@(() => OnTabClicked(key))">
+                       @if (HeaderTemplate is not null)
+                       {
+                           @HeaderTemplate(item)
+                       }
+                   </div>;
+        }
+    }
+
+    protected RenderFragment<STabStatus> GenerateTabContent(TItem item, string key)
+    {
+        return Generate;
+
+        RenderFragment Generate(STabStatus status)
+        {
+            var cls = "s-tab-content-item";
+            if (!status.IsActive)
+            {
+                cls += " invisible";
+            }
+
+            return @<div class="@cls" @key="key">
+                       @if (ContentTemplate is not null)
+                       {
+                           @ContentTemplate(item)
+                       }
+                   </div>;
+        }
+    }
+}

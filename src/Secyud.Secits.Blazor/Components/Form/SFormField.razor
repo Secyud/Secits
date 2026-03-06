@@ -1,0 +1,26 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="@GetClass()" style="@GetStyle()">
+    <CascadingValue Value="Context" IsFixed="true">
+        @if (TitleTemplate is not null)
+        {
+            <div class="s-form-field-title">
+                @TitleTemplate
+            </div>
+        }
+        else if (Title is not null)
+        {
+            <div class="s-form-field-title">
+                @Title
+            </div>
+        }
+
+        @ChildContent
+        @if (Validate)
+        {
+            <SValidationMessage/>
+        }
+    </CascadingValue>
+</div>
+

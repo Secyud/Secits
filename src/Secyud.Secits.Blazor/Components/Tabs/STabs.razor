@@ -1,0 +1,9 @@
+@namespace Secyud.Secits.Blazor
+@inherits SComponentBase
+<CascadingValue Value="PluginContext" IsFixed>
+    @Plugins
+</CascadingValue>
+
+<CascadingValue Value="GetTabContext()">
+    @ChildContent
+</CascadingValue>

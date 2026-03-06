@@ -1,4 +1,6 @@
-namespace Secyud.Secits.Blazor.Services;
+using Secyud.Secits.Blazor.Themes;
+
+namespace Secyud.Secits.Blazor;
 
 public interface ISecitsService
 {

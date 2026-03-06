@@ -8,6 +8,8 @@
 
     <ItemGroup>
         <None Update="**/*.razor.css" CssScope="s"/>
+        <Content Remove="**/*.less"/>
+        <None Include="**/*.less"/>
     </ItemGroup>
 
 </Project>

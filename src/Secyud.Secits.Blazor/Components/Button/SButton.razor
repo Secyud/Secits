@@ -1,0 +1,12 @@
+﻿@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div @ref="ElementRef"
+     class="@GetClass()" style="@GetStyle()" disabled="@Disabled"
+     @onclick="@((this as IClickableComponent).OnClick)">
+    @if (Icon is not null)
+    {
+        <SIcon Icon="@Icon"/>
+    }
+    @ChildContent
+</div>
