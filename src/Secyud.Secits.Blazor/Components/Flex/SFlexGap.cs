@@ -1,8 +1,9 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SFlexGap
+[SValue]
+public partial struct SFlexGap
 {
-    public static SValue Small => new("gap-sm");
-    public static SValue Medium => new("gap-md");
-    public static SValue Large => new("gap-lg");
+    public static SFlexGap Small { get; } =new("gap-sm");
+    public static SFlexGap Medium{ get; } = new("gap-md");
+    public static SFlexGap Large { get; } =new("gap-lg");
 }

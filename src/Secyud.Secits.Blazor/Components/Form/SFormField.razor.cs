@@ -20,7 +20,7 @@ public partial class SFormField : IContentComponent, IDisposable
     /// <see cref="SFormSpan"/>
     /// </summary>
     [Parameter]
-    public SValue Span { get; set; }
+    public SFormSpan Span { get; set; }
 
     [CascadingParameter]
     protected SValidationGroupContext? GroupContext

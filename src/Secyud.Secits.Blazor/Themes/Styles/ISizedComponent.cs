@@ -5,5 +5,5 @@ public interface ISizedComponent
     /// <summary>
     /// <see cref="SSize"/>
     /// </summary>
-    SValue Size { get; }
+    SSize Size { get; }
 }

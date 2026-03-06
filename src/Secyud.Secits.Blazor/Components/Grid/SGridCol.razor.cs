@@ -12,7 +12,7 @@ public partial class SGridCol : IContentComponent
     /// <see cref="SGridSpan"/>
     /// </summary>
     [Parameter]
-    public SValue Span { get; set; }
+    public SGridSpan Span { get; set; }
 
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {

@@ -1,9 +1,10 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class Placement
+[SValue]
+public partial struct Placement
 {
-    public static SValue Left => new("pl-l");
-    public static SValue Right => new("pl-r");
-    public static SValue Top => new("pl-t");
-    public static SValue Bottom => new("pl-b");
+    public static Placement Left { get; } = new("pl-l");
+    public static Placement Right { get; } = new("pl-r");
+    public static Placement Top { get; } = new("pl-t");
+    public static Placement Bottom { get; } = new("pl-b");
 }

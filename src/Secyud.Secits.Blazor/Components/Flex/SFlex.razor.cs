@@ -12,13 +12,13 @@ public partial class SFlex : IContentComponent
     /// <see cref="SFlexDirection"/>
     /// </summary>
     [Parameter]
-    public SValue FlexDirection { get; set; }
+    public SFlexDirection FlexDirection { get; set; }
 
     /// <summary>
     /// <see cref="SFlexGap"/>
     /// </summary>
     [Parameter]
-    public SValue Gap { get; set; }
+    public SFlexGap Gap { get; set; }
 
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {

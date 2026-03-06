@@ -29,7 +29,8 @@ public partial class RouterTabs : IDisposable
 
         if (firstRender)
         {
-            OnLocationChanged(null, new LocationChangedEventArgs("", true));
+            // 组件实例化时，当前路由一定有值，防止初始化时没有标签。
+            await CreateTabAsync();
         }
     }
 

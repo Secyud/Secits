@@ -32,6 +32,12 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
         _isDirty = true;
     }
 
+
+    /// <summary>
+    /// 使用<see cref="IDirtyParameter"/>来判断一个参数是否改变样式，如果改变，则需要重新生成样式。
+    /// </summary>
+    /// <param name="parameters"></param>
+    /// <returns></returns>
     public override Task SetParametersAsync(ParameterView parameters)
     {
         if (!_isDirty)
@@ -49,6 +55,9 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
         return base.SetParametersAsync(parameters);
     }
 
+    /// <summary>
+    /// 生成样式和类
+    /// </summary>
     private void GenerateClassAndStyle()
     {
         if (!_isDirty) return;
@@ -68,6 +77,10 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
         _isDirty = false;
     }
 
+    /// <summary>
+    /// 部分组件有自己的样式逻辑
+    /// </summary>
+    /// <param name="context"></param>
     protected virtual void ConfigureClassStyle(ClassStyleContext context)
     {
         context.AppendClass(ComponentClass);

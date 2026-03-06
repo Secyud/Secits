@@ -1,17 +1,18 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SFormSpan
+[SValue]
+public partial struct SFormSpan
 {
-    public static SValue Is1 => "span-1";
-    public static SValue Is2 => "span-2";
-    public static SValue Is3 => "span-3";
-    public static SValue Is4 => "span-4";
-    public static SValue Is5 => "span-5";
-    public static SValue Is6 => "span-6";
-    public static SValue Is7 => "span-7";
-    public static SValue Is8 => "span-8";
-    public static SValue Is9 => "span-9";
-    public static SValue Isa => "span-a";
-    public static SValue Isb => "span-b";
-    public static SValue Isc => "span-c";
+    public static SFormSpan Is1 { get; } = "span-1";
+    public static SFormSpan Is2 { get; } = "span-2";
+    public static SFormSpan Is3 { get; } = "span-3";
+    public static SFormSpan Is4 { get; } = "span-4";
+    public static SFormSpan Is5 { get; } = "span-5";
+    public static SFormSpan Is6 { get; } = "span-6";
+    public static SFormSpan Is7 { get; } = "span-7";
+    public static SFormSpan Is8 { get; } = "span-8";
+    public static SFormSpan Is9 { get; } = "span-9";
+    public static SFormSpan Isa { get; } = "span-a";
+    public static SFormSpan Isb { get; } = "span-b";
+    public static SFormSpan Isc { get; } = "span-c";
 }

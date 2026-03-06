@@ -16,7 +16,7 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
     }
 
     protected override string ComponentClass => "s-table";
-    [Parameter] public SValue Color { get; set; }
+    [Parameter] public SColor Color { get; set; }
     [Parameter] public RenderFragment? Columns { get; set; }
     protected SpTableColumnContext<TItem> ColumnContext { get; }
 

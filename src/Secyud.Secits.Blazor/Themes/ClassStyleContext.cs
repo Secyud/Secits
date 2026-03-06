@@ -19,6 +19,11 @@ public class ClassStyleContext
         foreach (var parameter in parameters)
             ClassBuilder.Append(parameter);
     }
+    
+    public void AppendClass(SValue @class)
+    {
+        AppendClass(@class.ToString());
+    }
 
     public void AppendStyle(string? name, string? value, bool important = false)
     {

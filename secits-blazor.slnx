@@ -28,7 +28,7 @@
     <File Path=".junie/guidelines.md" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/Secyud.Secits.Blazor.FontAwesome/Secyud.Secits.Blazor.FontAwesome.csproj" />
+    <Project Path="src/Secyud.Secits.Blazor.Generator/Secyud.Secits.Blazor.Generator.csproj" />
     <Project Path="src\Secyud.Secits.Blazor\Secyud.Secits.Blazor.csproj" />
   </Folder>
 </Solution>

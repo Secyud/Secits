@@ -5,5 +5,5 @@ public interface IThemedComponent
     /// <summary>
     /// <see cref="SColor"/>
     /// </summary>
-    SValue Color { get; }
+    SColor Color { get; }
 }

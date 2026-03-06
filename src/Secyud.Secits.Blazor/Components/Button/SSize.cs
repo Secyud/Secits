@@ -1,11 +1,12 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SSize
+[SValue]
+public partial struct SSize
 {
-    public static SValue Default => "";
-    public static SValue XSmall => "xs";
-    public static SValue Small => "sm";
-    public static SValue Medium => "md";
-    public static SValue Large => "lg";
-    public static SValue XLarge => "xl";
+    public static SSize Default { get; } = "";
+    public static SSize XSmall { get; } = "xs";
+    public static SSize Small { get; } = "sm";
+    public static SSize Medium { get; } = "md";
+    public static SSize Large { get; } = "lg";
+    public static SSize XLarge { get; } = "xl";
 }

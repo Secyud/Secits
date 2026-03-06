@@ -1,13 +1,14 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SColor
+[SValue]
+public partial struct SColor
 {
-    public static SValue Default => "";
-    public static SValue Primary => "primary";
-    public static SValue Secondary => "secondary";
-    public static SValue Naive => "naive";
-    public static SValue Success => "success";
-    public static SValue Info => "info";
-    public static SValue Warning => "warning";
-    public static SValue Danger => "danger";
+    public static SColor Default { get; } = "";
+    public static SColor Primary { get; } = "primary";
+    public static SColor Secondary { get; } = "secondary";
+    public static SColor Naive { get; } = "naive";
+    public static SColor Success { get; } = "success";
+    public static SColor Info { get; } = "info";
+    public static SColor Warning { get; } = "warning";
+    public static SColor Danger { get; } = "danger";
 }

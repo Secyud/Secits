@@ -1,7 +1,8 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SFlexDirection
+[SValue]
+public partial struct SFlexDirection
 {
-    public static SValue Horizontal => new("row");
-    public static SValue Vertical => new("col");
+    public static SFlexDirection Horizontal { get; } = "row";
+    public static SFlexDirection Vertical { get; } = "col";
 }

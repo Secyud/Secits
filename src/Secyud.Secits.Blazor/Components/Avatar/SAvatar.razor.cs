@@ -11,13 +11,13 @@ public partial class SAvatar : ISizedComponent
     /// <see cref="SSize"/>
     /// </summary>
     [Parameter]
-    public SValue Size { get; set; }
+    public SSize Size { get; set; }
 
     /// <summary>
     /// <see cref="SAvatarShape"/>
     /// </summary>
     [Parameter]
-    public SValue Shape { get; set; } = SAvatarShape.Circle;
+    public SAvatarShape Shape { get; set; } = SAvatarShape.Circle;
 
     [Parameter] public string? Src { get; set; }
     [Parameter] public string? Alt { get; set; }

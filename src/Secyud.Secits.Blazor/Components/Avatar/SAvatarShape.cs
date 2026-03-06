@@ -1,7 +1,8 @@
 ﻿namespace Secyud.Secits.Blazor;
 
-public static class SAvatarShape
+[SValue]
+public partial struct SAvatarShape
 {
-    public static SValue Square => new("square");
-    public static SValue Circle => new("circle");
+    public static SAvatarShape Square { get; } = "square";
+    public static SAvatarShape Circle { get; } = "circle";
 }

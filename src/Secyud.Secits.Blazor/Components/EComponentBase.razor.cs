@@ -44,7 +44,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     [Parameter] public TValue Value { get; set; } = default!;
     [Parameter] public EventCallback<TValue> ValueChanged { get; set; }
     [Parameter] public Expression<Func<TValue>>? ValueExpression { get; set; }
-    [Parameter] public SValue Color { get; set; }
+    [Parameter] public SColor Color { get; set; }
 
     public SPluginContext PluginContext { get; }
 

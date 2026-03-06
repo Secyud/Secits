@@ -11,6 +11,10 @@ public partial class SpRouterTabProvider : ISpTabProvider
     [Parameter] public RenderFragment<RouterItem>? HeaderTemplate { get; set; }
     [Parameter] public RenderFragment<RouterItem>? ContentTemplate { get; set; }
 
+    /// <summary>
+    /// 路由tab不同于普通的切换，需要改变路由
+    /// </summary>
+    /// <param name="item"></param>
     protected void OnTabClicked(RouterItem item)
     {
         NavigationManager.NavigateTo(item.Uri.ToString());

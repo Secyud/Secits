@@ -12,7 +12,7 @@ public partial class SForm : IContentComponent
     /// <see cref="SFormGap"/>
     /// </summary>
     [Parameter]
-    public SValue Gap { get; set; }
+    public SFormGap Gap { get; set; }
 
     public SValidationGroupContext Context { get; } = new();
 
