@@ -3,6 +3,9 @@ using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
+/// <summary>
+/// 卡片
+/// </summary>
 public partial class SCard : IThemedComponent, IContentComponent
 {
     protected override string ComponentClass => "s-card";

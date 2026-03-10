@@ -15,5 +15,9 @@
         <Content Remove="**/*.less"/>
         <None Include="**/*.less"/>
     </ItemGroup>
+    
+    <ItemGroup>
+      <AdditionalFiles Include="Components\Dynamic\SDynamicComponent.razor" />
+    </ItemGroup>
 
 </Project>

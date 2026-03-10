@@ -1,7 +1,7 @@
 ﻿@namespace Secyud.Secits.Blazor
 @inherits CComponentBase
 
-<div class="@GetClass()" style="@GetStyle()">
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
     @if (Src is not null)
     {
         <img class="avatar-item-image" src="@Src" alt="@Alt"/>

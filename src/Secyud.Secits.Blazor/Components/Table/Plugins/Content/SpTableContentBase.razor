@@ -10,8 +10,8 @@
     {
         if (Table is null) return null;
         var isSelected = Equals(Table.GetKey(item), Table.GetSelectedKey());
-        var @class = isSelected ? "selected" : "";
-        return @<tr @onclick="@OnClick" class="@class">
+        var cls = isSelected ? "selected" : "";
+        return @<tr @onclick="@OnClick" class="@cls">
                    @foreach (var column in Columns)
                    {
                        @column.GenerateColumn(item)

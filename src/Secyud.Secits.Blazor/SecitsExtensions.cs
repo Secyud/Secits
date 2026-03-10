@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Secyud.Secits.Blazor.JSInterop;
 using Secyud.Secits.Blazor.Navigation;
-using Secyud.Secits.Blazor.Services;
 using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
@@ -14,14 +13,12 @@ public static class SecitsExtensions
         #region Service
 
         services.AddSingleton<IDirtyParameterProvider, DirtyParameterProvider>();
-        services.AddTransient<ISecitsService, SecitsService>();
+        services.AddTransient<IThemeManager, SThemeManager>();
+        services.AddScoped<IAppContext, SAppContext>();
         services.AddScoped<IFormValidator, FormValidator>();
         services.AddScoped<IRouterItemGenerator, RouterItemGenerator>();
 
-        #endregion
-
-        #region Js
-
+        // js
         services.AddTransient<IJsWindow, JsWindow>();
 
         #endregion

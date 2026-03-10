@@ -24,7 +24,7 @@
 {
     protected virtual RenderFragment GenerateContent()
     {
-        return @<div class="@GetClass()" style="@GetStyle()">
+        return @<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
                    @GenerateTabHeader()
                    @GenerateTabContent()
                </div>;

@@ -1,0 +1,11 @@
+@namespace Secyud.Secits.Blazor
+@inherits DComponentBase
+
+@if (ParentRect is not null)
+{
+    <div class="@GetClass()" style="@GetStyle()">
+        @ChildContent
+    </div>
+}
+
+

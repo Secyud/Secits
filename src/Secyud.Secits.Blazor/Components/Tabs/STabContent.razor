@@ -1,7 +1,7 @@
 @namespace Secyud.Secits.Blazor
 @inherits CComponentBase
 
-<div class="@GetClass()" style="@GetStyle()">
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
     @if (Context?.Tabs is { Count: > 0 } tabs)
     {
         @if (Context.Mode == STabMode.Default)

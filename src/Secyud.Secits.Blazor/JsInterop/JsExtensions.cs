@@ -13,12 +13,11 @@ public static class JsExtensions
             return element.InvokeAsync<DomRect>(js, "getBoundingClientRect");
         }
 
-
         public async ValueTask InvokeVoidAsync(IJSRuntime js, string identifier, params object?[]? args)
         {
             try
             {
-                await js.InvokeVoidAsync("invokeElementMethodVoid", element, identifier, args);
+                await js.InvokeVoidAsync(SJsModules.Element.InvokeVoid, element, identifier, args);
             }
             catch (JSDisconnectedException)
             {
@@ -31,7 +30,7 @@ public static class JsExtensions
         {
             try
             {
-                return await js.InvokeAsync<T>("invokeElementMethod", element, identifier, args);
+                return await js.InvokeAsync<T>(SJsModules.Element.Invoke, element, identifier, args);
             }
             catch (JSDisconnectedException)
             {

@@ -1,6 +1,6 @@
 ﻿using Secyud.Secits.Blazor.Themes;
 
-namespace Secyud.Secits.Blazor.Services;
+namespace Secyud.Secits.Blazor;
 
 public class SecitsOptions
 {

@@ -3,6 +3,9 @@ using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
+/// <summary>
+/// 按钮
+/// </summary>
 public partial class SButton : IThemedComponent, ISizedComponent, IContentComponent, IActivableComponent,
     IClickableComponent
 {

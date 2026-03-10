@@ -1,0 +1,12 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()"
+     @onclick="@OnClick">
+    @ChildContent
+</div>
+
+@foreach (var dynamicComponent in DynamicComponents)
+{
+    <SDynamicComponent @key="dynamicComponent.Key"
+                       Context="dynamicComponent"/>
+}

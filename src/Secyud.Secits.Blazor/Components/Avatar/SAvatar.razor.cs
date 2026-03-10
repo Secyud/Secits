@@ -3,6 +3,9 @@ using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
+/// <summary>
+/// 头像显示
+/// </summary>
 public partial class SAvatar : ISizedComponent
 {
     protected override string ComponentClass => "s-avatar";

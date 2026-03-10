@@ -9,7 +9,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddSecitsBlazor(options
     =>
 {
-    options.AddSecitsIconFontAwesome();
 });
 
 builder.Services.AddScoped(sp

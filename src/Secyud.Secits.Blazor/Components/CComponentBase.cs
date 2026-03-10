@@ -17,7 +17,7 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
 
     protected virtual string? ComponentClass => null;
 
-    private IReadOnlyList<IDirtyParameter> _dirtyParameters = null!;
+    private IReadOnlyList<IDirtyParameter>? _dirtyParameters;
     private string? _builtClass;
     private string? _builtStyle;
     private bool _isDirty = true;
@@ -40,7 +40,7 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
     /// <returns></returns>
     public override Task SetParametersAsync(ParameterView parameters)
     {
-        if (!_isDirty)
+        if (!_isDirty && _dirtyParameters is not null)
         {
             foreach (var dirtyParameter in _dirtyParameters)
             {
@@ -65,9 +65,16 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
 
         ConfigureClassStyle(context);
 
-        foreach (var dirtyParameter in _dirtyParameters)
+        if (_dirtyParameters is not null)
         {
-            dirtyParameter.BuildComponentClassStyle(this, context);
+            foreach (var dirtyParameter in _dirtyParameters)
+            {
+                dirtyParameter.BuildComponentClassStyle(this, context);
+            }
+        }
+        else
+        {
+            return;
         }
 
         var cls = context.ClassBuilder.ToString();

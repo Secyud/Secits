@@ -4,9 +4,12 @@ using Secyud.Secits.Blazor.Navigation;
 
 namespace Secyud.Secits.Blazor;
 
+/// <summary>
+/// 路由Tabs，将路由导航用tab进行管理
+/// </summary>
 public partial class RouterTabs : IDisposable
 {
-    protected override string? ComponentClass => "s-router-tab";
+    protected override string ComponentClass => "s-router-tab";
     [Inject] protected IRouterItemGenerator RouterItemGenerator { get; set; } = null!;
 
     [Inject] protected NavigationManager NavigationManager { get; set; } = null!;

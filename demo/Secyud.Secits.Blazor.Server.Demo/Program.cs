@@ -1,6 +1,5 @@
 using Secyud.Secits.Blazor;
 using Secyud.Secits.Blazor.Components;
-using Secyud.Secits.Blazor.Layout;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +10,6 @@ builder.Services.AddRazorComponents()
 builder.Services.AddSecitsBlazor(options
     =>
 {
-    options.AddSecitsIconFontAwesome();
 });
 
 var app = builder.Build();
@@ -32,7 +30,7 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
-    .AddAdditionalAssemblies(typeof(MainLayout).Assembly);
+    .AddAdditionalAssemblies(typeof(DemoLayout).Assembly);
 
 app.Run();
 

@@ -7,7 +7,7 @@ namespace Secyud.Secits.Blazor;
 /// </summary>
 public interface IContentComponent
 {
-    RenderFragment? ChildContent { get; set; }
+    RenderFragment? ChildContent { get; }
 }
 
 /// <summary>
@@ -15,5 +15,5 @@ public interface IContentComponent
 /// </summary>
 public interface IContentComponent<TContext>
 {
-    RenderFragment<TContext>? ChildContent { get; set; }
+    RenderFragment<TContext>? ChildContent { get; }
 }

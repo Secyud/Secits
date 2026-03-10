@@ -1,7 +1,7 @@
 @namespace Secyud.Secits.Blazor
 @inherits CComponentBase
 
-<div class="@GetClass()" style="@GetStyle()">
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
     <CascadingValue Value="Context" IsFixed="true">
         @if (TitleTemplate is not null)
         {

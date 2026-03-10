@@ -1,7 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
-using Secyud.Secits.Blazor.Services;
 
 namespace Secyud.Secits.Blazor.Themes;
 

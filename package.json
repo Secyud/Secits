@@ -1,5 +1,40 @@
 {
+  "name": "secyud.secits.blazor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-component": "esbuild src/Secyud.Secits.Blazor/wwwroot/js/components.js --format=esm --bundle --sourcemap --minify --outfile=src/Secyud.Secits.Blazor/wwwroot/js/components.bundle.min.js --platform=node",
+    "dev": "vite ./react",
+    "build": "tsc --p ./react/tsconfig.lib.json && vite build",
+    "lint": "eslint ./react",
+    "preview": "vite preview ./react"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "less": "^4.5.1"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "esbuild": "^0.25.10",
+    "js-cookie": "^3.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "parcel": "^2.16.4",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
