@@ -8,7 +8,9 @@
     "si-angle-down": "\uE005",
     "si-angle-left-d": "\uE006",
     "si-angle-right-d": "\uE007",
-    "si-calendar": "\uE008",
-    "si-cross": "\uE009"
+    "si-bars": "\uE008",
+    "si-calendar": "\uE009",
+    "si-cross": "\uE00A",
+    "si-pin": "\uE00B"
   }
 }

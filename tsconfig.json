@@ -1,0 +1,8 @@
+﻿{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es2022",
+    "esModuleInterop": true,  // 启用这个选项
+    "allowSyntheticDefaultImports": true, // 通常与 esModuleInterop 一起使用
+  }
+}

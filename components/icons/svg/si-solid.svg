@@ -28,12 +28,18 @@
     <glyph glyph-name="si-angle-right-d"
       unicode="&#xE007;"
       horiz-adv-x="24" d="M7 18L13 12L7 6M13 18L19 12L13 6" />
-    <glyph glyph-name="si-calendar"
+    <glyph glyph-name="si-bars"
       unicode="&#xE008;"
+      horiz-adv-x="24" d="M4 17L20 17M4 12L20 12M4 7L20 7" />
+    <glyph glyph-name="si-calendar"
+      unicode="&#xE009;"
       horiz-adv-x="24" d="M5 21L19 21A2 2 0 0 0 21 19L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21zM5 21L19 21A2 2 0 0 0 21 19L21 16L3 16L3 19A2 2 0 0 0 5 21zM6 14H9V11H6V14zM11 14H14V11H11V14zM16 14H19V11H16V14zM6 10H9V7H6V10zM11 10H14V7H11V10zM16 10H19V7H16V10z" />
     <glyph glyph-name="si-cross"
-      unicode="&#xE009;"
+      unicode="&#xE00A;"
       horiz-adv-x="24" d="M6 18L18 6M18 18L6 6" />
+    <glyph glyph-name="si-pin"
+      unicode="&#xE00B;"
+      horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M12 12L12 4" />
   </font>
 </defs>
 </svg>
