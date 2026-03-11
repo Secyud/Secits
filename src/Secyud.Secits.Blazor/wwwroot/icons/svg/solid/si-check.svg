@@ -1,0 +1,11 @@
+<!-- si-check: 圆角风格对勾图标，适配勾选框 -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 圆角对勾路径：起点左下，向右上延伸，末端圆角，转折平滑 -->
+    <path
+            d="M5 12.5 L10 17.5 L19 6.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+    />
+</svg>

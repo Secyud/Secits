@@ -1,38 +1,69 @@
-.sis {
-  width: var(--s-s);height: var(--s-s);text-align: center;
+.sis,
+.si-solid {
+  position: relative;text-align: center;
+}
+.sis::after,
+.si-solid::after {
+  font-style: normal;position: absolute;display: contents;inset: 0;
 }
 @font-face {
   font-family: 'si-solid';
   src: url('../icons/woff2/si-solid.woff2#si-solid') format('woff2');
 }
-.sis::after {
+.sis::after,
+.si-solid::after {
   font-family: si-solid;
 }
-.sis.si-account::after {
+.sis.si-account::after,
+.si-solid.si-account::after {
   content: '';
 }
-.sis.si-angle-left::after {
+.sis.si-angle-down-d::after,
+.si-solid.si-angle-down-d::after {
   content: '';
 }
-.sis.si-angle-right::after {
+.sis.si-angle-down::after,
+.si-solid.si-angle-down::after {
   content: '';
 }
-.sis.si-angle-up::after {
+.sis.si-angle-left-d::after,
+.si-solid.si-angle-left-d::after {
   content: '';
 }
-.sis.si-angle-down::after {
+.sis.si-angle-left::after,
+.si-solid.si-angle-left::after {
   content: '';
 }
-.sis.si-angle-left-d::after {
+.sis.si-angle-right-d::after,
+.si-solid.si-angle-right-d::after {
   content: '';
 }
-.sis.si-angle-right-d::after {
+.sis.si-angle-right::after,
+.si-solid.si-angle-right::after {
   content: '';
 }
-.sis.si-calendar::after {
+.sis.si-angle-up-d::after,
+.si-solid.si-angle-up-d::after {
   content: '';
 }
-.sis.si-cross::after {
+.sis.si-angle-up::after,
+.si-solid.si-angle-up::after {
   content: '';
+}
+.sis.si-bars::after,
+.si-solid.si-bars::after {
+  content: '';
+}
+.sis.si-calendar::after,
+.si-solid.si-calendar::after {
+  content: '';
+}
+.sis.si-cross::after,
+.si-solid.si-cross::after {
+  content: '';
+}
+.sis.si-pin::after,
+.si-solid.si-pin::after {
+  content: '';
 }
 /*# sourceMappingURL=secits-icons.css.map */

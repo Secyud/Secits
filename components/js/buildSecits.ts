@@ -38,7 +38,7 @@ async function buildIcon(iconType: string) {
         if (iconIndex["fonts"][name]) {
             unicode = iconIndex["fonts"][name];
         } else {
-            unicode = `\\u${(57344 + index++).toString(16).toUpperCase()}`;
+            unicode = String.fromCodePoint(57344 + index++);
             iconIndex["fonts"][name] = unicode;
         }
 

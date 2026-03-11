@@ -10,19 +10,31 @@
   --main-color-rgb: var(--sc-b-m-rgb);
   --part-color: var(--sc-b-p);
   --part-color-rgb: var(--sc-b-p-rgb);
+  --avatar-size: calc(var(--s-s) * 3);
+  --avatar-font-size: calc(var(--s-s) * 2);
   background-color: var(--main-color);
-  width: calc(var(--s-s) * 3);
-  height: calc(var(--s-s) * 3);
-  font-size: calc(var(--s-s) * 2);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  font-size: var(--avatar-font-size);
   cursor: pointer;
-  display: inline-block;
   overflow: hidden;
   text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .s-avatar.circle {
   border-radius: 50%;
+}
+.s-avatar > .avatar-item-text {
+  width: var(--avatar-font-size);
+  height: var(--avatar-font-size);
+}
+.s-avatar > .avatar-item-icon {
+  width: var(--avatar-font-size);
+  height: var(--avatar-font-size);
+}
+.s-avatar > .avatar-item-image {
+  width: var(--avatar-font-size);
+  height: var(--avatar-font-size);
 }
 .s-button {
   padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);

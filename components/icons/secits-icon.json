@@ -1,18 +1,18 @@
 {
   "fontName": "secits-icons",
   "fonts": {
-    "si-account": "\\uE001",
-    "si-angle-down-d": "\\uE002",
-    "si-angle-down": "\\uE003",
-    "si-angle-left-d": "\\uE004",
-    "si-angle-left": "\\uE005",
-    "si-angle-right-d": "\\uE006",
-    "si-angle-right": "\\uE007",
-    "si-angle-up-d": "\\uE008",
-    "si-angle-up": "\\uE009",
-    "si-bars": "\\uE00A",
-    "si-calendar": "\\uE00B",
-    "si-cross": "\\uE00C",
-    "si-pin": "\\uE00D"
+    "si-account": "",
+    "si-angle-down-d": "",
+    "si-angle-down": "",
+    "si-angle-left-d": "",
+    "si-angle-left": "",
+    "si-angle-right-d": "",
+    "si-angle-right": "",
+    "si-angle-up-d": "",
+    "si-angle-up": "",
+    "si-bars": "",
+    "si-calendar": "",
+    "si-cross": "",
+    "si-pin": ""
   }
 }

@@ -14,14 +14,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae520c-ddde-402e-81c9-26c7f47cccf4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-check.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/icons/si-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-general.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/style/avatar/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/avatar/default.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/secits-icon.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/secits-icon.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/svg/solid/si-account.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/svg/solid/si-account.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/js/buildSecits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/buildSecits.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/secits-icon.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/secits-icon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/si-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/si-solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-account.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-account.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/tff/si-solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/tff/si-solid.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/woff2/si-solid.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/woff2/si-solid.woff2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,7 +454,7 @@
       <workItem from="1773125710572" duration="5307000" />
       <workItem from="1773132282951" duration="2375000" />
       <workItem from="1773137226337" duration="2711000" />
-      <workItem from="1773194466022" duration="9168000" />
+      <workItem from="1773194466022" duration="12966000" />
     </task>
     <task id="LOCAL-00001" summary="add ai generated readme">
       <option name="closed" value="true" />
@@ -502,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773210195775</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="optimize font generator, generate icon index instead of config it.">
+      <option name="closed" value="true" />
+      <created>1773213900944</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773213900944</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +556,8 @@
     <MESSAGE value="add svalue source generator" />
     <MESSAGE value="refactor demo" />
     <MESSAGE value="add ai generated icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ai generated icons" />
+    <MESSAGE value="optimize font generator, generate icon index instead of config it." />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize font generator, generate icon index instead of config it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
