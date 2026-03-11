@@ -1,0 +1,16 @@
+<!-- si-calendar: 纯黑白圆角日历图标，外框和顶部横条使用path绘制 -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 日历外框：圆角矩形路径 (rx=3) 黑色描边，白色填充 -->
+    <path d="M5,3 L19,3 A2,2 0 0 1 21,5 L21,19 A2,2 0 0 1 19,21 L5,21 A2,2 0 0 1 3,19 L3,5 A2,2 0 0 1 5,3 Z" stroke="black" stroke-width="1.5" fill="white"/>
+
+    <!-- 顶部横条：黑色填充，覆盖外框上部分，两侧贴合外框圆角 -->
+    <path d="M5,3 L19,3 A2,2 0 0 1 21,5 L21,8 L3,8 L3,5 A2,2 0 0 1 5,3 Z" fill="black"/>
+
+    <!-- 内部日期格子：黑色小方块代表日期（保持不变） -->
+    <rect x="6" y="10" width="3" height="3" fill="black"/>
+    <rect x="11" y="10" width="3" height="3" fill="black"/>
+    <rect x="16" y="10" width="3" height="3" fill="black"/>
+    <rect x="6" y="14" width="3" height="3" fill="black"/>
+    <rect x="11" y="14" width="3" height="3" fill="black"/>
+    <rect x="16" y="14" width="3" height="3" fill="black"/>
+</svg>

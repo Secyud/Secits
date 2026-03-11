@@ -1,7 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
+    <Target Name="CopyStaticAssetsFromExternalProject" BeforeTargets="BeforeBuild">
+        <Message Text="$([System.DateTime]::Now.ToString('HH:mm:ss')) Copy icon files to wwwroot" Importance="high"/>
+        <ItemGroup>
+            <ExternalAssets Include="../../components/icons/**/*"/>
+        </ItemGroup>
+        <Copy SourceFiles="@(ExternalAssets)"
+              DestinationFiles="@(ExternalAssets->'wwwroot/icons/%(RecursiveDir)%(Filename)%(Extension)')"/>
+    </Target>
 
     <Import Project="../../common.props"/>
-
+    
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
@@ -9,15 +17,15 @@
     <ItemGroup>
         <ProjectReference Include="..\Secyud.Secits.Blazor.Generator\Secyud.Secits.Blazor.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
     </ItemGroup>
-    
+
     <ItemGroup>
         <None Update="**/*.razor.css" CssScope="s"/>
         <Content Remove="**/*.less"/>
         <None Include="**/*.less"/>
     </ItemGroup>
-    
+
     <ItemGroup>
-      <AdditionalFiles Include="Components\Dynamic\SDynamicComponent.razor" />
+        <AdditionalFiles Include="Components\Dynamic\SDynamicComponent.razor"/>
     </ItemGroup>
 
 </Project>

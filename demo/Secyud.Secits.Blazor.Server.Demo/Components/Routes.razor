@@ -1,9 +1,7 @@
 @using Secyud.Secits.Blazor.Themes
-<SecitsStylesImport/>
 <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new []{typeof(DemoLayout).Assembly}"
         NotFoundPage="typeof(ErrorView)">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(DemoLayout)"/>
     </Found>
 </Router>
-<SecitsScriptsImport/>

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="si-solid" horiz-adv-x="24">
+    <font-face font-family="si-solid"
+      units-per-em="24" ascent="24"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="si-account"
+      unicode="&#xE001;"
+      horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M8 10L16 10A2 2 0 0 0 18 8L18 4ANaN NaN NaN 0 0 18 4L6 4ANaN NaN NaN 0 0 6 4L6 8A2 2 0 0 0 8 10z" />
+    <glyph glyph-name="si-angle-left"
+      unicode="&#xE002;"
+      horiz-adv-x="24" d="M13 18L7 12L13 6" />
+    <glyph glyph-name="si-angle-right"
+      unicode="&#xE003;"
+      horiz-adv-x="24" d="M9 18L15 12L9 6" />
+    <glyph glyph-name="si-angle-up"
+      unicode="&#xE004;"
+      horiz-adv-x="24" d="M6 9L12 15L18 9" />
+    <glyph glyph-name="si-angle-down"
+      unicode="&#xE005;"
+      horiz-adv-x="24" d="M6 15L12 9L18 15" />
+    <glyph glyph-name="si-angle-left-d"
+      unicode="&#xE006;"
+      horiz-adv-x="24" d="M11 18L5 12L11 6M17 18L11 12L17 6" />
+    <glyph glyph-name="si-angle-right-d"
+      unicode="&#xE007;"
+      horiz-adv-x="24" d="M7 18L13 12L7 6M13 18L19 12L13 6" />
+    <glyph glyph-name="si-calendar"
+      unicode="&#xE008;"
+      horiz-adv-x="24" d="M5 21L19 21A2 2 0 0 0 21 19L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21zM5 21L19 21A2 2 0 0 0 21 19L21 16L3 16L3 19A2 2 0 0 0 5 21zM6 14H9V11H6V14zM11 14H14V11H11V14zM16 14H19V11H16V14zM6 10H9V7H6V10zM11 10H14V7H11V10zM16 10H19V7H16V10z" />
+    <glyph glyph-name="si-cross"
+      unicode="&#xE009;"
+      horiz-adv-x="24" d="M6 18L18 6M18 18L6 6" />
+  </font>
+</defs>
+</svg>

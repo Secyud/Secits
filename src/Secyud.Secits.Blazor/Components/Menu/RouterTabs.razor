@@ -8,7 +8,7 @@
                 <a class="tab-text" href="@context.Uri.AbsolutePath" @onclick:stopPropagation>
                     @context.DisplayName
                 </a>
-                <i class="si-cross" @onclick="@(() => DeleteTabAsync(context))"></i>
+                <i class="sis si-cross" @onclick="@(() => DeleteTabAsync(context))"></i>
             </HeaderTemplate>
             <ContentTemplate>
                 @context.Content

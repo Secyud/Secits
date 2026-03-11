@@ -7,6 +7,8 @@ namespace Secyud.Secits.Blazor.Themes;
 /// </summary>
 public class ClassStyleContext
 {
+    private bool _hasClass;
+
     public StringBuilder ClassBuilder { get; } = new();
 
     public StringBuilder StyleBuilder { get; } = new();
@@ -14,12 +16,20 @@ public class ClassStyleContext
     public void AppendClass(string? @class, params string[] parameters)
     {
         if (string.IsNullOrWhiteSpace(@class)) return;
-        ClassBuilder.Append(' ');
+        if (_hasClass)
+        {
+            ClassBuilder.Append(' ');
+        }
+        else
+        {
+            _hasClass = true;
+        }
+
         ClassBuilder.Append(@class);
         foreach (var parameter in parameters)
             ClassBuilder.Append(parameter);
     }
-    
+
     public void AppendClass(SValue @class)
     {
         AppendClass(@class.ToString());

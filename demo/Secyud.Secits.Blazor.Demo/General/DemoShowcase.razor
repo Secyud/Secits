@@ -1,0 +1,14 @@
+@implements IContentComponent
+<div class="demo-showcase">
+    <div class="demo-showcase-header">
+        @Text
+    </div>
+    <div class="demo-showcase-content">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter] public string? Text { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

@@ -8,6 +8,12 @@ namespace Secyud.Secits.Blazor;
 /// </summary>
 public abstract class CComponentBase : SComponentBase, IContainerComponent
 {
+    protected CComponentBase()
+    {
+        _dirtyParameters = new Lazy<IReadOnlyList<IDirtyParameter>>(() =>
+            DirtyParameterProvider.GetDirtyParameters(this));
+    }
+
     [Inject] private IDirtyParameterProvider DirtyParameterProvider { get; set; } = null!;
 
     [Parameter] public string? Class { get; set; }
@@ -17,15 +23,11 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
 
     protected virtual string? ComponentClass => null;
 
-    private IReadOnlyList<IDirtyParameter>? _dirtyParameters;
+    private readonly Lazy<IReadOnlyList<IDirtyParameter>> _dirtyParameters;
     private string? _builtClass;
     private string? _builtStyle;
     private bool _isDirty = true;
 
-    protected override void OnInitialized()
-    {
-        _dirtyParameters = DirtyParameterProvider.GetDirtyParameters(this);
-    }
 
     public void SetDirty()
     {
@@ -40,9 +42,9 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
     /// <returns></returns>
     public override Task SetParametersAsync(ParameterView parameters)
     {
-        if (!_isDirty && _dirtyParameters is not null)
+        if (!_isDirty)
         {
-            foreach (var dirtyParameter in _dirtyParameters)
+            foreach (var dirtyParameter in _dirtyParameters.Value)
             {
                 if (dirtyParameter.CheckComponentDirty(this, parameters))
                 {
@@ -65,16 +67,9 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent
 
         ConfigureClassStyle(context);
 
-        if (_dirtyParameters is not null)
+        foreach (var dirtyParameter in _dirtyParameters.Value)
         {
-            foreach (var dirtyParameter in _dirtyParameters)
-            {
-                dirtyParameter.BuildComponentClassStyle(this, context);
-            }
-        }
-        else
-        {
-            return;
+            dirtyParameter.BuildComponentClassStyle(this, context);
         }
 
         var cls = context.ClassBuilder.ToString();

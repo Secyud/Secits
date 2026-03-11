@@ -1,3 +1,4 @@
+@using Secyud.Secits.Blazor.General
 @attribute [Route(DemoMenus.Avatar)]
 
 <SCard>
@@ -5,6 +6,8 @@
         Avatar
     </SCardHeader>
     <SCardBody>
-        <SAvatar Text="Secits"/>
+        <DemoShowcase Text="Default">
+            <SAvatar Text="Secits"/>
+        </DemoShowcase>
     </SCardBody>
 </SCard>

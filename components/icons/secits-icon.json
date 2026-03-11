@@ -1,0 +1,14 @@
+﻿{
+  "fontName": "secits-icons",
+  "fonts": {
+    "si-account": "\uE001",
+    "si-angle-left": "\uE002",
+    "si-angle-right": "\uE003",
+    "si-angle-up": "\uE004",
+    "si-angle-down": "\uE005",
+    "si-angle-left-d": "\uE006",
+    "si-angle-right-d": "\uE007",
+    "si-calendar": "\uE008",
+    "si-cross": "\uE009"
+  }
+}

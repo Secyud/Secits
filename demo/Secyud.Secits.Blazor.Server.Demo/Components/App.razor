@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Secyud.Secits.Blazor.Themes
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="@Assets["Secyud.Secits.Blazor.Server.Demo.styles.css"]"/>
     <link rel="stylesheet" href="@Assets["_content/Secyud.Secits.Blazor.Demo/secits-theme.css"]"/>
 
+    <SecitsStylesImport/>
     <ImportMap/>
     <HeadOutlet @rendermode="InteractiveServer"/>
     <title>demo</title>
@@ -17,6 +19,7 @@
 <body class="application-layout">
 <Routes @rendermode="InteractiveServer"/>
 <script src="_framework/blazor.web.js"></script>
+<SecitsScriptsImport/>
 </body>
 
 </html>

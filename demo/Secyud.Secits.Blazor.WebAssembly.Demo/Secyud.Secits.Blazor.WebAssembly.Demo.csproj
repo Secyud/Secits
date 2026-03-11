@@ -15,4 +15,8 @@
         <ProjectReference Include="..\Secyud.Secits.Blazor.Demo\Secyud.Secits.Blazor.Demo.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
+    </ItemGroup>
+
 </Project>

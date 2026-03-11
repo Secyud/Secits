@@ -18,12 +18,12 @@
 
         <div key="first" class="s-pager-button" disabled="@(_pageIndex <= 0)"
              @onclick="TurnToFirstPageAsync">
-            <i class="si-first-page"></i>
+            <i class="sis si-angle-left-d"></i>
         </div>
 
         <div key="previous" class="s-pager-button" disabled="@(_pageIndex <= 0)"
              @onclick="TurnToPreviewPageAsync">
-            <i class="si-preview-page"></i>
+            <i class="sis si-angle-left"></i>
         </div>
 
         for (var i = minPageIndex; i < maxPageIndex; i++)
@@ -33,12 +33,12 @@
 
         <div key="next" class="s-pager-button" disabled="@(_pageIndex >= MaxPageCount - 1)"
              @onclick="TurnToNextPageAsync">
-            <i class="si-first-page"></i>
+            <i class="sis si-angle-right"></i>
         </div>
 
         <div key="last" class="s-pager-button" disabled="@(_pageIndex >= MaxPageCount - 1)"
              @onclick="TurnToLastPageAsync">
-            <i class="si-first-page"></i>
+            <i class="sis si-angle-right-d"></i>
         </div>
     }
 

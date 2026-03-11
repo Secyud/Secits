@@ -31,4 +31,24 @@ public partial class SAvatar : ISizedComponent
         base.ConfigureClassStyle(context);
         context.AppendClass(Shape);
     }
+
+    protected string GetText()
+    {
+        var text = Text!;
+
+        var texts = text.Split(" ");
+
+        if (texts.Length == 0)
+        {
+            return "";
+        }
+
+        if (texts.Length == 1)
+        {
+            return texts[0][0].ToString();
+        }
+
+
+        return $"{texts[0][0]}{texts[1][0]}";
+    }
 }

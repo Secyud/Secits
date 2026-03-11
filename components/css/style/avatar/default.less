@@ -2,15 +2,22 @@
 
 .s-avatar {
   &:extend(.s-component);
-  text-align: center;
+  .set-color(main, --sc-b-m);
+  .set-color(part, --sc-b-p);
+  background-color: var(--main-color);
+  width: calc(var(--s-s) * 3);
+  height: calc(var(--s-s) * 3);
+  font-size: calc(var(--s-s) * 2);
   cursor: pointer;
-  display: inline-block;
-  resize: both;
-  width: calc(var(--s-s) * 2);
-  height: calc(var(--s-s) * 2);
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
 
-  .circle {
+  &.circle {
     border-radius: 50%;
   }
 
+  >.avatar-item-text{
+
+  }
 }

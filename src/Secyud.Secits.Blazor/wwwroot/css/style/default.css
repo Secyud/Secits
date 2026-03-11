@@ -6,14 +6,22 @@
   background-color: transparent;border: var(--s-s-bw) solid transparent;color: var(--text-color);font-size: var(--s-s);border-radius: var(--s-s-br);position: relative;transition: 50ms;
 }
 .s-avatar {
-  text-align: center;
+  --main-color: var(--sc-b-m);
+  --main-color-rgb: var(--sc-b-m-rgb);
+  --part-color: var(--sc-b-p);
+  --part-color-rgb: var(--sc-b-p-rgb);
+  background-color: var(--main-color);
+  width: calc(var(--s-s) * 3);
+  height: calc(var(--s-s) * 3);
+  font-size: calc(var(--s-s) * 2);
   cursor: pointer;
   display: inline-block;
-  resize: both;
-  width: calc(var(--s-s) * 2);
-  height: calc(var(--s-s) * 2);
+  overflow: hidden;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
 }
-.s-avatar .circle {
+.s-avatar.circle {
   border-radius: 50%;
 }
 .s-button {
@@ -22,10 +30,10 @@
   cursor: pointer;
   user-select: none;
   display: inline-block;
-  ----main-color-color: var(--sc-a-m);
-  ----main-color-color-rgb: var(--sc-a-m-rgb);
-  ----part-color-color: var(--sc-a-p);
-  ----part-color-color-rgb: var(--sc-a-p-rgb);
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-a-p);
+  --part-color-rgb: var(--sc-a-p-rgb);
   --alpha: 1;
   border-color: var(--main-color);
   background-color: rgba(var(--main-color-rgb), var(--alpha));
@@ -74,10 +82,10 @@
 .s-card {
   margin: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
   padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
-  ----main-color-color: var(--sc-c-m);
-  ----main-color-color-rgb: var(--sc-c-m-rgb);
-  ----part-color-color: var(--sc-c-p);
-  ----part-color-color-rgb: var(--sc-c-p-rgb);
+  --main-color: var(--sc-c-m);
+  --main-color-rgb: var(--sc-c-m-rgb);
+  --part-color: var(--sc-c-p);
+  --part-color-rgb: var(--sc-c-p-rgb);
   --alpha: 1;
   border-color: var(--main-color);
   background-color: rgba(var(--main-color-rgb), var(--alpha));
@@ -104,10 +112,10 @@
 .s-input {
   padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
   width: 100%;
-  ----main-color-color: var(--sc-a-m);
-  ----main-color-color-rgb: var(--sc-a-m-rgb);
-  ----part-color-color: var(--sc-c-p);
-  ----part-color-color-rgb: var(--sc-c-p-rgb);
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-c-p);
+  --part-color-rgb: var(--sc-c-p-rgb);
   --alpha: 0.25;
   border-color: rgba(var(--main-color-rgb), var(--alpha));
   background-color: var(--sc-c-m);
@@ -188,5 +196,17 @@ h5.s-title {
 }
 h6.s-title {
   padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+}
+html,
+body,
+.s-app-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.s-app-container {
+  background-color: var(--sc-b-m);
+  position: relative;
+  display: flex;
 }
 /*# sourceMappingURL=default.css.map */

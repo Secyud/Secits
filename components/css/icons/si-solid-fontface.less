@@ -1,0 +1,14 @@
+﻿@import (reference) "si-general";
+
+@font-face {
+  font-family: 'si-solid';
+  src: url('@{relative-path}/icons/woff2/si-solid.woff2#si-solid') format('woff2');
+}
+
+.sis {
+  &:extend(.si);
+
+  &::after {
+    font-family: si-solid;
+  }
+}

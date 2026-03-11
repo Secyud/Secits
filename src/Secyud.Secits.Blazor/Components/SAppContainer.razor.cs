@@ -14,7 +14,6 @@ public partial class SAppContainer : IContentComponent, ISizedComponent, IThemed
 
     protected List<SDynamicComponentContext> DynamicComponents { get; } = [];
 
-
     protected override void OnInitialized()
     {
         AppContext.CreateDynamicComponentEvent += CreateDynamicComponent;
