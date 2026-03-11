@@ -14,32 +14,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae520c-ddde-402e-81c9-26c7f47cccf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/js/general/eventManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/icons/si-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/avatar/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/avatar/default.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/secits-icon.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/secits-icon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/svg/solid/si-account.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/svg/solid/si-account.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/js/buildSecits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/buildSecits.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/js/general/elementManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/general/elementManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/secits-icon.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/secits-icon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/si-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/si-solid.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-account.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/svg/solid/si-account.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/tff/si-solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/tff/si-solid.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/woff2/si-solid.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/icons/woff2/si-solid.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/wwwroot/secits-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/wwwroot/secits-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsObjects/Invoker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsModules/SJsModules.general.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsModules/SJsModules.general.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +51,7 @@
       <list>
         <option value="CSS File" />
         <option value="Less File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -76,7 +64,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/C853ABE26296F857C1659F29/Secyud.Secits.Blazor.Generator/Secyud.Secits.Blazor.SValueGeneratorWithAttributes/SColor.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24f5857a073841e189d805de9660178ef49910/39/04cc72c8/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24f5857a073841e189d805de9660178ef49910/47/c26290d7/IEquatable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24f5857a073841e189d805de9660178ef49910/ce/8d575708/AppContext.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,31 +131,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: http.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;experiment&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;Less&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build-component.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: http.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "experiment",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "list.type.of.created.stylesheet": "Less",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build-component.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "D:\\Projects\\secyud\\secits\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1770458406306" />
     <option name="spentUsd" value="0.003678" />
@@ -454,7 +442,7 @@
       <workItem from="1773125710572" duration="5307000" />
       <workItem from="1773132282951" duration="2375000" />
       <workItem from="1773137226337" duration="2711000" />
-      <workItem from="1773194466022" duration="12966000" />
+      <workItem from="1773194466022" duration="19798000" />
     </task>
     <task id="LOCAL-00001" summary="add ai generated readme">
       <option name="closed" value="true" />
@@ -528,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773213900944</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix account icon, fix avatar style.">
+      <option name="closed" value="true" />
+      <created>1773217464121</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773217464121</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +553,8 @@
     <MESSAGE value="refactor demo" />
     <MESSAGE value="add ai generated icons" />
     <MESSAGE value="optimize font generator, generate icon index instead of config it." />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize font generator, generate icon index instead of config it." />
+    <MESSAGE value="fix account icon, fix avatar style." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix account icon, fix avatar style." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,28 +1,17 @@
 ﻿@namespace Secyud.Secits.Blazor
 @inherits LayoutComponentBase
-<SAppContainer>
-    <div class="sc-pin-menu left layout-menu-pin">
-        <div class="layout-menu-pin" @onclick="@(() => _menuFixed = !_menuFixed)">
-            <SIcon Icon="@(_menuFixed ? "si-pin" : "si-bars")"/>
-        </div>
-        <div class="sc-menu" id="main-menu">
-            <div class="s-menu outer">
-                @foreach (var (name, url) in DemoMenus.Items)
-                {
-                    <a class="menu-item" href="@url">
-                        <div class="menu-item-text">@name</div>
-                    </a>
-                }
-            </div>
+<SAppContainer Class="demo-layout">
+    <div class="demo-menu">
+        <div class="demo-menu-item outer">
+            @foreach (var (name, url) in DemoMenus.Items)
+            {
+                <a class="demo-menu-item-link" href="@url">
+                    <div class="demo-menu-item-text">@name</div>
+                </a>
+            }
         </div>
     </div>
-    <div class="sc-container">
+    <div class="demo-body">
         @Body
     </div>
 </SAppContainer>
-
-@code{
-
-    private bool _menuFixed = true;
-
-}

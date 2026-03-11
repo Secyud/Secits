@@ -8,24 +8,40 @@
         Avatar
     </SCardHeader>
     <SCardBody>
-        <DemoShowcase Text="Circle Default">
-            <SAvatar/>
-        </DemoShowcase>
-        <DemoShowcase Text="Circle Text">
-            <SAvatar Text="Secits Avatar"/>
-        </DemoShowcase>
-        <DemoShowcase Text="Circle Image">
-            <SAvatar Src="@src"/>
-        </DemoShowcase>
-        <DemoShowcase Text="Square Default">
-            <SAvatar Shape="SAvatarShape.Square"/>
-        </DemoShowcase>
-        <DemoShowcase Text="Square Text">
-            <SAvatar Shape="SAvatarShape.Square" Text="Secits Avatar"/>
-        </DemoShowcase>
-        <DemoShowcase Text="Square Image">
-            <SAvatar Shape="SAvatarShape.Square" Src="@src"/>
-        </DemoShowcase>
+        <SGridRow>
+            <SGridCol>
+                <DemoShowcase Text="Circle Default">
+                    <SAvatar/>
+                </DemoShowcase>
+            </SGridCol>
+            <SGridCol>
+                <DemoShowcase Text="Circle Text">
+                    <SAvatar Text="Secits Avatar"/>
+                </DemoShowcase>
+            </SGridCol>
+            <SGridCol>
+                <DemoShowcase Text="Circle Image">
+                    <SAvatar Src="@src"/>
+                </DemoShowcase>
+            </SGridCol>
+        </SGridRow>
+        <SGridRow>
+            <SGridCol>
+                <DemoShowcase Text="Square Default">
+                    <SAvatar Shape="SAvatarShape.Square"/>
+                </DemoShowcase>
+            </SGridCol>
+            <SGridCol>
+                <DemoShowcase Text="Square Text">
+                    <SAvatar Shape="SAvatarShape.Square" Text="Secits Avatar"/>
+                </DemoShowcase>
+            </SGridCol>
+            <SGridCol>
+                <DemoShowcase Text="Square Image">
+                    <SAvatar Shape="SAvatarShape.Square" Src="@src"/>
+                </DemoShowcase>
+            </SGridCol>
+        </SGridRow>
     </SCardBody>
 </SCard>
 

@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e95faa3-2a3a-4bb8-b986-94a566f901ba" name="更改" comment="optimize font generator, generate icon index instead of config it.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/icons/si-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/avatar/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/avatar/default.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Avatar/SAvatar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/secits-icons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" afterDir="false" />
-    </list>
+    <list default="true" id="0e95faa3-2a3a-4bb8-b986-94a566f901ba" name="更改" comment="optimize font generator, generate icon index instead of config it." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,11 +99,11 @@
       <recent name="D:\Projects\secyud\secits\components\icons" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.buildSecits.ts">
-    <configuration name="buildSecits.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/components/js/buildSecits.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/components/js">
+  <component name="RunManager" selected="npm.build-scripts">
+    <configuration name="build-iconfonts" type="NodeJSConfigurationType" temporary="true" path-to-js-file="buildSecits.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/components/js">
       <method v="2" />
     </configuration>
-    <configuration name="build-component (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build-scripts" type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -125,21 +113,14 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build-component" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/src/Secyud.Secits.Blazor/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build-component" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Node.js.build-iconfonts" />
+      <item itemvalue="npm.build-scripts" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.buildSecits.ts" />
-        <item itemvalue="npm.build-component (1)" />
-        <item itemvalue="npm.build-component" />
+        <item itemvalue="Node.js.build-iconfonts" />
+        <item itemvalue="npm.build-scripts" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +147,7 @@
       <workItem from="1772781186999" duration="1874000" />
       <workItem from="1773110762128" duration="7027000" />
       <workItem from="1773132224620" duration="4662000" />
-      <workItem from="1773194628705" duration="11286000" />
+      <workItem from="1773194628705" duration="13930000" />
     </task>
     <task id="LOCAL-00001" summary="move dragert build script to this project.">
       <option name="closed" value="true" />
@@ -193,6 +174,17 @@
       <list>
         <option value="$PROJECT_DIR$/react/lib/main.js" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
