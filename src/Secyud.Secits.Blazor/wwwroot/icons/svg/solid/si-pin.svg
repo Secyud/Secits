@@ -1,0 +1,8 @@
+﻿<!-- si-pin: 圆形头部 + 竖杠图钉图标 -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 图钉头部：实心圆形 -->
+  <circle cx="12" cy="8" r="4" fill="currentColor"/>
+
+  <!-- 图钉竖杆：直线 -->
+  <path d="M12 12 L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

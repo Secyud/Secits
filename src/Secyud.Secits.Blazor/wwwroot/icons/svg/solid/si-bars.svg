@@ -1,0 +1,11 @@
+﻿<!-- si-bars: 三个横杠菜单图标 -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 上横杠 -->
+    <path d="M4 7 L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 中横杠 -->
+    <path d="M4 12 L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 下横杠 -->
+    <path d="M4 17 L20 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

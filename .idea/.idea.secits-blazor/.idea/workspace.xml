@@ -14,11 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae520c-ddde-402e-81c9-26c7f47cccf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/icons/svg/solid/si-bars.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/icons/svg/solid/si-pin.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid-fontface.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/icons/si-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/icons/si-solid.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/secits-icon.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/secits-icon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Services/SecitsOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/svg/si-solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/tff/si-solid.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/woff2/si-solid.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/js/buildSecits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/buildSecits.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +436,7 @@
       <workItem from="1773125710572" duration="5307000" />
       <workItem from="1773132282951" duration="2375000" />
       <workItem from="1773137226337" duration="2711000" />
-      <workItem from="1773194466022" duration="8166000" />
+      <workItem from="1773194466022" duration="9168000" />
     </task>
     <task id="LOCAL-00001" summary="add ai generated readme">
       <option name="closed" value="true" />

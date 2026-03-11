@@ -8,32 +8,44 @@
       descent="0" />
     <missing-glyph horiz-adv-x="0" />
     <glyph glyph-name="si-account"
-      unicode="&#xE001;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x31;"
       horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M8 10L16 10A2 2 0 0 0 18 8L18 4ANaN NaN NaN 0 0 18 4L6 4ANaN NaN NaN 0 0 6 4L6 8A2 2 0 0 0 8 10z" />
-    <glyph glyph-name="si-angle-left"
-      unicode="&#xE002;"
-      horiz-adv-x="24" d="M13 18L7 12L13 6" />
-    <glyph glyph-name="si-angle-right"
-      unicode="&#xE003;"
-      horiz-adv-x="24" d="M9 18L15 12L9 6" />
-    <glyph glyph-name="si-angle-up"
-      unicode="&#xE004;"
-      horiz-adv-x="24" d="M6 9L12 15L18 9" />
+    <glyph glyph-name="si-angle-down-d"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x32;"
+      horiz-adv-x="24" d="M6 17L12 11L18 17M6 11L12 5L18 11" />
     <glyph glyph-name="si-angle-down"
-      unicode="&#xE005;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x33;"
       horiz-adv-x="24" d="M6 15L12 9L18 15" />
     <glyph glyph-name="si-angle-left-d"
-      unicode="&#xE006;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x34;"
       horiz-adv-x="24" d="M11 18L5 12L11 6M17 18L11 12L17 6" />
+    <glyph glyph-name="si-angle-left"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x35;"
+      horiz-adv-x="24" d="M13 18L7 12L13 6" />
     <glyph glyph-name="si-angle-right-d"
-      unicode="&#xE007;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x36;"
       horiz-adv-x="24" d="M7 18L13 12L7 6M13 18L19 12L13 6" />
+    <glyph glyph-name="si-angle-right"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x37;"
+      horiz-adv-x="24" d="M9 18L15 12L9 6" />
+    <glyph glyph-name="si-angle-up-d"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x38;"
+      horiz-adv-x="24" d="M6 7L12 13L18 7M6 13L12 19L18 13" />
+    <glyph glyph-name="si-angle-up"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x39;"
+      horiz-adv-x="24" d="M6 9L12 15L18 9" />
+    <glyph glyph-name="si-bars"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x41;"
+      horiz-adv-x="24" d="M4 17L20 17M4 12L20 12M4 7L20 7" />
     <glyph glyph-name="si-calendar"
-      unicode="&#xE008;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x42;"
       horiz-adv-x="24" d="M5 21L19 21A2 2 0 0 0 21 19L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21zM5 21L19 21A2 2 0 0 0 21 19L21 16L3 16L3 19A2 2 0 0 0 5 21zM6 14H9V11H6V14zM11 14H14V11H11V14zM16 14H19V11H16V14zM6 10H9V7H6V10zM11 10H14V7H11V10zM16 10H19V7H16V10z" />
     <glyph glyph-name="si-cross"
-      unicode="&#xE009;"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x43;"
       horiz-adv-x="24" d="M6 18L18 6M18 18L6 6" />
+    <glyph glyph-name="si-pin"
+      unicode="&#x5C;&#x75;&#x45;&#x30;&#x30;&#x44;"
+      horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M12 12L12 4" />
   </font>
 </defs>
 </svg>

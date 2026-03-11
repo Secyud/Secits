@@ -1,27 +1,54 @@
 ﻿import {FontBuilder} from "../../../dragert/fonts/src/font-builder"
-import {fs} from "../../../dragert/utils/src/file-stream";
+import {FileHelper} from "../../../dragert/utils/src/file-helper";
 import * as path from "path";
 import {join} from "node:path";
+import * as fs from "fs"
+
 
 const __dirname = path.resolve();
 const folder = join(__dirname, '../icons');
 console.log("Current dir: " + folder);
-const jsonConfigStr = await fs.readFile(join(folder, "secits-icon.json"), {encoding: "utf-8"}) as string;
-const jsonConfig = JSON.parse(jsonConfigStr.substring(jsonConfigStr.indexOf("{")));
-console.log(jsonConfig);
 
-let builder = new FontBuilder();
 
-let fonts = jsonConfig["fonts"];
-for (const key in fonts) {
-    builder.addSvg({
-        name: key, path: join(folder, "svg", "solid", key + ".svg"), unicode: fonts[key]
-    })
+let index = 1;
+let iconIndex = {
+    "fontName": "secits-icons",
+    "fonts": {}
+};
+
+await buildIcon("solid")
+await FileHelper.writeFile(join(folder, "secits-icon.json"), JSON.stringify(iconIndex, null, 2));
+
+async function buildIcon(iconType: string) {
+    const className = `.si${iconType[0]},.si-${iconType}`;
+    const fileName = `si-${iconType}`;
+
+
+    const svgPath = join(folder, "svg", iconType);
+    const files = fs.readdirSync(svgPath);
+
+    let builder = new FontBuilder();
+    files.forEach(file => {
+        if (!file.endsWith(".svg")) {
+            return;
+        }
+        const filePath = path.join(svgPath, file);
+        const name = file.substring(0, file.length - 4);
+        let unicode = "";
+        if (iconIndex["fonts"][name]) {
+            unicode = iconIndex["fonts"][name];
+        } else {
+            unicode = `\\u${(57344 + index++).toString(16).toUpperCase()}`;
+            iconIndex["fonts"][name] = unicode;
+        }
+
+        builder.addSvg({
+            name: name, path: filePath, unicode: unicode
+        })
+    });
+
+    await builder.buildSvgFontCss(join(folder, "../css/icons", fileName + ".less"), className);
+    await builder.buildSvg(join(folder, "svg", fileName + ".svg"), fileName);
+    await builder.buildTtfFont(join(folder, "svg", fileName + ".svg"), join(folder, "tff", fileName + ".ttf"))
+    await builder.buildWoff2Font(join(folder, "tff", fileName + ".ttf"), join(folder, "woff2", fileName + ".woff2"))
 }
-
-const fileName = "si-solid";
-
-await builder.buildSvgFontCss(join(folder, "../css/icons", fileName + ".less"), "sis");
-await builder.buildSvg(join(folder, "svg", fileName + ".svg"), fileName);
-await builder.buildTtfFont(join(folder, "svg", fileName + ".svg"), join(folder, "tff", fileName + ".ttf"))
-await builder.buildWoff2Font(join(folder, "tff", fileName + ".ttf"), join(folder, "woff2", fileName + ".woff2"))
