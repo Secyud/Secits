@@ -1,10 +1,10 @@
 .sis,
 .si-solid {
-  position: relative;text-align: center;
+  text-align: center;
 }
 .sis::after,
 .si-solid::after {
-  font-style: normal;position: absolute;display: contents;inset: 0;
+  font-style: normal;margin: auto;display: contents;
 }
 @font-face {
   font-family: 'si-solid';
@@ -58,12 +58,35 @@
 .si-solid.si-calendar::after {
   content: '';
 }
+.sis.si-check::after,
+.si-solid.si-check::after {
+  content: '';
+}
 .sis.si-cross::after,
 .si-solid.si-cross::after {
-  content: '';
+  content: '';
 }
 .sis.si-pin::after,
 .si-solid.si-pin::after {
-  content: '';
+  content: '';
 }
-/*# sourceMappingURL=secits-icons.css.map */
+.sis.si-square::after,
+.si-solid.si-square::after {
+  content: '';
+}
+.sis.si-triangle-down::after,
+.si-solid.si-triangle-down::after {
+  content: '';
+}
+.sis.si-triangle-left::after,
+.si-solid.si-triangle-left::after {
+  content: '';
+}
+.sis.si-triangle-right::after,
+.si-solid.si-triangle-right::after {
+  content: '';
+}
+.sis.si-triangle-up::after,
+.si-solid.si-triangle-up::after {
+  content: '';
+}

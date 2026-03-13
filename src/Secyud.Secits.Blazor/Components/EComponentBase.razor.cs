@@ -71,12 +71,14 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     {
         _valueHandlers.TryApply(plugin);
         _inputElements.TryApply(plugin);
+        StateHasChanged();
     }
 
     public virtual void ForgoPlugin(ISPlugin plugin)
     {
         _valueHandlers.TryForgo(plugin);
         _inputElements.TryForgo(plugin);
+        StateHasChanged();
     }
 
     public virtual Task TriggerInputChangedEventAsync(string? input)

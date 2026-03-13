@@ -15,6 +15,10 @@
     "si-check": "",
     "si-cross": "",
     "si-pin": "",
-    "si-square": ""
+    "si-square": "",
+    "si-triangle-down": "",
+    "si-triangle-left": "",
+    "si-triangle-right": "",
+    "si-triangle-up": ""
   }
 }

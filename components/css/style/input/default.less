@@ -2,6 +2,27 @@
 @import (reference)  "../../icons/si-general";
 @import (reference)  "../../icons/si-solid";
 
+// input icon
+.sii {
+  &:extend(.s-component all);
+  &:extend(.si all);
+  border: none;
+  display: block;
+  margin: auto;
+  font-family: si-solid;
+  font-size: calc(var(--s-s) * 0.75);
+  .set-color(main, --sc-a-m);
+  .set-color(part, --sc-a-p);
+  --alpha: 100%;
+  .on-hover({
+    --alpha: 60%;
+  });
+  .on-active({
+    --alpha: 80%;
+  });
+  .is-text();
+}
+
 .s-input-general {
   &:extend(.s-component);
   .set-color(main, --sc-a-m);
@@ -12,6 +33,7 @@
   border-color: var(--component-color);
   background-color: var(--sc-c-m);
   color: var(--part-color);
+  position: relative;
 
   .on-hover({
     --alpha: 60%;
@@ -30,7 +52,6 @@
     background: none;
     box-shadow: none;
   }
-
 
   &.shadow {
     @shadow-x: 0;
@@ -53,42 +74,70 @@
 
 .s-input {
   &:extend(.s-input-general all);
+  --input-margin: size-vh(4, 4);
 
   display: flex;
   width: 100%;
 
-
-  & > .s-element {
-    position: absolute;
-    inset: size-vh(4, 4);
-    left: unset;
-  }
-
-  textarea {
-  }
-
-  input, textarea {
-    padding: size-vh(4, 4);
+  & > input, textarea {
+    padding: var(--input-margin);
     min-height: var(--s-s);
     width: 100% !important;
     color: var(--part-color);
   }
 
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    //-webkit-appearance: none;
-    //margin: 0;
-    &:extend(.si all);
-    &::after {
-      margin: auto;
-      color: var(--component-color);
-      font-family: si-solid;
-      &:extend(.sis.si-angle-down::after);
-    }
+  --element-display: none;
 
+  & > .s-input-elements {
+    display: var(--element-display);
+    position: absolute;
+    inset: var(--input-margin);
+    left: unset;
+    bottom: unset;
+
+    & > .s-input-element {
+      display: flex;
+      width: var(--s-s);
+      height: var(--s-s);
+    }
   }
+
+  .on-hover({
+    --element-display: flex;
+  });
+  .on-focus({
+    --element-display: flex;
+  });
 }
 
+.s-input:has(>input[type="number"]) {
+  & > input[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      //-webkit-appearance: none;
+    }
+  }
+
+  & > .s-input-elements > .s-outer-spin-button {
+    display: inline-block;
+    width: var(--s-s);
+    height: var(--s-s);
+
+    & > .sii {
+      --icon-size: calc(var(--s-s) / 2);
+      height: var(--icon-size);
+      font-size: var(--icon-size);
+    }
+
+    & > .s-spin-down::after {
+      &:extend(.sis.si-triangle-down::after);
+    }
+
+    & > .s-spin-up::after {
+      &:extend(.sis.si-triangle-up::after);
+    }
+  }
+}
 
 .s-input-check {
   &:extend(.s-input-general all);
@@ -97,19 +146,19 @@
   display: block;
   width: var(--input-size);
   height: var(--input-size);
-  position: relative;
 
   input {
     position: absolute;
     inset: 0;
-    color: var(--main-color);
+    display: flex;
+    color: var(--component-color);
+    font-family: si-solid;
+    font-size: calc(var(--s-s) * 1.4);
     &:extend(.si all);
 
     &::after {
+      display: block;
       margin: auto;
-      color: var(--component-color);
-      font-size: calc(var(--s-s) * 1.4);
-      font-family: si-solid;
     }
 
   }
@@ -121,4 +170,8 @@
   input:indeterminate::after {
     &:extend(.sis.si-square::after);
   }
+}
+
+.s-input > .s-input-elements > .s-input-element > .s-clear::after {
+  &:extend(.sis.si-cross::after);
 }

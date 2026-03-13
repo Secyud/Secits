@@ -26,4 +26,12 @@ public static partial class SJsModules
         public const string Create = ModuleName + ".create";
         public const string Delete = ModuleName + ".delete";
     }
+
+    public static class Input
+    {
+        public const string ModuleName = Name + ".inputManager";
+
+        public const string NumberStepUp = ModuleName + ".numberStepUp";
+        public const string NumberStepDown = ModuleName + ".numberStepDown";
+    }
 }

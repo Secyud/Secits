@@ -2,6 +2,7 @@
 .s-badge,
 .s-button,
 .s-card,
+.sii,
 .s-input-general,
 .s-input,
 .s-input-check {
@@ -118,25 +119,49 @@
   width: 100%;
   display: block;
 }
-.s-input input[type="number"]::-webkit-inner-spin-button,
-.s-input input[type="number"]::-webkit-outer-spin-button,
+.sii,
 .s-input-check input {
   text-align: center;
 }
-.s-input input[type="number"]::-webkit-inner-spin-button::after,
-.s-input input[type="number"]::-webkit-outer-spin-button::after,
+.sii::after,
 .s-input-check input::after {
   font-style: normal;margin: auto;display: contents;
-}
-.s-input input[type="number"]::-webkit-inner-spin-button::after,
-.s-input input[type="number"]::-webkit-outer-spin-button::after {
-  content: '';
 }
 .s-input-check input:checked::after {
   content: '';
 }
+.s-input > .s-input-elements > .s-input-element > .s-clear::after {
+  content: '';
+}
 .s-input-check input:indeterminate::after {
   content: '';
+}
+.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .s-spin-down::after {
+  content: '';
+}
+.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .s-spin-up::after {
+  content: '';
+}
+.sii {
+  border: none;
+  display: block;
+  margin: auto;
+  font-family: si-solid;
+  font-size: calc(var(--s-s) * 0.75);
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-a-p);
+  --part-color-rgb: var(--sc-a-p-rgb);
+  --alpha: 100%;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--component-color);
+}
+.sii:hover:not(.disabled,.readonly) {
+  --alpha: 60%;
+}
+.sii:active:not(.disabled,.readonly) {
+  --alpha: 80%;
 }
 .s-input-general,
 .s-input,
@@ -150,6 +175,7 @@
   border-color: var(--component-color);
   background-color: var(--sc-c-m);
   color: var(--part-color);
+  position: relative;
 }
 .s-input-general:hover:not(.disabled,.readonly),
 .s-input:hover:not(.disabled,.readonly),
@@ -196,44 +222,63 @@
   --shadow-alpha: 0.7;
 }
 .s-input {
+  --input-margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
   display: flex;
   width: 100%;
+  --element-display: none;
 }
-.s-input > .s-element {
-  position: absolute;
-  inset: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
-  left: unset;
-}
-.s-input input,
+.s-input > input,
 .s-input textarea {
-  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
+  padding: var(--input-margin);
   min-height: var(--s-s);
   width: 100% !important;
   color: var(--part-color);
 }
-.s-input input[type="number"]::-webkit-inner-spin-button::after,
-.s-input input[type="number"]::-webkit-outer-spin-button::after {
-  margin: auto;
-  color: var(--component-color);
-  font-family: si-solid;
+.s-input > .s-input-elements {
+  display: var(--element-display);
+  position: absolute;
+  inset: var(--input-margin);
+  left: unset;
+  bottom: unset;
+}
+.s-input > .s-input-elements > .s-input-element {
+  display: flex;
+  width: var(--s-s);
+  height: var(--s-s);
+}
+.s-input:hover:not(.disabled,.readonly) {
+  --element-display: flex;
+}
+.s-input:has(:focus):not(.disabled,.readonly) {
+  --element-display: flex;
+}
+.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button {
+  display: inline-block;
+  width: var(--s-s);
+  height: var(--s-s);
+}
+.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .sii {
+  --icon-size: calc(var(--s-s) / 2);
+  height: var(--icon-size);
+  font-size: var(--icon-size);
 }
 .s-input-check {
   --input-size: calc(var(--s-s) * 1.5);
   display: block;
   width: var(--input-size);
   height: var(--input-size);
-  position: relative;
 }
 .s-input-check input {
   position: absolute;
   inset: 0;
-  color: var(--main-color);
+  display: flex;
+  color: var(--component-color);
+  font-family: si-solid;
+  font-size: calc(var(--s-s) * 1.4);
 }
 .s-input-check input::after {
+  display: block;
   margin: auto;
-  color: var(--component-color);
-  font-size: calc(var(--s-s) * 1.4);
-  font-family: si-solid;
 }
 .s-pager {
   display: flex;

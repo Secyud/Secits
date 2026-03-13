@@ -51,7 +51,19 @@
       horiz-adv-x="32" d="M14 16A7 7 0 1 0 18 16L18 4A2 2 0 0 0 14 4z" />
     <glyph glyph-name="si-square"
       unicode="&#xE00F;"
-      horiz-adv-x="32" d="M5 30H27A3 3 0 0 0 30 27V5A3 3 0 0 0 27 2H5A3 3 0 0 0 2 5V27A3 3 0 0 0 5 30z" />
+      horiz-adv-x="32" d="M7 28H25A3 3 0 0 0 28 25V7A3 3 0 0 0 25 4H7A3 3 0 0 0 4 7V25A3 3 0 0 0 7 28z" />
+    <glyph glyph-name="si-triangle-down"
+      unicode="&#xE010;"
+      horiz-adv-x="32" d="M2 20C2 20 0 24 6 24L26 24C32 24 30 20 30 20L18 8A4 4 0 0 0 14 8z" />
+    <glyph glyph-name="si-triangle-left"
+      unicode="&#xE011;"
+      horiz-adv-x="32" d="M20 30C20 30 24 32 24 26L24 6C24 0 20 2 20 2L8 14A4 4 0 0 0 8 18z" />
+    <glyph glyph-name="si-triangle-right"
+      unicode="&#xE012;"
+      horiz-adv-x="32" d="M12 30C12 30 8 32 8 26L8 6C8 0 12 2 12 2L24 14A4 4 0 0 1 24 18z" />
+    <glyph glyph-name="si-triangle-up"
+      unicode="&#xE013;"
+      horiz-adv-x="32" d="M2 12C2 12 0 8 6 8L26 8C32 8 30 12 30 12L18 24A4 4 0 0 1 14 24z" />
   </font>
 </defs>
 </svg>

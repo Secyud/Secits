@@ -1,3 +1,4 @@
+@using Secyud.Secits.Blazor.Plugins
 @attribute [Route(DemoMenus.Input)]
 <SCard>
     <SCardHeader>
@@ -13,7 +14,11 @@
                         <SCol>
                             <DemoShowcase Text="@($"{typeName} Text")">
                                 <SInputText Type="@type" Color="@color"
-                                            @bind-Value="_stringValue"/>
+                                            @bind-Value="_stringValue">
+                                    <Plugins>
+                                        <SpInputClear TValue="string?"/>
+                                    </Plugins>
+                                </SInputText>
                             </DemoShowcase>
                         </SCol>
                         <SCol>
@@ -25,19 +30,31 @@
                         <SCol>
                             <DemoShowcase Text="@($"{typeName} Number")">
                                 <SInputNumber Type="@type" Color="@color"
-                                              @bind-Value="_integerValue"/>
+                                              @bind-Value="_integerValue">
+                                    <Plugins>
+                                        <SpInputClear/>
+                                    </Plugins>
+                                </SInputNumber>
                             </DemoShowcase>
                         </SCol>
                         <SCol>
                             <DemoShowcase Text="@($"{typeName} DateTime")">
                                 <SInputDateTime Type="@type" Color="@color"
-                                                @bind-Value="_datetimeValue"/>
+                                                @bind-Value="_datetimeValue">
+                                    <Plugins>
+                                        <SpInputClear/>
+                                    </Plugins>
+                                </SInputDateTime>
                             </DemoShowcase>
                         </SCol>
                         <SCol Span="SGridSpan.Is6">
                             <DemoShowcase Text="@($"{typeName} Area")">
                                 <SInputText Type="@type" Color="@color" Area
-                                                @bind-Value="_textValue"/>
+                                            @bind-Value="_textValue">
+                                    <Plugins>
+                                        <SpInputClear TValue="string?"/>
+                                    </Plugins>
+                                </SInputText>
                             </DemoShowcase>
                         </SCol>
                         <SCol Span="SGridSpan.Is6">

@@ -2,6 +2,7 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.JSInterop;
 using Secyud.Secits.Blazor.Plugins;
 
 namespace Secyud.Secits.Blazor;
@@ -9,9 +10,12 @@ namespace Secyud.Secits.Blazor;
 [CascadingTypeParameter(nameof(TValue))]
 public partial class SInputNumber<TValue> : EComponentBase<TValue>
 {
+    private ElementReference _input;
     private string? _inputValue;
     private TValue _currentValue = default!;
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
+
+    [Inject] private IJSRuntime Js { get; set; } = null!;
 
     public override void ApplyPlugin(ISPlugin plugin)
     {
@@ -37,7 +41,18 @@ public partial class SInputNumber<TValue> : EComponentBase<TValue>
         builder.AddAttributeIfNotEmpty(5, "disabled", GetDisabled());
         builder.AddAttribute(6, "value", _inputValue);
         builder.AddAttribute(7, "oninput", CreateInputEvent(OnInputAsync, _inputValue));
+        builder.AddElementReferenceCapture(9, u => _input = u);
         builder.CloseElement();
+    }
+
+    protected async Task StepUp()
+    {
+        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepUp, _input);
+    }
+
+    protected async Task StepDown()
+    {
+        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepDown, _input);
     }
 
     protected override bool CheckGenericIsValid()
