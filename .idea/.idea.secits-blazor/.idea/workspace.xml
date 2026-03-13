@@ -14,19 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae520c-ddde-402e-81c9-26c7f47cccf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/js/general/eventManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ai/mcp/mcp.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.junie/guidelines.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/js/general/elementManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/general/elementManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoLayout.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Avatar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/wwwroot/secits-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/wwwroot/secits-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsInterop/JsObjects/Invoker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsModules/SJsModules.general.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/JsModules/SJsModules.general.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/param/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/param/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="experiment" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,7 +134,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "experiment",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "list.type.of.created.stylesheet": "Less",
@@ -399,8 +392,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Blazor.Generator: DebugRoslynSourceGenerator" />
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: http" />
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: https" />
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Blazor.WebAssembly.Demo: http" />
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Blazor.WebAssembly.Demo: https" />
+      <item itemvalue=".NET Launch Settings Profile.Secyud.Secits.Generator: DebugRoslynSourceGenerator" />
+      <item itemvalue=".NET Launch Settings Profile.SourceGenerators1: DebugRoslynSourceGenerator" />
+      <item itemvalue="npm.build-component" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build-component" />
         <item itemvalue="npm.build-component" />
       </list>
     </recent_temporary>
@@ -554,7 +558,8 @@
     <MESSAGE value="add ai generated icons" />
     <MESSAGE value="optimize font generator, generate icon index instead of config it." />
     <MESSAGE value="fix account icon, fix avatar style." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix account icon, fix avatar style." />
+    <MESSAGE value="update input number" />
+    <option name="LAST_COMMIT_MESSAGE" value="update input number" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,62 +2,30 @@
 
 ---
 
-## Secits (English)
+## Secits
 
-Secits is a Blazor component library designed with a plugin-oriented architecture. Unlike most traditional component
-libraries, Secits focuses on making component development more flexible and reusable through a highly extensible plugin
-system.
+Secits 是一套基于插件化组件的设计。功能组件可以使用各种插件进行自定义而不是传统的组合或者继承。这方便了组件的自定义，但同时可能会带来使用的不便。
+Secyud 将对这套设计进行研究，核心在于自定义程度和使用便捷性之间的平衡。
+在编写组件时，部分less、js是与项目分离的，便于在Blazor或其他项目中复用。
 
-### 🚀 Overview
+### Secits React
 
-- **Plugin-based Architecture**: Components are built using a "主体 (Subject) + 插件 (Plugin)" model. You can change a
-  component's functionality and appearance by attaching different plugins.
-- **SComponentBase**: A custom base class that provides fine-grained control over the Blazor component lifecycle.
-- **Experimental**: This project is currently experimental. Performance and stability have not been strictly verified.
+Secits React 是Secits在React上的实现，目前还未开始。
 
-### 🛠 Tech Stack
+### Secits Blazor
 
-- **Framework**: .NET 10 (C# 14.0)
-- **UI**: Blazor (Server-side & WebAssembly)
-- **JS Bundling**: [esbuild](https://esbuild.github.io/)
-- **Styling**: CSS Isolation, FontAwesome integration
+Secits Blazor 是Secits在Blazor上的实现。目前已经有部分可以使用的组件，例如 Avatar，Button。期间经历过多次重构，以协调我们的设计理念。
 
-### 📁 Project Structure
+#### Project Structure
 
-- `src/Secyud.Secits.Blazor`: Core library containing base classes and core logic.
-- `demo/`: Demo applications showing both Server and WASM usage.
-
-### 💻 Getting Started
-
-#### Prerequisites
-
-- [.NET SDK](https://dotnet.microsoft.com/download)
-- An IDE like [JetBrains Rider](https://www.jetbrains.com/rider/)
-  or [Visual Studio](https://visualstudio.microsoft.com/)
+- `src/Secyud.Secits.Blazor`: 核心的组件和逻辑。
+- `src/Secyud.Secits.Blazor.Generator`: 用于代码生成的项目。
+- `demo/Secyud.Secits.Blazor.Demo`: 展示页面的代码。
+- `demo/Secyud.Secits.Blazor.Server.Demo`: Blazor Server模式的Demo。
 
 #### Build
 
-To build the entire solution:
+在编译项目之前，我们推荐先生成必要的样式和字体，wwwroot里面的所有less应当正确编译。
+如果你修改了部分svg，则需要执行components/buildSecits.ts生成字体。
+准备好之后，可以编译 src/Secyud.Secits.Blazor并执行demo。
 
-#### Running Demos
-
-You can run the demo projects from the `demo/` folder:
-
-- **Server Demo**: `demo/Secyud.Secits.Blazor.Server.Demo`
-- **WASM Demo**: `demo/Secyud.Secits.Blazor.WebAssembly.Demo`
-
-#### JS Asset Bundling
-
-The project uses `esbuild` for JavaScript bundling. If you modify JS files in the core library:
-
-### 📝 TODO
-
-- [ ] Strict performance and stability testing.
-- [ ] Comprehensive documentation for the plugin system.
-- [ ] More pre-defined components in the Preset library.
-
-### ⚖️ License
-
-This project's license is not explicitly defined in the root. (ISC License is mentioned in `package.json`).
-
----
