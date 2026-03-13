@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
@@ -19,6 +20,8 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
             OnInitializedEvent = OnInitialized,
             OnAfterRenderEvent = OnAfterRender,
         };
+        _dirtyParameters = new Lazy<IReadOnlyList<IDirtyParameter>>(() =>
+            DirtyParameterProvider.GetDirtyParameters(this));
     }
 
     [Inject] protected IAppContext AppContext { get; set; } = null!;
@@ -48,12 +51,27 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
 
     public virtual Task SetParametersAsync(ParameterView parameters)
     {
-        parameters.SetParameterProperties(this);
-        if (!_isInitialized)
+        if (_isInitialized)
+        {
+            if (!_isDirty)
+            {
+                foreach (var dirtyParameter in _dirtyParameters.Value)
+                {
+                    if (dirtyParameter.CheckComponentDirty(this, parameters))
+                    {
+                        SetDirty();
+                        break;
+                    }
+                }
+            }
+        }
+        else
         {
             _isInitialized = true;
             AppContext.CreateDynamicComponent(Context);
         }
+
+        parameters.SetParameterProperties(this);
 
         return Task.CompletedTask;
     }
@@ -111,5 +129,70 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
     {
         Dispose(true);
         GC.SuppressFinalize(this);
+    }
+
+
+    [Inject] private IDirtyParameterProvider DirtyParameterProvider { get; set; } = null!;
+
+    [Parameter] public string? Class { get; set; }
+    [Parameter] public string? Style { get; set; }
+
+    public ElementReference ElementRef { get; protected set; }
+
+    protected virtual string? ComponentClass => null;
+
+    private readonly Lazy<IReadOnlyList<IDirtyParameter>> _dirtyParameters;
+    private string? _builtClass;
+    private string? _builtStyle;
+    private bool _isDirty = true;
+
+
+    public void SetDirty()
+    {
+        _isDirty = true;
+    }
+
+
+    /// <summary>
+    /// 生成样式和类
+    /// </summary>
+    private void GenerateClassAndStyle()
+    {
+        if (!_isDirty) return;
+        var context = new ClassStyleContext();
+
+        ConfigureClassStyle(context);
+
+        foreach (var dirtyParameter in _dirtyParameters.Value)
+        {
+            dirtyParameter.BuildComponentClassStyle(this, context);
+        }
+
+        var cls = context.ClassBuilder.ToString();
+        _builtClass = string.IsNullOrWhiteSpace(cls) ? null : cls;
+        var stl = context.StyleBuilder.ToString();
+        _builtStyle = string.IsNullOrWhiteSpace(stl) ? null : stl;
+        _isDirty = false;
+    }
+
+    /// <summary>
+    /// 部分组件有自己的样式逻辑
+    /// </summary>
+    /// <param name="context"></param>
+    protected virtual void ConfigureClassStyle(ClassStyleContext context)
+    {
+        context.AppendClass(ComponentClass);
+    }
+
+    protected string? GetClass()
+    {
+        GenerateClassAndStyle();
+        return _builtClass;
+    }
+
+    protected string? GetStyle()
+    {
+        GenerateClassAndStyle();
+        return _builtStyle;
     }
 }

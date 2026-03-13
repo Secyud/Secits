@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Secyud.Secits.Blazor.Plugins;
@@ -40,6 +41,21 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
+    /// <summary>
+    /// <see cref="SInputType"/>
+    /// </summary>
+    [Parameter]
+    public SInputType Type
+    {
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    }
+
     [Parameter] public RenderFragment? Plugins { get; set; }
     [Parameter] public TValue Value { get; set; } = default!;
     [Parameter] public EventCallback<TValue> ValueChanged { get; set; }
@@ -55,12 +71,14 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     {
         _valueHandlers.TryApply(plugin);
         _inputElements.TryApply(plugin);
+        StateHasChanged();
     }
 
     public virtual void ForgoPlugin(ISPlugin plugin)
     {
         _valueHandlers.TryForgo(plugin);
         _inputElements.TryForgo(plugin);
+        StateHasChanged();
     }
 
     public virtual Task TriggerInputChangedEventAsync(string? input)
@@ -73,6 +91,13 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
         await ValueChanged.InvokeAsync(value);
         await _valueHandlers.InvokeAsync(u
             => u.HandleValueAsync(value));
+    }
+
+
+    protected override void ConfigureClassStyle(ClassStyleContext context)
+    {
+        base.ConfigureClassStyle(context);
+        context.AppendClass(Type);
     }
 
     protected string? GetReadonly()
@@ -93,6 +118,11 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     protected EventCallback<ChangeEventArgs> CreateInputEvent(Func<string?, Task> action, string? inputValue)
     {
         return EventCallback.Factory.CreateBinder<string?>(this, action, inputValue);
+    }
+
+    protected static Type GetGenericType()
+    {
+        return Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
     }
 
     protected abstract void BuildInputRenderTree(RenderTreeBuilder builder);

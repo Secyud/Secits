@@ -89,10 +89,10 @@ public class SValueGeneratorWithAttributes : IIncrementalGenerator
 
                          using System;
                          using System.Collections.Generic;
-                         
+
                          #nullable enable
                          namespace {{namespaceName}};
-                         
+
                          public readonly partial struct {{structName}}(SValue value): IEquatable<{{structName}}>
                          {
                              private SValue Value { get; } = value;
@@ -102,9 +102,22 @@ public class SValueGeneratorWithAttributes : IIncrementalGenerator
                                  return value.Value;
                              }
                              
+                             public static implicit operator {{structName}}({{structName}}[] values)
+                             {
+                                 return string.Join(' ', values
+                                     .Where(u => u.Value is { IsClass: true, IsNull: false })
+                                     .Select(u => u.Value.Value)
+                                 );
+                             }
+                             
                              public static implicit operator {{structName}}(string str)
                              {
-                                 return new {{structName}}(new SValue(str));
+                                 return new SValue(str);
+                             }
+                             
+                             public static implicit operator {{structName}}(SValue value)
+                             {
+                                 return new {{structName}}(value);
                              }
                              
                              public override bool Equals(object? obj)

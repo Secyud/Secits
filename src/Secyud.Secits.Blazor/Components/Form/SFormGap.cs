@@ -3,7 +3,7 @@
 [SValue]
 public partial struct SFormGap
 {
-    public static SFormGap Small { get; } = new("gap-sm");
-    public static SFormGap Medium { get; } = new("gap-md");
-    public static SFormGap Large { get; } = new("gap-lg");
+    public static SFormGap Small { get; } = "gap-sm";
+    public static SFormGap Medium { get; } = "gap-md";
+    public static SFormGap Large { get; } = "gap-lg";
 }

@@ -16,6 +16,7 @@ public static partial class SJsModules
         public const string ModuleName = Name + ".elementManager";
         public const string Invoke = ModuleName + ".invoke";
         public const string InvokeVoid = ModuleName + ".invokeVoid";
+        public const string SetProperty = ModuleName + ".setProperty";
     }
 
     public static class Event
@@ -24,5 +25,13 @@ public static partial class SJsModules
         public const string GetId = ModuleName + ".getId";
         public const string Create = ModuleName + ".create";
         public const string Delete = ModuleName + ".delete";
+    }
+
+    public static class Input
+    {
+        public const string ModuleName = Name + ".inputManager";
+
+        public const string NumberStepUp = ModuleName + ".numberStepUp";
+        public const string NumberStepDown = ModuleName + ".numberStepDown";
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
@@ -8,7 +10,6 @@ namespace Secyud.Secits.Blazor;
 
 [CascadingTypeParameter(nameof(TValue))]
 public partial class SInputDateTime<TValue> : EComponentBase<TValue>
-    where TValue : IParsable<TValue>
 {
     private const string DateFormat = "yyyy-MM-dd"; // Compatible with HTML 'date' inputs
     private const string DateTimeLocalFormat = "yyyy-MM-ddTHH:mm:ss"; // Compatible with HTML 'datetime-local' inputs
@@ -22,10 +23,13 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
     /// Gets or sets the type of HTML input to be rendered.
     /// </summary>
     [Parameter]
-    public InputDateType Type { get; set; } = InputDateType.Date;
+    public InputDateType DateType { get; set; } = InputDateType.Date;
 
 
     private string? _inputValue;
+
+    private TValue _currentValue = default!;
+
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
     public override void ApplyPlugin(ISPlugin plugin)
@@ -42,7 +46,7 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
 
     protected override void OnParametersSet()
     {
-        (_typeAttributeValue, _format) = Type switch
+        (_typeAttributeValue, _format) = DateType switch
         {
             InputDateType.Date => ("date", DateFormat),
             InputDateType.DateTimeLocal => ("datetime-local", DateTimeLocalFormat),
@@ -51,7 +55,11 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
             _ => throw new InvalidOperationException($"Unsupported {nameof(InputDateType)} '{Type}'.")
         };
 
-        _inputValue = string.Format($"{{0:{_format}}}", Value);
+        if (!Equals(_currentValue, Value))
+        {
+            _currentValue = Value;
+            _inputValue = FormatValueAsString(Value);
+        }
     }
 
     protected override void BuildInputRenderTree(RenderTreeBuilder builder)
@@ -69,9 +77,10 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
         builder.CloseElement();
     }
 
+
     protected override bool CheckGenericIsValid()
     {
-        var type = Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
+        var type = GetGenericType();
         return type == typeof(DateTime) ||
                type == typeof(DateTimeOffset) ||
                type == typeof(DateOnly) ||
@@ -88,7 +97,26 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
 
     public override async Task TriggerInputChangedEventAsync(string? input)
     {
-        if (TValue.TryParse(input, CultureInfo.InvariantCulture, out var value))
+        if (TryParseValueFromString(input, out var value))
+        {
+            _inputValue = input;
             await TriggerValueChangedEventAsync(value);
+        }
+    }
+
+    protected string FormatValueAsString(TValue? value)
+        => value switch
+        {
+            DateTime dateTimeValue => BindConverter.FormatValue(dateTimeValue, _format, CultureInfo.InvariantCulture),
+            DateTimeOffset dateTimeOffsetValue => BindConverter.FormatValue(dateTimeOffsetValue, _format,
+                CultureInfo.InvariantCulture),
+            DateOnly dateOnlyValue => BindConverter.FormatValue(dateOnlyValue, _format, CultureInfo.InvariantCulture),
+            TimeOnly timeOnlyValue => BindConverter.FormatValue(timeOnlyValue, _format, CultureInfo.InvariantCulture),
+            _ => string.Empty, // Handles null for Nullable<DateTime>, etc.
+        };
+
+    protected bool TryParseValueFromString(string? value, [MaybeNullWhen(false)] out TValue result)
+    {
+        return BindConverter.TryConvertTo(value, CultureInfo.InvariantCulture, out result);
     }
 }

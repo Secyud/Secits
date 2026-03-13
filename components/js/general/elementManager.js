@@ -7,6 +7,10 @@
         this.getElement(element)[method](...params);
     }
 
+    static setProperty(element, property, value) {
+        this.getElement(element)[property] = value;
+    }
+
     static getElement(element) {
         if (!element) {
             element = document.body;

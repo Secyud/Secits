@@ -1,11 +1,5 @@
-﻿<!-- si-bars: 三个横杠菜单图标 -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- 上横杠 -->
-    <path d="M4 7 L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-
-    <!-- 中横杠 -->
-    <path d="M4 12 L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-
-    <!-- 下横杠 -->
-    <path d="M4 17 L20 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+﻿<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4,2A3,3 0 0 0 4,8L28,8A2,2 0 0 0 28,2Z" fill="currentColor"/>
+    <path d="M4,13A3,3 0 0 0 4,19L28,19A2,2 0 0 0 28,13Z" fill="currentColor"/>
+    <path d="M4,24A3,3 0 0 0 4,30L28,30A2,2 0 0 0 28,24Z" fill="currentColor"/>
 </svg>

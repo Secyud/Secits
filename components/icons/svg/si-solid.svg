@@ -2,50 +2,68 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <font id="si-solid" horiz-adv-x="24">
+  <font id="si-solid" horiz-adv-x="32">
     <font-face font-family="si-solid"
-      units-per-em="24" ascent="24"
+      units-per-em="32" ascent="32"
       descent="0" />
     <missing-glyph horiz-adv-x="0" />
     <glyph glyph-name="si-account"
       unicode="&#xE001;"
-      horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M8 10L16 10A2 2 0 0 0 18 8L18 4L6 4L6 8A2 2 0 0 0 8 10z" />
+      horiz-adv-x="32" d="M9 24A7 7 0 0 1 23 24A7 7 0 0 1 9 24M8 14L24 14A4 4 0 0 0 28 10L28 0L4 0L4 10A4 4 0 0 0 8 14z" />
     <glyph glyph-name="si-angle-down-d"
       unicode="&#xE002;"
-      horiz-adv-x="24" d="M6 17L12 11L18 17M6 11L12 5L18 11" />
+      horiz-adv-x="32" d="M2 26A2 2 0 0 0 6 30L16 20L26 30A2 2 0 0 0 30 26L18 14A4 4 0 0 0 14 14zM2 14A2 2 0 0 0 6 18L16 8L26 18A2 2 0 0 0 30 14L18 2A4 4 0 0 0 14 2z" />
     <glyph glyph-name="si-angle-down"
       unicode="&#xE003;"
-      horiz-adv-x="24" d="M6 15L12 9L18 15" />
+      horiz-adv-x="32" d="M2 20A2 2 0 0 0 6 24L16 14L26 24A2 2 0 0 0 30 20L18 8A4 4 0 0 0 14 8z" />
     <glyph glyph-name="si-angle-left-d"
       unicode="&#xE004;"
-      horiz-adv-x="24" d="M11 18L5 12L11 6M17 18L11 12L17 6" />
+      horiz-adv-x="32" d="M14 30A2 2 0 0 0 18 26L8 16L18 6A2 2 0 0 0 14 2L2 14A4 4 0 0 0 2 18zM26 30A2 2 0 0 0 30 26L20 16L30 6A2 2 0 0 0 26 2L14 14A4 4 0 0 0 14 18z" />
     <glyph glyph-name="si-angle-left"
       unicode="&#xE005;"
-      horiz-adv-x="24" d="M13 18L7 12L13 6" />
+      horiz-adv-x="32" d="M20 30A2 2 0 0 0 24 26L14 16L24 6A2 2 0 0 0 20 2L8 14A4 4 0 0 0 8 18z" />
     <glyph glyph-name="si-angle-right-d"
       unicode="&#xE006;"
-      horiz-adv-x="24" d="M7 18L13 12L7 6M13 18L19 12L13 6" />
+      horiz-adv-x="32" d="M6 30A2 2 0 0 1 2 26L12 16L2 6A2 2 0 0 1 6 2L18 14A4 4 0 0 1 18 18zM18 30A2 2 0 0 1 14 26L24 16L14 6A2 2 0 0 1 18 2L30 14A4 4 0 0 1 30 18z" />
     <glyph glyph-name="si-angle-right"
       unicode="&#xE007;"
-      horiz-adv-x="24" d="M9 18L15 12L9 6" />
+      horiz-adv-x="32" d="M12 30A2 2 0 0 1 8 26L18 16L8 6A2 2 0 0 1 12 2L24 14A4 4 0 0 1 24 18z" />
     <glyph glyph-name="si-angle-up-d"
       unicode="&#xE008;"
-      horiz-adv-x="24" d="M6 7L12 13L18 7M6 13L12 19L18 13" />
+      horiz-adv-x="32" d="M2 18A2 2 0 0 1 6 14L16 24L26 14A2 2 0 0 1 30 18L18 30A4 4 0 0 1 14 30zM2 6A2 2 0 0 1 6 2L16 12L26 2A2 2 0 0 1 30 6L18 18A4 4 0 0 1 14 18z" />
     <glyph glyph-name="si-angle-up"
       unicode="&#xE009;"
-      horiz-adv-x="24" d="M6 9L12 15L18 9" />
+      horiz-adv-x="32" d="M2 12A2 2 0 0 1 6 8L16 18L26 8A2 2 0 0 1 30 12L18 24A4 4 0 0 1 14 24z" />
     <glyph glyph-name="si-bars"
       unicode="&#xE00A;"
-      horiz-adv-x="24" d="M4 17L20 17M4 12L20 12M4 7L20 7" />
+      horiz-adv-x="32" d="M4 30A3 3 0 0 1 4 24L28 24A2 2 0 0 1 28 30zM4 19A3 3 0 0 1 4 13L28 13A2 2 0 0 1 28 19zM4 8A3 3 0 0 1 4 2L28 2A2 2 0 0 1 28 8z" />
     <glyph glyph-name="si-calendar"
       unicode="&#xE00B;"
-      horiz-adv-x="24" d="M5 21L19 21A2 2 0 0 0 21 19L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21zM5 21L19 21A2 2 0 0 0 21 19L21 16L3 16L3 19A2 2 0 0 0 5 21zM6 14H9V11H6V14zM11 14H14V11H11V14zM16 14H19V11H16V14zM6 10H9V7H6V10zM11 10H14V7H11V10zM16 10H19V7H16V10z" />
-    <glyph glyph-name="si-cross"
+      horiz-adv-x="32" d="M2 28A2 2 0 0 0 4 30L28 30A2 2 0 0 0 30 28L30 4A2 2 0 0 0 28 2L4 2A2 2 0 0 0 2 4M27 20L5 20L5 7A2 2 0 0 1 7 5L25 5A2 2 0 0 1 27 7M7 27A2 2 0 0 1 5 25L5 23L27 23L27 25A2 2 0 0 1 25 27zM8 18H10A1 1 0 0 0 11 17V15A1 1 0 0 0 10 14H8A1 1 0 0 0 7 15V17A1 1 0 0 0 8 18zM8 11H10A1 1 0 0 0 11 10V8A1 1 0 0 0 10 7H8A1 1 0 0 0 7 8V10A1 1 0 0 0 8 11zM15 18H17A1 1 0 0 0 18 17V15A1 1 0 0 0 17 14H15A1 1 0 0 0 14 15V17A1 1 0 0 0 15 18zM15 11H17A1 1 0 0 0 18 10V8A1 1 0 0 0 17 7H15A1 1 0 0 0 14 8V10A1 1 0 0 0 15 11zM22 18H24A1 1 0 0 0 25 17V15A1 1 0 0 0 24 14H22A1 1 0 0 0 21 15V17A1 1 0 0 0 22 18z" />
+    <glyph glyph-name="si-check"
       unicode="&#xE00C;"
-      horiz-adv-x="24" d="M6 18L18 6M18 18L6 6" />
-    <glyph glyph-name="si-pin"
+      horiz-adv-x="32" d="M2 14A2 2 0 0 0 6 18L12 12L26 26A2 2 0 0 0 30 22L14 6A4 4 0 0 0 10 6z" />
+    <glyph glyph-name="si-cross"
       unicode="&#xE00D;"
-      horiz-adv-x="24" d="M8 16A4 4 0 0 1 16 16A4 4 0 0 1 8 16M12 12L12 4" />
+      horiz-adv-x="32" d="M2 26A2 2 0 0 0 6 30L16 20L26 30A2 2 0 0 0 30 26L20 16L30 6A2 2 0 0 0 26 2L16 12L6 2A2 2 0 0 0 2 6L12 16z" />
+    <glyph glyph-name="si-pin"
+      unicode="&#xE00E;"
+      horiz-adv-x="32" d="M14 16A7 7 0 1 0 18 16L18 4A2 2 0 0 0 14 4z" />
+    <glyph glyph-name="si-square"
+      unicode="&#xE00F;"
+      horiz-adv-x="32" d="M7 28H25A3 3 0 0 0 28 25V7A3 3 0 0 0 25 4H7A3 3 0 0 0 4 7V25A3 3 0 0 0 7 28z" />
+    <glyph glyph-name="si-triangle-down"
+      unicode="&#xE010;"
+      horiz-adv-x="32" d="M2 20C2 20 0 24 6 24L26 24C32 24 30 20 30 20L18 8A4 4 0 0 0 14 8z" />
+    <glyph glyph-name="si-triangle-left"
+      unicode="&#xE011;"
+      horiz-adv-x="32" d="M20 30C20 30 24 32 24 26L24 6C24 0 20 2 20 2L8 14A4 4 0 0 0 8 18z" />
+    <glyph glyph-name="si-triangle-right"
+      unicode="&#xE012;"
+      horiz-adv-x="32" d="M12 30C12 30 8 32 8 26L8 6C8 0 12 2 12 2L24 14A4 4 0 0 1 24 18z" />
+    <glyph glyph-name="si-triangle-up"
+      unicode="&#xE013;"
+      horiz-adv-x="32" d="M2 12C2 12 0 8 6 8L26 8C32 8 30 12 30 12L18 24A4 4 0 0 1 14 24z" />
   </font>
 </defs>
 </svg>

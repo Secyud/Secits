@@ -1,5 +1,46 @@
-<h3>Button</h3>
+@attribute [Route(DemoMenus.Button)]
+<SCard>
+    <SCardHeader>
+        Button
+    </SCardHeader>
+    <SCardBody>
+        @foreach (var (colorName, color) in _colors)
+        {
+            <DemoShowcase Text="@colorName">
+                <SRow>
+                    @foreach (var (typeName, type) in _types)
+                    {
+                        <SCol Span="SGridSpan.Is2">
+                            <SButton Color="@color" Type="type">
+                                @typeName
+                            </SButton>
+                        </SCol>
+                    }
+                </SRow>
+            </DemoShowcase>
+        }
+    </SCardBody>
+</SCard>
 
-@code {
-    
+@code
+{
+    readonly (string name, SColor color)[] _colors =
+    [
+        ("Primary", SColor.Primary),
+        ("Secondary", SColor.Secondary),
+        ("Naive", SColor.Naive),
+        ("Info", SColor.Info),
+        ("Success", SColor.Success),
+        ("Warning", SColor.Warning),
+        ("Danger", SColor.Danger),
+    ];
+
+    readonly (string name, SButtonType type)[] _types =
+    [
+        ("Default", ""),
+        ("Plain", SButtonType.Plain),
+        ("Outline", SButtonType.Outline),
+        ("Text", SButtonType.Text),
+        ("Shadow", SButtonType.Shadow),
+    ];
 }

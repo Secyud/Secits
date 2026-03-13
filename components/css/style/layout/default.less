@@ -1,0 +1,35 @@
+﻿@import (reference)  "../general";
+
+:root {
+  --span: 3;
+}
+
+each(range(9), {
+  .span-@{value} {
+    --span: @value;
+  }
+});
+.span-a {
+  --span: 10;
+}
+
+.span-b {
+  --span: 11;
+}
+
+.span-c {
+  --span: 12;
+}
+
+.s-grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--gap);
+  margin: var(--gap);
+}
+
+.s-grid-col {
+  grid-column: auto / span var(--span);
+}
+
+

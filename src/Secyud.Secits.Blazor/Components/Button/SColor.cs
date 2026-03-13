@@ -3,7 +3,6 @@
 [SValue]
 public partial struct SColor
 {
-    public static SColor Default { get; } = "";
     public static SColor Primary { get; } = "primary";
     public static SColor Secondary { get; } = "secondary";
     public static SColor Naive { get; } = "naive";

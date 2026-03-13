@@ -1,4 +1,7 @@
-﻿<!-- si-angle-up-d: 双上尖括号 -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 17 L12 11 L18 17 M6 11 L12 5 L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+﻿
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2,14A2,2 0 0 0 6,18L16,08L26,18A2,2 0 0 0 30,14L18,2A4,4 0 0 0 14,2Z"
+          fill="currentColor"/>
+    <path d="M2,26A2,2 0 0 0 6,30L16,20L26,30A2,2 0 0 0 30,26L18,14A4,4 0 0 0 14,14Z"
+          fill="currentColor"/>
 </svg>
