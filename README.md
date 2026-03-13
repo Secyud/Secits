@@ -25,7 +25,7 @@ Secits Blazor 是Secits在Blazor上的实现。目前已经有部分可以使用
 
 #### Build
 
-在编译项目之前，我们推荐先生成必要的样式和字体，wwwroot里面的所有less应当正确编译。
-如果你修改了部分svg，则需要执行components/buildSecits.ts生成字体。
-准备好之后，可以编译 src/Secyud.Secits.Blazor并执行demo。
+在编译项目之前，我们推荐先生成必要的样式和字体，`wwwroot`里面的所有less应当正确编译。
+如果你修改了部分svg，则需要执行`components/buildSecits.ts`生成字体。
+准备好之后，可以编译 `src/Secyud.Secits.Blazor`并执行demo。
 
