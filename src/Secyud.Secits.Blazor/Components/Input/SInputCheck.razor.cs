@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.JSInterop;
+using Secyud.Secits.Blazor.JsInterop;
 
 namespace Secyud.Secits.Blazor;
 
@@ -9,7 +11,9 @@ public partial class SInputCheck<TValue>
     protected override string ComponentClass => "s-input-check";
 
     private TValue _currentValue = default!;
+    private ElementReference _input;
 
+    [Inject] protected IJSRuntime Js { get; set; } = null!;
     [Parameter] public string? Label { get; set; }
 
     protected override void BuildInputRenderTree(RenderTreeBuilder builder)
@@ -19,24 +23,45 @@ public partial class SInputCheck<TValue>
         builder.AddAttribute(2, "type", "checkbox");
         builder.AddAttributeIfNotEmpty(3, "name", Name);
         builder.AddAttribute(4, "value", _currentValue);
-        builder.AddAttribute(5, "checked", _currentValue is true or null);
-        builder.AddAttribute(6, "indeterminate", _currentValue is null);
-        builder.AddAttribute(7, "onchange",
+        builder.AddAttribute(5, "checked", _currentValue is true);
+        builder.AddAttribute(6, "onchange",
             EventCallback.Factory.CreateBinder(this, OnCheckedChangedAsync, _currentValue));
         builder.SetUpdatesAttributeName("checked");
+        builder.AddElementReferenceCapture(7, e => _input = e);
         builder.CloseElement();
     }
 
     protected override bool CheckGenericIsValid()
     {
-        var targetType = Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
+        var targetType = GetGenericType();
         return targetType == typeof(bool);
     }
 
-    protected override void OnParametersSet()
+    protected override async Task OnParametersSetAsync()
     {
-        _currentValue = Value;
+        await base.OnParametersSetAsync();
+        if (!Equals(_currentValue, Value))
+        {
+            _currentValue = Value;
+            await SyncIndeterminateStateAsync();
+        }
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await SyncIndeterminateStateAsync();
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected ValueTask SyncIndeterminateStateAsync()
+    {
+        return _input.SetPropertyAsync(Js, "indeterminate", _currentValue is null);
+    }
+
 
     protected async Task OnCheckedChangedAsync(TValue value)
     {

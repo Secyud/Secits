@@ -1,4 +1,5 @@
-<!-- si-angle-up: 单上尖括号，用于向上翻页或返回顶部 -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 15 L12 9 L18 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2,20A2,2 0 0 0 6,24L16,14L26,24A2,2 0 0 0 30,20L18,8A4,4 0 0 0 14,8Z"
+          fill="currentColor"/>
 </svg>

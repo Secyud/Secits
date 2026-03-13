@@ -4,9 +4,7 @@ using Secyud.Secits.Blazor.Plugins;
 
 namespace Secyud.Secits.Blazor;
 
-[CascadingTypeParameter(nameof(TValue))]
-public partial class SInputText<TValue>
-    where TValue : class
+public partial class SInputText
 {
     [Parameter] public bool Area { get; set; }
     private string? _inputValue;
@@ -28,14 +26,7 @@ public partial class SInputText<TValue>
     {
         ValidateGeneric();
 
-        if (Area)
-        {
-            builder.OpenElement(0, "textarea");
-        }
-        else
-        {
-            builder.OpenElement(0, "input");
-        }
+        builder.OpenElement(0, Area ? "textarea" : "input");
 
         builder.AddMultipleAttributes(1, AdditionalAttributes);
         builder.AddAttributeIfNotEmpty(2, "name", Name);
@@ -49,15 +40,15 @@ public partial class SInputText<TValue>
 
     protected override bool CheckGenericIsValid()
     {
-        var targetType = Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
-        return targetType == typeof(string);
+        var type = GetGenericType();
+        return type == typeof(string);
     }
 
     protected override void OnParametersSet()
     {
-        _inputValue = Value.ToString();
+        _inputValue = Value;
     }
-    
+
     protected virtual async Task OnInputAsync(string? str)
     {
         _inputValue = str;
@@ -68,6 +59,6 @@ public partial class SInputText<TValue>
 
     public override async Task TriggerInputChangedEventAsync(string? input)
     {
-        await TriggerValueChangedEventAsync((input as TValue)!);
+        await TriggerValueChangedEventAsync(input);
     }
 }

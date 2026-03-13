@@ -6,9 +6,9 @@
 
 @code {
 
-    protected override RenderFragment GenerateElements => __builder =>
+    protected override RenderFragment GenerateElements() => __builder =>
     {
-        @base.GenerateElements
+        @base.GenerateElements()
         <i class="sis si-calendar"></i>
     };
 

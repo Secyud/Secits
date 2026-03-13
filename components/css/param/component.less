@@ -1,11 +1,15 @@
 ﻿.define-param(@component-size, @interval-size, @border-radius, @border-width, @unit-value) {
 
-  // size
-  --s-s: unit(@component-size, @unit-value);
-  // border radius
-  --s-s-br: unit(@border-radius, @unit-value);
-  // border width
-  --s-s-bw: unit(@border-width, @unit-value);
+  :root{
+    // size
+    --s-s: unit(@component-size, @unit-value);
+    // border radius
+    --s-s-br: unit(@border-radius, @unit-value);
+    // border width
+    --s-s-bw: unit(@border-width, @unit-value);
+
+    --gap: unit((@component-size / 2), @unit-value);
+  }
 
   .xs {
     --s-s: unit(@component-size - 2 * @interval-size, @unit-value);
@@ -26,4 +30,14 @@
     --s-s: unit(@component-size + 2 * @interval-size, @unit-value);
   }
 
+  .gap-sm {
+    --gap: unit(((@component-size - @interval-size) / 2), @unit-value);
+  }
+
+  .gap-md {
+  }
+
+  .gap-lg {
+    --gap: unit(((@component-size + @interval-size) / 2), @unit-value);
+  }
 }

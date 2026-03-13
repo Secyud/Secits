@@ -1,5 +1,4 @@
-<!-- si-cross -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- 使用两条带圆帽的线组成叉，外角通过 stroke-linecap="round" 实现圆润效果 -->
-    <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2,6A2,2 0 0 1 6,2L16,12L26,2A2,2 0 0 1 30,6L20,16L30,26A2,2 0 0 1 26,30L16,20L6,30A2,2 0 0 1 2,26L12,16Z"
+          fill="currentColor"/>
 </svg>

@@ -42,6 +42,8 @@
   border-radius: var(--s-s-br);
   position: relative;
   transition: 50ms;
+  --alpha: 100%;
+  --component-color: color-mix(in srgb, var(--main-color) var(--alpha), var(--sc-c-m));
 }
 
 .set-color(@name, @color) {
@@ -50,31 +52,27 @@
 }
 
 .is-normal() {
-  --alpha: 1;
   border-color: var(--main-color);
-  background-color: rgba(var(--main-color-rgb), var(--alpha));
+  background-color: var(--component-color);
   color: var(--part-color);
 }
 
 .is-plain() {
-  --alpha: 1;
-  border-color: rgba(var(--main-color-rgb), var(--alpha));
-  background-color: rgba(var(--main-color-rgb), var(--alpha));
+  border-color: var(--component-color);
+  background-color: var(--component-color);
   color: var(--part-color);
 }
 
 .is-outline() {
-  --alpha: 1;
-  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  border-color: var(--component-color);
   background-color: transparent;
-  color: rgba(var(--main-color-rgb), var(--alpha));
+  color: var(--component-color);
 }
 
-.is-texted() {
-  --alpha: 1;
+.is-text() {
   border-color: transparent;
   background-color: transparent;
-  color: rgba(var(--main-color-rgb), var(--alpha));
+  color:  var(--component-color);
 }
 
 input, textarea, button {

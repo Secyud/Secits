@@ -35,9 +35,10 @@ public class ClassStyleContext
         AppendClass(@class.ToString());
     }
 
-    public void AppendStyle(string? name, string? value, bool important = false)
+    public void AppendStyle<TValue>(string? name, TValue? value, bool important = false)
     {
-        if (string.IsNullOrWhiteSpace(value)) return;
+        if (value is null) return;
+        if (value is string str && string.IsNullOrWhiteSpace(str)) return;
 
         StyleBuilder.Append(name).Append(':').Append(value);
         if (important)

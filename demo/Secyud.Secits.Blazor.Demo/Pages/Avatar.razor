@@ -1,4 +1,3 @@
-@using Secyud.Secits.Blazor.General
 @attribute [Route(DemoMenus.Avatar)]
 @{
     const string src = "_content/Secyud.Secits.Blazor/icons/svg/solid/si-pin.svg";
@@ -8,40 +7,40 @@
         Avatar
     </SCardHeader>
     <SCardBody>
-        <SGridRow>
-            <SGridCol>
+        <SRow>
+            <SCol>
                 <DemoShowcase Text="Circle Default">
                     <SAvatar/>
                 </DemoShowcase>
-            </SGridCol>
-            <SGridCol>
+            </SCol>
+            <SCol>
                 <DemoShowcase Text="Circle Text">
                     <SAvatar Text="Secits Avatar"/>
                 </DemoShowcase>
-            </SGridCol>
-            <SGridCol>
+            </SCol>
+            <SCol>
                 <DemoShowcase Text="Circle Image">
                     <SAvatar Src="@src"/>
                 </DemoShowcase>
-            </SGridCol>
-        </SGridRow>
-        <SGridRow>
-            <SGridCol>
+            </SCol>
+        </SRow>
+        <SRow>
+            <SCol>
                 <DemoShowcase Text="Square Default">
                     <SAvatar Shape="SAvatarShape.Square"/>
                 </DemoShowcase>
-            </SGridCol>
-            <SGridCol>
+            </SCol>
+            <SCol>
                 <DemoShowcase Text="Square Text">
                     <SAvatar Shape="SAvatarShape.Square" Text="Secits Avatar"/>
                 </DemoShowcase>
-            </SGridCol>
-            <SGridCol>
+            </SCol>
+            <SCol>
                 <DemoShowcase Text="Square Image">
                     <SAvatar Shape="SAvatarShape.Square" Src="@src"/>
                 </DemoShowcase>
-            </SGridCol>
-        </SGridRow>
+            </SCol>
+        </SRow>
     </SCardBody>
 </SCard>
 

@@ -8,12 +8,14 @@
 
 <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
     @(BuildInputRenderTree)
-    @GenerateElements
+    <span class="s-input-elements">
+        @GenerateElements()
+    </span>
 </div>
 
 @code{
 
-    protected virtual RenderFragment GenerateElements => __builder =>
+    protected virtual RenderFragment GenerateElements() => __builder =>
     {
         @foreach (var value in _inputElements)
         {

@@ -6,13 +6,13 @@
 
 @code {
 
-    protected override RenderFragment GenerateElements => __builder =>
+    protected override RenderFragment GenerateElements() => __builder =>
     {
-        @base.GenerateElements
-        <span class="s-element">
-            <i class="sis si-angle-up"></i>
-            <i class="sis si-angle-down"></i>
-        </span>
+        @base.GenerateElements()
+        @* <span class="s-element"> *@
+        @*     <i class="sis si-angle-up"></i> *@
+        @*     <i class="sis si-angle-down"></i> *@
+        @* </span> *@
     };
 
 }

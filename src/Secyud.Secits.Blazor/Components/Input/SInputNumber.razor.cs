@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Secyud.Secits.Blazor.Plugins;
@@ -7,9 +8,9 @@ namespace Secyud.Secits.Blazor;
 
 [CascadingTypeParameter(nameof(TValue))]
 public partial class SInputNumber<TValue> : EComponentBase<TValue>
-    where TValue : IParsable<TValue>
 {
     private string? _inputValue;
+    private TValue _currentValue = default!;
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
     public override void ApplyPlugin(ISPlugin plugin)
@@ -41,18 +42,22 @@ public partial class SInputNumber<TValue> : EComponentBase<TValue>
 
     protected override bool CheckGenericIsValid()
     {
-        var targetType = Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
-        return targetType == typeof(int) ||
-               targetType == typeof(long) ||
-               targetType == typeof(short) ||
-               targetType == typeof(float) ||
-               targetType == typeof(double) ||
-               targetType == typeof(decimal);
+        var type = GetGenericType();
+        return type == typeof(int) ||
+               type == typeof(long) ||
+               type == typeof(short) ||
+               type == typeof(float) ||
+               type == typeof(double) ||
+               type == typeof(decimal);
     }
 
     protected override void OnParametersSet()
     {
-        _inputValue = Value.ToString();
+        if (!Equals(_currentValue, Value))
+        {
+            _currentValue = Value;
+            _inputValue = FormatValueAsString(Value);
+        }
     }
 
     protected virtual async Task OnInputAsync(string? str)
@@ -65,7 +70,31 @@ public partial class SInputNumber<TValue> : EComponentBase<TValue>
 
     public override async Task TriggerInputChangedEventAsync(string? input)
     {
-        if (TValue.TryParse(input, CultureInfo.InvariantCulture, out var value))
+        if (TryParseValueFromString(input, out var value))
+        {
+            _inputValue = input;
             await TriggerValueChangedEventAsync(value);
+        }
+    }
+
+
+    protected bool TryParseValueFromString(string? value, [MaybeNullWhen(false)] out TValue result)
+    {
+        return BindConverter.TryConvertTo(value, CultureInfo.InvariantCulture, out result);
+    }
+
+    protected string? FormatValueAsString(TValue? value)
+    {
+        return value switch
+        {
+            null => null,
+            int @int => BindConverter.FormatValue(@int, CultureInfo.InvariantCulture),
+            long @long => BindConverter.FormatValue(@long, CultureInfo.InvariantCulture),
+            short @short => BindConverter.FormatValue(@short, CultureInfo.InvariantCulture),
+            float @float => BindConverter.FormatValue(@float, CultureInfo.InvariantCulture),
+            double @double => BindConverter.FormatValue(@double, CultureInfo.InvariantCulture),
+            decimal @decimal => BindConverter.FormatValue(@decimal, CultureInfo.InvariantCulture),
+            _ => throw new InvalidOperationException($"Unsupported type {value.GetType()}")
+        };
     }
 }

@@ -3,7 +3,7 @@ using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
-public partial class SGridCol : IContentComponent
+public partial class SCol : IContentComponent
 {
     protected override string ComponentClass => "s-grid-col";
     [Parameter] public RenderFragment? ChildContent { get; set; }

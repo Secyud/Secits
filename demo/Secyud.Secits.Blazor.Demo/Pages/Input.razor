@@ -1,5 +1,80 @@
-<h3>Input</h3>
+@attribute [Route(DemoMenus.Input)]
+<SCard>
+    <SCardHeader>
+        Input
+    </SCardHeader>
+    <SCardBody>
+        @foreach (var (colorName, color) in _colors)
+        {
+            <DemoShowcase Text="@colorName">
+                <SRow>
+                    @foreach (var (typeName, type) in _types)
+                    {
+                        <SCol>
+                            <DemoShowcase Text="@($"{typeName} Text")">
+                                <SInputText Type="@type" Color="@color"
+                                            @bind-Value="_stringValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                        <SCol>
+                            <DemoShowcase Text="@($"{typeName} Check")">
+                                <SInputCheck Type="@type" Color="@color"
+                                             @bind-Value="_booleanValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                        <SCol>
+                            <DemoShowcase Text="@($"{typeName} Number")">
+                                <SInputNumber Type="@type" Color="@color"
+                                              @bind-Value="_integerValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                        <SCol>
+                            <DemoShowcase Text="@($"{typeName} DateTime")">
+                                <SInputDateTime Type="@type" Color="@color"
+                                                @bind-Value="_datetimeValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                        <SCol Span="SGridSpan.Is6">
+                            <DemoShowcase Text="@($"{typeName} Area")">
+                                <SInputText Type="@type" Color="@color" Area
+                                                @bind-Value="_textValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                        <SCol Span="SGridSpan.Is6">
+                            <DemoShowcase Text="@($"{typeName} DateTime")">
+                                <SInputDateTime Type="@type" Color="@color"
+                                                @bind-Value="_datetimeValue"/>
+                            </DemoShowcase>
+                        </SCol>
+                    }
+                </SRow>
+            </DemoShowcase>
+        }
+    </SCardBody>
+</SCard>
 
-@code {
-    
+@code
+{
+    string? _stringValue;
+    string? _textValue;
+    bool? _booleanValue;
+    int? _integerValue;
+    DateTime? _datetimeValue;
+
+    readonly (string name, SColor color)[] _colors =
+    [
+        ("Primary", SColor.Primary),
+        ("Secondary", SColor.Secondary),
+        ("Naive", SColor.Naive),
+        ("Info", SColor.Info),
+        ("Success", SColor.Success),
+        ("Warning", SColor.Warning),
+        ("Danger", SColor.Danger),
+    ];
+
+    readonly (string name, SInputType type)[] _types =
+    [
+        ("Default", ""),
+        ("Shadow", SInputType.Shadow),
+    ];
 }

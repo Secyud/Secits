@@ -40,16 +40,16 @@ module.exports = {
          * */
         functions.add('get-size', getSize);
 
-        functions.add("size", function (t, r, b, l) {
+        functions.add("size-trbl", function (t, r, b, l) {
             return `${getSize(t)} ${getSize(r)} ${getSize(b)} ${getSize(l)}`;
         })
-        functions.add("size", function (v, h) {
+        functions.add("size-vh", function (v, h) {
             return `${getSize(v)} ${getSize(h)}`;
         })
-        functions.add("size", function (v) {
+        functions.add("size-a", function (v) {
             return `${getSize(v)}`;
         })
-        functions.add("size", function () {
+        functions.add("default-size", function () {
             return `${getSize(4)} ${getSize(2)}`;
         })
     }

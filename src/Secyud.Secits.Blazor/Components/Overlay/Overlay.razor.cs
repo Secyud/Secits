@@ -2,13 +2,29 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Secyud.Secits.Blazor.JsInterop;
 using Secyud.Secits.Blazor.JSInterop;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
+/// <summary>
+/// 浮在所有组件上方的组件，可以控制显示隐藏。
+/// </summary>
 public partial class Overlay : IContentComponent
 {
+    protected override string? ComponentClass => "s-overlay";
+
     public RenderFragment? ChildContent { get; set; }
-    protected bool OverlayVisible { get; set; }
+
+    protected bool OverlayVisible
+    {
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    }
 
     [Inject] protected IJSRuntime Js { get; set; } = null!;
 
@@ -27,7 +43,25 @@ public partial class Overlay : IContentComponent
 
     [Parameter] public ElementReference OverlayParent { get; set; }
 
-    protected DomRect? ParentRect { get; set; }
+    protected DomRect? ParentRect
+    {
+        get;
+        set
+        {
+            if (value is null)
+            {
+                field = value;
+                return;
+            }
+
+            if (field is null || !field.Equals(value))
+            {
+                SetDirty();
+            }
+
+            field = value;
+        }
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -41,24 +75,18 @@ public partial class Overlay : IContentComponent
         VisibleChanged.InvokeAsync(visible).ConfigureAwait(false);
     }
 
-    protected string GetClass()
+    protected override void ConfigureClassStyle(ClassStyleContext context)
     {
-        var cls = "s-overlay";
-        if (!OverlayVisible) cls += " hidden";
-
-        return cls;
-    }
-
-    protected string GetStyle()
-    {
-        if (ParentRect is null) return "";
-        return
-            $"--ob:{ParentRect.Bottom};" +
-            $"--ot:{ParentRect.Top};" +
-            $"--ol:{ParentRect.Left};" +
-            $"--or:{ParentRect.Right};" +
-            $"--ow:{ParentRect.Width};" +
-            $"--oh:{ParentRect.Height};"
-            ;
+        base.ConfigureClassStyle(context);
+        if (!OverlayVisible) context.AppendClass("hidden");
+        if (ParentRect is not null)
+        {
+            context.AppendStyle("--ob", ParentRect.Bottom);
+            context.AppendStyle("--ot", ParentRect.Top);
+            context.AppendStyle("--ol", ParentRect.Left);
+            context.AppendStyle("--or", ParentRect.Right);
+            context.AppendStyle("--ow", ParentRect.Width);
+            context.AppendStyle("--oh", ParentRect.Height);
+        }
     }
 }

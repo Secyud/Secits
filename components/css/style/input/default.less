@@ -1,34 +1,124 @@
 @import (reference)  "../general";
+@import (reference)  "../../icons/si-general";
+@import (reference)  "../../icons/si-solid";
 
-
-.s-input {
+.s-input-general {
   &:extend(.s-component);
-  padding: size(0, 4);
-
-  width: 100%;
-
   .set-color(main, --sc-a-m);
   .set-color(part, --sc-c-p);
 
-  --alpha: 0.25;
-  border-color: rgba(var(--main-color-rgb), var(--alpha));
+  --alpha: 25%;
+  border-width: 0.125rem;
+  border-color: var(--component-color);
   background-color: var(--sc-c-m);
   color: var(--part-color);
 
   .on-hover({
-    --alpha: 0.6;
+    --alpha: 60%;
   });
   .on-focus({
-    --alpha: 1;
+    --alpha: 100%;
   });
 
   input, textarea {
-    min-height: var(--s-s);
-    width: 100% !important;
-    padding: size(4, 0);
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+  }
+
+
+  &.shadow {
+    @shadow-x: 0;
+    @shadow-y: 0;
+    @shadow-extend: 0;
+    --shadow-alpha: 0.3;
+    --shadow-size: calc(var(--s-s) * 0.5);
+    box-shadow: @shadow-x @shadow-y var(--shadow-size) @shadow-extend rgba(var(--main-color-rgb), var(--shadow-alpha));
+
+    .on-hover({
+      --shadow-size: calc(var(--s-s) * 1);
+      --shadow-alpha: 0.5;
+    });
+    .on-focus({
+      --shadow-size: calc(var(--s-s) * 0.7);
+      --shadow-alpha: 0.7;
+    });
+  }
+}
+
+.s-input {
+  &:extend(.s-input-general all);
+
+  display: flex;
+  width: 100%;
+
+
+  & > .s-element {
+    position: absolute;
+    inset: size-vh(4, 4);
+    left: unset;
   }
 
   textarea {
-    margin-bottom: 0.25rem;
+  }
+
+  input, textarea {
+    padding: size-vh(4, 4);
+    min-height: var(--s-s);
+    width: 100% !important;
+    color: var(--part-color);
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    //-webkit-appearance: none;
+    //margin: 0;
+    &:extend(.si all);
+    &::after {
+      margin: auto;
+      color: var(--component-color);
+      font-family: si-solid;
+      &:extend(.sis.si-angle-down::after);
+    }
+
+  }
+}
+
+
+.s-input-check {
+  &:extend(.s-input-general all);
+
+  --input-size: calc(var(--s-s) * 1.5);
+  display: block;
+  width: var(--input-size);
+  height: var(--input-size);
+  position: relative;
+
+  input {
+    position: absolute;
+    inset: 0;
+    color: var(--main-color);
+    &:extend(.si all);
+
+    &::after {
+      margin: auto;
+      color: var(--component-color);
+      font-size: calc(var(--s-s) * 1.4);
+      font-family: si-solid;
+    }
+
+  }
+
+  input:checked::after {
+    &:extend(.sis.si-check::after);
+  }
+
+  input:indeterminate::after {
+    &:extend(.sis.si-square::after);
   }
 }

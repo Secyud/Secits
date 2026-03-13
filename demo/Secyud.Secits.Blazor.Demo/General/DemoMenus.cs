@@ -1,4 +1,6 @@
-﻿namespace Secyud.Secits.Blazor;
+﻿using Secyud.Secits.Blazor.Pages;
+
+namespace Secyud.Secits.Blazor;
 
 public static class DemoMenus
 {
@@ -6,15 +8,14 @@ public static class DemoMenus
     {
         [nameof(Home)] = Home,
         [nameof(Avatar)] = Avatar,
+        [nameof(Button)] = Button,
+        [nameof(Input)] = Input,
     };
 
     public const string Home = "/";
     
     public const string Avatar = "/avatar";
+    public const string Button = "/button";
 
     public const string Input = "/input";
-    public const string Component = "/component";
-    public const string Table = "/table";
-    public const string Overview = "/overview";
-    public const string Card = "/card";
 }

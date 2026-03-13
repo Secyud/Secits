@@ -1,8 +1,4 @@
-<!-- si-account: 默认头像图标，上为圆头，下为顶部带圆角、底部直角的矩形身体 -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- 头部：一个实心圆 -->
-  <circle cx="12" cy="8" r="4" fill="currentColor"/>
-
-  <!-- 身体：顶部圆角（半径2）、底部直角 → 修正无效A0,0指令，简化路径 -->
-  <path d="M8,14 L16,14 A2,2 0 0 1 18,16 L18,20 L6,20 L6,16 A2,2 0 0 1 8,14 Z" fill="currentColor"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="8" r="7" fill="currentColor"/>
+    <path d="M8,18L24,18A4,4 0 0 1 28,22L28,32L4,32L4,22A4,4 0 0 1 8,18Z" fill="currentColor"/>
 </svg>

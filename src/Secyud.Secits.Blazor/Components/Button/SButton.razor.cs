@@ -23,8 +23,29 @@ public partial class SButton : IThemedComponent, ISizedComponent, IContentCompon
     [Parameter]
     public SSize Size { get; set; }
 
+    /// <summary>
+    /// <see cref="SButtonType"/>
+    /// </summary>
+    [Parameter]
+    public SButtonType Type
+    {
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    }
+
     [Parameter] public bool Disabled { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
     [Parameter] public EventCallback Click { get; set; }
     [Parameter] public string? Icon { get; set; }
+
+    protected override void ConfigureClassStyle(ClassStyleContext context)
+    {
+        base.ConfigureClassStyle(context);
+        context.AppendClass(Type);
+    }
 }

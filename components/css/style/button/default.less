@@ -2,7 +2,7 @@
 
 .s-button {
   &:extend(.s-component);
-  padding: size();
+  padding: default-size();
   text-align: center;
   cursor: pointer;
   user-select: none;
@@ -14,7 +14,7 @@
   // default style
   .is-normal();
 
-  &.plain, &.text {
+  &.plain {
     .is-plain();
   }
 
@@ -22,38 +22,33 @@
     .is-outline();
   }
 
-  .on-hover({
-    --alpha: 0.6;
-  });
-  .on-active({
-    --alpha: 0.8;
-  });
-
   &.text {
-    --alpha: 0.0;
-    .on-hover({
-      --alpha: 0.3;
-    });
-    .on-active({
-      --alpha: 0.5;
-    });
+    .is-text();
   }
 
+  .on-hover({
+    --alpha: 60%;
+  });
+  .on-active({
+    --alpha: 80%;
+  });
+
   &.shadow {
+    .is-plain();
     @shadow-x: 0;
     @shadow-y: 0;
-    @shadow-size: 0.2rem;
     @shadow-extend: 0;
-    --shadow-alpha: 0.25;
-    box-shadow: @shadow-x @shadow-y @shadow-size @shadow-extend rgba(var(--sc-b-p-rgb), var(--shadow-alpha));
+    --shadow-alpha: 0.3;
+    --shadow-size: calc(var(--s-s) * 0.5);
+    box-shadow: @shadow-x @shadow-y var(--shadow-size) @shadow-extend rgba(var(--main-color-rgb), var(--shadow-alpha));
 
     .on-hover({
-      --shadow-size: calc(var(--s-s) * 0.5);
-      --shadow-alpha: 0.2;
+      --shadow-size: calc(var(--s-s) * 1);
+      --shadow-alpha: 0.5;
     });
     .on-active({
-      --shadow-size: calc(var(--s-s) * 0.35);
-      --shadow-alpha: 0.15;
+      --shadow-size: calc(var(--s-s) * 0.7);
+      --shadow-alpha: 0.7;
     });
   }
 }

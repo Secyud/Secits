@@ -13,6 +13,11 @@ public static class JsExtensions
             return element.InvokeAsync<DomRect>(js, "getBoundingClientRect");
         }
 
+        public ValueTask SetPropertyAsync<TValue>(IJSRuntime js, string? name, TValue value)
+        {
+            return js.InvokeVoidAsync(SJsModules.Element.SetProperty, element, name, value);
+        }
+
         public async ValueTask InvokeVoidAsync(IJSRuntime js, string identifier, params object?[]? args)
         {
             try
