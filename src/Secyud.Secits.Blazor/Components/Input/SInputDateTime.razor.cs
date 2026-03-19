@@ -1,9 +1,8 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.AspNetCore.Components.Web;
 using Secyud.Secits.Blazor.Plugins;
 
 namespace Secyud.Secits.Blazor;
@@ -11,6 +10,13 @@ namespace Secyud.Secits.Blazor;
 [CascadingTypeParameter(nameof(TValue))]
 public partial class SInputDateTime<TValue> : EComponentBase<TValue>
 {
+    public SInputDateTime()
+    {
+        _genericType = GetGenericType();
+        _isNullable = Nullable.GetUnderlyingType(typeof(TValue)) is not null;
+    }
+    protected override string ComponentClass => "s-input-date-time";
+
     private const string DateFormat = "yyyy-MM-dd"; // Compatible with HTML 'date' inputs
     private const string DateTimeLocalFormat = "yyyy-MM-ddTHH:mm:ss"; // Compatible with HTML 'datetime-local' inputs
     private const string MonthFormat = "yyyy-MM"; // Compatible with HTML 'month' inputs
@@ -18,17 +24,44 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
 
     private string _typeAttributeValue = null!;
     private string _format = null!;
+    private readonly Type _genericType;
+    private readonly bool _isNullable;
+
+    protected bool OverlayVisible { get; set; }
 
     /// <summary>
     /// Gets or sets the type of HTML input to be rendered.
     /// </summary>
     [Parameter]
-    public InputDateType DateType { get; set; } = InputDateType.Date;
+    public SInputDateType DateType { get; set; } = SInputDateType.Date;
+    [Parameter]
+    public SOverlayControlType ControlType { get; set; } 
 
 
     private string? _inputValue;
 
-    private TValue _currentValue = default!;
+    private DateOnly? _currentDate;
+    private TimeOnly? _currentTime;
+
+    private DateOnly? CurrentDate
+    {
+        get => _currentDate;
+        set
+        {
+            _currentDate = value;
+            OnSelectAsync().ConfigureAwait(false);
+        }
+    }
+
+    private TimeOnly? CurrentTime
+    {
+        get => _currentTime;
+        set
+        {
+            _currentTime = value;
+            OnSelectAsync().ConfigureAwait(false);
+        }
+    }
 
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
@@ -48,18 +81,14 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
     {
         (_typeAttributeValue, _format) = DateType switch
         {
-            InputDateType.Date => ("date", DateFormat),
-            InputDateType.DateTimeLocal => ("datetime-local", DateTimeLocalFormat),
-            InputDateType.Month => ("month", MonthFormat),
-            InputDateType.Time => ("time", TimeFormat),
-            _ => throw new InvalidOperationException($"Unsupported {nameof(InputDateType)} '{Type}'.")
+            SInputDateType.Date => ("date", DateFormat),
+            SInputDateType.DateTimeLocal => ("datetime-local", DateTimeLocalFormat),
+            SInputDateType.Month => ("month", MonthFormat),
+            SInputDateType.Time => ("time", TimeFormat),
+            _ => throw new InvalidOperationException($"Unsupported {nameof(SInputDateType)} '{Type}'.")
         };
 
-        if (!Equals(_currentValue, Value))
-        {
-            _currentValue = Value;
-            _inputValue = FormatValueAsString(Value);
-        }
+        SetCurrentValue(Value);
     }
 
     protected override void BuildInputRenderTree(RenderTreeBuilder builder)
@@ -77,6 +106,15 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
         builder.CloseElement();
     }
 
+    protected void SetCurrentValue(object? value)
+    {
+        if (!Equals(CurrentValue, value))
+        {
+            CurrentValue = Value;
+            _inputValue = FormatValueAsString((TValue?)value);
+        }
+    }
+
 
     protected override bool CheckGenericIsValid()
     {
@@ -85,6 +123,38 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
                type == typeof(DateTimeOffset) ||
                type == typeof(DateOnly) ||
                type == typeof(TimeOnly);
+    }
+
+    protected virtual async Task OnSelectAsync()
+    {
+        object? obj = null;
+        if (_genericType == typeof(DateOnly))
+        {
+            obj = _isNullable ? _currentDate : _currentDate ?? default(DateOnly);
+        }
+        else if (_genericType == typeof(TimeOnly))
+        {
+            obj = _isNullable ? _currentTime : _currentTime ?? default(TimeOnly);
+        }
+        else
+        {
+            DateTime? dateTime = _currentTime is null && _currentDate is null
+                ? null
+                : new DateTime(_currentDate ?? default, _currentTime ?? default);
+            if (_genericType == typeof(DateTimeOffset))
+            {
+                DateTimeOffset? offset = dateTime is null ? null : new DateTimeOffset(dateTime.Value);
+                obj = _isNullable ? offset : offset ?? default(DateTimeOffset);
+            }
+            else if (_genericType == typeof(DateTime))
+            {
+                obj = _isNullable ? dateTime : dateTime ?? default(DateTime);
+            }
+        }
+
+        var value = (TValue?)obj;
+        _inputValue = FormatValueAsString(value);
+        await TriggerValueChangedEventAsync(value);
     }
 
     protected virtual async Task OnInputAsync(string? str)
@@ -118,5 +188,44 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
     protected bool TryParseValueFromString(string? value, [MaybeNullWhen(false)] out TValue result)
     {
         return BindConverter.TryConvertTo(value, CultureInfo.InvariantCulture, out result);
+    }
+
+    protected void OnCalendarClickAsync(MouseEventArgs args)
+    {
+        OverlayVisible = !OverlayVisible;
+        if (!OverlayVisible) return;
+        if (CurrentValue is null)
+        {
+            _currentDate = null;
+            _currentTime = null;
+            return;
+        }
+
+        if (_genericType == typeof(DateOnly))
+        {
+            _currentDate = (DateOnly)(object)CurrentValue;
+            _currentTime = null;
+        }
+        else if (_genericType == typeof(TimeOnly))
+        {
+            _currentDate = null;
+            _currentTime = (TimeOnly)(object)CurrentValue;
+        }
+        else
+        {
+            DateTime dateTime = default;
+            if (_genericType == typeof(DateTimeOffset))
+            {
+                var offset = (DateTimeOffset)(object)CurrentValue;
+                dateTime = offset.DateTime;
+            }
+            else if (_genericType == typeof(DateTime))
+            {
+                dateTime = (DateTime)(object)CurrentValue;
+            }
+
+            _currentDate = DateOnly.FromDateTime(dateTime);
+            _currentTime = TimeOnly.FromDateTime(dateTime);
+        }
     }
 }

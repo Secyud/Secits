@@ -28,11 +28,13 @@ public partial class SAppContainer : IContentComponent, ISizedComponent, IThemed
     protected void CreateDynamicComponent(SDynamicComponentContext context)
     {
         DynamicComponents.Add(context);
+        StateHasChanged();
     }
 
     protected void DeleteDynamicComponent(SDynamicComponentContext context)
     {
         DynamicComponents.Remove(context);
+        StateHasChanged();
     }
 
     public void Dispose()

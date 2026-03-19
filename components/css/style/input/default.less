@@ -110,11 +110,13 @@
   });
 }
 
-.s-input:has(>input[type="number"]) {
-  & > input[type="number"] {
+.s-input-number {
+  &:extend(.s-input all);
+
+  & > input {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-      //-webkit-appearance: none;
+      -webkit-appearance: none;
     }
   }
 
@@ -135,6 +137,25 @@
 
     & > .s-spin-up::after {
       &:extend(.sis.si-triangle-up::after);
+    }
+  }
+}
+
+.s-input-date-time {
+  &:extend(.s-input all);
+
+  & > input {
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+
+  & > .s-input-elements > .s-outer-spin-button {
+    display: inline-block;
+    line-height: var(--s-s);
+
+    &.s-calendar::after {
+      &:extend(.sis.si-calendar::after);
     }
   }
 }

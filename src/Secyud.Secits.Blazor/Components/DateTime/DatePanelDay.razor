@@ -1,0 +1,62 @@
+@namespace Secyud.Secits.Blazor
+@inherits DatePanelBase
+
+@(base.BuildRenderTree)
+
+@code{
+
+    protected override RenderFragment GenerateHeaderContent()
+    {
+        return @<div class="s-header-content"
+                     @onclick="@OnHeaderContentClick">
+                   @CurrentShow.ToString("MM/yyyy")
+               </div>;
+    }
+
+    protected override RenderFragment GenerateContent()
+    {
+        var start = new DateOnly(CurrentShow.Year, CurrentShow.Month, 1);
+        var firstIndex = -(int)start.DayOfWeek;
+        return @<table @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+                   <thead>
+                   <tr>
+                       <th>SUN</th>
+                       <th>MON</th>
+                       <th>TUE</th>
+                       <th>WED</th>
+                       <th>THU</th>
+                       <th>FRI</th>
+                       <th>SAT</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   @for (var i = 0; i < 5; i++)
+                   {
+                       <tr>
+                           @for (var j = 0; j < 7; j++)
+                           {
+                               @GenerateCell(start.AddDays(firstIndex + i * 7 + j))
+                           }
+                       </tr>
+                   }
+                   </tbody>
+               </table>;
+    }
+
+    private RenderFragment GenerateCell(DateOnly date)
+    {
+        var list = new List<string>();
+        if (date.Month != CurrentShow.Month)
+            list.Add("outer");
+        if (date == CurrentDate)
+            list.Add("selected");
+        if (date == DateOnly.FromDateTime(DateTime.Now))
+            list.Add("today");
+        var cls = string.Join(' ', list);
+
+        return @<td class="@cls" @onclick="@(_ => OnDateChanged(date))">
+                   @date.Day
+               </td>;
+    }
+
+}

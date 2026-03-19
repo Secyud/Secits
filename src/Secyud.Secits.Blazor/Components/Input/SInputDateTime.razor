@@ -4,12 +4,23 @@
 
 @(base.BuildRenderTree)
 
+<SOverlay @bind-Visible="OverlayVisible"
+          OverlayParent="this"
+          ControlType="ControlType"
+          Mode="SOverlayMode.Dynamic">
+    <SDateTimePicker DateType="DateType" Color="Color" Size="Size"
+                     @bind-Date="CurrentDate"
+                     @bind-Time="CurrentTime"
+                     FinishEdit="@(() => OverlayVisible = false)"/>
+</SOverlay>
+
 @code {
 
     protected override RenderFragment GenerateElements() => __builder =>
     {
         @base.GenerateElements()
-        <i class="sii si-calendar"></i>
+        <i class="sii s-outer-spin-button s-calendar"
+           @onclick="@OnCalendarClickAsync"></i>
     };
 
 }

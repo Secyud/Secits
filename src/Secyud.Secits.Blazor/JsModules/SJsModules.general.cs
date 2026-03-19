@@ -17,6 +17,8 @@ public static partial class SJsModules
         public const string Invoke = ModuleName + ".invoke";
         public const string InvokeVoid = ModuleName + ".invokeVoid";
         public const string SetProperty = ModuleName + ".setProperty";
+        public const string GetProperty = ModuleName + ".getProperty";
+        public const string ScrollToElement = ModuleName + ".scrollToElement";
     }
 
     public static class Event

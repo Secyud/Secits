@@ -15,6 +15,13 @@ public class SDynamicComponentContext(string key, RenderFragment renderFragment)
         StateHasChangedEvent?.Invoke();
     }
 
+    public event Func<Action, Task>? InvokeAsyncEvent;
+
+    public Task InvokeAsync(Action action)
+    {
+        return InvokeAsyncEvent?.Invoke(action) ?? Task.CompletedTask;
+    }
+
     public required Func<bool, Task> OnAfterRenderAsyncEvent { get; set; }
     public required Action<bool> OnAfterRenderEvent { get; set; }
     public required Func<Task> OnInitializedAsyncEvent { get; set; }

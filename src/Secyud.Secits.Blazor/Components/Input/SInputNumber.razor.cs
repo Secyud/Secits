@@ -10,9 +10,9 @@ namespace Secyud.Secits.Blazor;
 [CascadingTypeParameter(nameof(TValue))]
 public partial class SInputNumber<TValue> : EComponentBase<TValue>
 {
+    protected override string ComponentClass => "s-input-number";
     private ElementReference _input;
     private string? _inputValue;
-    private TValue _currentValue = default!;
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
     [Inject] private IJSRuntime Js { get; set; } = null!;
@@ -68,9 +68,9 @@ public partial class SInputNumber<TValue> : EComponentBase<TValue>
 
     protected override void OnParametersSet()
     {
-        if (!Equals(_currentValue, Value))
+        if (!Equals(CurrentValue, Value))
         {
-            _currentValue = Value;
+            CurrentValue = Value;
             _inputValue = FormatValueAsString(Value);
         }
     }

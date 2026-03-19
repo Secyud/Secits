@@ -1,0 +1,11 @@
+@namespace Secyud.Secits.Blazor
+@inherits DComponentBase
+
+@if (Mode == SOverlayMode.Static || OverlayVisible)
+{
+    <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+        @ChildContent
+    </div>
+}
+
+

@@ -1,11 +1,23 @@
+.hidden {
+  display: none !important;
+}
 .s-avatar,
-.s-badge,
 .s-button,
 .s-card,
+.s-selected-button,
+.s-datetime-picker,
 .sii,
 .s-input-general,
+.s-date-panel td,
+.s-time-selector > .s-time > .s-item,
 .s-input,
-.s-input-check {
+.s-input-check,
+.s-date-panel-decade td,
+.s-date-panel-year td,
+.s-date-panel-month td,
+.s-date-panel-day td,
+.s-input-number,
+.s-input-date-time {
   background-color: transparent;border: var(--s-s-bw) solid transparent;color: var(--text-color);font-size: var(--s-s);border-radius: var(--s-s-br);position: relative;transition: 50ms;--alpha: 100%;--component-color: color-mix(in srgb, var(--main-color) var(--alpha), var(--sc-c-m));
 }
 .s-avatar {
@@ -38,6 +50,16 @@
 .s-avatar > .avatar-item-image {
   width: var(--avatar-font-size);
   height: var(--avatar-font-size);
+}
+.s-badge-container {
+  position: relative;
+  display: inline-block;
+}
+.s-badge-container .s-badge {
+  position: absolute;
+  inset: calc(var(--s-s) / -2) calc(var(--s-s) / -2);
+  left: unset;
+  bottom: unset;
 }
 .s-button {
   padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
@@ -104,15 +126,151 @@
 .s-card > .s-card-header {
   font-weight: bold;
 }
+.s-selected-button,
+.s-date-panel td,
+.s-time-selector > .s-time > .s-item,
+.s-date-panel-decade td,
+.s-date-panel-year td,
+.s-date-panel-month td,
+.s-date-panel-day td {
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-a-p);
+  --part-color-rgb: var(--sc-a-p-rgb);
+  --alpha: 0%;
+  cursor: pointer;
+  user-select: none;
+  border-color: var(--component-color);
+  background-color: var(--component-color);
+  color: var(--sc-c-p);
+}
+.s-selected-button.selected:not(.disabled,.readonly),
+.s-date-panel td.selected:not(.disabled,.readonly),
+.s-time-selector > .s-time > .s-item.selected:not(.disabled,.readonly),
+.s-date-panel-decade td.selected:not(.disabled,.readonly),
+.s-date-panel-year td.selected:not(.disabled,.readonly),
+.s-date-panel-month td.selected:not(.disabled,.readonly),
+.s-date-panel-day td.selected:not(.disabled,.readonly) {
+  border-color: var(--sc-a-m);
+  background-color: transparent;
+  color: var(--sc-a-m);
+}
+.s-selected-button:hover:not(.disabled,.readonly),
+.s-date-panel td:hover:not(.disabled,.readonly),
+.s-time-selector > .s-time > .s-item:hover:not(.disabled,.readonly),
+.s-date-panel-decade td:hover:not(.disabled,.readonly),
+.s-date-panel-year td:hover:not(.disabled,.readonly),
+.s-date-panel-month td:hover:not(.disabled,.readonly),
+.s-date-panel-day td:hover:not(.disabled,.readonly) {
+  --alpha: 60%;
+  border-color: var(--component-color);
+  background-color: var(--component-color);
+  color: var(--part-color);
+}
+.s-selected-button:active:not(.disabled,.readonly),
+.s-date-panel td:active:not(.disabled,.readonly),
+.s-time-selector > .s-time > .s-item:active:not(.disabled,.readonly),
+.s-date-panel-decade td:active:not(.disabled,.readonly),
+.s-date-panel-year td:active:not(.disabled,.readonly),
+.s-date-panel-month td:active:not(.disabled,.readonly),
+.s-date-panel-day td:active:not(.disabled,.readonly) {
+  --alpha: 80%;
+  border-color: var(--component-color);
+  background-color: var(--component-color);
+  color: var(--part-color);
+}
+.s-datetime-picker {
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
+  display: inline-block;
+}
+.s-datetime-picker > .s-header {
+  display: flex;
+  text-align: center;
+  padding: calc(var(--s-s) / 4);
+  height: calc(var(--s-s) * 1.5);
+}
+.s-datetime-picker > .s-header > i {
+  width: var(--s-s);
+  height: var(--s-s);
+}
+.s-datetime-picker > .s-header > .s-header-content {
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+}
+.s-datetime-picker > .s-footer {
+  display: flex;
+}
+.s-datetime-picker > .s-footer > .s-button {
+  margin: auto;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--component-color);
+}
+.s-date-panel,
+.s-time-selector,
+.s-date-panel-decade,
+.s-date-panel-year,
+.s-date-panel-month,
+.s-date-panel-day {
+  width: calc(var(--s-s) * 16);
+  height: calc(var(--s-s) * 16);
+  text-align: center;
+}
+.s-date-panel,
+.s-date-panel-decade,
+.s-date-panel-year,
+.s-date-panel-month,
+.s-date-panel-day {
+  table-layout: fixed;
+  border-spacing: 0.5rem;
+}
+.s-date-panel td,
+.s-date-panel-decade td,
+.s-date-panel-year td,
+.s-date-panel-month td,
+.s-date-panel-day td {
+  font-size: calc(var(--s-s) * 0.75);
+}
+.s-date-panel td.outer:not(.selected or :hover or :active),
+.s-date-panel-decade td.outer:not(.selected or :hover or :active),
+.s-date-panel-year td.outer:not(.selected or :hover or :active),
+.s-date-panel-month td.outer:not(.selected or :hover or :active),
+.s-date-panel-day td.outer:not(.selected or :hover or :active) {
+  background-color: var(--sc-d-m);
+  color: var(--sc-d-p);
+}
+.s-date-panel-day th {
+  font-size: calc(var(--s-s) * 0.75);
+}
+.s-time-selector {
+  display: flex;
+  justify-content: center;
+}
+.s-time-selector > .s-time {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.s-time-selector > .s-time > .s-item {
+  width: var(--s-s);
+  height: var(--s-s);
+  line-height: var(--s-s);
+  font-size: var(--s-s);
+  padding: calc(var(--s-s) / 2) calc(var(--s-s) / 1);
+  margin: 4px;
+}
 .s-icon {
   border-radius: 50%;
   width: var(--s-s);
   height: var(--s-s);
+  line-height: var(--s-s);
   font-size: var(--s-s);
   display: inline-block;
   user-select: none;
   margin: auto;
-  color: inherit;
+  color: var(--component-color, var(--sc-a-m));
 }
 .s-icon > svg {
   height: 100%;
@@ -127,20 +285,25 @@
 .s-input-check input::after {
   font-style: normal;margin: auto;display: contents;
 }
+.s-input-date-time > .s-input-elements > .s-outer-spin-button.s-calendar::after {
+  content: '';
+}
 .s-input-check input:checked::after {
   content: '';
 }
-.s-input > .s-input-elements > .s-input-element > .s-clear::after {
-  content: '';
+.s-input > .s-input-elements > .s-input-element > .s-clear::after,
+.s-input-number > .s-input-elements > .s-input-element > .s-clear::after,
+.s-input-date-time > .s-input-elements > .s-input-element > .s-clear::after {
+  content: '';
 }
 .s-input-check input:indeterminate::after {
-  content: '';
-}
-.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .s-spin-down::after {
   content: '';
 }
-.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .s-spin-up::after {
-  content: '';
+.s-input-number > .s-input-elements > .s-outer-spin-button > .s-spin-down::after {
+  content: '';
+}
+.s-input-number > .s-input-elements > .s-outer-spin-button > .s-spin-up::after {
+  content: '';
 }
 .sii {
   border: none;
@@ -165,7 +328,9 @@
 }
 .s-input-general,
 .s-input,
-.s-input-check {
+.s-input-check,
+.s-input-number,
+.s-input-date-time {
   --main-color: var(--sc-a-m);
   --main-color-rgb: var(--sc-a-m-rgb);
   --part-color: var(--sc-c-p);
@@ -179,12 +344,16 @@
 }
 .s-input-general:hover:not(.disabled,.readonly),
 .s-input:hover:not(.disabled,.readonly),
-.s-input-check:hover:not(.disabled,.readonly) {
+.s-input-check:hover:not(.disabled,.readonly),
+.s-input-number:hover:not(.disabled,.readonly),
+.s-input-date-time:hover:not(.disabled,.readonly) {
   --alpha: 60%;
 }
 .s-input-general:has(:focus):not(.disabled,.readonly),
 .s-input:has(:focus):not(.disabled,.readonly),
-.s-input-check:has(:focus):not(.disabled,.readonly) {
+.s-input-check:has(:focus):not(.disabled,.readonly),
+.s-input-number:has(:focus):not(.disabled,.readonly),
+.s-input-date-time:has(:focus):not(.disabled,.readonly) {
   --alpha: 100%;
 }
 .s-input-general input,
@@ -192,7 +361,11 @@
 .s-input input,
 .s-input textarea,
 .s-input-check input,
-.s-input-check textarea {
+.s-input-check textarea,
+.s-input-number input,
+.s-input-number textarea,
+.s-input-date-time input,
+.s-input-date-time textarea {
   margin: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -204,63 +377,94 @@
 }
 .s-input-general.shadow,
 .s-input.shadow,
-.s-input-check.shadow {
+.s-input-check.shadow,
+.s-input-number.shadow,
+.s-input-date-time.shadow {
   --shadow-alpha: 0.3;
   --shadow-size: calc(var(--s-s) * 0.5);
   box-shadow: 0 0 var(--shadow-size) 0 rgba(var(--main-color-rgb), var(--shadow-alpha));
 }
 .s-input-general.shadow:hover:not(.disabled,.readonly),
 .s-input.shadow:hover:not(.disabled,.readonly),
-.s-input-check.shadow:hover:not(.disabled,.readonly) {
+.s-input-check.shadow:hover:not(.disabled,.readonly),
+.s-input-number.shadow:hover:not(.disabled,.readonly),
+.s-input-date-time.shadow:hover:not(.disabled,.readonly) {
   --shadow-size: calc(var(--s-s) * 1);
   --shadow-alpha: 0.5;
 }
 .s-input-general.shadow:has(:focus):not(.disabled,.readonly),
 .s-input.shadow:has(:focus):not(.disabled,.readonly),
-.s-input-check.shadow:has(:focus):not(.disabled,.readonly) {
+.s-input-check.shadow:has(:focus):not(.disabled,.readonly),
+.s-input-number.shadow:has(:focus):not(.disabled,.readonly),
+.s-input-date-time.shadow:has(:focus):not(.disabled,.readonly) {
   --shadow-size: calc(var(--s-s) * 0.7);
   --shadow-alpha: 0.7;
 }
-.s-input {
+.s-input,
+.s-input-number,
+.s-input-date-time {
   --input-margin: calc(var(--s-s) / 4) calc(var(--s-s) / 4);
   display: flex;
   width: 100%;
   --element-display: none;
 }
 .s-input > input,
-.s-input textarea {
+.s-input textarea,
+.s-input-number > input,
+.s-input-number textarea,
+.s-input-date-time > input,
+.s-input-date-time textarea {
   padding: var(--input-margin);
   min-height: var(--s-s);
   width: 100% !important;
   color: var(--part-color);
 }
-.s-input > .s-input-elements {
+.s-input > .s-input-elements,
+.s-input-number > .s-input-elements,
+.s-input-date-time > .s-input-elements {
   display: var(--element-display);
   position: absolute;
   inset: var(--input-margin);
   left: unset;
   bottom: unset;
 }
-.s-input > .s-input-elements > .s-input-element {
+.s-input > .s-input-elements > .s-input-element,
+.s-input-number > .s-input-elements > .s-input-element,
+.s-input-date-time > .s-input-elements > .s-input-element {
   display: flex;
   width: var(--s-s);
   height: var(--s-s);
 }
-.s-input:hover:not(.disabled,.readonly) {
+.s-input:hover:not(.disabled,.readonly),
+.s-input-number:hover:not(.disabled,.readonly),
+.s-input-date-time:hover:not(.disabled,.readonly) {
   --element-display: flex;
 }
-.s-input:has(:focus):not(.disabled,.readonly) {
+.s-input:has(:focus):not(.disabled,.readonly),
+.s-input-number:has(:focus):not(.disabled,.readonly),
+.s-input-date-time:has(:focus):not(.disabled,.readonly) {
   --element-display: flex;
 }
-.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button {
+.s-input-number > input::-webkit-inner-spin-button,
+.s-input-number > input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.s-input-number > .s-input-elements > .s-outer-spin-button {
   display: inline-block;
   width: var(--s-s);
   height: var(--s-s);
 }
-.s-input:has(>input[type="number"]) > .s-input-elements > .s-outer-spin-button > .sii {
+.s-input-number > .s-input-elements > .s-outer-spin-button > .sii {
   --icon-size: calc(var(--s-s) / 2);
   height: var(--icon-size);
   font-size: var(--icon-size);
+}
+.s-input-date-time > input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.s-input-date-time > .s-input-elements > .s-outer-spin-button {
+  display: inline-block;
+  line-height: var(--s-s);
 }
 .s-input-check {
   --input-size: calc(var(--s-s) * 1.5);
@@ -279,6 +483,126 @@
 .s-input-check input::after {
   display: block;
   margin: auto;
+}
+:root {
+  --span: 3;
+}
+.span-1 {
+  --span: 1;
+}
+.span-2 {
+  --span: 2;
+}
+.span-3 {
+  --span: 3;
+}
+.span-4 {
+  --span: 4;
+}
+.span-5 {
+  --span: 5;
+}
+.span-6 {
+  --span: 6;
+}
+.span-7 {
+  --span: 7;
+}
+.span-8 {
+  --span: 8;
+}
+.span-9 {
+  --span: 9;
+}
+.span-a {
+  --span: 10;
+}
+.span-b {
+  --span: 11;
+}
+.span-c {
+  --span: 12;
+}
+.s-grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--gap);
+  margin: var(--gap);
+}
+.s-grid-col {
+  grid-column: auto / span var(--span);
+}
+.s-overlay {
+  position: absolute;
+  display: block;
+}
+.s-overlay.oa-l {
+  right: calc(var(--or) + var(--ow));
+  left: unset;
+}
+.s-overlay.oa-r {
+  right: unset;
+  left: calc(var(--ol) + var(--ow));
+}
+.s-overlay.oa-t {
+  bottom: calc(var(--ob) + var(--oh));
+  top: unset;
+}
+.s-overlay.oa-b {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oh));
+}
+.s-overlay.oa-l.oj-bb,
+.s-overlay.oa-r.oj-bb {
+  bottom: calc(var(--ob) + var(--oh));
+  top: unset;
+}
+.s-overlay.oa-l.oj-b,
+.s-overlay.oa-r.oj-b {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oi));
+}
+.s-overlay.oa-l.oj-m,
+.s-overlay.oa-r.oj-m {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oh) / 2);
+  transform: translate(0, -50%);
+}
+.s-overlay.oa-l.oj-e,
+.s-overlay.oa-r.oj-e {
+  bottom: calc(var(--ob) + var(--oi));
+  top: unset;
+}
+.s-overlay.oa-l.oj-ae,
+.s-overlay.oa-r.oj-ae {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oh));
+}
+.s-overlay.oa-t.oj-bb,
+.s-overlay.oa-b.oj-bb {
+  right: calc(var(--or) + var(--ow));
+  left: unset;
+}
+.s-overlay.oa-t.oj-b,
+.s-overlay.oa-b.oj-b {
+  right: unset;
+  left: calc(var(--ol) + var(--oi));
+}
+.s-overlay.oa-t.oj-m,
+.s-overlay.oa-b.oj-m {
+  right: unset;
+  left: calc(var(--ol) + var(--ow) / 2);
+  transform: translate(-50%, 0);
+}
+.s-overlay.oa-t.oj-e,
+.s-overlay.oa-b.oj-e {
+  right: calc(var(--or) + var(--oi));
+  left: unset;
+}
+.s-overlay.oa-t.oj-ae,
+.s-overlay.oa-b.oj-ae {
+  right: unset;
+  left: calc(var(--ol) + var(--ow));
 }
 .s-pager {
   display: flex;
@@ -341,54 +665,6 @@ h5.s-title {
 h6.s-title {
   padding: calc(var(--s-s) / 8) 0;
 }
-:root {
-  --span: 3;
-}
-.span-1 {
-  --span: 1;
-}
-.span-2 {
-  --span: 2;
-}
-.span-3 {
-  --span: 3;
-}
-.span-4 {
-  --span: 4;
-}
-.span-5 {
-  --span: 5;
-}
-.span-6 {
-  --span: 6;
-}
-.span-7 {
-  --span: 7;
-}
-.span-8 {
-  --span: 8;
-}
-.span-9 {
-  --span: 9;
-}
-.span-a {
-  --span: 10;
-}
-.span-b {
-  --span: 11;
-}
-.span-c {
-  --span: 12;
-}
-.s-grid-row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: var(--gap);
-  margin: var(--gap);
-}
-.s-grid-col {
-  grid-column: auto / span var(--span);
-}
 html,
 body,
 .s-app-container {
@@ -400,4 +676,26 @@ body,
   background-color: var(--sc-b-m);
   position: relative;
   display: flex;
+}
+:root {
+  /* 滚动条轨道 */
+  /* 滚动条滑块 */
+}
+:root ::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
+:root ::-webkit-scrollbar-track {
+  background: rgba(var(--sc-b-m-rgb), 0.5);
+  /* 背景颜色 */
+  border-radius: 0.5rem;
+}
+:root ::-webkit-scrollbar-thumb {
+  background: rgba(var(--sc-a-m-rgb), 0.6);
+  /* 滑块颜色 */
+  border: 0.4rem solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-clip: content-box;
 }

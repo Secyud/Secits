@@ -8,5 +8,22 @@ public partial class SIcon : ISizedComponent, IThemedComponent
     protected override string ComponentClass => "s-icon";
     [Parameter] public SColor Color { get; set; }
     [Parameter] public SSize Size { get; set; }
-    [Parameter] public string? Icon { get; set; }
+
+    [Parameter]
+    public SIconName Icon
+    {
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    }
+
+    protected override void ConfigureClassStyle(ClassStyleContext context)
+    {
+        base.ConfigureClassStyle(context);
+        context.AppendClass(Icon);
+    }
 }

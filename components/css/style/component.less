@@ -1,13 +1,16 @@
-﻿@import "avatar/@{theme}";
+﻿@import "atom/@{theme}";
+@import "avatar/@{theme}";
 @import "badge/@{theme}";
 @import "button/@{theme}";
 @import "card/@{theme}";
+@import "date-time/@{theme}";
 @import "icon/@{theme}";
 @import "input/@{theme}";
+@import "layout/@{theme}";
+@import "overlay/@{theme}";
 @import "pager/@{theme}";
 @import "progress/@{theme}";
 @import "title/@{theme}";
-@import "layout/@{theme}";
 
 html, body, .s-app-container {
   height: 100%;
@@ -19,4 +22,29 @@ html, body, .s-app-container {
   background-color: var(--sc-b-m);
   position: relative;
   display: flex;
+}
+
+:root {
+  ::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+  }
+
+  /* 滚动条轨道 */
+
+  ::-webkit-scrollbar-track {
+    background: rgba(var(--sc-b-m-rgb), 0.5); /* 背景颜色 */
+    border-radius: 0.5rem;
+  }
+
+  /* 滚动条滑块 */
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(var(--sc-a-m-rgb), 0.6); /* 滑块颜色 */
+    border: 0.4rem solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-clip: content-box;
+  }
 }

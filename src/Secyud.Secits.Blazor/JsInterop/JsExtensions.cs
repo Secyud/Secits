@@ -13,9 +13,19 @@ public static class JsExtensions
             return element.InvokeAsync<DomRect>(js, "getBoundingClientRect");
         }
 
-        public ValueTask SetPropertyAsync<TValue>(IJSRuntime js, string? name, TValue value)
+        public ValueTask ScrollToElement(IJSRuntime js, string? sub)
+        {
+            return js.InvokeVoidAsync(SJsModules.Element.ScrollToElement, element, sub);
+        }
+
+        public ValueTask SetProperty<TValue>(IJSRuntime js, string? name, TValue value)
         {
             return js.InvokeVoidAsync(SJsModules.Element.SetProperty, element, name, value);
+        }
+
+        public ValueTask<TValue> GetProperty<TValue>(IJSRuntime js, string? name)
+        {
+            return js.InvokeAsync<TValue>(SJsModules.Element.GetProperty, element, name);
         }
 
         public async ValueTask InvokeVoidAsync(IJSRuntime js, string identifier, params object?[]? args)

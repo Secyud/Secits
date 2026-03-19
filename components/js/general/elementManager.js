@@ -11,6 +11,21 @@
         this.getElement(element)[property] = value;
     }
 
+    static getProperty(element, property) {
+        return this.getElement(element)[property];
+    }
+
+    static scrollToElement(element, sub) {
+        element = this.getElement(element);
+        sub = element.querySelector(sub);
+        if (!sub) return;
+        element.scrollTo({
+            left: sub.offsetLeft - sub.offsetWidth,
+            top: sub.offsetTop - sub.offsetHeight,
+            behavior: 'smooth'
+        });
+    }
+
     static getElement(element) {
         if (!element) {
             element = document.body;

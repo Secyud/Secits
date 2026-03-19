@@ -9,9 +9,4 @@ namespace Secyud.Secits.Blazor;
 public interface IClickableComponent
 {
     EventCallback Click { get; }
-
-    void OnClick(MouseEventArgs args)
-    {
-        Click.InvokeAsync(args).ConfigureAwait(false);
-    }
 }

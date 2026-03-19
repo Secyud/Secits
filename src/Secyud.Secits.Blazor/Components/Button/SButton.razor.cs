@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
@@ -41,11 +42,16 @@ public partial class SButton : IThemedComponent, ISizedComponent, IContentCompon
     [Parameter] public bool Disabled { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
     [Parameter] public EventCallback Click { get; set; }
-    [Parameter] public string? Icon { get; set; }
+    [Parameter] public SIconName? Icon { get; set; }
 
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {
         base.ConfigureClassStyle(context);
         context.AppendClass(Type);
+    }
+
+    Task OnClick(MouseEventArgs args)
+    {
+        return Click.InvokeAsync(args);
     }
 }

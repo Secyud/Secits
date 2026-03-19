@@ -6,7 +6,7 @@ namespace Secyud.Secits.Blazor;
 /// <summary>
 /// container component with styles
 /// </summary>
-public abstract class CComponentBase : SComponentBase, IContainerComponent
+public abstract class CComponentBase : SComponentBase, IContainerComponent,IElementComponent
 {
     protected CComponentBase()
     {

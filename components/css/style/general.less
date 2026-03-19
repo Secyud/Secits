@@ -27,7 +27,7 @@
 
 .on-select( @selected) {
   &.selected:not(.disabled,.readonly) {
-    each(selected, {
+    each(@selected, {
         @{key}: @value;
     });
   }

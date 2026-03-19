@@ -1,0 +1,37 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+@GenerateHeader()
+<div class="s-content">
+    @GenerateContent()
+</div>
+
+@code {
+
+    protected virtual RenderFragment GenerateHeader()
+    {
+        return @<div class="s-header">
+                   <div class="s-button text"
+                        @onclick="@OnAngleLftClick">
+                       <i class="sis si-angle-left-d"></i>
+                   </div>
+                   @GenerateHeaderContent()
+                   <div class="s-button text"
+                        @onclick="@OnAngleRhtClick">
+                       <i class="sis si-angle-right-d"></i>
+                   </div>
+               </div>;
+    }
+
+    protected virtual RenderFragment? GenerateHeaderContent()
+    {
+        return null;
+    }
+
+    protected virtual RenderFragment GenerateContent()
+    {
+        return @<table @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+               </table>;
+    }
+
+}

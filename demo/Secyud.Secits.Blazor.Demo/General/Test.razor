@@ -1,0 +1,33 @@
+@attribute [Route(DemoMenus.Test)]
+@implements IElementComponent
+
+<SCard>
+    <SCardBody>
+        <div @ref="ElementRef" style="border: 2px solid black;">Test</div>
+        <SOverlay Visible="true" VisibleChanged="VisibleChanged"
+                  ControlType="SOverlayControlType.Hover"
+                  Mode="SOverlayMode.Static"
+                  OverlayAlignment="SOverlayAlignment.Bottom"
+                  OverlayJustify="SOverlayJustify.Middle"
+                  OverlayParent="this">
+            <SDateTimePicker DateType="SInputDateType.DateTimeLocal" Type="DateTimePickerType.Time"
+                             @bind-Date="CurrentDate"
+                             @bind-Time="CurrentTime"/>
+        </SOverlay>
+
+    </SCardBody>
+</SCard>
+
+@code
+{
+    DateOnly? CurrentDate;
+    TimeOnly? CurrentTime;
+
+    Task VisibleChanged(bool b)
+    {
+        Console.WriteLine($"visible changed {b}");
+        return Task.CompletedTask;
+    }
+
+    public ElementReference ElementRef { get; set; }
+}

@@ -10,7 +10,6 @@ public partial class SInputCheck<TValue>
 {
     protected override string ComponentClass => "s-input-check";
 
-    private TValue _currentValue = default!;
     private ElementReference _input;
 
     [Inject] protected IJSRuntime Js { get; set; } = null!;
@@ -22,10 +21,10 @@ public partial class SInputCheck<TValue>
         builder.AddMultipleAttributes(1, AdditionalAttributes);
         builder.AddAttribute(2, "type", "checkbox");
         builder.AddAttributeIfNotEmpty(3, "name", Name);
-        builder.AddAttribute(4, "value", _currentValue);
-        builder.AddAttribute(5, "checked", _currentValue is true);
+        builder.AddAttribute(4, "value", CurrentValue);
+        builder.AddAttribute(5, "checked", CurrentValue is true);
         builder.AddAttribute(6, "onchange",
-            EventCallback.Factory.CreateBinder(this, OnCheckedChangedAsync, _currentValue));
+            EventCallback.Factory.CreateBinder(this, OnCheckedChangedAsync, CurrentValue));
         builder.SetUpdatesAttributeName("checked");
         builder.AddElementReferenceCapture(7, e => _input = e);
         builder.CloseElement();
@@ -40,9 +39,9 @@ public partial class SInputCheck<TValue>
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
-        if (!Equals(_currentValue, Value))
+        if (!Equals(CurrentValue, Value))
         {
-            _currentValue = Value;
+            CurrentValue = Value;
             await SyncIndeterminateStateAsync();
         }
     }
@@ -59,13 +58,13 @@ public partial class SInputCheck<TValue>
 
     protected ValueTask SyncIndeterminateStateAsync()
     {
-        return _input.SetPropertyAsync(Js, "indeterminate", _currentValue is null);
+        return _input.SetProperty(Js, "indeterminate", CurrentValue is null);
     }
 
 
     protected async Task OnCheckedChangedAsync(TValue value)
     {
-        _currentValue = value;
+        CurrentValue = value;
         await TriggerValueChangedEventAsync(value);
     }
 }

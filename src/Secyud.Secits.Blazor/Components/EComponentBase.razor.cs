@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Secyud.Secits.Blazor.Plugins;
@@ -11,10 +10,11 @@ namespace Secyud.Secits.Blazor;
 /// Editor component base for input
 /// </summary>
 public abstract partial class EComponentBase<TValue> : IActivableComponent, IInputComponent,
-    IPluggableComponent, IThemedComponent
+    IPluggableComponent, IThemedComponent, ISizedComponent
 {
     // ReSharper disable once StaticMemberInGenericType
     private static bool? _isValid;
+    protected TValue CurrentValue { get; set; } = default!;
 
     protected void ValidateGeneric()
     {
@@ -61,6 +61,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     [Parameter] public EventCallback<TValue> ValueChanged { get; set; }
     [Parameter] public Expression<Func<TValue>>? ValueExpression { get; set; }
     [Parameter] public SColor Color { get; set; }
+    [Parameter] public SSize Size { get; set; }
 
     public SPluginContext PluginContext { get; }
 
@@ -86,7 +87,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
         return Task.CompletedTask;
     }
 
-    public virtual async Task TriggerValueChangedEventAsync(TValue value)
+    public virtual async Task TriggerValueChangedEventAsync(TValue? value)
     {
         await ValueChanged.InvokeAsync(value);
         await _valueHandlers.InvokeAsync(u

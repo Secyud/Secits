@@ -7,7 +7,6 @@ namespace Secyud.Secits.Blazor;
 public partial class SInputText
 {
     [Parameter] public bool Area { get; set; }
-    private string? _inputValue;
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
     public override void ApplyPlugin(ISPlugin plugin)
@@ -32,8 +31,8 @@ public partial class SInputText
         builder.AddAttributeIfNotEmpty(2, "name", Name);
         builder.AddAttributeIfNotEmpty(3, "readonly", GetReadonly());
         builder.AddAttributeIfNotEmpty(4, "disabled", GetDisabled());
-        builder.AddAttribute(5, "value", _inputValue);
-        builder.AddAttribute(6, "oninput", CreateInputEvent(OnInputAsync, _inputValue));
+        builder.AddAttribute(5, "value", CurrentValue);
+        builder.AddAttribute(6, "oninput", CreateInputEvent(OnInputAsync, CurrentValue));
         builder.SetUpdatesAttributeName("value");
         builder.CloseElement();
     }
@@ -46,12 +45,12 @@ public partial class SInputText
 
     protected override void OnParametersSet()
     {
-        _inputValue = Value;
+        CurrentValue = Value;
     }
 
     protected virtual async Task OnInputAsync(string? str)
     {
-        _inputValue = str;
+        CurrentValue = str;
         await _inputHandler.InvokeAsync(
             u => u.HandleInputAsync(str),
             () => TriggerInputChangedEventAsync(str));

@@ -8,14 +8,18 @@ public static class DemoMenus
     {
         [nameof(Home)] = Home,
         [nameof(Avatar)] = Avatar,
+        [nameof(Badge)] = Badge,
         [nameof(Button)] = Button,
         [nameof(Input)] = Input,
+        [nameof(Test)] = Test,
     };
 
     public const string Home = "/";
     
     public const string Avatar = "/avatar";
+    public const string Badge = "/Badge";
     public const string Button = "/button";
 
     public const string Input = "/input";
+    public const string Test = "/test";
 }

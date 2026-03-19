@@ -7,13 +7,15 @@ public sealed class JsEvent<TElement, TArgs> : IAsyncDisposable
     private readonly string _eventName;
     private readonly TElement _element;
     private readonly IJSRuntime _js;
+    private readonly int _delay;
     private readonly DotNetObjectReference<JsEvent<TElement, TArgs>> _ref;
 
-    public JsEvent(TElement element, string eventName, IJSRuntime js)
+    public JsEvent(TElement element, string eventName, IJSRuntime js, int delay = 0)
     {
         _eventName = eventName;
         _element = element;
         _js = js;
+        _delay = delay;
         _ref = DotNetObjectReference.Create(this);
     }
 
@@ -28,7 +30,7 @@ public sealed class JsEvent<TElement, TArgs> : IAsyncDisposable
     public ValueTask CreateEventAsync(bool preventDefault = false, bool stopPropagation = false)
     {
         return _js.InvokeVoidAsync(SJsModules.Event.Create,
-            _element, _eventName, _ref, preventDefault, stopPropagation);
+            _element, _eventName, _ref, preventDefault, stopPropagation, _delay);
     }
 
     public ValueTask DeleteEventAsync()

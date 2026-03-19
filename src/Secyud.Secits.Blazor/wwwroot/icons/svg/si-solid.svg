@@ -43,26 +43,29 @@
     <glyph glyph-name="si-check"
       unicode="&#xE00C;"
       horiz-adv-x="32" d="M2 14A2 2 0 0 0 6 18L12 12L26 26A2 2 0 0 0 30 22L14 6A4 4 0 0 0 10 6z" />
-    <glyph glyph-name="si-cross"
+    <glyph glyph-name="si-circle"
       unicode="&#xE00D;"
+      horiz-adv-x="32" d="M4 16A12 12 0 0 1 28 16A12 12 0 0 1 4 16" />
+    <glyph glyph-name="si-cross"
+      unicode="&#xE00E;"
       horiz-adv-x="32" d="M2 26A2 2 0 0 0 6 30L16 20L26 30A2 2 0 0 0 30 26L20 16L30 6A2 2 0 0 0 26 2L16 12L6 2A2 2 0 0 0 2 6L12 16z" />
     <glyph glyph-name="si-pin"
-      unicode="&#xE00E;"
+      unicode="&#xE00F;"
       horiz-adv-x="32" d="M14 16A7 7 0 1 0 18 16L18 4A2 2 0 0 0 14 4z" />
     <glyph glyph-name="si-square"
-      unicode="&#xE00F;"
+      unicode="&#xE010;"
       horiz-adv-x="32" d="M7 28H25A3 3 0 0 0 28 25V7A3 3 0 0 0 25 4H7A3 3 0 0 0 4 7V25A3 3 0 0 0 7 28z" />
     <glyph glyph-name="si-triangle-down"
-      unicode="&#xE010;"
+      unicode="&#xE011;"
       horiz-adv-x="32" d="M2 20C2 20 0 24 6 24L26 24C32 24 30 20 30 20L18 8A4 4 0 0 0 14 8z" />
     <glyph glyph-name="si-triangle-left"
-      unicode="&#xE011;"
+      unicode="&#xE012;"
       horiz-adv-x="32" d="M20 30C20 30 24 32 24 26L24 6C24 0 20 2 20 2L8 14A4 4 0 0 0 8 18z" />
     <glyph glyph-name="si-triangle-right"
-      unicode="&#xE012;"
+      unicode="&#xE013;"
       horiz-adv-x="32" d="M12 30C12 30 8 32 8 26L8 6C8 0 12 2 12 2L24 14A4 4 0 0 1 24 18z" />
     <glyph glyph-name="si-triangle-up"
-      unicode="&#xE013;"
+      unicode="&#xE014;"
       horiz-adv-x="32" d="M2 12C2 12 0 8 6 8L26 8C32 8 30 12 30 12L18 24A4 4 0 0 1 14 24z" />
   </font>
 </defs>

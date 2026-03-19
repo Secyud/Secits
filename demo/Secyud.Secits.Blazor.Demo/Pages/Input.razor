@@ -11,7 +11,7 @@
                 <SRow>
                     @foreach (var (typeName, type) in _types)
                     {
-                        <SCol>
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} Text")">
                                 <SInputText Type="@type" Color="@color"
                                             @bind-Value="_stringValue">
@@ -21,13 +21,13 @@
                                 </SInputText>
                             </DemoShowcase>
                         </SCol>
-                        <SCol>
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} Check")">
                                 <SInputCheck Type="@type" Color="@color"
                                              @bind-Value="_booleanValue"/>
                             </DemoShowcase>
                         </SCol>
-                        <SCol>
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} Number")">
                                 <SInputNumber Type="@type" Color="@color"
                                               @bind-Value="_integerValue">
@@ -37,7 +37,7 @@
                                 </SInputNumber>
                             </DemoShowcase>
                         </SCol>
-                        <SCol>
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} DateTime")">
                                 <SInputDateTime Type="@type" Color="@color"
                                                 @bind-Value="_datetimeValue">
@@ -47,7 +47,7 @@
                                 </SInputDateTime>
                             </DemoShowcase>
                         </SCol>
-                        <SCol Span="SGridSpan.Is6">
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} Area")">
                                 <SInputText Type="@type" Color="@color" Area
                                             @bind-Value="_textValue">
@@ -57,9 +57,10 @@
                                 </SInputText>
                             </DemoShowcase>
                         </SCol>
-                        <SCol Span="SGridSpan.Is6">
+                        <SCol Span="SGridSpan.Is2">
                             <DemoShowcase Text="@($"{typeName} DateTime")">
                                 <SInputDateTime Type="@type" Color="@color"
+                                                ControlType="SOverlayControlType.Click"
                                                 @bind-Value="_datetimeValue"/>
                             </DemoShowcase>
                         </SCol>

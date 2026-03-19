@@ -1,5 +1,13 @@
 @import  (reference)  "../general";
 
-.s-badge {
-  &:extend(.s-component);
+.s-badge-container {
+  position: relative;
+  display: inline-block;
+
+  .s-badge {
+    position: absolute;
+    inset: size-vh(-2, -2);
+    left: unset;
+    bottom: unset;
+  }
 }

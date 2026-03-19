@@ -3,7 +3,7 @@ import {elementManager} from "./elementManager.js";
 export class eventManager {
     static totalEvents = {};
 
-    static create(element, eventName, invoker, preventDefault = false, stopPropagation = false) {
+    static create(element, eventName, invoker, preventDefault = false, stopPropagation = false, delay = 0) {
         const callback = args => {
             const obj = {};
             for (const k in args) {
@@ -13,7 +13,7 @@ export class eventManager {
                     typeof v === 'object' ||
                     v instanceof Node ||
                     v instanceof Window) {
-                    return;
+                    continue;
                 }
                 const key = k[0].toUpperCase() + k.substring(1);
                 obj[key] = v;
@@ -21,7 +21,8 @@ export class eventManager {
 
             setTimeout(function () {
                 invoker.invokeMethodAsync('invoke', obj)
-            }, 0);
+            }, delay);
+
             if (preventDefault === true) {
                 args.preventDefault();
             }

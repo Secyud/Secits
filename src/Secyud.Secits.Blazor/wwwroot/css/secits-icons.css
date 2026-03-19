@@ -62,31 +62,35 @@
 .si-solid.si-check::after {
   content: '';
 }
+.sis.si-circle::after,
+.si-solid.si-circle::after {
+  content: '';
+}
 .sis.si-cross::after,
 .si-solid.si-cross::after {
-  content: '';
+  content: '';
 }
 .sis.si-pin::after,
 .si-solid.si-pin::after {
-  content: '';
+  content: '';
 }
 .sis.si-square::after,
 .si-solid.si-square::after {
-  content: '';
+  content: '';
 }
 .sis.si-triangle-down::after,
 .si-solid.si-triangle-down::after {
-  content: '';
+  content: '';
 }
 .sis.si-triangle-left::after,
 .si-solid.si-triangle-left::after {
-  content: '';
+  content: '';
 }
 .sis.si-triangle-right::after,
 .si-solid.si-triangle-right::after {
-  content: '';
+  content: '';
 }
 .sis.si-triangle-up::after,
 .si-solid.si-triangle-up::after {
-  content: '';
+  content: '';
 }

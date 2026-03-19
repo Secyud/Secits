@@ -1,0 +1,54 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div @key="CurrentType" @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+    @switch (CurrentType)
+    {
+        case DateTimePickerType.Decade:
+        {
+            <DatePanelDecade Date="CurrentDate" Show="CurrentShowDate" Class="s-decade"
+                             ShowChanged="@(date => OnShowChanged(date))"
+                             DateChanged="@(date => OnDateChanged(date, DateTimePickerType.Year))"/>
+            break;
+        }
+        case DateTimePickerType.Year:
+        {
+            <DatePanelYear Date="CurrentDate" Show="CurrentShowDate" Class="s-year"
+                           HeaderClick="@(() => CurrentType = DateTimePickerType.Decade)"
+                           ShowChanged="@(date => OnShowChanged(date))"
+                           DateChanged="@(date => OnDateChanged(date, DateTimePickerType.Month))"/>
+            break;
+        }
+        case DateTimePickerType.Month:
+        {
+            <DatePanelMonth Date="CurrentDate" Show="CurrentShowDate" Class="s-month"
+                            HeaderClick="@(() => CurrentType = DateTimePickerType.Year)"
+                            ShowChanged="@(date => OnShowChanged(date))"
+                            DateChanged="@(date => OnDateChanged(date, DateTimePickerType.Day))"/>
+            break;
+        }
+        case DateTimePickerType.Day:
+            <DatePanelDay Date="CurrentDate" Show="CurrentShowDate" Class="s-day"
+                          HeaderClick="@(() => CurrentType = DateTimePickerType.Month)"
+                          ShowChanged="@(date => OnShowChanged(date))"
+                          DateChanged="@(date => OnDateChanged(date, DateTimePickerType.Time))"/>
+            break;
+        case DateTimePickerType.Time:
+            <STimeSelector Time="CurrentTime" TimeChanged="OnTimeChanged">
+                <HeaderTemplate>
+                    @if (DateType != SInputDateType.Time)
+                    {
+                        <div class="s-header-content" @onclick="@(e => CurrentType = DateTimePickerType.Day)">
+                            @CurrentDate.ToString("MM/dd/yyyy")
+                        </div>
+                    }
+                </HeaderTemplate>
+            </STimeSelector>
+            break;
+        default:
+                throw new ArgumentOutOfRangeException();
+    }
+    <div class="s-footer">
+        <SButton Icon="SIconName.Calendar" Click="SetToCurrent"/>
+    </div>
+</div>

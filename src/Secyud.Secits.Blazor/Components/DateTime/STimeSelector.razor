@@ -1,0 +1,44 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div class="s-header">
+    @HeaderTemplate
+</div>
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+    <div @ref="_hourRef" class="s-time">
+        @GenerateSelector(24, _time.Hour, OnHourChanged)
+    </div>
+    <div @ref="_minuteRef" class="s-time">
+        @GenerateSelector(60, _time.Minute, OnMinuteChanged)
+    </div>
+    <div @ref="_secondRef" class="s-time">
+        @GenerateSelector(60, _time.Second, OnSecondChanged)
+    </div>
+</div>
+
+@code
+{
+    protected RenderFragment GenerateSelector(int maxValue, int selected, Func<int, Task> click)
+    {
+        return __builder =>
+        {
+            @for (var i = 0; i < maxValue; i++)
+            {
+                @GenerateItem(i)
+            }
+        };
+
+        RenderFragment GenerateItem(int i)
+        {
+            return @<div class="s-item@(i == selected ? " selected" : null)"
+                         @onclick="OnClick">
+                       @i
+                   </div>;
+
+            async Task OnClick()
+            {
+                await click(i);
+            }
+        }
+    }
+}

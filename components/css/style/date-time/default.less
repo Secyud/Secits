@@ -1,0 +1,136 @@
+@import (reference)  "../general";
+
+.s-selected-button {
+  &:extend(.s-component);
+  .set-color(main, --sc-a-m);
+  .set-color(part, --sc-a-p);
+  --alpha: 0%;
+  cursor: pointer;
+  user-select: none;
+  border-color: var(--component-color);
+  background-color: var(--component-color);
+  color: var(--sc-c-p);
+
+  .on-select({
+    border-color: var(--sc-a-m);
+    background-color: transparent;
+    color: var(--sc-a-m);
+  });
+  .on-hover({
+    --alpha: 60%;
+    border-color: var(--component-color);
+    background-color: var(--component-color);
+    color: var(--part-color);
+  });
+  .on-active({
+    --alpha: 80%;
+    border-color: var(--component-color);
+    background-color: var(--component-color);
+    color: var(--part-color);
+  });
+}
+
+
+.s-datetime-picker {
+  &:extend(.s-component);
+
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
+  display: inline-block;
+
+  & > .s-header {
+    display: flex;
+    text-align: center;
+    padding: size-a(4);
+    height: calc(var(--s-s) * 1.5);
+
+    & > i {
+      width: var(--s-s);
+      height: var(--s-s);
+    }
+
+    & > .s-header-content {
+      margin: auto;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  & > .s-footer {
+    display: flex;
+
+    & > .s-button {
+      margin: auto;
+      .is-text();
+    }
+  }
+}
+
+.s-date-panel,
+.s-time-selector {
+  width: calc(var(--s-s) * 16);
+  height: calc(var(--s-s) * 16);
+  text-align: center;
+}
+
+
+.s-date-panel {
+  table-layout: fixed;
+  border-spacing: 0.5rem;
+
+  & td {
+    &:extend(.s-selected-button all);
+
+    font-size: calc(var(--s-s) * 0.75);
+
+    &.outer:not(.selected or :hover or :active) {
+      background-color: var(--sc-d-m);
+      color: var(--sc-d-p);
+    }
+
+  }
+}
+
+.s-date-panel-decade {
+  &:extend(.s-date-panel all);
+
+}
+
+.s-date-panel-year {
+  &:extend(.s-date-panel all);
+
+}
+
+.s-date-panel-month {
+  &:extend(.s-date-panel all);
+
+}
+
+.s-date-panel-day {
+  &:extend(.s-date-panel all);
+
+  & th {
+    font-size: calc(var(--s-s) * 0.75);
+  }
+}
+
+.s-time-selector {
+  display: flex;
+  justify-content: center;
+
+  & > .s-time {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    & > .s-item {
+      &:extend(.s-selected-button all);
+      width: var(--s-s);
+      height: var(--s-s);
+      line-height: var(--s-s);
+      font-size: var(--s-s);
+      padding: size-vh(2, 1);
+      margin: 4px;
+    }
+  }
+}

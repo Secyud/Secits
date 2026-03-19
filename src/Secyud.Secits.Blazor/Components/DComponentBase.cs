@@ -101,6 +101,11 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
         Context.StateHasChanged();
     }
 
+    protected Task InvokeAsync(Action action)
+    {
+        return Context.InvokeAsync(action);
+    }
+
     private async Task CallStateHasChangedOnAsyncCompletion(Task task)
     {
         try

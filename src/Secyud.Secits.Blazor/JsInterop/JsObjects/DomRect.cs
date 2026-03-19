@@ -20,9 +20,9 @@ public class DomRect : IEquatable<DomRect>
 
     [JsonPropertyName("y")] public double Y { get; init; }
 
-    public bool ContainsPoint(double x, double y)
+    public bool ContainsPoint(double x, double y, double interval = 0)
     {
-        return x >= Left && x <= Right && y >= Top && y <= Bottom;
+        return x >= Left - interval && x <= Right + interval && y >= Top - interval && y <= Bottom + interval;
     }
 
     public bool Equals(DomRect? other)

@@ -2,10 +2,10 @@
 @inherits CComponentBase
 
 <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()" disabled="@Disabled"
-     @onclick="@((this as IClickableComponent).OnClick)">
+     @onclick="@OnClick">
     @if (Icon is not null)
     {
-        <SIcon Icon="@Icon"/>
+        <SIcon Icon="@Icon.Value"/>
     }
     @ChildContent
 </div>

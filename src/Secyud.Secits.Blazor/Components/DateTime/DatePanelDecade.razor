@@ -1,0 +1,55 @@
+@namespace Secyud.Secits.Blazor
+@inherits DatePanelBase
+
+@(base.BuildRenderTree)
+
+@code{
+
+    protected override RenderFragment GenerateHeaderContent()
+    {
+        var start = CurrentShow.Year / 100 * 100;
+        var end = start + 99;
+        return @<div class="s-header-content">
+                   @start - @end
+               </div>;
+    }
+
+    protected override RenderFragment GenerateContent()
+    {
+        var start = new DateOnly(CurrentShow.Year / 100 * 100, 1, 1);
+        return @<table @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+                   <tbody>
+                   @for (var i = 0; i < 4; i++)
+                   {
+                       <tr>
+                           @for (var j = 0; j < 3; j++)
+                           {
+                               @GenerateCell(start.AddYears(10 * (i * 3 + j - 1)))
+                           }
+                       </tr>
+                   }
+                   </tbody>
+               </table>;
+    }
+
+    private RenderFragment GenerateCell(DateOnly date)
+    {
+        var list = new List<string>();
+        var decade = date.Year / 10;
+        if (date.Year / 100 != CurrentShow.Year / 100)
+            list.Add("outer");
+        if (decade == CurrentDate.Year / 10)
+            list.Add("selected");
+        if (decade == DateTime.Now.Year / 10)
+            list.Add("today");
+        var cls = string.Join(' ', list);
+
+        var start = decade * 10;
+        var end = start + 9;
+
+        return @<td class="@cls" @onclick="@(_ => OnDateChanged(date))">
+                   @start - @end
+               </td>;
+    }
+
+}

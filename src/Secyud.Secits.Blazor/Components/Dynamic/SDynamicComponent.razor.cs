@@ -16,8 +16,10 @@ public sealed partial class SDynamicComponent : IDisposable
         {
             if (field == value) return;
             field?.StateHasChangedEvent -= StateHasChanged;
+            field?.InvokeAsyncEvent -= InvokeAsync;
             field = value;
             field?.StateHasChangedEvent += StateHasChanged;
+            field?.InvokeAsyncEvent += InvokeAsync;
         }
     }
 
