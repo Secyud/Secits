@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using Secyud.Secits.Blazor.JsInterop;
-using Secyud.Secits.Blazor.JSInterop;
 using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
@@ -12,7 +10,17 @@ namespace Secyud.Secits.Blazor;
 /// </summary>
 public partial class SOverlay : IContentComponent
 {
+    private readonly JsInvoker _closeInvoker;
+    private bool _visibleChanged;
+
+    public SOverlay()
+    {
+        _closeInvoker = new JsInvoker(() => ChangeVisible(false));
+    }
+
     protected override string ComponentClass => "s-overlay";
+
+    [Inject] protected IJSRuntime Js { get; set; } = null!;
 
     [Parameter] public RenderFragment? ChildContent { get; set; }
 
@@ -51,12 +59,10 @@ public partial class SOverlay : IContentComponent
         {
             if (field == value) return;
             field = value;
-            SetDirty();
-            CheckEventAsync().ConfigureAwait(false);
+            _visibleChanged = true;
+            StateHasChanged();
         }
     }
-
-    [Inject] protected IJSRuntime Js { get; set; } = null!;
 
     [Parameter]
     public bool Visible
@@ -73,104 +79,24 @@ public partial class SOverlay : IContentComponent
 
     [Parameter] public IElementComponent? OverlayParent { get; set; }
     [Parameter] public SOverlayControlType ControlType { get; set; }
-    protected JsEvent<string, MouseEventArgs> DomClickEvent { get; set; } = null!;
-    protected JsEvent<string, MouseEventArgs> DomMoveEvent { get; set; } = null!;
-    protected JsEvent<string, MouseEventArgs> DomWheelEvent { get; set; } = null!;
 
-    protected DomRect? ParentRect
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        get;
-        set
-        {
-            if (value is null)
-            {
-                field = value;
-                return;
-            }
+        await base.OnAfterRenderAsync(firstRender);
 
-            if (field is null || !field.Equals(value))
+        if (_visibleChanged && ElementRef is { Context: not null } element &&
+            OverlayParent?.ElementRef is { Context: not null } parent)
+        {
+            if (OverlayVisible)
             {
-                field = value;
-                SetDirty();
-                StateHasChanged();
+                await Js.InvokeVoidAsync(SJsModules.Overlay.Create,
+                    element.Id, element, parent, ControlType.ToString(), _closeInvoker.Ref);
             }
             else
             {
-                field = value;
+                await Js.InvokeVoidAsync(SJsModules.Overlay.Delete, element.Id);
             }
         }
-    }
-
-    protected override void OnInitialized()
-    {
-        DomClickEvent = new JsEvent<string, MouseEventArgs>("document", "click", Js);
-        DomMoveEvent = new JsEvent<string, MouseEventArgs>("document", "mousemove", Js);
-        DomWheelEvent = new JsEvent<string, MouseEventArgs>("document", "wheel", Js, 100);
-        DomClickEvent.Event += OnDocumentCheck;
-        DomMoveEvent.Event += OnDocumentCheck;
-        DomWheelEvent.Event += OnDocumentWheel;
-    }
-
-    /// <summary>
-    /// 在弹出或关闭时，注册或注销事件
-    /// </summary>
-    /// <exception cref="ArgumentOutOfRangeException"></exception>
-    protected async Task CheckEventAsync()
-    {
-        if (OverlayVisible)
-        {
-            switch (ControlType)
-            {
-                case SOverlayControlType.Hover:
-                    await DomMoveEvent.CreateEventAsync();
-                    break;
-                case SOverlayControlType.Click:
-                    await DomClickEvent.CreateEventAsync();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            await DomWheelEvent.CreateEventAsync();
-            if (OverlayParent?.ElementRef is { Context : not null } element)
-            {
-                ParentRect = await element.GetBoundingClientRect(Js);
-            }
-        }
-        else
-        {
-            await DomMoveEvent.DeleteEventAsync();
-            await DomClickEvent.DeleteEventAsync();
-            await DomWheelEvent.DeleteEventAsync();
-        }
-
-        await InvokeAsync(StateHasChanged);
-    }
-
-    /// <summary>
-    /// 处理doc检查，不在父级元素或本元素的将关闭。
-    /// </summary>
-    /// <param name="args"></param>
-    protected async Task OnDocumentWheel(MouseEventArgs args)
-    {
-        if (OverlayParent?.ElementRef is { Context : not null } element)
-        {
-            ParentRect = await element.GetBoundingClientRect(Js);
-        }
-
-        await InvokeAsync(StateHasChanged);
-    }
-
-    /// <summary>
-    /// 处理doc检查，不在父级元素或本元素的将关闭。
-    /// </summary>
-    /// <param name="args"></param>
-    protected async Task OnDocumentCheck(MouseEventArgs args)
-    {
-        if (ParentRect is null || ElementRef.Context is null) return;
-        if (ParentRect.ContainsPoint(args.ClientX, args.ClientY, Interval)) return;
-        var rect = await ElementRef.GetBoundingClientRect(Js);
-        if (rect.ContainsPoint(args.ClientX, args.ClientY, Interval)) return;
-        await ChangeVisible(false);
     }
 
     protected async Task ChangeVisible(bool visible)
@@ -187,31 +113,5 @@ public partial class SOverlay : IContentComponent
         context.AppendClass(OverlayAlignment);
         context.AppendClass(OverlayJustify);
         if (!OverlayVisible) context.AppendClass("hidden");
-        if (ParentRect is not null)
-        {
-            context.AppendStyle("--ob", $"{ParentRect.Bottom - Interval:F}px");
-            context.AppendStyle("--ot", $"{ParentRect.Top - Interval:F}px");
-            context.AppendStyle("--ol", $"{ParentRect.Left - Interval:F}px");
-            context.AppendStyle("--or", $"{ParentRect.Right - Interval:F}px");
-            context.AppendStyle("--ow", $"{ParentRect.Width + 2 * Interval:F}px");
-            context.AppendStyle("--oh", $"{ParentRect.Height + 2 * Interval:F}px");
-            context.AppendStyle("--oi", $"{Interval:F}px");
-        }
-    }
-
-    protected async Task DisposeAsync()
-    {
-        await DomClickEvent.DisposeAsync();
-        await DomMoveEvent.DisposeAsync();
-    }
-
-    protected override void Dispose(bool isDisposing)
-    {
-        if (isDisposing)
-        {
-            DisposeAsync().ConfigureAwait(false);
-        }
-
-        base.Dispose(isDisposing);
     }
 }
