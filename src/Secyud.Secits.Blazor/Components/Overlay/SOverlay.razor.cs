@@ -84,18 +84,31 @@ public partial class SOverlay : IContentComponent
     {
         await base.OnAfterRenderAsync(firstRender);
 
+        if (OverlayVisible)
+        {
+            await CreateOverlay();
+        }
+        else
+        {
+            await DeleteOverlay();
+        }
+    }
+
+    protected async Task CreateOverlay()
+    {
         if (_visibleChanged && ElementRef is { Context: not null } element &&
             OverlayParent?.ElementRef is { Context: not null } parent)
         {
-            if (OverlayVisible)
-            {
-                await Js.InvokeVoidAsync(SJsModules.Overlay.Create,
-                    element.Id, element, parent, ControlType.ToString(), _closeInvoker.Ref);
-            }
-            else
-            {
-                await Js.InvokeVoidAsync(SJsModules.Overlay.Delete, element.Id);
-            }
+            await Js.InvokeVoidAsync(SJsModules.Overlay.Create,
+                element.Id, element, parent, ControlType.ToString(), _closeInvoker.Ref);
+        }
+    }
+
+    protected async Task DeleteOverlay()
+    {
+        if (_visibleChanged && ElementRef is { Context: not null } element)
+        {
+            await Js.InvokeVoidAsync(SJsModules.Overlay.Delete, element.Id);
         }
     }
 
@@ -113,5 +126,17 @@ public partial class SOverlay : IContentComponent
         context.AppendClass(OverlayAlignment);
         context.AppendClass(OverlayJustify);
         if (!OverlayVisible) context.AppendClass("hidden");
+    }
+
+    protected async Task DisposeAsync(bool isDisposing)
+    {
+        if (!isDisposing) return;
+        await DeleteOverlay();
+    }
+
+    protected override void Dispose(bool isDisposing)
+    {
+        DisposeAsync(isDisposing).ConfigureAwait(false);
+        base.Dispose(isDisposing);
     }
 }
