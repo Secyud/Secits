@@ -1,0 +1,20 @@
+@attribute [Route(DemoMenus.Pager)]
+<SCard>
+    <SCardHeader>
+        Pager
+    </SCardHeader>
+    <SCardBody>
+        <DemoShowcase Text="Pager Total">
+            <SPager MaxPageCount="10" ShowPageCount="10"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Pager Part">
+            <SPager MaxPageCount="100" ShowPageCount="10"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Danger Total">
+            <SPager Color="SColor.Danger" MaxPageCount="10" ShowPageCount="10"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Danger Part">
+            <SPager Color="SColor.Danger" MaxPageCount="100" ShowPageCount="10"/>
+        </DemoShowcase>
+    </SCardBody>
+</SCard>

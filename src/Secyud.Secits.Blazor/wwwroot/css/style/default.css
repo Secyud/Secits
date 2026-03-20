@@ -1,6 +1,3 @@
-.hidden {
-  display: none !important;
-}
 .s-avatar,
 .s-button,
 .s-card,
@@ -8,6 +5,9 @@
 .s-datetime-picker,
 .sii,
 .s-input-general,
+.s-pager,
+.s-pager > .s-pager-button,
+.s-table,
 .s-date-panel td,
 .s-time-selector > .s-time > .s-item,
 .s-input,
@@ -19,6 +19,9 @@
 .s-input-number,
 .s-input-date-time {
   background-color: transparent;border: var(--s-s-bw) solid transparent;color: var(--text-color);font-size: var(--s-s);border-radius: var(--s-s-br);position: relative;transition: 50ms;--alpha: 100%;--component-color: color-mix(in srgb, var(--main-color) var(--alpha), var(--sc-c-m));
+}
+.hidden {
+  display: none !important;
 }
 .s-avatar {
   --main-color: var(--sc-b-m);
@@ -90,10 +93,10 @@
   background-color: transparent;
   color: var(--component-color);
 }
-.s-button:hover:not(.disabled,.readonly) {
+.s-button:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 60%;
 }
-.s-button:active:not(.disabled,.readonly) {
+.s-button:active:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 80%;
 }
 .s-button.shadow {
@@ -104,11 +107,11 @@
   --shadow-size: calc(var(--s-s) * 0.5);
   box-shadow: 0 0 var(--shadow-size) 0 rgba(var(--main-color-rgb), var(--shadow-alpha));
 }
-.s-button.shadow:hover:not(.disabled,.readonly) {
+.s-button.shadow:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --shadow-size: calc(var(--s-s) * 1);
   --shadow-alpha: 0.5;
 }
-.s-button.shadow:active:not(.disabled,.readonly) {
+.s-button.shadow:active:not([disabled="disabled"],[readonly="readonly"]) {
   --shadow-size: calc(var(--s-s) * 0.7);
   --shadow-alpha: 0.7;
 }
@@ -144,36 +147,36 @@
   background-color: var(--component-color);
   color: var(--sc-c-p);
 }
-.s-selected-button.selected:not(.disabled,.readonly),
-.s-date-panel td.selected:not(.disabled,.readonly),
-.s-time-selector > .s-time > .s-item.selected:not(.disabled,.readonly),
-.s-date-panel-decade td.selected:not(.disabled,.readonly),
-.s-date-panel-year td.selected:not(.disabled,.readonly),
-.s-date-panel-month td.selected:not(.disabled,.readonly),
-.s-date-panel-day td.selected:not(.disabled,.readonly) {
+.s-selected-button.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel td.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-time-selector > .s-time > .s-item.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-decade td.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-year td.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-month td.selected:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-day td.selected:not([disabled="disabled"],[readonly="readonly"]) {
   border-color: var(--sc-a-m);
   background-color: transparent;
   color: var(--sc-a-m);
 }
-.s-selected-button:hover:not(.disabled,.readonly),
-.s-date-panel td:hover:not(.disabled,.readonly),
-.s-time-selector > .s-time > .s-item:hover:not(.disabled,.readonly),
-.s-date-panel-decade td:hover:not(.disabled,.readonly),
-.s-date-panel-year td:hover:not(.disabled,.readonly),
-.s-date-panel-month td:hover:not(.disabled,.readonly),
-.s-date-panel-day td:hover:not(.disabled,.readonly) {
+.s-selected-button:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel td:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-time-selector > .s-time > .s-item:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-decade td:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-year td:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-month td:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-day td:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 60%;
   border-color: var(--component-color);
   background-color: var(--component-color);
   color: var(--part-color);
 }
-.s-selected-button:active:not(.disabled,.readonly),
-.s-date-panel td:active:not(.disabled,.readonly),
-.s-time-selector > .s-time > .s-item:active:not(.disabled,.readonly),
-.s-date-panel-decade td:active:not(.disabled,.readonly),
-.s-date-panel-year td:active:not(.disabled,.readonly),
-.s-date-panel-month td:active:not(.disabled,.readonly),
-.s-date-panel-day td:active:not(.disabled,.readonly) {
+.s-selected-button:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel td:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-time-selector > .s-time > .s-item:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-decade td:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-year td:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-month td:active:not([disabled="disabled"],[readonly="readonly"]),
+.s-date-panel-day td:active:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 80%;
   border-color: var(--component-color);
   background-color: var(--component-color);
@@ -320,10 +323,10 @@
   background-color: transparent;
   color: var(--component-color);
 }
-.sii:hover:not(.disabled,.readonly) {
+.sii:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 60%;
 }
-.sii:active:not(.disabled,.readonly) {
+.sii:active:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 80%;
 }
 .s-input-general,
@@ -342,18 +345,18 @@
   color: var(--part-color);
   position: relative;
 }
-.s-input-general:hover:not(.disabled,.readonly),
-.s-input:hover:not(.disabled,.readonly),
-.s-input-check:hover:not(.disabled,.readonly),
-.s-input-number:hover:not(.disabled,.readonly),
-.s-input-date-time:hover:not(.disabled,.readonly) {
+.s-input-general:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-check:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 60%;
 }
-.s-input-general:has(:focus):not(.disabled,.readonly),
-.s-input:has(:focus):not(.disabled,.readonly),
-.s-input-check:has(:focus):not(.disabled,.readonly),
-.s-input-number:has(:focus):not(.disabled,.readonly),
-.s-input-date-time:has(:focus):not(.disabled,.readonly) {
+.s-input-general:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-check:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time:has(:focus):not([disabled="disabled"],[readonly="readonly"]) {
   --alpha: 100%;
 }
 .s-input-general input,
@@ -384,19 +387,19 @@
   --shadow-size: calc(var(--s-s) * 0.5);
   box-shadow: 0 0 var(--shadow-size) 0 rgba(var(--main-color-rgb), var(--shadow-alpha));
 }
-.s-input-general.shadow:hover:not(.disabled,.readonly),
-.s-input.shadow:hover:not(.disabled,.readonly),
-.s-input-check.shadow:hover:not(.disabled,.readonly),
-.s-input-number.shadow:hover:not(.disabled,.readonly),
-.s-input-date-time.shadow:hover:not(.disabled,.readonly) {
+.s-input-general.shadow:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input.shadow:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-check.shadow:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number.shadow:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time.shadow:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --shadow-size: calc(var(--s-s) * 1);
   --shadow-alpha: 0.5;
 }
-.s-input-general.shadow:has(:focus):not(.disabled,.readonly),
-.s-input.shadow:has(:focus):not(.disabled,.readonly),
-.s-input-check.shadow:has(:focus):not(.disabled,.readonly),
-.s-input-number.shadow:has(:focus):not(.disabled,.readonly),
-.s-input-date-time.shadow:has(:focus):not(.disabled,.readonly) {
+.s-input-general.shadow:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input.shadow:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-check.shadow:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number.shadow:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time.shadow:has(:focus):not([disabled="disabled"],[readonly="readonly"]) {
   --shadow-size: calc(var(--s-s) * 0.7);
   --shadow-alpha: 0.7;
 }
@@ -435,14 +438,14 @@
   width: var(--s-s);
   height: var(--s-s);
 }
-.s-input:hover:not(.disabled,.readonly),
-.s-input-number:hover:not(.disabled,.readonly),
-.s-input-date-time:hover:not(.disabled,.readonly) {
+.s-input:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number:hover:not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time:hover:not([disabled="disabled"],[readonly="readonly"]) {
   --element-display: flex;
 }
-.s-input:has(:focus):not(.disabled,.readonly),
-.s-input-number:has(:focus):not(.disabled,.readonly),
-.s-input-date-time:has(:focus):not(.disabled,.readonly) {
+.s-input:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-number:has(:focus):not([disabled="disabled"],[readonly="readonly"]),
+.s-input-date-time:has(:focus):not([disabled="disabled"],[readonly="readonly"]) {
   --element-display: flex;
 }
 .s-input-number > input::-webkit-inner-spin-button,
@@ -606,14 +609,39 @@
 }
 .s-pager {
   display: flex;
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
 }
-.s-pager .s-button {
-  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
-  --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
+.s-pager > .s-pager-button {
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-a-p);
+  --part-color-rgb: var(--sc-a-p-rgb);
+  --alpha: 0%;
+  padding: calc(var(--s-s) / 4);
+  background-color: var(--component-color);
+  color: var(--main-color);
+  border-color: var(--component-color);
+  cursor: pointer;
+}
+.s-pager > .s-pager-button:hover:not([disabled="disabled"],[readonly="readonly"]) {
+  --alpha: 60%;
+  color: var(--part-color);
+}
+.s-pager > .s-pager-button:active:not([disabled="disabled"],[readonly="readonly"]) {
+  --alpha: 80%;
+  color: var(--part-color);
+}
+.s-pager > .s-pager-button,
+.s-pager > .s-pager-divider {
+  margin: calc(var(--s-s) / 4);
   min-width: var(--s-s);
   height: var(--s-s);
   line-height: var(--s-s);
   text-align: center;
+  font-size: var(--s-s);
+  user-select: none;
 }
 .s-progress {
   width: 100%;
@@ -647,6 +675,32 @@
     left: 190%;
   }
 }
+.s-table {
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
+}
+.s-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.s-table tr.selected {
+  background-color: var(--sc-a-m);
+  color: var(--sc-a-p);
+}
+.s-table td,
+.s-table th {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  border-right: 1px solid var(--sc-a-m);
+  border-bottom: 1px solid var(--sc-a-m);
+}
+.s-table td:last-child,
+.s-table th:last-child {
+  border-right: 0;
+}
+.s-table .s-pager {
+  border: 0;
+}
 h1.s-title {
   padding: calc(var(--s-s) / 0.25) 0;
 }
@@ -664,6 +718,13 @@ h5.s-title {
 }
 h6.s-title {
   padding: calc(var(--s-s) / 8) 0;
+}
+[disabled="disabled"] {
+  --main-color: var(--sc-d-m) !important;
+  --main-color-rgb: var(--sc-d-m-rgb) !important;
+  --part-color: var(--sc-d-p) !important;
+  --part-color-rgb: var(--sc-d-p-rgb) !important;
+  cursor: unset;
 }
 html,
 body,

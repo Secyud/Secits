@@ -18,6 +18,7 @@ public abstract class SPluginBase : IComponent, ISPlugin, IDisposable
             field = value;
             field?.Component.ApplyPlugin(this);
             OnComponentSet();
+            field?.InvokeAsync(field.StateHasChanged);
         }
     }
 
@@ -43,12 +44,6 @@ public abstract class SPluginBase : IComponent, ISPlugin, IDisposable
         where TComponent : class
     {
         component = Context?.Component as TComponent;
-    }
-
-    protected static string? JoinString(List<string?> strList)
-    {
-        var res = string.Join(' ', strList.Where(u => !string.IsNullOrWhiteSpace(u)));
-        return string.IsNullOrWhiteSpace(res) ? null : res;
     }
 
     protected virtual void Dispose(bool isDisposing)

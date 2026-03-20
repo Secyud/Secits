@@ -4,6 +4,7 @@ using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
+[CascadingTypeParameter(nameof(TItem))]
 public partial class STable<TItem> : IThemedComponent, IPluggableComponent
 {
     public STable()
@@ -12,7 +13,11 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         {
             Table = this
         };
-        PluginContext = new SPluginContext(this);
+        PluginContext = new SPluginContext(this)
+        {
+            StateHasChanged = StateHasChanged,
+            InvokeAsync = InvokeAsync
+        };
     }
 
     protected override string ComponentClass => "s-table";
@@ -38,6 +43,7 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
     protected SPluginsContainer<ISpTableHeader<TItem>> Header { get; } = new();
     protected SPluginsContainer<ISpTableFooter<TItem>> Footer { get; } = new();
     protected SPluginsContainer<ISpTableElement> Element { get; } = new();
+    protected SPluginsContainer<ISpTableStyle> Styles { get; } = new();
 
     public void ApplyPlugin(ISPlugin plugin)
     {
@@ -45,6 +51,8 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         Header.TryApply(plugin);
         Footer.TryApply(plugin);
         Element.TryApply(plugin);
+        Styles.TryApply(plugin);
+        InvokeAsync(StateHasChanged);
     }
 
     public void ForgoPlugin(ISPlugin plugin)
@@ -53,6 +61,14 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         Header.TryForgo(plugin);
         Footer.TryForgo(plugin);
         Element.TryForgo(plugin);
+        Styles.TryForgo(plugin);
+        InvokeAsync(StateHasChanged);
+    }
+
+    protected override void ConfigureClassStyle(ClassStyleContext context)
+    {
+        base.ConfigureClassStyle(context);
+        Styles.Invoke(u => u.BuildClassStyle(context));
     }
 
     public Task RefreshAsync()
@@ -99,6 +115,7 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         _selectedItem = item;
         _selectedKey = GetKeyOrDefault(item);
         SelectedItemChanged.InvokeAsync(_selectedItem).ConfigureAwait(false);
+        StateHasChanged();
     }
 
     public TItem? GetSelectedItem() => _selectedItem;
@@ -135,6 +152,7 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         }
 
         SelectedItemsChanged.InvokeAsync(_selectedItems).ConfigureAwait(false);
+        StateHasChanged();
     }
 
     public List<TItem>? GetSelectedItems() => _selectedItems;

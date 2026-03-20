@@ -2,7 +2,7 @@
 
 // anim
 .on-hover(@hover) {
-  &:hover:not(.disabled,.readonly) {
+  &:hover:not([disabled="disabled"],[readonly="readonly"]) {
     each(@hover, {
         @{key}: @value;
     });
@@ -10,7 +10,7 @@
 }
 
 .on-active(@active) {
-  &:active:not(.disabled,.readonly) {
+  &:active:not([disabled="disabled"],[readonly="readonly"]) {
     each(@active, {
         @{key}: @value;
     });
@@ -18,7 +18,7 @@
 }
 
 .on-focus(@focus) {
-  &:has(:focus):not(.disabled,.readonly) {
+  &:has(:focus):not([disabled="disabled"],[readonly="readonly"]) {
     each(@focus, {
         @{key}: @value;
     });
@@ -26,7 +26,7 @@
 }
 
 .on-select( @selected) {
-  &.selected:not(.disabled,.readonly) {
+  &.selected:not([disabled="disabled"],[readonly="readonly"]) {
     each(@selected, {
         @{key}: @value;
     });
@@ -72,7 +72,7 @@
 .is-text() {
   border-color: transparent;
   background-color: transparent;
-  color:  var(--component-color);
+  color: var(--component-color);
 }
 
 input, textarea, button {

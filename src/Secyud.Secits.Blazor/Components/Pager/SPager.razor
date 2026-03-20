@@ -16,29 +16,49 @@
         var minPageIndex = Math.Max(0, _pageIndex - ShowPageCount / 2);
         var maxPageIndex = Math.Min(MaxPageCount, minPageIndex + ShowPageCount);
 
-        <div key="first" class="s-pager-button" disabled="@(_pageIndex <= 0)"
-             @onclick="TurnToFirstPageAsync">
-            <i class="sis si-angle-left-d"></i>
-        </div>
-
         <div key="previous" class="s-pager-button" disabled="@(_pageIndex <= 0)"
              @onclick="TurnToPreviewPageAsync">
             <i class="sis si-angle-left"></i>
         </div>
+
+        if (minPageIndex > 0)
+        {
+            <div key="first" class="s-pager-button" disabled="@(_pageIndex <= 0)"
+                 @onclick="TurnToFirstPageAsync">
+                1
+            </div>
+        }
+
+        if (minPageIndex > 1)
+        {
+            <div class="s-pager-divider">
+                ...
+            </div>
+        }
 
         for (var i = minPageIndex; i < maxPageIndex; i++)
         {
             @GeneratePageButton(i)
         }
 
+        if (maxPageIndex < MaxPageCount - 1)
+        {
+            <div class="s-pager-divider">
+                ...
+            </div>
+        }
+
+        if (maxPageIndex < MaxPageCount)
+        {
+            <div key="last" class="s-pager-button" disabled="@(_pageIndex >= MaxPageCount - 1)"
+                 @onclick="TurnToLastPageAsync">
+                @MaxPageCount
+            </div>
+        }
+
         <div key="next" class="s-pager-button" disabled="@(_pageIndex >= MaxPageCount - 1)"
              @onclick="TurnToNextPageAsync">
             <i class="sis si-angle-right"></i>
-        </div>
-
-        <div key="last" class="s-pager-button" disabled="@(_pageIndex >= MaxPageCount - 1)"
-             @onclick="TurnToLastPageAsync">
-            <i class="sis si-angle-right-d"></i>
         </div>
     }
 

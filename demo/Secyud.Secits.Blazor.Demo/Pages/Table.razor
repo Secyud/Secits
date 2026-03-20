@@ -1,0 +1,51 @@
+@using Secyud.Secits.Blazor.Plugins
+@attribute [Route(DemoMenus.Table)]
+
+<SCard>
+    <SCardHeader>
+        Table
+    </SCardHeader>
+    <SCardBody>
+        <DemoShowcase Text="Paged Table">
+            <STable TItem="ListDemoItem" @bind-SelectedItem="_selectedItem">
+                <Plugins>
+                    <SpTableContentPaged TItem="ListDemoItem" Items="GetItems"/>
+                    <SpTableHeader/>
+                </Plugins>
+                <Columns>
+                    <SpTableColumn Field="i => i.Name" Caption="Name"/>
+                    <SpTableColumn Field="i => i.BirthDate" Caption="BirthDate"/>
+                    <SpTableColumn Field="i => i.Age" Caption="Age"/>
+                    <SpTableColumn Field="i => i.PhoneNumber" Caption="PhoneNumber"/>
+                </Columns>
+            </STable>
+        </DemoShowcase>
+        <DemoShowcase Text="Virtualize Table">
+            <STable TItem="ListDemoItem" @bind-SelectedItem="_selectedItem">
+                <Plugins>
+                    <SpTableContentVirtualize TItem="ListDemoItem" Items="GetItems"/>
+                    <SpTableHeader/>
+                </Plugins>
+                <Columns>
+                    <SpTableColumn Field="i => i.Name" Caption="Name"/>
+                    <SpTableColumn Field="i => i.BirthDate" Caption="BirthDate"/>
+                    <SpTableColumn Field="i => i.Age" Caption="Age"/>
+                    <SpTableColumn Field="i => i.PhoneNumber" Caption="PhoneNumber"/>
+                </Columns>
+            </STable>
+        </DemoShowcase>
+    </SCardBody>
+</SCard>
+
+
+@code{
+    private ListDemoItem? _selectedItem;
+
+    protected async Task<DataResult<ListDemoItem>> GetItems(DataRequest<ListDemoItem> request)
+    {
+        var list = ListDemoItem.Generate(request.PageSize);
+
+        return await Task.FromResult(new DataResult<ListDemoItem>(list, 1000));
+    }
+
+}

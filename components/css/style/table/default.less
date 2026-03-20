@@ -1,0 +1,38 @@
+@import  (reference) "../general";
+
+.s-table {
+
+  &:extend(.s-component);
+
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  tr.selected {
+    background-color: var(--sc-a-m);
+    color: var(--sc-a-p);
+  }
+
+  td, th {
+    padding: default-size();
+    border-right: 1px solid var(--sc-a-m);
+    border-bottom: 1px solid var(--sc-a-m);
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  &.s-virtualize {
+
+  }
+
+  .s-pager {
+    border: 0;
+  }
+}

@@ -1,7 +1,7 @@
 ﻿@namespace Secyud.Secits.Blazor.Plugins
 @typeparam TItem
 @typeparam TField
-@inherits SpTableColumnBase
+@inherits SpTableColumnBase<TItem>
 
 @Caption
 
@@ -10,7 +10,7 @@
     public RenderFragment GenerateColumn(TItem item)
     {
         var value = GetField(item);
-        var text = string.Format(string.IsNullOrEmpty(Format) ? "0" : $"{{0:{Format}}}", value);
+        var text = string.Format(string.IsNullOrEmpty(Format) ? "{0}" : $"{{0:{Format}}}", value);
 
         return @<td>
                    @text

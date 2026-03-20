@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
@@ -11,6 +12,17 @@ public static class SComponentExtensions
         {
             if (string.IsNullOrWhiteSpace(value)) return;
             builder.AddAttribute(sequence, name, value);
+        }
+    }
+
+    extension(IComponent component)
+    {
+        public void AddDirtyParameters(ClassStyleContext context, Lazy<IReadOnlyList<IDirtyParameter>> dirtyParameters)
+        {
+            foreach (var dirtyParameter in dirtyParameters.Value)
+            {
+                dirtyParameter.BuildComponentClassStyle(component, context);
+            }
         }
     }
 

@@ -1,21 +1,30 @@
 using Microsoft.AspNetCore.Components;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor.Plugins;
 
-public partial class SpTableContent<TItem> : ISpTableContent<TItem>
+public partial class SpTableContent<TItem> : ISpTableContent<TItem>, ISpTableStyle
 {
     public override string PluginName => "table-content";
-
     [Parameter] public List<TItem>? Items { get; set; }
 
-    [Parameter] public bool Scrollable { get; set; } = true;
-
-    protected override void GenerateClassList(List<string?> list)
+    [Parameter]
+    public bool Scrollable
     {
-        base.GenerateClassList(list);
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    } = true;
+
+    public void BuildClassStyle(ClassStyleContext context)
+    {
         if (Scrollable)
         {
-            list.Add("s-virtualize");
+            context.AppendClass("s-virtualize");
         }
     }
 

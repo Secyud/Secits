@@ -1,4 +1,5 @@
-﻿@import "atom/@{theme}";
+﻿@import (reference) "general";
+@import "atom/@{theme}";
 @import "avatar/@{theme}";
 @import "badge/@{theme}";
 @import "button/@{theme}";
@@ -10,7 +11,17 @@
 @import "overlay/@{theme}";
 @import "pager/@{theme}";
 @import "progress/@{theme}";
+@import "table/@{theme}";
 @import "title/@{theme}";
+
+
+[disabled="disabled"] {
+  --main-color: var(--sc-d-m) !important;
+  --main-color-rgb: var(--sc-d-m-rgb) !important;
+  --part-color: var(--sc-d-p) !important;
+  --part-color-rgb: var(--sc-d-p-rgb) !important;
+  cursor: unset;
+}
 
 html, body, .s-app-container {
   height: 100%;

@@ -11,6 +11,8 @@ public static class DemoMenus
         [nameof(Badge)] = Badge,
         [nameof(Button)] = Button,
         [nameof(Input)] = Input,
+        [nameof(Pager)] = Pager,
+        [nameof(Table)] = Table,
         [nameof(Test)] = Test,
     };
 
@@ -21,5 +23,7 @@ public static class DemoMenus
     public const string Button = "/button";
 
     public const string Input = "/input";
+    public const string Pager = "/pager";
+    public const string Table = "/table";
     public const string Test = "/test";
 }

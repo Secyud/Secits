@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor;
 
-public partial class SPager
+public partial class SPager : IThemedComponent, ISizedComponent
 {
     protected override string ComponentClass => "s-pager";
 
@@ -12,6 +13,8 @@ public partial class SPager
     [Parameter] public int ShowPageCount { get; set; } = 10;
     [Parameter] public int PageIndex { get; set; }
     [Parameter] public EventCallback<int> PageIndexChanged { get; set; }
+    [Parameter] public SColor Color { get; set; }
+    [Parameter] public SSize Size { get; set; }
 
     protected override void OnParametersSet()
     {

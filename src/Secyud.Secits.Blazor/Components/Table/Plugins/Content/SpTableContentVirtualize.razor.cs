@@ -1,16 +1,28 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
+using Secyud.Secits.Blazor.Themes;
 
 namespace Secyud.Secits.Blazor.Plugins;
 
-public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>
+public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, ISpTableStyle
 {
     public override string PluginName => "table-content-virtualize";
 
     [Parameter] public STablePosition Position { get; set; }
     [Parameter] public Func<DataRequest<TItem>, Task<DataResult<TItem>>>? Items { get; set; }
-
     [Parameter] public Func<Exception, Task>? ErrorHandler { get; set; }
+
+    [Parameter]
+    public int Height
+    {
+        get;
+        set
+        {
+            if (field == value) return;
+            field = value;
+            SetDirty();
+        }
+    } = 800;
 
     private Virtualize<TItem>? _virtualize;
 
@@ -19,10 +31,10 @@ public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>
         return _virtualize?.Items?.ToList();
     }
 
-    protected override void GenerateClassList(List<string?> list)
+    public void BuildClassStyle(ClassStyleContext context)
     {
-        base.GenerateClassList(list);
-        list.Add("s-virtualize");
+        context.AppendClass("s-virtualize");
+        context.AppendStyle("height", $"{Height}px");
     }
 
     protected async ValueTask<ItemsProviderResult<TItem>> RequestItemAsync(ItemsProviderRequest request)

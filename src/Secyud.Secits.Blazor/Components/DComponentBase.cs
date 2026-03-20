@@ -10,6 +10,14 @@ namespace Secyud.Secits.Blazor;
 public class DComponentBase : IComponent, IDisposable, IHandleEvent
 {
     private bool _isInitialized;
+    private readonly Lazy<IReadOnlyList<IDirtyParameter>> _dirtyParameters;
+    private readonly ClassStyleBuilder _classStyleBuilder;
+
+    [Inject] private IDirtyParameterProvider DirtyParameterProvider { get; set; } = null!;
+    [Parameter] public string? Class { get; set; }
+    [Parameter] public string? Style { get; set; }
+    public ElementReference ElementRef { get; protected set; }
+    protected virtual string? ComponentClass => null;
 
     public DComponentBase()
     {
@@ -22,6 +30,7 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
         };
         _dirtyParameters = new Lazy<IReadOnlyList<IDirtyParameter>>(() =>
             DirtyParameterProvider.GetDirtyParameters(this));
+        _classStyleBuilder = new ClassStyleBuilder(ConfigureClassStyleAction);
     }
 
     [Inject] protected IAppContext AppContext { get; set; } = null!;
@@ -53,17 +62,8 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
     {
         if (_isInitialized)
         {
-            if (!_isDirty)
-            {
-                foreach (var dirtyParameter in _dirtyParameters.Value)
-                {
-                    if (dirtyParameter.CheckComponentDirty(this, parameters))
-                    {
-                        SetDirty();
-                        break;
-                    }
-                }
-            }
+            _classStyleBuilder.CheckDirtyFromParameterView(
+                this, parameters, _dirtyParameters);
         }
         else
         {
@@ -137,47 +137,17 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
     }
 
 
-    [Inject] private IDirtyParameterProvider DirtyParameterProvider { get; set; } = null!;
-
-    [Parameter] public string? Class { get; set; }
-    [Parameter] public string? Style { get; set; }
-
-    public ElementReference ElementRef { get; protected set; }
-
-    protected virtual string? ComponentClass => null;
-
-    private readonly Lazy<IReadOnlyList<IDirtyParameter>> _dirtyParameters;
-    private string? _builtClass;
-    private string? _builtStyle;
-    private bool _isDirty = true;
-
-
     public void SetDirty()
     {
-        _isDirty = true;
+        _classStyleBuilder.SetDirty();
     }
 
 
-    /// <summary>
-    /// 生成样式和类
-    /// </summary>
-    private void GenerateClassAndStyle()
+    private void ConfigureClassStyleAction(ClassStyleContext context)
     {
-        if (!_isDirty) return;
-        var context = new ClassStyleContext();
-
+        context.AppendClass(ComponentClass);
         ConfigureClassStyle(context);
-
-        foreach (var dirtyParameter in _dirtyParameters.Value)
-        {
-            dirtyParameter.BuildComponentClassStyle(this, context);
-        }
-
-        var cls = context.ClassBuilder.ToString();
-        _builtClass = string.IsNullOrWhiteSpace(cls) ? null : cls;
-        var stl = context.StyleBuilder.ToString();
-        _builtStyle = string.IsNullOrWhiteSpace(stl) ? null : stl;
-        _isDirty = false;
+        this.AddDirtyParameters(context, _dirtyParameters);
     }
 
     /// <summary>
@@ -186,18 +156,15 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
     /// <param name="context"></param>
     protected virtual void ConfigureClassStyle(ClassStyleContext context)
     {
-        context.AppendClass(ComponentClass);
     }
 
     protected string? GetClass()
     {
-        GenerateClassAndStyle();
-        return _builtClass;
+        return _classStyleBuilder.GetClass();
     }
 
     protected string? GetStyle()
     {
-        GenerateClassAndStyle();
-        return _builtStyle;
+        return _classStyleBuilder.GetStyle();
     }
 }

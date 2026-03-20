@@ -7,7 +7,11 @@ public partial class STabs : IPluggableComponent, IContentComponent
 {
     public STabs()
     {
-        PluginContext = new SPluginContext(this);
+        PluginContext = new SPluginContext(this)
+        {
+            StateHasChanged = StateHasChanged,
+            InvokeAsync = InvokeAsync
+        };
     }
 
     [Parameter] public RenderFragment? ChildContent { get; set; }

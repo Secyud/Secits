@@ -29,7 +29,11 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
 
     protected EComponentBase()
     {
-        PluginContext = new SPluginContext(this);
+        PluginContext = new SPluginContext(this)
+        {
+            StateHasChanged = StateHasChanged,
+            InvokeAsync = InvokeAsync
+        };
     }
 
     protected override string ComponentClass => "s-input";

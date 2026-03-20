@@ -2,13 +2,41 @@
 
 .s-pager {
   display: flex;
+  &:extend(.s-component);
+  border-color: var(--sc-a-m);
+  background-color: var(--sc-c-m);
+  color: var(--sc-c-p);
 
-  .s-button {
-    padding: default-size();
-    --text-color: rgba(var(--component-color-rgb), var(--component-opacity));
+  & > .s-pager-button {
+    &:extend(.s-component);
+
+    .set-color(main, --sc-a-m);
+    .set-color(part, --sc-a-p);
+
+    --alpha: 0%;
+    padding: size-a(4);
+    background-color: var(--component-color);
+    color: var(--main-color);
+    border-color: var(--component-color);
+    cursor: pointer;
+
+    .on-hover({
+      --alpha: 60%;
+      color: var(--part-color);
+    });
+    .on-active({
+      --alpha: 80%;
+      color: var(--part-color);
+    });
+  }
+
+  & > .s-pager-button, & > .s-pager-divider {
+    margin: size-a(4);
     min-width: var(--s-s);
     height: var(--s-s);
     line-height: var(--s-s);
     text-align: center;
+    font-size: var(--s-s);
+    user-select: none;
   }
 }
