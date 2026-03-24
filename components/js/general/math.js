@@ -4,8 +4,8 @@
     }
 
     static rectContains(rect, point, t) {
-        return this.valueEquals(point.x, (rect.left + rect.right) / 2, rect.width / 2 + t) &&
-            this.valueEquals(point.y, (rect.top + rect.bottom) / 2, rect.height / 2 + t)
+        return this.valueEquals(point.x * 2, rect.left + rect.right, rect.width + t * 2) &&
+            this.valueEquals(point.y * 2, rect.top + rect.bottom, rect.height + t * 2)
     }
 
     static rectEquals(rect1, rect2, t) {

@@ -1,36 +1,33 @@
-﻿@import "../root";
-@import "../@{root}/color/component";
+﻿@background-m: rgb(34, 139, 34);
+@background-p: rgb(255, 255, 255);
+@card-m: rgb(245, 245, 220);
+@card-p: rgb(50, 50, 50);
+@disabled-m: rgb(255, 255, 240);
+@disabled-p: rgb(50, 50, 50);
+@primary-m: rgb(152, 251, 152);
+@primary-p: rgb(100, 100, 100);
+@secondary-m: rgb(144, 238, 144);
+@secondary-p: @primary-p;
+@naive-m: rgb(139, 115, 85);
+@naive-p: @primary-p;
+@success-m: rgb(50, 205, 50);
+@success-p: @primary-p;
+@info-m: rgb(0, 128, 128);
+@info-p: @primary-p;
+@warning-m: rgb(218, 165, 32);
+@warning-p: @primary-p;
+@danger-m: rgb(178, 34, 34);
+@danger-p: @primary-p;
 
+@import "../root";
+@import (reference) "../@{root}/color/component";
+
+/*
+ * a: activable
+ * b: background
+ * c: card
+ * d: disabled
+ */
 :root {
-  .declare-color(--sc-a, rgb(34, 139, 34), rgb(255, 255, 255));
-  .declare-color(--sc-b, rgb(245, 245, 220), rgb(50, 50, 50));
-  .declare-color(--sc-c, rgb(255, 255, 240), rgb(50, 50, 50));
-  .declare-color(--sc-d, rgb(152, 251, 152), rgb(100, 100, 100));
-
-  .primary {
-  }
-
-  .secondary {
-    .declare-color(--sc-a, rgb(144, 238, 144), rgb(255, 255, 255));
-  }
-
-  .naive {
-    .declare-color(--sc-a, rgb(139, 115, 85), rgb(255, 255, 255));
-  }
-
-  .success {
-    .declare-color(--sc-a, rgb(50, 205, 50), rgb(255, 255, 255));
-  }
-
-  .info {
-    .declare-color(--sc-a, rgb(0, 128, 128), rgb(255, 255, 255));
-  }
-
-  .warning {
-    .declare-color(--sc-a, rgb(218, 165, 32), rgb(255, 255, 255));
-  }
-
-  .danger {
-    .declare-color(--sc-a, rgb(178, 34, 34), rgb(255, 255, 255));
-  }
+  &:extend(.theme all);
 }

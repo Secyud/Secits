@@ -1,35 +1,33 @@
-﻿@import "../root";
-@import "../@{root}/color/component";
+﻿@background-m: rgb(139, 69, 19); // Rich earth brown
+@background-p: rgb(255, 255, 255);
+@card-m: rgb(245, 222, 179); // Sandy wheat
+@card-p: rgb(60, 60, 60);
+@disabled-m: rgb(255, 248, 220); // Light cornsilk
+@disabled-p: rgb(60, 60, 60);
+@primary-m: rgb(205, 133, 63); // Faded peru brown
+@primary-p: rgb(100, 100, 100);
+@secondary-m: rgb(188, 143, 143); // Rosy brown
+@secondary-p: @primary-p;
+@naive-m: rgb(128, 128, 128); // Neutral gray (for balance)
+@naive-p: @primary-p;
+@success-m: rgb(107, 142, 35); // Olive drab (earthy success)
+@success-p: @primary-p;
+@info-m: rgb(100, 149, 237); // Cornflower blue (subtle contrast)
+@info-p: @primary-p;
+@warning-m: rgb(184, 134, 11); // Dark goldenrod
+@warning-p: @primary-p;
+@danger-m: rgb(165, 42, 42); // Deep brown red
+@danger-p: @primary-p;
 
+@import "../root";
+@import (reference) "../@{root}/color/component";
+
+/*
+ * a: activable
+ * b: background
+ * c: card
+ * d: disabled
+ */
 :root {
-  .declare-color(--sc-a, rgb(139, 69, 19), rgb(255, 255, 255)); // Rich earth brown
-  .declare-color(--sc-b, rgb(245, 222, 179), rgb(60, 60, 60)); // Sandy wheat
-  .declare-color(--sc-c, rgb(255, 248, 220), rgb(60, 60, 60)); // Light cornsilk
-  .declare-color(--sc-d, rgb(205, 133, 63), rgb(100, 100, 100)); // Faded peru brown
-
-  .primary {}
-
-  .secondary {
-    .declare-color(--sc-a, rgb(188, 143, 143), rgb(255, 255, 255)); // Rosy brown
-  }
-
-  .naive {
-    .declare-color(--sc-a, rgb(128, 128, 128), rgb(255, 255, 255)); // Neutral gray (for balance)
-  }
-
-  .success {
-    .declare-color(--sc-a, rgb(107, 142, 35), rgb(255, 255, 255)); // Olive drab (earthy success)
-  }
-
-  .info {
-    .declare-color(--sc-a, rgb(100, 149, 237), rgb(255, 255, 255)); // Cornflower blue (subtle contrast)
-  }
-
-  .warning {
-    .declare-color(--sc-a, rgb(184, 134, 11), rgb(255, 255, 255)); // Dark goldenrod
-  }
-
-  .danger {
-    .declare-color(--sc-a, rgb(165, 42, 42), rgb(255, 255, 255)); // Deep brown red
-  }
+  &:extend(.theme all);
 }

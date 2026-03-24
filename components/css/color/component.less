@@ -17,3 +17,64 @@
   .define-color(@main-name, @main-color);
   .define-color(@part-name, @part-color);
 }
+
+.declare-theme(@theme, @main-color, @part-color) {
+  @main-name: e("--sc-@{theme}-m");
+  @part-name: e("--sc-@{theme}-p");
+  .define-color(@main-name, @main-color);
+  .define-color(@part-name, @part-color);
+}
+
+.theme {
+  /*
+   * a: activable
+   * b: background
+   * c: card
+   * d: disabled
+   */
+  .declare-color(--sc-a, @primary-m, @primary-p);
+  .declare-color(--sc-b, @background-m, @background-p);
+  .declare-color(--sc-c, @card-m, @card-p);
+  .declare-color(--sc-d, @disabled-m, @disabled-p);
+
+  .declare-theme(primary, @primary-m, @primary-p);
+
+  .primary {
+  }
+
+  .declare-theme(secondary, @secondary-m, @secondary-p);
+
+  .secondary {
+    .declare-color(--sc-a, @secondary-m, @secondary-p);
+  }
+
+  .declare-theme(naive, @naive-m, @naive-p);
+
+  .naive {
+    .declare-color(--sc-a, @naive-m, @naive-p);
+  }
+
+  .declare-theme(success, @success-m, @success-p);
+
+  .success {
+    .declare-color(--sc-a, @success-m, @success-p);
+  }
+
+  .declare-theme(info, @info-m, @info-p);
+
+  .info {
+    .declare-color(--sc-a, @info-m, @info-p);
+  }
+
+  .declare-theme(warning, @warning-m, @warning-p);
+
+  .warning {
+    .declare-color(--sc-a, @warning-m, @warning-p);
+  }
+
+  .declare-theme(danger, @danger-m, @danger-p);
+
+  .danger {
+    .declare-color(--sc-a, @danger-m, @danger-p);
+  }
+}

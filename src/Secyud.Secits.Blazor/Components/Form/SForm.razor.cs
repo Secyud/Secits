@@ -12,9 +12,9 @@ public partial class SForm : IContentComponent
     /// <see cref="SFormGap"/>
     /// </summary>
     [Parameter]
-    public SFormGap Gap { get; set; }
+    public SFormGap Gap { get; set; } = SFormGap.Medium;
 
-    public SValidationGroupContext Context { get; } = new();
+    protected SValidationGroupContext Context { get; } = new();
 
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {
@@ -22,4 +22,6 @@ public partial class SForm : IContentComponent
 
         context.AppendClassOrStyle(Gap, styleName: "grid-gap");
     }
+
+    public bool IsValid => Context.IsValid();
 }

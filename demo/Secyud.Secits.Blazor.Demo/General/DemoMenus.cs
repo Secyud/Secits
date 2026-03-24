@@ -10,6 +10,7 @@ public static class DemoMenus
         [nameof(Avatar)] = Avatar,
         [nameof(Badge)] = Badge,
         [nameof(Button)] = Button,
+        [nameof(Form)] = Form,
         [nameof(Input)] = Input,
         [nameof(Pager)] = Pager,
         [nameof(Table)] = Table,
@@ -21,6 +22,7 @@ public static class DemoMenus
     public const string Avatar = "/avatar";
     public const string Badge = "/Badge";
     public const string Button = "/button";
+    public const string Form = "/Form";
 
     public const string Input = "/input";
     public const string Pager = "/pager";

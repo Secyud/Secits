@@ -526,14 +526,20 @@
 .span-c {
   --span: 12;
 }
-.s-grid-row {
+.s-grid-row,
+.s-form {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: var(--gap);
   margin: var(--gap);
 }
-.s-grid-col {
+.s-grid-col,
+.s-form-field {
   grid-column: auto / span var(--span);
+}
+.s-validation-message {
+  color: var(--sc-danger-m);
+  font-size: calc(var(--s-s) / 3 * 2);
 }
 .s-overlay {
   position: absolute;

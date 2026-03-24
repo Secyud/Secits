@@ -1,0 +1,63 @@
+@using System.ComponentModel.DataAnnotations
+@using Secyud.Secits.Blazor.Plugins
+@attribute [Route(DemoMenus.Form)]
+<SCard>
+    <SCardHeader>
+        Button
+    </SCardHeader>
+    <SCardBody>
+        <SForm @ref="_sform">
+            <SFormField Title="Name">
+                <SInputText @bind-Value="Name">
+                    <Plugins>
+                        <SpInputValidate/>
+                    </Plugins>
+                </SInputText>
+            </SFormField>
+            <SFormField Title="Phone Number">
+                <SInputText @bind-Value="PhoneNumber">
+                    <Plugins>
+                        <SpInputValidate/>
+                    </Plugins>
+                </SInputText>
+            </SFormField>
+            <SFormField Title="Age">
+                <SInputNumber @bind-Value="Age">
+                    <Plugins>
+                        <SpInputValidate/>
+                    </Plugins>
+                </SInputNumber>
+            </SFormField>
+            <SFormField Title="Birth Date">
+                <SInputDateTime @bind-Value="BirthDate">
+                    <Plugins>
+                        <SpInputValidate/>
+                    </Plugins>
+                </SInputDateTime>
+            </SFormField>
+        </SForm>
+    </SCardBody>
+    <SCardFooter>
+        <SButton Click="Submit">
+            Submit
+        </SButton>
+    </SCardFooter>
+</SCard>
+
+@code
+{
+    private SForm? _sform;
+    [Required, MaxLength(16)] public string? Name { get; set; }
+    [Required, MaxLength(16)] public string? PhoneNumber { get; set; }
+    [Required, Range(0, 100)] public int Age { get; set; }
+    [Required] public DateOnly BirthDate { get; set; }
+
+    protected async Task Submit()
+    {
+        if (_sform is { IsValid: true })
+        {
+        }
+
+        await Task.CompletedTask;
+    }
+}

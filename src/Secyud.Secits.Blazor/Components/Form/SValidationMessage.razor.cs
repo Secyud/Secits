@@ -11,9 +11,9 @@ public partial class SValidationMessage : IDisposable
         set
         {
             if (field == value) return;
-            field?.ValidationResultChanged += OnValidationResultChanged;
-            field = value;
             field?.ValidationResultChanged -= OnValidationResultChanged;
+            field = value;
+            field?.ValidationResultChanged += OnValidationResultChanged;
         }
     }
 

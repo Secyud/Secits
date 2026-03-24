@@ -1,5 +1,7 @@
 ﻿import {math} from "../general/math.js";
 
+const interval = 4;
+
 export class overlayManager {
     static overlays = {}
 
@@ -23,12 +25,12 @@ export class overlayManager {
             if (!math.rectEquals(rectPre, rect, 0.1)) {
                 rectPre = rect;
                 let style = element.style;
-                style.setProperty("--ob", `${(rect.bottom - 4).toFixed(2)}px`);
-                style.setProperty("--ot", `${(rect.top - 4).toFixed(2)}px`);
-                style.setProperty("--ol", `${(rect.left - 4).toFixed(2)}px`);
-                style.setProperty("--or", `${(rect.right - 4).toFixed(2)}px`);
-                style.setProperty("--ow", `${(rect.width + 8).toFixed(2)}px`);
-                style.setProperty("--oh", `${(rect.height + 8).toFixed(2)}px`);
+                style.setProperty("--ob", `${(rect.bottom - interval).toFixed(2)}px`);
+                style.setProperty("--ot", `${(rect.top - interval).toFixed(2)}px`);
+                style.setProperty("--ol", `${(rect.left - interval).toFixed(2)}px`);
+                style.setProperty("--or", `${(rect.right - interval).toFixed(2)}px`);
+                style.setProperty("--ow", `${(rect.width + interval * 2).toFixed(2)}px`);
+                style.setProperty("--oh", `${(rect.height + interval * 2).toFixed(2)}px`);
                 style.setProperty("--oi", `4px`);
             }
         }
@@ -37,10 +39,13 @@ export class overlayManager {
             controlType,
             closeCheck: function (e) {
                 let parentRect = parent.getBoundingClientRect();
-                if (math.rectContains(parentRect, e.clientX, e.clientY, 4))
+                let point = {
+                    x: e.clientX, y: e.clientY
+                };
+                if (math.rectContains(parentRect, point, interval))
                     return;
                 let rect = element.getBoundingClientRect();
-                if (math.rectContains(rect, e.clientX, e.clientY, 4))
+                if (math.rectContains(rect, point, interval))
                     return;
 
                 closeInvoker.invokeMethodAsync("invoke");

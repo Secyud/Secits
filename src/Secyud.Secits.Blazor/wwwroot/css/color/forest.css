@@ -1,60 +1,32 @@
-/*
- * Declares a color series.
- * main-color is the general color.
- * part-color is the text or icon color on main.
- */
 :root {
-  --sc-a-m: #228b22;
-  --sc-a-m-rgb: 34, 139, 34;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
-  --sc-b-m: #f5f5dc;
-  --sc-b-m-rgb: 245, 245, 220;
-  --sc-b-p: #323232;
-  --sc-b-p-rgb: 50, 50, 50;
-  --sc-c-m: #fffff0;
-  --sc-c-m-rgb: 255, 255, 240;
-  --sc-c-p: #323232;
-  --sc-c-p-rgb: 50, 50, 50;
-  --sc-d-m: #98fb98;
-  --sc-d-m-rgb: 152, 251, 152;
-  --sc-d-p: #646464;
-  --sc-d-p-rgb: 100, 100, 100;
+  /*
+   * a: activable
+   * b: background
+   * c: card
+   * d: disabled
+   */--sc-a-m: #98fb98;--sc-a-m-rgb: 152, 251, 152;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;--sc-b-m: #228b22;--sc-b-m-rgb: 34, 139, 34;--sc-b-p: #ffffff;--sc-b-p-rgb: 255, 255, 255;--sc-c-m: #f5f5dc;--sc-c-m-rgb: 245, 245, 220;--sc-c-p: #323232;--sc-c-p-rgb: 50, 50, 50;--sc-d-m: #fffff0;--sc-d-m-rgb: 255, 255, 240;--sc-d-p: #323232;--sc-d-p-rgb: 50, 50, 50;--sc-primary-m: #98fb98;--sc-primary-m-rgb: 152, 251, 152;--sc-primary-p: #646464;--sc-primary-p-rgb: 100, 100, 100;--sc-secondary-m: #90ee90;--sc-secondary-m-rgb: 144, 238, 144;--sc-secondary-p: #646464;--sc-secondary-p-rgb: 100, 100, 100;--sc-naive-m: #8b7355;--sc-naive-m-rgb: 139, 115, 85;--sc-naive-p: #646464;--sc-naive-p-rgb: 100, 100, 100;--sc-success-m: #32cd32;--sc-success-m-rgb: 50, 205, 50;--sc-success-p: #646464;--sc-success-p-rgb: 100, 100, 100;--sc-info-m: #008080;--sc-info-m-rgb: 0, 128, 128;--sc-info-p: #646464;--sc-info-p-rgb: 100, 100, 100;--sc-warning-m: #daa520;--sc-warning-m-rgb: 218, 165, 32;--sc-warning-p: #646464;--sc-warning-p-rgb: 100, 100, 100;--sc-danger-m: #b22222;--sc-danger-m-rgb: 178, 34, 34;--sc-danger-p: #646464;--sc-danger-p-rgb: 100, 100, 100;
 }
 :root .secondary {
-  --sc-a-m: #90ee90;
-  --sc-a-m-rgb: 144, 238, 144;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #90ee90;--sc-a-m-rgb: 144, 238, 144;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
 :root .naive {
-  --sc-a-m: #8b7355;
-  --sc-a-m-rgb: 139, 115, 85;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #8b7355;--sc-a-m-rgb: 139, 115, 85;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
 :root .success {
-  --sc-a-m: #32cd32;
-  --sc-a-m-rgb: 50, 205, 50;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #32cd32;--sc-a-m-rgb: 50, 205, 50;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
 :root .info {
-  --sc-a-m: #008080;
-  --sc-a-m-rgb: 0, 128, 128;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #008080;--sc-a-m-rgb: 0, 128, 128;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
 :root .warning {
-  --sc-a-m: #daa520;
-  --sc-a-m-rgb: 218, 165, 32;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #daa520;--sc-a-m-rgb: 218, 165, 32;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
 :root .danger {
-  --sc-a-m: #b22222;
-  --sc-a-m-rgb: 178, 34, 34;
-  --sc-a-p: #ffffff;
-  --sc-a-p-rgb: 255, 255, 255;
+  --sc-a-m: #b22222;--sc-a-m-rgb: 178, 34, 34;--sc-a-p: #646464;--sc-a-p-rgb: 100, 100, 100;
 }
-/*# sourceMappingURL=forest.css.map */
+/*
+ * a: activable
+ * b: background
+ * c: card
+ * d: disabled
+ */
