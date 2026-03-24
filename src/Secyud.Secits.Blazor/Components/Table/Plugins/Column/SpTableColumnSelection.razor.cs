@@ -25,10 +25,17 @@ public partial class SpTableColumnSelection<TItem> : ISpTableColumn<TItem>
         set
         {
             if (_table is null) return;
-            var items = (value ? _table.GetCurrentItems() : []) ?? [];
-            var originItems = _table.GetSelectedItems() ?? [];
-            var result = items.UnionBy(originItems, _table.GetKey);
-            _table.SetSelectedItems(result.ToList());
+            if (!AllItemSelected)
+            {
+                var items = (value ? _table.GetCurrentItems() : []) ?? [];
+                var originItems = _table.GetSelectedItems() ?? [];
+                var result = items.UnionBy(originItems, _table.GetKey);
+                _table.SetSelectedItems(result.ToList());
+            }
+            else
+            {
+                _table.SetSelectedItems([]);
+            }
         }
     }
 

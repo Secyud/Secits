@@ -6,6 +6,7 @@ namespace Secyud.Secits.Blazor.Plugins;
 
 public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, ISpTableStyle
 {
+    private List<TItem>? _items;
     public override string PluginName => "table-content-virtualize";
 
     [Parameter] public STablePosition Position { get; set; }
@@ -28,7 +29,7 @@ public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, I
 
     public List<TItem>? GetCurrentItems()
     {
-        return _virtualize?.Items?.ToList();
+        return _items;
     }
 
     public void BuildClassStyle(ClassStyleContext context)
@@ -51,6 +52,7 @@ public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, I
             DataFields = Table.GetDataFields(),
         };
         var result = await Items(dataRequest);
+        _items = result.Items.ToList();
         return new ItemsProviderResult<TItem>(result.Items, result.TotalCount);
     }
 

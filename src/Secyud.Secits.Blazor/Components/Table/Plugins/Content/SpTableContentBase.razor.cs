@@ -15,6 +15,7 @@ public abstract partial class SpTableContentBase<TItem>
     {
         base.OnComponentSet();
         SetComponentRef(ref _table);
+        SetDirty();
     }
 
     [Parameter] public string? Class { get; set; }

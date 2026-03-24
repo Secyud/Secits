@@ -1,7 +1,8 @@
 @import  (reference) "../general";
 
 .s-table {
-
+  isolation: isolate;
+  position: relative;
   &:extend(.s-component);
 
   border-color: var(--sc-a-m);
@@ -17,7 +18,6 @@
     background-color: var(--sc-a-m);
     color: var(--sc-a-p);
   }
-
   td, th {
     padding: default-size();
     border-right: 1px solid var(--sc-a-m);
@@ -28,8 +28,26 @@
     }
   }
 
-  &.s-virtualize {
+  thead {
+    position: sticky;
+    background-color: var(--sc-c-m);
+    z-index: 1;
+    box-shadow: 0 1px 0 var(--sc-a-m);
+    top: 0;
+  }
 
+  tfoot {
+    position: sticky;
+    background-color: var(--sc-c-m);
+    border-bottom: 1px solid var(--sc-a-m);
+    box-shadow: 0 -1px 0 var(--sc-a-m);
+    z-index: 1;
+    bottom: 0;
+  }
+
+
+  &.s-virtualize {
+    overflow: auto;
   }
 
   .s-pager {

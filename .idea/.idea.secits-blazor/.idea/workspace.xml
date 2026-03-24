@@ -14,38 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ae520c-ddde-402e-81c9-26c7f47cccf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/css/style/table/default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Pager.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/ISpTableStyle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Themes/ClassStyleBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/component.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/component.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/pager/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/pager/default.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoMenus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoMenus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/CComponentBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/CComponentBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/DComponentBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/DComponentBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/EComponentBase.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/EComponentBase.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Pager/SPager.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SComponentExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/SComponentExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Args/DataResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumn.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumn.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContent.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContent.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/style/table/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/table/default.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Table.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Table.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Column/SpTableColumnSelection.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentBase.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentBase.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentPaged.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentPaged.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentVirtualize.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/Plugins/Content/SpTableContentVirtualize.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Table/STable.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabs.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tabs/STabs.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Plugins/SPluginContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +154,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: http.executor": "Run",
+    ".NET Launch Settings Profile.Secyud.Secits.Blazor.Server.Demo: http.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -503,6 +479,7 @@
       <workItem from="1773713624252" duration="23982000" />
       <workItem from="1773802454169" duration="15644000" />
       <workItem from="1773882943353" duration="21177000" />
+      <workItem from="1774334615781" duration="1426000" />
     </task>
     <task id="LOCAL-00001" summary="add ai generated readme">
       <option name="closed" value="true" />
@@ -608,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773910562859</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update table and pager demo">
+      <option name="closed" value="true" />
+      <created>1774006599533</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1774006599533</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +639,8 @@
     <MESSAGE value="update readme" />
     <MESSAGE value="refactor input" />
     <MESSAGE value="optimize overlay" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize overlay" />
+    <MESSAGE value="update table and pager demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="update table and pager demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
