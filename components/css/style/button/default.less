@@ -12,19 +12,9 @@
   .set-color(part, --sc-a-p);
 
   // default style
-  .is-normal();
-
-  &.plain {
-    .is-plain();
-  }
-
-  &.outline {
-    .is-outline();
-  }
-
-  &.text {
-    .is-text();
-  }
+  border-color: var(--main-color);
+  background-color: var(--component-color);
+  color: var(--part-color);
 
   .on-hover({
     --alpha: 60%;
@@ -33,14 +23,34 @@
     --alpha: 80%;
   });
 
+  &.plain {
+    border-color: var(--component-color);
+  }
+
+  &.outline {
+    border-color: var(--component-color);
+    background-color: transparent;
+    color: var(--component-color);
+  }
+
+  &.text {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--component-color);
+  }
+
+
   &.shadow {
-    .is-plain();
     @shadow-x: 0;
     @shadow-y: 0;
     @shadow-extend: 0;
     --shadow-alpha: 0.3;
     --shadow-size: calc(var(--s-s) * 0.5);
     box-shadow: @shadow-x @shadow-y var(--shadow-size) @shadow-extend rgba(var(--main-color-rgb), var(--shadow-alpha));
+
+    &.text {
+      --shadow-alpha: 0;
+    }
 
     .on-hover({
       --shadow-size: calc(var(--s-s) * 1);

@@ -1,0 +1,97 @@
+@using Secyud.Secits.Blazor.Plugins
+@attribute [Route(DemoMenus.Tabs)]
+<SCard>
+    <SCardHeader>
+        Tabs
+    </SCardHeader>
+    <SCardBody>
+        <SRow>
+            <SCol>
+                <DemoShowcase Text="Standard Tabs">
+
+                    <STabs>
+                        <Plugins>
+                            <SpTabProviderItems>
+                                <SpTabProviderItem Key="1">
+                                    <Header>
+                                        First
+                                    </Header>
+                                    <ChildContent>
+                                        <SCard>
+                                            <SCardBody>
+                                                My first tab
+                                            </SCardBody>
+                                        </SCard>
+                                    </ChildContent>
+                                </SpTabProviderItem>
+                                <SpTabProviderItem Key="2">
+                                    <Header>
+                                        Second
+                                    </Header>
+                                    <ChildContent>
+                                        <SCard>
+                                            <SCardBody>
+                                                My second tab
+                                            </SCardBody>
+                                        </SCard>
+                                    </ChildContent>
+                                </SpTabProviderItem>
+                                <SpTabProviderItem Key="3">
+                                    <Header>
+                                        Third
+                                    </Header>
+                                    <ChildContent>
+                                        <SCard>
+                                            <SCardBody>
+                                                My third tab
+                                            </SCardBody>
+                                        </SCard>
+                                    </ChildContent>
+                                </SpTabProviderItem>
+                            </SpTabProviderItems>
+                        </Plugins>
+                        <ChildContent>
+                            <STabHeader/>
+                            <STabContent/>
+                        </ChildContent>
+                    </STabs>
+                </DemoShowcase>
+            </SCol>
+        </SRow>
+        <SRow>
+            <SCol>
+                <DemoShowcase Text="Item Tabs">
+
+                    <STabs>
+                        <Plugins>
+                            @code
+                            {
+                                private readonly List<ListDemoItem> _items = ListDemoItem.Generate(5);
+                            }
+
+                            <SpTabProvider TabItems="_items"
+                                           Key="@(u => u.Id.ToString("N"))">
+                                <HeaderTemplate>
+                                    @context.Name
+                                </HeaderTemplate>
+                                <ContentTemplate>
+                                    <SCard>
+                                        <SCardBody>
+                                            @context.Name, @context.Age years old.
+                                            Phonenumber is @context.PhoneNumber.
+                                            @context.Description
+                                        </SCardBody>
+                                    </SCard>
+                                </ContentTemplate>
+                            </SpTabProvider>
+                        </Plugins>
+                        <ChildContent>
+                            <STabHeader/>
+                            <STabContent/>
+                        </ChildContent>
+                    </STabs>
+                </DemoShowcase>
+            </SCol>
+        </SRow>
+    </SCardBody>
+</SCard>

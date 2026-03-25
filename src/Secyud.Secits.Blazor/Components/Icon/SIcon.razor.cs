@@ -25,5 +25,9 @@ public partial class SIcon : ISizedComponent, IThemedComponent
     {
         base.ConfigureClassStyle(context);
         context.AppendClass(Icon);
+        if (Color != "")
+        {
+            context.AppendClass("colored");
+        }
     }
 }

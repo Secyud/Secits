@@ -2,3 +2,41 @@
 .hidden {
   display: none !important;
 }
+
+.flex {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@each-item: 1, 2, 4, 8;
+
+each(@each-item, {
+  .pd-@{value} {
+    padding: size-a(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .pd-@{value}-@{w} {
+      padding: size-a(@value, @w);
+    }
+  })
+})
+
+each(@each-item, {
+  .mg-@{value} {
+    margin: size-a(@value);
+  }
+  @w: @value;
+  each(@each-item, {
+    .mg-@{value}-@{w} {
+      margin: size-a(@value, @w);
+    }
+  })
+})
+
+.colored{
+  color: var(--sc-a-m);
+}

@@ -1,0 +1,34 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+@typeparam TItem
+
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+    @if (ChildContent is not null)
+    {
+        @GenerateMenuItems(Items, 0)
+    }
+</div>
+
+@code{
+
+    protected virtual RenderFragment? GenerateMenuItems(IList<TItem>? items, int depth)
+    {
+        if (items is null) return null;
+
+        return __builder =>
+        {
+            foreach (var item in items)
+            {
+                var collapsed = Collapsed?.Invoke(item) ?? false;
+                var children = Children?.Invoke(item);
+                <div class="s-menu-item" style="--depth: @depth;">
+                    @ChildContent!(item)
+                </div>
+
+                if (collapsed) continue;
+                @GenerateMenuItems(children, depth + 1)
+            }
+        };
+    }
+
+}

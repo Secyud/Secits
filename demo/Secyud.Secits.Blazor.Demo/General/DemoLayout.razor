@@ -2,14 +2,11 @@
 @inherits LayoutComponentBase
 <SAppContainer Class="demo-layout">
     <div class="demo-menu">
-        <div class="demo-menu-item outer">
-            @foreach (var (name, url) in DemoMenus.Items)
-            {
-                <a class="demo-menu-item-link" href="@url">
-                    <div class="demo-menu-item-text">@name</div>
-                </a>
-            }
-        </div>
+        <SMenu Items="DemoMenus.Items">
+            <a class="demo-menu-item-link" href="@context.Item2">
+                <div class="demo-menu-item-text">@context.Item1</div>
+            </a>
+        </SMenu>
     </div>
     <div class="demo-body">
         @Body

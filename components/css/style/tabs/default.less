@@ -1,0 +1,35 @@
+﻿@import (reference)  "../general";
+
+.s-tab-header {
+  display: flex;
+  background-color: var(--sc-b-m);
+  width: 100%;
+
+  & > .s-tab-header-item {
+    &:extend(.s-component);
+    padding: default-size();
+    background-color: var(--component-color);
+    border-color: var(--component-color);
+    color: var(--sc-a-m);
+    cursor: pointer;
+    --alpha: 0%;
+
+    .set-color(main, --sc-a-m);
+    .set-color(part, --sc-a-p);
+
+    &:hover {
+      color: var(--sc-a-p);
+      --alpha: 50%;
+    }
+
+    &:active {
+      color: var(--sc-a-p);
+      --alpha: 50%;
+    }
+  }
+}
+
+.s-tab-content {
+  width: 100%;
+  background-color: var(--sc-b-m);
+}

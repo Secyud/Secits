@@ -35,12 +35,10 @@
 
 // components
 .s-component {
-  background-color: transparent;
-  border: var(--s-s-bw) solid transparent;
-  color: var(--text-color);
+  border-style: solid;
+  border-width: var(--s-s-bw);
   font-size: var(--s-s);
   border-radius: var(--s-s-br);
-  position: relative;
   transition: 50ms;
   --alpha: 100%;
   --component-color: color-mix(in srgb, var(--main-color) var(--alpha), var(--sc-c-m));
@@ -49,30 +47,6 @@
 .set-color(@name, @color) {
   --@{name}-color: var(@color);
   --@{name}-color-rgb: var(@{color}-rgb);
-}
-
-.is-normal() {
-  border-color: var(--main-color);
-  background-color: var(--component-color);
-  color: var(--part-color);
-}
-
-.is-plain() {
-  border-color: var(--component-color);
-  background-color: var(--component-color);
-  color: var(--part-color);
-}
-
-.is-outline() {
-  border-color: var(--component-color);
-  background-color: transparent;
-  color: var(--component-color);
-}
-
-.is-text() {
-  border-color: transparent;
-  background-color: transparent;
-  color: var(--component-color);
 }
 
 input, textarea, button {

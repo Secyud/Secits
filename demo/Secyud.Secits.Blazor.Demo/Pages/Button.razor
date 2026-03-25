@@ -18,6 +18,7 @@
                     }
                 </SRow>
             </DemoShowcase>
+            <SDivider/>
         }
     </SCardBody>
 </SCard>
@@ -42,5 +43,8 @@
         ("Outline", SButtonType.Outline),
         ("Text", SButtonType.Text),
         ("Shadow", SButtonType.Shadow),
+        ("Shadow Plain", (SButtonType)new[] { SButtonType.Shadow, SButtonType.Plain }),
+        ("Shadow Outline", (SButtonType)new[] { SButtonType.Shadow, SButtonType.Outline }),
+        ("Shadow Text", (SButtonType)new[] { SButtonType.Shadow, SButtonType.Text }),
     ];
 }

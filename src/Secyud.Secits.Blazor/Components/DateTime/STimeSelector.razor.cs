@@ -69,7 +69,7 @@ public partial class STimeSelector
     protected async Task OnMinuteChanged(int minute)
     {
         _minuteNeedScroll = true;
-        await OnTimeChanged(TimeSpan.FromMinutes(minute - _time.Hour));
+        await OnTimeChanged(TimeSpan.FromMinutes(minute - _time.Minute));
     }
 
     protected async Task OnSecondChanged(int second)

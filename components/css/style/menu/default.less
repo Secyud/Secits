@@ -1,0 +1,31 @@
+﻿@import (reference)  "../general";
+
+
+.s-menu {
+
+  background-color: var(--sc-c-m);
+
+  .s-menu-item {
+    &:extend(.s-component);
+
+    cursor: pointer;
+    padding: calc(var(--s-s) / 4) calc(var(--s-s) / 4) calc(var(--s-s) / 4) calc(var(--depth) * var(--s-s) / 4);
+    border-color: var(--component-color);
+    color: var(--sc-a-m);
+    background: var(--component-color);
+    --alpha: 0%;
+
+    .set-color(main, --sc-a-m);
+    .set-color(part, --sc-a-p);
+
+    &:hover {
+      color: var(--sc-a-p);
+      --alpha: 50%;
+    }
+
+    &:active {
+      color: var(--sc-a-p);
+      --alpha: 75%;
+    }
+  }
+}
