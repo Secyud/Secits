@@ -13,12 +13,7 @@ public partial class SIcon : ISizedComponent, IThemedComponent
     public SIconName Icon
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     }
 
     protected override void ConfigureClassStyle(ClassStyleContext context)

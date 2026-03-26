@@ -12,12 +12,7 @@ public partial class SpTableContent<TItem> : ISpTableContent<TItem>, ISpTableSty
     public bool Scrollable
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     } = true;
 
     public void BuildClassStyle(ClassStyleContext context)

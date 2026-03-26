@@ -717,73 +717,51 @@ h6.s-title {
   position: absolute;
   display: block;
 }
-.s-overlay.oa-l {
-  right: calc(var(--or) + var(--ow));
+.s-overlay.o-ol {
+  right: calc(var(--or) + var(--ow) + var(--ith));
   left: unset;
 }
-.s-overlay.oa-r {
+.s-overlay.o-il {
   right: unset;
-  left: calc(var(--ol) + var(--ow));
+  left: calc(var(--ol) + var(--ith));
 }
-.s-overlay.oa-t {
-  bottom: calc(var(--ob) + var(--oh));
-  top: unset;
-}
-.s-overlay.oa-b {
-  bottom: unset;
-  top: calc(var(--ot) + var(--oh));
-}
-.s-overlay.oa-l.oj-bb,
-.s-overlay.oa-r.oj-bb {
-  bottom: calc(var(--ob) + var(--oh));
-  top: unset;
-}
-.s-overlay.oa-l.oj-b,
-.s-overlay.oa-r.oj-b {
-  bottom: unset;
-  top: calc(var(--ot) + var(--oi));
-}
-.s-overlay.oa-l.oj-m,
-.s-overlay.oa-r.oj-m {
-  bottom: unset;
-  top: calc(var(--ot) + var(--oh) / 2);
-  transform: translate(0, -50%);
-}
-.s-overlay.oa-l.oj-e,
-.s-overlay.oa-r.oj-e {
-  bottom: calc(var(--ob) + var(--oi));
-  top: unset;
-}
-.s-overlay.oa-l.oj-ae,
-.s-overlay.oa-r.oj-ae {
-  bottom: unset;
-  top: calc(var(--ot) + var(--oh));
-}
-.s-overlay.oa-t.oj-bb,
-.s-overlay.oa-b.oj-bb {
-  right: calc(var(--or) + var(--ow));
-  left: unset;
-}
-.s-overlay.oa-t.oj-b,
-.s-overlay.oa-b.oj-b {
-  right: unset;
-  left: calc(var(--ol) + var(--oi));
-}
-.s-overlay.oa-t.oj-m,
-.s-overlay.oa-b.oj-m {
+.s-overlay.o-ct {
   right: unset;
   left: calc(var(--ol) + var(--ow) / 2);
   transform: translate(-50%, 0);
 }
-.s-overlay.oa-t.oj-e,
-.s-overlay.oa-b.oj-e {
-  right: calc(var(--or) + var(--oi));
+.s-overlay.o-ir {
+  right: calc(var(--or) + var(--ith));
   left: unset;
 }
-.s-overlay.oa-t.oj-ae,
-.s-overlay.oa-b.oj-ae {
+.s-overlay.o-or {
   right: unset;
-  left: calc(var(--ol) + var(--ow));
+  left: calc(var(--ol) + var(--ow) + var(--ith));
+}
+.s-overlay.o-ot {
+  bottom: calc(var(--ob) + var(--oh) + var(--itv));
+  top: unset;
+}
+.s-overlay.o-it {
+  bottom: unset;
+  top: calc(var(--ot) + var(--itv));
+}
+.s-overlay.o-md {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oh) / 2);
+  transform: translate(-50%, 0);
+}
+.s-overlay.o-ib {
+  bottom: calc(var(--ob) + var(--itv));
+  top: unset;
+}
+.s-overlay.o-ob {
+  bottom: unset;
+  top: calc(var(--ot) + var(--oh) + var(--itv));
+}
+.s-overlay.o-md,
+.s-overlay.o-md {
+  transform: translate(-50%, -50%);
 }
 .s-pager {
   display: flex;

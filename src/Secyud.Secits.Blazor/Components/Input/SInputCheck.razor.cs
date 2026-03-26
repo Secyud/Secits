@@ -9,9 +9,6 @@ namespace Secyud.Secits.Blazor;
 public partial class SInputCheck<TValue>
 {
     protected override string ComponentClass => "s-input-check";
-
-    private ElementReference _input;
-
     [Inject] protected IJSRuntime Js { get; set; } = null!;
     [Parameter] public string? Label { get; set; }
 
@@ -26,7 +23,7 @@ public partial class SInputCheck<TValue>
         builder.AddAttribute(6, "onchange",
             EventCallback.Factory.CreateBinder(this, OnCheckedChangedAsync, CurrentValue));
         builder.SetUpdatesAttributeName("checked");
-        builder.AddElementReferenceCapture(7, e => _input = e);
+        builder.AddElementReferenceCapture(7, e => InputRef = e);
         builder.CloseElement();
     }
 
@@ -58,7 +55,7 @@ public partial class SInputCheck<TValue>
 
     protected ValueTask SyncIndeterminateStateAsync()
     {
-        return _input.SetProperty(Js, "indeterminate", CurrentValue is null);
+        return InputRef.SetProperty(Js, "indeterminate", CurrentValue is null);
     }
 
 

@@ -42,7 +42,7 @@
 @code{
     private ListDemoItem? _selectedItem;
 
-    protected async Task<DataResult<ListDemoItem>> GetItems(DataRequest<ListDemoItem> request)
+    protected async Task<DataResult<ListDemoItem>> GetItems(DataRequest request)
     {
         var list = ListDemoItem.Generate(request.PageSize);
 

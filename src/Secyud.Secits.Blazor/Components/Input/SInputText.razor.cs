@@ -9,7 +9,6 @@ public partial class SInputText<TValue>
 {
     [Parameter] public bool Area { get; set; }
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
-    private ElementReference _input;
     private string? _inputValue;
 
     public override void ApplyPlugin(ISPlugin plugin)
@@ -36,7 +35,7 @@ public partial class SInputText<TValue>
         builder.AddAttributeIfNotEmpty(4, "disabled", GetDisabled());
         builder.AddAttribute(5, "value", _inputValue);
         builder.AddAttribute(6, "oninput", CreateInputEvent(OnInputAsync, _inputValue));
-        builder.AddElementReferenceCapture(7, u => _input = u); 
+        builder.AddElementReferenceCapture(7, u => InputRef = u); 
         builder.CloseElement();
     }
 

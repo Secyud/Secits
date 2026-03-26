@@ -26,6 +26,11 @@ public abstract partial class SpTableContentBase<TItem>
         _table?.SetDirty();
     }
 
+    protected void SetDirty<T>(ref T? field, T? value) where T : IEquatable<T>
+    {
+        _table?.SetDirty(ref field, value);
+    }
+
     protected string? GetClass() => Class;
     protected string? GetStyle() => Style;
 }

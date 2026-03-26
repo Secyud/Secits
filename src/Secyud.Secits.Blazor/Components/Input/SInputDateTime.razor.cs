@@ -103,6 +103,7 @@ public partial class SInputDateTime<TValue> : EComponentBase<TValue>
         builder.AddAttributeIfNotEmpty(6, "disabled", GetDisabled());
         builder.AddAttribute(7, "value", _inputValue);
         builder.AddAttribute(8, "onchange", CreateInputEvent(OnInputAsync, _inputValue));
+        builder.AddElementReferenceCapture(9, r => InputRef = r);
         builder.CloseElement();
     }
 

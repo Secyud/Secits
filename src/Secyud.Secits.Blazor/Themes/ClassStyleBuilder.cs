@@ -13,6 +13,15 @@ public class ClassStyleBuilder(Action<ClassStyleContext> configureAction)
         _isDirty = true;
     }
 
+    public void SetDirty<T>(ref T? field, T? value)
+        where T : IEquatable<T>
+    {
+        if ((field is null && value is not null) ||
+            (field is not null && field.Equals(value))) return;
+        field = value;
+        _isDirty = true;
+    }
+
     public void CheckDirtyFromParameterView(IComponent component,
         ParameterView parameters, Lazy<IReadOnlyList<IDirtyParameter>> dirtyParameters)
     {
@@ -26,7 +35,7 @@ public class ClassStyleBuilder(Action<ClassStyleContext> configureAction)
             }
         }
     }
-    
+
     /// <summary>
     /// 生成样式和类
     /// </summary>

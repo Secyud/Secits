@@ -11,7 +11,6 @@ namespace Secyud.Secits.Blazor;
 public partial class SInputNumber<TValue> : EComponentBase<TValue>
 {
     protected override string ComponentClass => "s-input-number";
-    private ElementReference _input;
     private string? _inputValue;
     private readonly SPluginContainer<ISpInputHandler> _inputHandler = new();
 
@@ -41,18 +40,18 @@ public partial class SInputNumber<TValue> : EComponentBase<TValue>
         builder.AddAttributeIfNotEmpty(5, "disabled", GetDisabled());
         builder.AddAttribute(6, "value", _inputValue);
         builder.AddAttribute(7, "oninput", CreateInputEvent(OnInputAsync, _inputValue));
-        builder.AddElementReferenceCapture(9, u => _input = u);
+        builder.AddElementReferenceCapture(9, u => InputRef = u);
         builder.CloseElement();
     }
 
     protected async Task StepUp()
     {
-        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepUp, _input);
+        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepUp, InputRef);
     }
 
     protected async Task StepDown()
     {
-        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepDown, _input);
+        await Js.InvokeVoidAsync(SJsModules.Input.NumberStepDown, InputRef);
     }
 
     protected override bool CheckGenericIsValid()

@@ -11,12 +11,7 @@ public partial class SProgress
     public int Percentage
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     }
 
     protected override void ConfigureClassStyle(ClassStyleContext context)

@@ -31,6 +31,11 @@ public abstract class CComponentBase : SComponentBase, IContainerComponent, IEle
     {
         _classStyleBuilder.SetDirty();
     }
+    
+    public void SetDirty<T>(ref T? field, T? value) where T : IEquatable<T>
+    {
+        _classStyleBuilder.SetDirty(ref field, value);
+    }
 
     /// <summary>
     /// 使用<see cref="IDirtyParameter"/>来判断一个参数是否改变样式，如果改变，则需要重新生成样式。

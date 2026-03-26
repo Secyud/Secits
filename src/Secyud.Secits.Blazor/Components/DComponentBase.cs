@@ -142,6 +142,11 @@ public class DComponentBase : IComponent, IDisposable, IHandleEvent
         _classStyleBuilder.SetDirty();
     }
 
+    protected void SetDirty<T>(ref T? field, T? value) where T : IEquatable<T>
+    {
+        _classStyleBuilder.SetDirty(ref field, value);
+    }
+
 
     private void ConfigureClassStyleAction(ClassStyleContext context)
     {

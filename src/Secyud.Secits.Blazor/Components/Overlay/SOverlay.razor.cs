@@ -23,34 +23,36 @@ public partial class SOverlay : IContentComponent
     [Inject] protected IJSRuntime Js { get; set; } = null!;
 
     [Parameter] public RenderFragment? ChildContent { get; set; }
-
-    [Parameter] public int Interval { get; set; } = 4;
-
-    [Parameter]
-    public SOverlayAlignment OverlayAlignment
-    {
-        get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
-    } = SOverlayAlignment.Bottom;
-
-    [Parameter]
-    public SOverlayJustify OverlayJustify
-    {
-        get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
-    } = SOverlayJustify.Begin;
-
     [Parameter] public SOverlayMode Mode { get; set; } = SOverlayMode.Static;
+
+    [Parameter]
+    public SOverlayHorizontalAlignment HorizontalAlignment
+    {
+        get;
+        set => SetDirty(ref field, value);
+    } = SOverlayHorizontalAlignment.Center;
+
+    [Parameter]
+    public SOverlayVerticalAlignment VerticalAlignment
+    {
+        get;
+        set => SetDirty(ref field, value);
+    } = SOverlayVerticalAlignment.Middle;
+
+    [Parameter]
+    public int HorizontalInterval
+    {
+        get;
+        set => SetDirty(ref field, value);
+    }
+
+    [Parameter]
+    public int VerticalInterval
+    {
+        get;
+        set => SetDirty(ref field, value);
+    }
+
 
     protected bool OverlayVisible
     {
@@ -100,7 +102,12 @@ public partial class SOverlay : IContentComponent
             OverlayParent?.ElementRef is { Context: not null } parent)
         {
             await Js.InvokeVoidAsync(SJsModules.Overlay.Create,
-                element.Id, element, parent, ControlType.ToString(), _closeInvoker.Ref);
+                element.Id, element, parent, _closeInvoker.Ref, new SOverlayOptions
+                {
+                    ControlType = ControlType,
+                    HorizontalInterval = HorizontalInterval,
+                    VerticalInterval = VerticalInterval,
+                });
         }
     }
 
@@ -123,9 +130,11 @@ public partial class SOverlay : IContentComponent
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {
         base.ConfigureClassStyle(context);
-        context.AppendClass(OverlayAlignment);
-        context.AppendClass(OverlayJustify);
+        context.AppendClass(HorizontalAlignment);
+        context.AppendClass(VerticalAlignment);
         if (!OverlayVisible) context.AppendClass("hidden");
+        context.AppendStyle("--ith", HorizontalInterval + "px");
+        context.AppendStyle("--itv", VerticalInterval + "px");
     }
 
     protected async Task DisposeAsync(bool isDisposing)

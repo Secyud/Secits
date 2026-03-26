@@ -31,12 +31,7 @@ public partial class SButton : IThemedComponent, ISizedComponent, IContentCompon
     public SButtonType Type
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     }
 
     [Parameter] public bool Disabled { get; set; }

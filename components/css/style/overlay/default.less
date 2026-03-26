@@ -3,80 +3,59 @@
   position: absolute;
   display: block;
 
-  &.oa-l {
-    right: calc(var(--or) + var(--ow));
+  &.o-ol {
+    right: calc(var(--or) + var(--ow) + var(--ith));
     left: unset;
   }
 
-  &.oa-r {
+  &.o-il {
     right: unset;
-    left: calc(var(--ol) + var(--ow));
+    left: calc(var(--ol) + var(--ith));
   }
 
-  &.oa-t {
-    bottom: calc(var(--ob) + var(--oh));
+  &.o-ct {
+    right: unset;
+    left: calc(var(--ol) + var(--ow) / 2);
+    transform: translate(-50%, 0);
+  }
+
+  &.o-ir {
+    right: calc(var(--or) + var(--ith));
+    left: unset;
+  }
+
+  &.o-or {
+    right: unset;
+    left: calc(var(--ol) + var(--ow) + var(--ith));
+  }
+
+  &.o-ot {
+    bottom: calc(var(--ob) + var(--oh) + var(--itv));
     top: unset;
   }
 
-  &.oa-b {
+  &.o-it {
     bottom: unset;
-    top: calc(var(--ot) + var(--oh));
+    top: calc(var(--ot) + var(--itv));
   }
 
-  &.oa-l, &.oa-r {
-    &.oj-bb {
-      bottom: calc(var(--ob) + var(--oh));
-      top: unset;
-    }
-
-    &.oj-b {
-      bottom: unset;
-      top: calc(var(--ot) + var(--oi));
-    }
-
-    &.oj-m {
-      bottom: unset;
-      top: calc(var(--ot) + var(--oh) / 2);
-      transform: translate(0, -50%);
-    }
-
-    &.oj-e {
-      bottom: calc(var(--ob) + var(--oi));
-      top: unset;
-    }
-
-    &.oj-ae {
-      bottom: unset;
-      top: calc(var(--ot) + var(--oh));
-    }
+  &.o-md {
+    bottom: unset;
+    top: calc(var(--ot) + var(--oh) / 2);
+    transform: translate(-50%, 0);
   }
 
-  &.oa-t, &.oa-b {
-    &.oj-bb {
-      right: calc(var(--or) + var(--ow));
-      left: unset;
-    }
+  &.o-ib {
+    bottom: calc(var(--ob) + var(--itv));
+    top: unset;
+  }
 
-    &.oj-b {
-      right: unset;
-      left: calc(var(--ol) + var(--oi));
-    }
+  &.o-ob {
+    bottom: unset;
+    top: calc(var(--ot) + var(--oh) + var(--itv));
+  }
 
-    &.oj-m {
-      right: unset;
-      left: calc(var(--ol) + var(--ow) / 2);
-      transform: translate(-50%, 0);
-    }
-
-    &.oj-e {
-
-      right: calc(var(--or) + var(--oi));
-      left: unset;
-    }
-
-    &.oj-ae {
-      right: unset;
-      left: calc(var(--ol) + var(--ow));
-    }
+  &.o-md, &.o-md {
+    transform: translate(-50%, -50%);
   }
 }

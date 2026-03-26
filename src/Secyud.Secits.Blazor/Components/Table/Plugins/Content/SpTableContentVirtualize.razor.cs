@@ -10,19 +10,14 @@ public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, I
     public override string PluginName => "table-content-virtualize";
 
     [Parameter] public STablePosition Position { get; set; }
-    [Parameter] public Func<DataRequest<TItem>, Task<DataResult<TItem>>>? Items { get; set; }
+    [Parameter] public Func<DataRequest, Task<DataResult<TItem>>>? Items { get; set; }
     [Parameter] public Func<Exception, Task>? ErrorHandler { get; set; }
 
     [Parameter]
     public int Height
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     } = 800;
 
     private Virtualize<TItem>? _virtualize;
@@ -45,7 +40,7 @@ public partial class SpTableContentVirtualize<TItem> : ISpTableContent<TItem>, I
             return new ItemsProviderResult<TItem>([], 0);
         }
 
-        var dataRequest = new DataRequest<TItem>
+        var dataRequest = new DataRequest
         {
             SkipCount = request.StartIndex,
             PageSize = request.Count,

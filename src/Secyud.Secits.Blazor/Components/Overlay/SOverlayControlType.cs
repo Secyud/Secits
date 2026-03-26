@@ -4,4 +4,5 @@ public enum SOverlayControlType
 {
     Hover,
     Click,
+    None,
 }

@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.JSInterop;
 using Secyud.Secits.Blazor.Plugins;
 using Secyud.Secits.Blazor.Themes;
 
@@ -15,6 +16,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     // ReSharper disable once StaticMemberInGenericType
     private static bool? _isValid;
     protected TValue CurrentValue { get; set; } = default!;
+    protected ElementReference InputRef { get; set; }
 
     protected void ValidateGeneric()
     {
@@ -37,7 +39,6 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     }
 
     protected override string ComponentClass => "s-input";
-
     [Parameter] public bool Disabled { get; set; }
     [Parameter] public bool Readonly { get; set; }
     [Parameter] public string? Name { get; set; }
@@ -52,12 +53,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     public SInputType Type
     {
         get;
-        set
-        {
-            if (field == value) return;
-            field = value;
-            SetDirty();
-        }
+        set => SetDirty(ref field, value);
     }
 
     [Parameter] public RenderFragment? Plugins { get; set; }
@@ -66,6 +62,7 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     [Parameter] public Expression<Func<TValue>>? ValueExpression { get; set; }
     [Parameter] public SColor Color { get; set; }
     [Parameter] public SSize Size { get; set; }
+    [Parameter] public bool EnableValidation { get; set; }
 
     public SPluginContext PluginContext { get; }
 
@@ -113,6 +110,11 @@ public abstract partial class EComponentBase<TValue> : IActivableComponent, IInp
     protected string? GetDisabled()
     {
         return Disabled ? "disabled" : null;
+    }
+
+    public ValueTask FocusAsync()
+    {
+        return InputRef.FocusAsync();
     }
 
     protected EventCallback<ChangeEventArgs> CreateInputEvent(Action<string?> action, string? inputValue)

@@ -1,9 +1,14 @@
 ﻿@namespace Secyud.Secits.Blazor
 @typeparam TValue
+@using Secyud.Secits.Blazor.Plugins
 @inherits CComponentBase
 
 <CascadingValue Value="PluginContext" IsFixed>
     @Plugins
+    @if (EnableValidation)
+    {
+        <SpInputValidate TValue="TValue" />
+    }
 </CascadingValue>
 
 <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
