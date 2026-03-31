@@ -127,6 +127,16 @@ public partial class SOverlay : IContentComponent
         await InvokeAsync(StateHasChanged);
     }
 
+    public Task ShowAsync()
+    {
+        return ChangeVisible(true);
+    }
+
+    public Task HideAsync()
+    {
+        return ChangeVisible(false);
+    }
+
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {
         base.ConfigureClassStyle(context);

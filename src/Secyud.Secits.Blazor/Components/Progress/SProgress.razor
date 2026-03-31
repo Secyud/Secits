@@ -2,5 +2,9 @@
 @inherits CComponentBase
 
 <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
-    <div class="s-progress-inner"></div>
+    <div class="s-progress-mask"></div>
+    <div class="s-progress-element"></div>
+    <div class="s-progress-inner">
+        @ChildContent
+    </div>
 </div>

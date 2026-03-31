@@ -13,6 +13,7 @@ public static class DemoMenus
         (nameof(Form), Form),
         (nameof(Input), Input),
         (nameof(Pager), Pager),
+        (nameof(Progress), Progress),
         (nameof(Table), Table),
         (nameof(Tabs), Tabs),
         (nameof(Test), Test),
@@ -27,6 +28,7 @@ public static class DemoMenus
 
     public const string Input = "/input";
     public const string Pager = "/pager";
+    public const string Progress = "/progress-bar";
     public const string Table = "/table";
     public const string Test = "/test";
     public const string Tabs = "/tabs";

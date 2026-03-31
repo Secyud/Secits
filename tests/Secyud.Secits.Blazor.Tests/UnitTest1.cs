@@ -11,7 +11,8 @@ public class UnitTest1(ITestOutputHelper output)
         var option = new SOverlayOptions
         {
             ControlType = SOverlayControlType.Hover,
-            HorizontalInterval = 1
+            HorizontalInterval = 1,
+            VerticalInterval = 1
         };
         output.WriteLine(JsonSerializer.Serialize(option));
     }

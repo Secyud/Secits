@@ -1,0 +1,51 @@
+@attribute [Route(DemoMenus.Progress)]
+@using System.Timers
+@implements IDisposable
+
+@code {
+
+    private readonly Timer _timer = new(TimeSpan.FromSeconds(0.05));
+    private int _percentage;
+
+    public Progress()
+    {
+        _timer.AutoReset = true;
+        _timer.Elapsed += (sender, args) =>
+        {
+            _percentage += 1;
+            if (_percentage > 100)
+            {
+                _percentage = 0;
+            }
+
+            InvokeAsync(StateHasChanged).ConfigureAwait(false);
+        };
+        _timer.Start();
+    }
+
+    public void Dispose()
+    {
+        _timer.Dispose();
+    }
+
+}
+
+<SCard>
+    <SCardHeader>
+        Progress
+    </SCardHeader>
+    <SCardBody>
+        <DemoShowcase Text="Progress">
+            <SProgress Percentage="@_percentage"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Progress Info">
+            <SProgress Percentage="@_percentage" Color="SColor.Info"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Progress">
+            <SProgress Percentage="@_percentage" Type="SProgressType.Circle"/>
+        </DemoShowcase>
+        <DemoShowcase Text="Progress Info">
+            <SProgress Percentage="@_percentage" Type="SProgressType.Circle" Color="SColor.Info"/>
+        </DemoShowcase>
+    </SCardBody>
+</SCard>

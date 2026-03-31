@@ -799,37 +799,106 @@ h6.s-title {
   font-size: var(--s-s);
   user-select: none;
 }
-.s-progress {
+.s-progress.bar {
   width: 100%;
-  height: 4px;
-}
-.s-progress > .s-progress-inner {
-  height: 100%;
-  width: calc(var(--percentage) * 1%);
-  overflow: hidden;
-  background: var(--s-c);
-  transition: width 1s;
+  height: calc(var(--s-s) / 4);
+  background: transparent;
   position: relative;
 }
-.s-progress > .s-progress-inner::after {
+.s-progress.bar > .s-progress-mask {
+  position: relative;
+  width: calc(var(--percentage) * 1%);
+  height: 100%;
+  overflow: hidden;
+  background: var(--sc-a-m);
+  transition: width 1s;
+}
+.s-progress.bar > .s-progress-mask::after {
   content: "";
   height: 100%;
   top: 0;
-  width: 30%;
+  width: 50%;
   left: var(--anim);
   position: absolute;
-  display: block;
-  --mid-color: color-mix(in srgb, var(--s-c-bg) 90%, var(--s-c));
-  background: linear-gradient(0.25turn, var(--s-c), var(--mid-color), var(--s-c));
-  animation: progress-anim 1.5s linear infinite;
+  background: linear-gradient(0.25turn, transparent, rgba(var(--sc-c-m-rgb), 90%), transparent);
+  animation: progress-bar-anim 1.5s linear infinite;
 }
-@keyframes progress-anim {
+@keyframes progress-bar-anim {
   from {
-    left: -90%;
+    left: -150%;
   }
   to {
-    left: 190%;
+    left: 250%;
   }
+}
+.s-progress.bar > .s-progress-element {
+  display: none;
+}
+.s-progress.bar > .s-progress-inner {
+  position: absolute;
+  inset: 0;
+}
+.s-progress.circle {
+  width: calc(var(--s-s) * 4);
+  height: calc(var(--s-s) * 4);
+  border-radius: 50%;
+  background-color: var(--sc-c-m);
+  overflow: hidden;
+  position: relative;
+}
+.s-progress.circle > .s-progress-element,
+.s-progress.circle > .s-progress-mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.s-progress.circle > .s-progress-element::before,
+.s-progress.circle > .s-progress-mask::before,
+.s-progress.circle > .s-progress-element::after,
+.s-progress.circle > .s-progress-mask::after {
+  position: absolute;
+  background-color: var(--sc-a-m);
+  inset: 0;
+  content: "";
+}
+.s-progress.circle > .s-progress-element::after,
+.s-progress.circle > .s-progress-mask::after {
+  background: radial-gradient(farthest-corner at 0px 0px, var(--sc-c-m) 0%, transparent 50%);
+  animation: progress-circle-anim 1.5s linear infinite;
+}
+.s-progress.circle .s-progress-element {
+  right: 50%;
+}
+.s-progress.circle .s-progress-element::before {
+  transform-origin: right;
+  transform: rotate(calc((max(var(--percentage), 50)) * 3.6deg));
+}
+.s-progress.circle .s-progress-element::after {
+  right: -100%;
+}
+.s-progress.circle > .s-progress-mask {
+  left: 50%;
+}
+.s-progress.circle > .s-progress-mask::before {
+  transform-origin: left;
+  transform: rotate(calc((min(var(--percentage), 50) - 50) * 3.6deg));
+}
+.s-progress.circle > .s-progress-mask::after {
+  left: -100%;
+}
+@keyframes progress-circle-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.s-progress.circle > .s-progress-inner {
+  position: absolute;
+  border-radius: 50%;
+  inset: calc(var(--s-s) / 4);
+  background: var(--sc-b-m);
 }
 .s-table {
   isolation: isolate;
