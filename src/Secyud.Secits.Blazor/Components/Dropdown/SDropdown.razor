@@ -1,0 +1,17 @@
+@namespace Secyud.Secits.Blazor
+@inherits SDropdownBase
+@(base.BuildRenderTree)
+
+@code {
+
+    protected override RenderFragment? GenerateChildContent()
+    {
+        return ChildContent;
+    }
+
+    protected override RenderFragment? GenerateDropdownContent()
+    {
+        return DropdownContent;
+    }
+
+}

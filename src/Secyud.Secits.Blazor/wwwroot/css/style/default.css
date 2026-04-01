@@ -10,6 +10,7 @@
 .s-pager > .s-pager-button,
 .s-table,
 .s-tab-header > .s-tab-header-item,
+.s-tooltip,
 .s-date-panel td,
 .s-time-selector > .s-time > .s-item,
 .s-input,
@@ -974,6 +975,16 @@ h6.s-title {
 .s-tab-content {
   width: 100%;
   background-color: var(--sc-b-m);
+}
+.s-tooltip {
+  padding: calc(var(--s-s) / 4) calc(var(--s-s) / 2);
+  --main-color: var(--sc-a-m);
+  --main-color-rgb: var(--sc-a-m-rgb);
+  --part-color: var(--sc-a-p);
+  --part-color-rgb: var(--sc-a-p-rgb);
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+  color: var(--part-color);
 }
 [disabled="disabled"] {
   --main-color: var(--sc-d-m) !important;

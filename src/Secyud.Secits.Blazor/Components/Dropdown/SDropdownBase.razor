@@ -1,0 +1,17 @@
+@namespace Secyud.Secits.Blazor
+@inherits CComponentBase
+
+<div @ref="ElementRef" class="@GetClass()" style="@GetStyle()"
+     @onclick="ShowAsync">
+    @GenerateChildContent()
+</div>
+
+<SOverlay @ref="_overlay" OverlayParent="this"
+          Mode="Mode" ControlType="ControlType"
+          HorizontalAlignment="HorizontalAlignment"
+          VerticalAlignment="VerticalAlignment"
+          HorizontalInterval="HorizontalInterval"
+          VerticalInterval="VerticalInterval">
+    @GenerateDropdownContent()
+</SOverlay>
+

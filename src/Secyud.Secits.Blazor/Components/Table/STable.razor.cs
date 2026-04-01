@@ -5,7 +5,7 @@ using Secyud.Secits.Blazor.Themes;
 namespace Secyud.Secits.Blazor;
 
 [CascadingTypeParameter(nameof(TItem))]
-public partial class STable<TItem> : IThemedComponent, IPluggableComponent
+public partial class STable<TItem> : IThemedComponent, IPluggableComponent, ISelectionComponent<TItem>
 {
     public STable()
     {
@@ -18,6 +18,7 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
             StateHasChanged = StateHasChanged,
             InvokeAsync = InvokeAsync
         };
+        Selection = new SSelection<TItem>(this);
     }
 
     protected override string ComponentClass => "s-table";
@@ -65,6 +66,12 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
         InvokeAsync(StateHasChanged);
     }
 
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        Selection.SyncParameters(SelectedItem, SelectedItems);
+    }
+
     protected override void ConfigureClassStyle(ClassStyleContext context)
     {
         base.ConfigureClassStyle(context);
@@ -78,85 +85,28 @@ public partial class STable<TItem> : IThemedComponent, IPluggableComponent
 
     #region Selection
 
+    public SSelection<TItem> Selection { get; }
     [Parameter] public Func<TItem, object>? Key { get; set; }
-
-    public object? GetKeyOrDefault(TItem? item)
-    {
-        if (item is not null)
-        {
-            return GetKey(item);
-        }
-
-        return null;
-    }
-
-    public object GetKey(TItem item) => Key?.Invoke(item) ?? item!;
-
-    private TItem? _selectedItem;
-    private object? _selectedKey;
-
-    [Parameter]
-    public TItem? SelectedItem
-    {
-        get;
-        set
-        {
-            if (Equals(field, value)) return;
-            field = value;
-            _selectedItem = value;
-            _selectedKey = GetKeyOrDefault(value);
-        }
-    }
-
+    [Parameter] public TItem? SelectedItem { get; set; }
     [Parameter] public EventCallback<TItem?> SelectedItemChanged { get; set; }
 
-    public void SetSelectedItem(TItem? item)
+    public async Task SetSelectedItem(TItem? item)
     {
-        _selectedItem = item;
-        _selectedKey = GetKeyOrDefault(item);
-        SelectedItemChanged.InvokeAsync(_selectedItem).ConfigureAwait(false);
-        StateHasChanged();
+        Selection.SetSelectedItem(item);
+        await SelectedItemChanged.InvokeAsync(item);
+        await InvokeAsync(StateHasChanged);
     }
 
-    public TItem? GetSelectedItem() => _selectedItem;
-    public object? GetSelectedKey() => _selectedKey;
-
-    private List<TItem>? _selectedItems;
-    private HashSet<object> _selectedKeys = [];
-
-    [Parameter]
-    public List<TItem>? SelectedItems
-    {
-        get;
-        set
-        {
-            field = value;
-            _selectedItems = value;
-            if (value is not null)
-            {
-                _selectedKeys.Clear();
-                _selectedKeys.UnionWith(value.Select(GetKey));
-            }
-        }
-    }
+    [Parameter] public List<TItem>? SelectedItems { get; set; }
 
     [Parameter] public EventCallback<List<TItem>?> SelectedItemsChanged { get; set; }
 
-    public void SetSelectedItems(List<TItem>? items)
+    public async Task SetSelectedItems(List<TItem>? items)
     {
-        _selectedItems = items;
-        _selectedKeys.Clear();
-        if (items is not null)
-        {
-            _selectedKeys.UnionWith(items.Select(GetKey));
-        }
-
-        SelectedItemsChanged.InvokeAsync(_selectedItems).ConfigureAwait(false);
-        StateHasChanged();
+        Selection.SetSelectedItems(items);
+        await SelectedItemsChanged.InvokeAsync(items);
+        await InvokeAsync(StateHasChanged);
     }
-
-    public List<TItem>? GetSelectedItems() => _selectedItems;
-    public HashSet<object> GetSelectedKeys() => _selectedKeys;
 
     public List<TItem>? GetCurrentItems()
     {

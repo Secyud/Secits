@@ -37,4 +37,19 @@ public static class SComponentExtensions
             }
         }
     }
+
+    extension<TItem>(ISelectionComponent<TItem> component)
+    {
+        public object GetKey(TItem item) => component.Key?.Invoke(item) ?? item!;
+
+        public object? GetKeyOrDefault(TItem? item)
+        {
+            return item is not null ? component.GetKey(item) : null;
+        }
+
+        public TItem? GetSelectedItem() => component.Selection.SelectedItem;
+        public object? GetSelectedKey() => component.Selection.SelectedKey;
+        public List<TItem>? GetSelectedItems() => component.Selection.SelectedItems;
+        public HashSet<object> GetSelectedKeys() => component.Selection.SelectedKeys;
+    }
 }

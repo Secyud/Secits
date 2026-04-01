@@ -5,22 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="318bf19f-f38d-4aed-ba4d-ec7589e630b7" name="更改" comment="add form demo">
-      <change afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Progress.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgressType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/css/style/tooltip/default.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Tooltip.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Dropdown/SDropdown.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Dropdown/SDropdown.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Dropdown/SDropdownBase.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Dropdown/SDropdownBase.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.secits-blazor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/css/style/progress/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/progress/default.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/css/style/component.less" beforeDir="false" afterPath="$PROJECT_DIR$/components/css/style/component.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoMenus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/General/DemoMenus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Tabs.razor" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Secyud.Secits.Blazor.Demo/Pages/Tabs.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/secits-blazor.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icon/SIconName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Icon/SIconName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Menu/RouterTabs.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Menu/RouterTabs.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Overlay/SOverlay.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Overlay/SOverlay.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Progress/SProgress.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Components/Tooltip/STooltip.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Navigation/MenuItemAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/Secyud.Secits.Blazor.csproj.DotSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Secyud.Secits.Blazor/wwwroot/css/style/default.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Secyud.Secits.Blazor.Tests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Secyud.Secits.Blazor.Tests/UnitTest1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
     </option>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="2105" />
+    <option name="cachedIndexableFilesCount" value="2106" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -178,7 +182,8 @@
       <workItem from="1774348044625" duration="1709000" />
       <workItem from="1774417500089" duration="12714000" />
       <workItem from="1774505840158" duration="12370000" />
-      <workItem from="1774942332983" duration="3688000" />
+      <workItem from="1774942332983" duration="5490000" />
+      <workItem from="1775013511169" duration="2871000" />
     </task>
     <task id="LOCAL-00001" summary="add font awesome split icon">
       <option name="closed" value="true" />

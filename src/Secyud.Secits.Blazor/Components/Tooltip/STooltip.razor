@@ -1,9 +1,17 @@
 @namespace Secyud.Secits.Blazor
 @inherits CComponentBase
 
-<div class="s-tooltip-container">
+<div @ref="ElementRef" class="s-tooltip-container"
+     @onmouseenter="@(() => _visible = true)">
     @ChildContent
-    <div @ref="ElementRef" class="@GetClass()" style="@GetStyle()">
+</div>
+
+<SOverlay @bind-Visible="_visible"
+          OverlayParent="this" Mode="SOverlayMode.Static"
+          ControlType="SOverlayControlType.Hover"
+          VerticalAlignment="SOverlayVerticalAlignment.OuterBottom"
+          VerticalInterval="4">
+    <div class="@GetClass()" style="@GetStyle()">
         @TooltipContent
     </div>
-</div>
+</SOverlay>

@@ -30,12 +30,12 @@
                </div>;
     }
 
-    protected RenderFragment GenerateTabHeader()
+    protected virtual RenderFragment GenerateTabHeader()
     {
         return @<STabHeader Class="s-router-tab-header"/>;
     }
 
-    protected RenderFragment GenerateTabContent()
+    protected virtual RenderFragment GenerateTabContent()
     {
         return @<STabContent Class="s-router-tab-content"/>;
     }

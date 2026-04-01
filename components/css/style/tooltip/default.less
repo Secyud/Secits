@@ -1,0 +1,12 @@
+﻿@import (reference)  "../general";
+
+.s-tooltip {
+  &:extend(.s-component);
+  padding: default-size();
+
+  .set-color(main, --sc-a-m);
+  .set-color(part, --sc-a-p);
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+  color: var(--part-color);
+}

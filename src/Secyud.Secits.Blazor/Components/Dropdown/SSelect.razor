@@ -1,0 +1,105 @@
+@namespace Secyud.Secits.Blazor
+@inherits SDropdownBase
+@using Secyud.Secits.Blazor.Themes
+@typeparam TItem
+@(base.BuildRenderTree)
+
+@code {
+
+    protected override RenderFragment? GenerateChildContent()
+    {
+        if (MultiSelect)
+        {
+            return
+                @<div class="s-select-container">
+                    @if (Selection.SelectedItems is { Count: > 0 } items)
+                    {
+                        @foreach (var item in items)
+                        {
+                            <div class="s-select-tag">
+                                @if (ContentTemplate is not null)
+                                {
+                                    @ContentTemplate(item)
+                                }
+                                else
+                                {
+                                    @this.GetKey(item)
+                                }
+                            </div>
+                        }
+                    }
+                </div>;
+        }
+
+        return @<div class="s-select-container">
+                   @if (ContentTemplate is not null)
+                   {
+                       @ContentTemplate(SelectedItem)
+                   }
+                   else
+                   {
+                       @this.GetKeyOrDefault(SelectedItem)
+                   }
+               </div>;
+    }
+
+    protected override RenderFragment? GenerateDropdownContent()
+    {
+        return
+            @<div class="s-select-content">
+                <Virtualize Items="Items" Context="item">
+                    @GenerateSelectItem(item)
+                </Virtualize>
+            </div>;
+    }
+
+    protected RenderFragment GenerateSelectItem(TItem item)
+    {
+        var context = new ClassStyleContext();
+        context.AppendClass("s-select-item");
+        var key = this.GetKey(item);
+        var selected = MultiSelect
+            ? Selection.SelectedKeys.Contains(key)
+            : Selection.SelectedKey == key;
+        if (selected)
+            context.AppendClass("selected");
+
+        return
+            @<div class="@context.ClassBuilder.ToString()"
+                  style="@context.StyleBuilder.ToString()"
+                  @onclick="OnItemClick">
+                @if (SelectTemplate is not null)
+                {
+                    @SelectTemplate(item)
+                }
+                else
+                {
+                    @this.GetKeyOrDefault(item)
+                }
+            </div>;
+
+        void OnItemClick()
+        {
+            if (MultiSelect)
+            {
+                var items = Selection.SelectedItems ?? [];
+                var key = this.GetKey(item);
+                if (selected)
+                {
+                    items.RemoveAll(u => this.GetKey(u) == key);
+                }
+                else
+                {
+                    items.Add(item);
+                }
+
+                SetSelectedItems(items).ConfigureAwait(false);
+            }
+            else
+            {
+                SetSelectedItem(item).ConfigureAwait(false);
+            }
+        }
+    }
+
+}

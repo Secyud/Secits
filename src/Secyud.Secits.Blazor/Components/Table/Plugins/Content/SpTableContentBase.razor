@@ -18,9 +18,9 @@
                    }
                </tr>;
 
-        void OnClick()
+        Task OnClick()
         {
-            Table.SetSelectedItem(isSelected ? default : item);
+            return Table.SetSelectedItem(isSelected ? default : item);
         }
     }
 

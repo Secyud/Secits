@@ -60,8 +60,8 @@ public partial class SOverlay : IContentComponent
         set
         {
             if (field == value) return;
-            field = value;
             _visibleChanged = true;
+            SetDirty(ref field, value);
             StateHasChanged();
         }
     }
@@ -78,9 +78,8 @@ public partial class SOverlay : IContentComponent
     }
 
     [Parameter] public EventCallback<bool> VisibleChanged { get; set; }
-
     [Parameter] public IElementComponent? OverlayParent { get; set; }
-    [Parameter] public SOverlayControlType ControlType { get; set; }
+    [Parameter] public SOverlayControlType ControlType { get; set; } = SOverlayControlType.None;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -98,9 +97,10 @@ public partial class SOverlay : IContentComponent
 
     protected async Task CreateOverlay()
     {
-        if (_visibleChanged && ElementRef is { Context: not null } element &&
-            OverlayParent?.ElementRef is { Context: not null } parent)
+        if (_visibleChanged && ElementRef is { Context: not null } element)
         {
+            object? parent =
+                OverlayParent?.ElementRef is { Context: not null } ? OverlayParent?.ElementRef : "document";
             await Js.InvokeVoidAsync(SJsModules.Overlay.Create,
                 element.Id, element, parent, _closeInvoker.Ref, new SOverlayOptions
                 {

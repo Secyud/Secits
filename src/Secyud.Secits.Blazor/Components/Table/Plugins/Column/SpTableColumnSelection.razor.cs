@@ -25,17 +25,19 @@ public partial class SpTableColumnSelection<TItem> : ISpTableColumn<TItem>
         set
         {
             if (_table is null) return;
-            if (!AllItemSelected)
+            List<TItem> list;
+            if (AllItemSelected)
             {
-                var items = (value ? _table.GetCurrentItems() : []) ?? [];
-                var originItems = _table.GetSelectedItems() ?? [];
-                var result = items.UnionBy(originItems, _table.GetKey);
-                _table.SetSelectedItems(result.ToList());
+                list = [];
             }
             else
             {
-                _table.SetSelectedItems([]);
+                var items = (value ? _table.GetCurrentItems() : []) ?? [];
+                var originItems = _table.GetSelectedItems() ?? [];
+                list = items.UnionBy(originItems, _table.GetKey).ToList();
             }
+
+            _table.SetSelectedItems(list).ConfigureAwait(false);
         }
     }
 
@@ -53,7 +55,7 @@ public partial class SpTableColumnSelection<TItem> : ISpTableColumn<TItem>
             items.RemoveAll(u => _table.GetKey(u) == key);
         }
 
-        _table.SetSelectedItems(items);
+        _table.SetSelectedItems(items).ConfigureAwait(false);
     }
 
     protected override string? GetFiledName()

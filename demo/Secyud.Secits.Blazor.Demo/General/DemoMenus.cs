@@ -16,6 +16,7 @@ public static class DemoMenus
         (nameof(Progress), Progress),
         (nameof(Table), Table),
         (nameof(Tabs), Tabs),
+        (nameof(Tooltip), Tooltip),
         (nameof(Test), Test),
     };
 
@@ -32,4 +33,5 @@ public static class DemoMenus
     public const string Table = "/table";
     public const string Test = "/test";
     public const string Tabs = "/tabs";
+    public const string Tooltip = "/tooltip";
 }
